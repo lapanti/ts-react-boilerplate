@@ -25,7 +25,7 @@
     "lint:ts": "tslint 'src/**/*.{ts,tsx}'",
     "test": "yarn run lint:less && yarn run lint:ts && jest",
     "test:watch": "jest --watch",
-    "test:ci": "yarn run lint:less && yarn run lint:ts && jest --runInBand --forceExit --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:ci": "yarn run lint:less && yarn run lint:ts && jest --runInBand --forceExit --coverage",
     "develop:less": "mkdir -p dist/styles && less-watch-compiler src/styles dist/styles",
     "develop:client": "budo src/index.tsx:js/bundle.js --live --verbose -- -p tsify",
     "develop": "NODE_ENV=development concurrently -p \"[{name}]\" -n \"BROWSERIFY,LESS\" -c \"bgBlue,bgMagenta\" -k \"yarn run develop:client\" \"yarn run develop:less\"",
