@@ -24,7 +24,7 @@
 - :nail_care: [{less}](http://lesscss.org/) for styles
     - :kiss: [less-plugin-clean-css](https://github.com/less/less-plugin-clean-css) to clean, minify and add compatibility to CSS
     - :sparkles: [less-simple-watcher](https://github.com/jonycheung/deadsimple-less-watch-compiler) for watching less
-- :two_hears: [concurrently](https://github.com/kimmobrunfeldt/concurrently) to run multiple script concurrently
+- :two_hearts: [concurrently](https://github.com/kimmobrunfeldt/concurrently) to run multiple script concurrently
   
 ## Develop
 
