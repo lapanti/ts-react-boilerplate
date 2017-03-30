@@ -8,23 +8,22 @@ describe('IndexView', () => {
     const testName = 'A_TEST_NAME';
     const testSetName = jest.fn();
     const testFetchPost = jest.fn();
-    const testDispatch = jest.fn();
-    const wrapperNoPost = shallow(<IndexView name={testName} setName={testSetName} fetchPost={testFetchPost} dispatch={testDispatch} />);
+    const wrapperNoPost = shallow(<IndexView name={testName} setName={testSetName} fetchPost={testFetchPost} />);
 
     it('should render with correct props', () => {
         expect(wrapperNoPost).toMatchSnapshot();
-        const wrapperPost = shallow(<IndexView name={testName} post={testPost} setName={testSetName} fetchPost={testFetchPost} dispatch={testDispatch} />);
+        const wrapperPost = shallow(<IndexView name={testName} post={testPost} setName={testSetName} fetchPost={testFetchPost} />);
         expect(wrapperPost).toMatchSnapshot();
     });
 
     it('should call the correct functions when typing to input field', () => {
         const testValue = 'A_TEST_VALUE';
         wrapperNoPost.find('[type="text"]').simulate('change', { target: { testValue }});
-        expect(testDispatch).toBeCalledWith(testSetName(testValue));
+        expect(testSetName).toBeCalledWith(testValue);
     });
 
     it('should call the correct functions on click', () => {
         wrapperNoPost.find('button').simulate('click');
-        expect(testDispatch).toBeCalledWith(testFetchPost());
+        expect(testFetchPost).toBeCalled;
     });
 });

@@ -28,7 +28,7 @@
     "test:coverage": "jest --coverage",
     "develop:less": "mkdir -p dist/styles && less-watch-compiler src/styles dist/styles",
     "develop:client": "budo src/index.tsx:js/bundle.js --live --verbose -- -p tsify",
-    "develop": "concurrently -p \"[{name}]\" -n \"BROWSERIFY,LESS\" -c \"bgBlue,bgMagenta\" -k \"yarn run develop:client\" \"yarn run develop:less\"",
+    "develop": "NODE_ENV=development concurrently -p \"[{name}]\" -n \"BROWSERIFY,LESS\" -c \"bgBlue,bgMagenta\" -k \"yarn run develop:client\" \"yarn run develop:less\"",
     "build:server": "mkdir -p dist && browserify src/server.tsx --node -p tsify > dist/server.js",
     "build:less": "mkdir -p dist/styles && lessc src/styles/styles.less --clean-css=\"--s1 --advanced --compatibility=ie8\" dist/styles/styles.css",
     "build:client": "mkdir -p dist/js && browserify src/index.tsx -p tsify > dist/js/bundle.js",
