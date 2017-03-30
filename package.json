@@ -1,6 +1,6 @@
 {
   "name": "frontend-barebones",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Barebones application to use for server-side rendered React/Typescript/Redux applications",
   "main": "dist/index.js",
   "author": "Lapanti",
