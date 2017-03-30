@@ -1,4 +1,5 @@
 # A very opinionated frontend boilerplate
+[![Build Status](https://travis-ci.org/Lapanti/ts-react-boilerplate.svg?branch=master)](https://travis-ci.org/Lapanti/ts-react-boilerplate)
 
 ## Dependencies
 - :package: [Yarn](https://yarnpkg.com/lang/en/) for package management

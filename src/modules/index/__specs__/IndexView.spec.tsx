@@ -18,7 +18,7 @@ describe('IndexView', () => {
 
     it('should call the correct functions when typing to input field', () => {
         const testValue = 'A_TEST_VALUE';
-        wrapperNoPost.find('[type="text"]').simulate('change', { target: { testValue }});
+        wrapperNoPost.find('[type="text"]').simulate('change', { target: { value: testValue }});
         expect(testSetName).toBeCalledWith(testValue);
     });
 
