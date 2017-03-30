@@ -1,13 +1,13 @@
-import { bindActionCreators } from 'redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-
-import { State } from '../../redux/reducer';
-import * as IndexActions from './IndexReducer';
+import { State, Actions } from '../../redux/reducer';
+import { setName, fetchPost } from './IndexReducer';
 import IndexView, { IIndexProps } from './IndexView';
 
 export default connect<{}, {}, IIndexProps>((state: State) => ({
     name: state.index.name,
     post: state.index.post,
-    setName: IndexActions.setName,
-    fetchPost: IndexActions.fetchPost,
+}), (dispatch: Dispatch<Actions>) => ({
+    setName: bindActionCreators(setName, dispatch),
+    fetchPost: bindActionCreators(fetchPost, dispatch),
 }))(IndexView);

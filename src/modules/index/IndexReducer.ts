@@ -4,7 +4,7 @@ import { ajax } from 'rxjs/observable/dom/ajax';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import { Epic, combineEpics, ActionsObservable } from 'redux-observable';
-import * as ReduxUtils from '../../redux/utils';
+import { DefaultAction } from '../../redux/utils';
 import { IPost } from '../../components/Post';
 
 export class IndexState {
@@ -30,7 +30,7 @@ export const fetchPostSuccess = (payload: IPost) => ({ type: FETCH_POST_SUCCESS,
 export type FetchPostFail = { type: FETCH_POST_FAIL };
 export const fetchPostFail = () => ({ type: FETCH_POST_FAIL });
 
-type IndexActions = SetNameAction | FetchPostAction | FetchPostSuccessAction | ReduxUtils.DefaultAction;
+export type IndexActions = SetNameAction | FetchPostAction | FetchPostSuccessAction | DefaultAction;
 
 export const fetchPostEpic: Epic<IndexActions, undefined> = (action$: ActionsObservable<IndexActions>): Observable<IndexActions> =>
     action$.ofType(FETCH_POST)
