@@ -1,5 +1,5 @@
 # A very opinionated frontend boilerplate
-[![Build Status](https://travis-ci.org/Lapanti/ts-react-boilerplate.svg?branch=master)](https://travis-ci.org/Lapanti/ts-react-boilerplate)
+[![Build Status](https://travis-ci.org/Lapanti/ts-react-boilerplate.svg?branch=master)](https://travis-ci.org/Lapanti/ts-react-boilerplate) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Dependency Status](https://gemnasium.com/badges/github.com/Lapanti/ts-react-boilerplate.svg)](https://gemnasium.com/github.com/Lapanti/ts-react-boilerplate)
 
 ## Dependencies
 - :package: [Yarn](https://yarnpkg.com/lang/en/) for package management
