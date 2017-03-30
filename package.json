@@ -1,7 +1,7 @@
 {
-  "name": "frontend-barebones",
+  "name": "ts-react-boilerplate",
   "version": "0.0.1",
-  "description": "Barebones application to use for server-side rendered React/Typescript/Redux applications",
+  "description": "A very opinionated (React/TypeScript/Redux/etc) frontend boilerplate",
   "main": "dist/index.js",
   "author": "Lapanti",
   "license": "MIT",
