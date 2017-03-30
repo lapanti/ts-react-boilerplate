@@ -9,7 +9,7 @@ const reducer = combineReducers<State>({
 
 export class State {
     readonly index: IndexState = new IndexState();
-};
+}
 
 export const epics = combineEpics(
     IndexEpics,
