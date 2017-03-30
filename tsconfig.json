@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es5",
+        "jsx": "react",
+        "moduleResolution": "node"
+    },
+    "files": [
+        "src/**/*.{ts,tsx}"
+    ],
+    "exclude": [
+        "**/*.spec.{ts,tsx}",
+        "**/*.snap"
+    ]
+}

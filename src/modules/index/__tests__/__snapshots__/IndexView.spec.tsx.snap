@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndexView should render with correct props 1`] = `
+<div
+  className="index"
+>
+  <h1
+    className="index__header"
+  >
+    A_TEST_NAME
+  </h1>
+  <input
+    className="index__input"
+    onChange={[Function]}
+    type="text"
+  />
+  <br />
+  <button
+    className="index__button"
+    onClick={[Function]}
+  >
+    This button will be styled
+  </button>
+</div>
+`;
+
+exports[`IndexView should render with correct props 2`] = `
+<div
+  className="index"
+>
+  <h1
+    className="index__header"
+  >
+    A_TEST_NAME
+  </h1>
+  <input
+    className="index__input"
+    onChange={[Function]}
+    type="text"
+  />
+  <br />
+  <button
+    className="index__button"
+    onClick={[Function]}
+  >
+    This button will be styled
+  </button>
+  <Post
+    post={
+      Object {
+        "body": "A_BODY",
+        "id": 0,
+        "title": "A_TITLE",
+        "userId": 0,
+      }
+    }
+  />
+</div>
+`;

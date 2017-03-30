@@ -1,0 +1,78 @@
+{
+  "name": "frontend-barebones",
+  "version": "1.0.0",
+  "description": "Barebones application to use for server-side rendered React/Typescript/Redux applications",
+  "main": "dist/index.js",
+  "author": "Lapanti",
+  "license": "MIT",
+  "jest": {
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "scripts": {
+    "lint:less": "lesshint src/styles/",
+    "lint:ts": "tslint 'src/**/*.{ts,tsx}'",
+    "test": "yarn run lint:less && yarn run lint:ts && jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "develop:less": "mkdir -p dist/styles && less-watch-compiler src/styles dist/styles",
+    "develop:client": "budo src/index.tsx:js/bundle.js --live --verbose -- -p tsify",
+    "develop": "concurrently -p \"[{name}]\" -n \"BROWSERIFY,LESS\" -c \"bgBlue,bgMagenta\" -k \"yarn run develop:client\" \"yarn run develop:less\"",
+    "build:server": "mkdir -p dist && browserify src/server.tsx --node -p tsify > dist/server.js",
+    "build:less": "mkdir -p dist/styles && lessc src/styles/styles.less --clean-css=\"--s1 --advanced --compatibility=ie8\" dist/styles/styles.css",
+    "build:client": "mkdir -p dist/js && browserify src/index.tsx -p tsify > dist/js/bundle.js",
+    "build": "yarn run build:server && yarn run build:less && yarn run build:client",
+    "start": "NODE_ENV=production node dist/server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^3.0.2",
+    "redux": "^3.6.0",
+    "redux-observable": "^0.14.1",
+    "rxjs": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "^0.31.32",
+    "@types/express": "^4.0.35",
+    "@types/jest": "^19.2.2",
+    "@types/nock": "^8.2.1",
+    "@types/react": "^15.0.15",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-redux": "^4.4.37",
+    "@types/react-router": "^3.0.6",
+    "@types/react-test-renderer": "^15.4.2",
+    "browserify": "^14.1.0",
+    "budo": "^9.4.7",
+    "concurrently": "^3.4.0",
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.5.0",
+    "jest": "^19.0.2",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "less-watch-compiler": "^1.4.2",
+    "lesshint": "^3.1.0",
+    "nock": "^9.0.9",
+    "react-addons-test-utils": "^15.4.2",
+    "react-proxy": "^1.1.8",
+    "redux-mock-store": "^1.2.2",
+    "ts-jest": "^19.0.1",
+    "tsify": "^3.0.1",
+    "tslint": "^4.5.1",
+    "tslint-react": "^2.5.0",
+    "typescript": "^2.2.1"
+  }
+}
