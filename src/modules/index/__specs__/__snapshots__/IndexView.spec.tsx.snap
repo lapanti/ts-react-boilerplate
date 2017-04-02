@@ -1,59 +1,80 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`IndexView should render with correct props 1`] = `
-<div
+<main
   className="index"
 >
   <h1
     className="index__header"
   >
-    A_TEST_NAME
+    Todo app
   </h1>
+  <label
+    htmlFor="newtodo"
+  >
+    Add new todo
+  </label>
   <input
     className="index__input"
+    name="newtodo"
     onChange={[Function]}
     type="text"
   />
+  <Button
+    click={[Function]}
+    text="Add"
+  />
   <br />
-  <button
-    className="index__button"
-    onClick={[Function]}
-  >
-    This button will be styled
-  </button>
-</div>
+</main>
 `;
 
 exports[`IndexView should render with correct props 2`] = `
-<div
+<main
   className="index"
 >
+  <Loading />
   <h1
     className="index__header"
   >
-    A_TEST_NAME
+    Todo app
   </h1>
+  <label
+    htmlFor="newtodo"
+  >
+    Add new todo
+  </label>
   <input
     className="index__input"
+    name="newtodo"
     onChange={[Function]}
     type="text"
   />
+  <Button
+    click={[Function]}
+    text="Add"
+  />
   <br />
-  <button
-    className="index__button"
-    onClick={[Function]}
-  >
-    This button will be styled
-  </button>
-  <Post
-    post={
-      Object {
-        "body": "A_BODY",
-        "id": 0,
-        "title": "A_TITLE",
-        "userId": 0,
+  <TodoComponent
+    setDone={[Function]}
+    todo={
+      Todo {
+        "done": false,
+        "number": 0,
+        "setDone": [Function],
+        "title": "title",
       }
     }
   />
-</div>
+  <TodoComponent
+    setDone={[Function]}
+    todo={
+      Todo {
+        "done": true,
+        "number": 1,
+        "setDone": [Function],
+        "title": "testing",
+      }
+    }
+  />
+</main>
 `;
