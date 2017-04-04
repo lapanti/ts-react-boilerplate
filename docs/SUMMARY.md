@@ -1,3 +1,3 @@
 # Table of contents
 
-- [Getting started](docs/GETTING-STARTED.md)
+- [README](/README.md)
