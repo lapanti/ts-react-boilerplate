@@ -1,6 +1,6 @@
 import { ActionsObservable } from 'redux-observable';
 import configureStore from '../../../redux/store';
-import Todo from '../../../classes/Todo';
+import Todo from '../../../common/Todo';
 import IndexReducer, {
     SET_TITLE,
     setTitle,

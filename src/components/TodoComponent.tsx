@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Dispatch } from 'redux';
 import { Actions } from '../redux/reducer';
-import Todo from '../classes/Todo';
+import Todo from '../common/Todo';
 
 export interface ITodoComponent {
     todo: Todo;

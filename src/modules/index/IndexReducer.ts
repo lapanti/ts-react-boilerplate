@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mapTo';
 import { Epic, combineEpics, ActionsObservable } from 'redux-observable';
 import { DefaultAction } from '../../redux/utils';
-import Todo from '../../classes/Todo';
+import Todo from '../../common/Todo';
 
 const testDelay = 1000;
 

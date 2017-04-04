@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import TodoComponent from '../TodoComponent';
-import Todo from '../../classes/Todo';
+import Todo from '../../common/Todo';
 
 describe('TodoComponent', () => {
     const testTodo1 = new Todo(1, 'Title');

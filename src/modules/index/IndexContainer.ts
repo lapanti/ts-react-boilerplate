@@ -4,12 +4,16 @@ import { State, Actions } from '../../redux/reducer';
 import { setTitle, saveTodo, setDone } from './IndexReducer';
 import IndexView, { IIndexProps } from './IndexView';
 
-export default connect<{}, {}, IIndexProps>((state: State) => ({
+const stateToProps = (state: State) => ({
     title: state.index.title,
     todos: state.index.todos,
     loading: state.index.loading,
-}), (dispatch: Dispatch<Actions>) => ({
+});
+
+const dispatchToProps = (dispatch: Dispatch<Actions>) => ({
     setTitle: bindActionCreators(setTitle, dispatch),
     saveTodo: bindActionCreators(saveTodo, dispatch),
     setDone: bindActionCreators(setDone, dispatch),
-}))(IndexView);
+});
+
+export default connect<{}, {}, IIndexProps>(stateToProps, dispatchToProps)(IndexView);

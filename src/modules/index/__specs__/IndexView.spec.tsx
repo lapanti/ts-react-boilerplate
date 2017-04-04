@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import IndexView from '../IndexView';
-import Todo from '../../../classes/Todo';
+import Todo from '../../../common/Todo';
 
 describe('IndexView', () => {
     const testTodo1 = new Todo(0, 'title');
