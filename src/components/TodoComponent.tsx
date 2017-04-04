@@ -14,9 +14,9 @@ const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone
             className="todo__checkbox"
             type="checkbox"
             checked={todo.done}
-            onChange={() => !todo.done && setDone(todo.number)}
+            onChange={() => !todo.done && setDone(todo.id)}
         />
-        <span className="todo__number">{todo.number}:</span>
+        <span className="todo__number">{todo.id}:</span>
         <span className="todo__title">{todo.title}</span>
     </div>
 );

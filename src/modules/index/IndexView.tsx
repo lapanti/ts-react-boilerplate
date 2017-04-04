@@ -33,7 +33,7 @@ const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loadin
         </form>
         <br />
         <main className="index__todo-container">
-            {todos.map(t => <TodoComponent todo={t} setDone={setDone} key={t.number} />)}
+            {todos.map(t => <TodoComponent todo={t} setDone={setDone} key={t.id} />)}
         </main>
     </main>
 );
