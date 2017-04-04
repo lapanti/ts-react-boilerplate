@@ -22,8 +22,9 @@ const renderHtml = (html: string, preloadedState: State) => (
     <!doctype html>
     <html>
         <head>
-            <title>Hello</title>
-            <meta charset="utf-8">
+            <meta charset="utf-8" />
+            <title>Todo app</title>
+            <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
             <link rel="stylesheet" href="/styles/styles.css">
         </head>
         <body>

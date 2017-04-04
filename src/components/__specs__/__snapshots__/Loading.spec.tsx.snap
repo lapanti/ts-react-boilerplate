@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading should render correctly 1`] = `
+exports[`Loader should render correctly 1`] = `
 <i
   className="loading"
 >
-  Loading
+  Loader
 </i>
 `;

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Loading from '../Loading';
+import Loader from '../Loader';
 
-describe('Loading', () => (
+describe('Loader', () => (
     it('should render correctly', () => (
-        expect(shallow(<Loading />)).toMatchSnapshot()
+        expect(shallow(<Loader />)).toMatchSnapshot()
     ))
 ));
