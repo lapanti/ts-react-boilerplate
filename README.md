@@ -18,12 +18,10 @@
 - :pray: [Jest](https://facebook.github.io/jest/) for testing
     - :ok_hand: [TSlint](https://palantir.github.io/tslint/) for linting
     - :runner: [nock](https://github.com/node-nock/nock) to mock API calls
-    - :question: [lesshint](https://github.com/lesshint/lesshint) to lint less
+    - :question: [sass-lint](https://github.com/sasstools/sass-lint) to lint SASS
     - :bust_in_silhouette: [Enzyme](https://github.com/airbnb/enzyme) for snapshot and behavior testing
         - :cyclone: [Enzyme-to-JSON](https://github.com/adriantoine/enzyme-to-json) to enable Enzyme snapshots with Jest
-- :nail_care: [{less}](http://lesscss.org/) for styles
-    - :kiss: [less-plugin-clean-css](https://github.com/less/less-plugin-clean-css) to clean, minify and add compatibility to CSS
-    - :sparkles: [less-simple-watcher](https://github.com/jonycheung/deadsimple-less-watch-compiler) for watching less
+- :nail_care: [SASS](https://github.com/sass/node-sass) for styles
 - :two_hearts: [concurrently](https://github.com/kimmobrunfeldt/concurrently) to run multiple script concurrently
   
 ## Develop

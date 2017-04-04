@@ -9,22 +9,33 @@ exports[`IndexView should render with correct props 1`] = `
   >
     Todo app
   </h1>
-  <label
-    htmlFor="newtodo"
+  <form
+    className="index__form"
+    onSubmit={[Function]}
   >
-    Add new todo
-  </label>
-  <input
-    className="index__input"
-    name="newtodo"
-    onChange={[Function]}
-    type="text"
-  />
-  <Button
-    click={[Function]}
-    text="Add"
-  />
+    <label
+      className="index__form__label"
+      htmlFor="newtodo"
+    >
+      Add a new todo:
+    </label>
+    <input
+      autoFocus={true}
+      className="index__form__input"
+      name="newtodo"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <Button
+      click={[Function]}
+      text="Add"
+    />
+  </form>
   <br />
+  <main
+    className="index__todo-container"
+  />
 </main>
 `;
 
@@ -38,43 +49,55 @@ exports[`IndexView should render with correct props 2`] = `
   >
     Todo app
   </h1>
-  <label
-    htmlFor="newtodo"
+  <form
+    className="index__form"
+    onSubmit={[Function]}
   >
-    Add new todo
-  </label>
-  <input
-    className="index__input"
-    name="newtodo"
-    onChange={[Function]}
-    type="text"
-  />
-  <Button
-    click={[Function]}
-    text="Add"
-  />
+    <label
+      className="index__form__label"
+      htmlFor="newtodo"
+    >
+      Add a new todo:
+    </label>
+    <input
+      autoFocus={true}
+      className="index__form__input"
+      name="newtodo"
+      onChange={[Function]}
+      type="text"
+      value="A title"
+    />
+    <Button
+      click={[Function]}
+      text="Add"
+    />
+  </form>
   <br />
-  <TodoComponent
-    setDone={[Function]}
-    todo={
-      Todo {
-        "done": false,
-        "number": 0,
-        "setDone": [Function],
-        "title": "title",
+  <main
+    className="index__todo-container"
+  >
+    <TodoComponent
+      setDone={[Function]}
+      todo={
+        Todo {
+          "done": false,
+          "number": 0,
+          "setDone": [Function],
+          "title": "title",
+        }
       }
-    }
-  />
-  <TodoComponent
-    setDone={[Function]}
-    todo={
-      Todo {
-        "done": true,
-        "number": 1,
-        "setDone": [Function],
-        "title": "testing",
+    />
+    <TodoComponent
+      setDone={[Function]}
+      todo={
+        Todo {
+          "done": true,
+          "number": 1,
+          "setDone": [Function],
+          "title": "testing",
+        }
       }
-    }
-  />
+    />
+  </main>
 </main>
 `;
