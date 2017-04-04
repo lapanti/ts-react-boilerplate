@@ -1,5 +1,4 @@
 # A very opinionated frontend boilerplate
-
 [![Build Status](https://img.shields.io/travis/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/Lapanti/ts-react-boilerplate) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Dependency Status](https://david-dm.org/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate) [![DevDependency Status](https://img.shields.io/david/dev/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate?type=dev) [![Coverage Status](https://img.shields.io/coveralls/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://coveralls.io/github/Lapanti/ts-react-boilerplate?branch=master)
 
 ## Purpose
