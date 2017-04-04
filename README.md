@@ -3,7 +3,7 @@
 
 ## Purpose
 
-This is all you need to get started in developing your own web application, using TypeScript, React, server-side rendering and all the other hip tools. All the source code is well-documented and explains it's purpose. You can read the [getting started guide here](#getstarted)
+This is all you need to get started in developing your own web application, using TypeScript, React, server-side rendering and all the other hip tools. All the source code is well-documented and explains its purpose. You can read the [getting started guide here](#getstarted)
 
 ## Contents
 - [Getting started](#getstarted)
@@ -41,8 +41,6 @@ This is all you need to get started in developing your own web application, usin
 6. Start the deployable version by running `yarn run start` or read the [How to Docker](#dockerization) guide to Dockerize your application
 7. To test your application, run `yarn run test`
 8. Start modifying the code to build your own application
-9. ???
-10. Profit (like all those SaaS startups you've heard about)
 
 ## <a name="tipsandsuggestions">Tips and suggestions</a>
 - Make sure everything has a type (the more you squeeze out of the compiler the easier you're going to have it while developing)
@@ -53,11 +51,11 @@ This is all you need to get started in developing your own web application, usin
 The [Dockerfile](Dockerfile) is where you can find the configuration to build a [Docker](https://www.docker.com/) image out of your application. The first line of the `Dockerfile` (starting with `FROM`) includes the base for your Dockerfile, feel free to change it if you want to.
 1. Put your email to the [fourth line in the Dockerfile](Dockerfile#L4)
 2. In your console run `docker build .`
-3. In your console run `docker run -d -p 8888:8888 bd9b1d6725bc` **but** replace `bd9b1d6725bc` with the image ID you received from the previous command
+3. In your console run `docker run -d -p 8080:8080 bd9b1d6725bc` **but** replace `bd9b1d6725bc` with the image ID you received from the previous command
 4. Host your Docker image in your favorite cloud or local server (the web is filled with guides for this)
 
 ## <a name="dependencies">Dependencies</a>
-The following are all the dependencies of the project, with the reasoning behind their includement:
+The following are all the dependencies of the project, with the reasoning behind their inclusion:
 - :package: [Yarn](https://yarnpkg.com/lang/en/) for package management
 - :muscle: [TypeScript](https://www.typescriptlang.org/) for types
 - :computer: [Express](https://expressjs.com/) for server-side rendering
