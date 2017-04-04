@@ -4,4 +4,6 @@ node_js:
 
 cache: yarn
 
-script: yarn run test:ci
+script: "yarn run test:ci"
+
+after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
