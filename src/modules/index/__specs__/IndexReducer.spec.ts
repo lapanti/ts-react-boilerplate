@@ -49,7 +49,7 @@ describe('IndexReducer', () => {
         const newState = IndexReducer(initialState, saveTodoSuccessAction);
         expect(newState.title).toEqual('');
         expect(newState.todos[0].done).toBeFalsy();
-        expect(newState.todos[0].number).toEqual(1);
+        expect(newState.todos[0].id).toEqual(1);
         expect(newState.todos[0].title).toEqual(initialState.title);
         expect(newState.loading).toBeFalsy();
     });
@@ -62,10 +62,10 @@ describe('IndexReducer', () => {
     });
 
     it('should trigger the correct action on setDoneEpic', async () => {
-        return await setDoneEpic(ActionsObservable.of(setDone(0)), { getState: () => undefined, dispatch: () => {} })
-            .forEach(actionReceived =>
-                expect(actionReceived)
-                    .toEqual(setDoneSuccess(0)));
+        return await setDoneEpic(ActionsObservable.of(setDone(0)), undefined)
+            .subscribe(actionsReceived =>
+                expect(actionsReceived)
+                    .toEqual([{ type: SET_DONE_SUCCESS, payload: 0 }]));
     });
 
     it('should set the correct values on setDoneSuccess', () => {
@@ -75,7 +75,7 @@ describe('IndexReducer', () => {
         const newState = IndexReducer(initialState, setDoneSuccessAction);
         expect(newState.loading).toBeFalsy();
         expect(newState.todos[0].done).toBeTruthy();
-        expect(newState.todos[0].number).toEqual(initialState.todos[0].number);
+        expect(newState.todos[0].id).toEqual(initialState.todos[0].id);
         expect(newState.todos[0].title).toEqual(initialState.todos[0].title);
     });
 });

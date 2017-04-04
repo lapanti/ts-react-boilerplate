@@ -68,7 +68,7 @@ const IndexReducer = (state: IndexState = new IndexState(), action: IndexActions
         case SET_DONE_SUCCESS:
             return {
                 ...state,
-                todos: state.todos.map(t => t.number === action.payload ? t.setDone() : t),
+                todos: state.todos.map(t => t.id === action.payload ? t.setDone() : t),
                 loading: false,
             };
         default:

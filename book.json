@@ -1,15 +1,10 @@
 {
     "gitbook": "^3.1.1",
     "title": "TS-React-Boilerplate",
-    "plugins": ["edit-link", "prism", "github"],
+    "plugins": ["edit-link", "prism", "anker-enable", "github", "advanced-emoji", "-sharing"],
     "pluginsConfig": {
         "theme-default": {
             "showLevel": true
-        },
-        "sharing": {
-            "google": false,
-            "twitter": false,
-            "facebook": false
         },
         "edit-link": {
             "base": "https://github.com/Lapanti/ts-react-boilerplate/tree/master",
