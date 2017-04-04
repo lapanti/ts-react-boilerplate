@@ -1,0 +1,22 @@
+{
+    "gitbook": "^3.1.1",
+    "title": "TS-React-Boilerplate",
+    "plugins": ["edit-link", "prism", "github"],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "sharing": {
+            "google": false,
+            "twitter": false,
+            "facebook": false
+        },
+        "edit-link": {
+            "base": "https://github.com/Lapanti/ts-react-boilerplate/tree/master",
+            "label": "Edit this page"
+        },
+        "github": {
+            "url": "https://github.com/Lapanti/ts-react-boilerplate"
+        }
+    }
+}

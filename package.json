@@ -1,10 +1,18 @@
 {
   "name": "ts-react-boilerplate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A very opinionated (React/TypeScript/Redux/etc) frontend boilerplate",
   "main": "dist/index.js",
   "author": "Lapanti",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lapanti/ts-react-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lapanti/ts-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Lapanti/ts-react-boilerplate#README.md",
   "jest": {
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
@@ -22,6 +30,11 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/jest/setup.js"
   },
   "scripts": {
+    "docs:clean": "rm -rf _book",
+    "docs:prepare": "gitbook install",
+    "docs:watch": "yarn run docs:prepare && gitbook serve",
+    "docs:build": "yarn run docs:prepare && gitbook build -g Lapanti/ts-react-boilerplate",
+    "docs:publish": "yarn run docs:clean && yarn run docs:build && cd _book && git init . && git commit --allow-empty -m \"Update book\" && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -m \"Update book\" && git push git@github.com:Lapanti/ts-react-boilerplate gh-pages --force",
     "lint:sass": "sass-lint src/**/*.scss -v --max-warnings 1",
     "lint:ts": "tslint 'src/**/*.{ts,tsx}'",
     "test": "yarn run lint:sass && yarn run lint:ts && jest",
@@ -62,6 +75,11 @@
     "coveralls": "^2.12.0",
     "enzyme": "^2.8.0",
     "enzyme-to-json": "^1.5.0",
+    "gitbook-cli": "^2.3.0",
+    "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-github": "^3.0.0",
+    "gitbook-plugin-prism": "^2.2.0",
+    "gitbook-plugin-theme-default": "^1.0.6",
     "jest": "^19.0.2",
     "nock": "^9.0.11",
     "node-sass": "^4.5.2",
