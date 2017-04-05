@@ -3,10 +3,10 @@
 
 ## Purpose
 
-This is all you need to get started in developing your own web application, using TypeScript, React, server-side rendering and all the other hip tools. All the source code is well-documented and explains its purpose. You can read the [getting started guide here](#getstarted)
+This is all you need to get started in developing your own web application, using TypeScript, React, server-side rendering and all the other hip tools. If you know what you are doing, you can follow the [quick start guide](#quickstart) or you can go learn with the walk-through starting [here](/docs/STRUCTURE.md).
 
 ## Contents
-- [Getting started](#getstarted)
+- [Quick start guide](#quickstart)
     - [Requirements](#requirements)
     - [Download the source code](#download)
     - [Starting development](#startingdevelopment)
@@ -19,7 +19,7 @@ This is all you need to get started in developing your own web application, usin
     - [Roadmap](#roadmap)
 - [License and contact information](#license)
 
-## <a name="getstarted">Getting started</a>
+## <a name="quickstart">Quick start guide</a>
 
 ### <a name="requirements">Requirements</a>
 - If you don't already have it, install [Node](https://nodejs.org/en/download/)
