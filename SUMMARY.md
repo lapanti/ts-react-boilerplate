@@ -12,6 +12,8 @@
     * [Linting](/docs/COMMON.md#linting)
     * [Alternatives](/docs/COMMON.md#alternatives)
 * [Components](/docs/COMPONENTS.md)
+    * [Initialize](/docs/COMPONENTS.md#initialize)
+    * [Configuring for React](/docs/COMPONENTS.md#configuring)
 * [Modules](/docs/MODULES.md)
 * [Redux](/docs/REDUX.md)
 * [Styles](/docs/STYLES.md)

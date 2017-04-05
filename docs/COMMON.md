@@ -28,11 +28,48 @@ Next we will configure [TypeScript](https://www.typescriptlang.org/) by creating
         "moduleResolution": "node"
     },
     "files": [
-        "src/**/*.{ts,tsx}"
+        "src/**/*.ts"
     ]
 }
 ```
-On the first row we start by defining the [compilerOptions](https://www.typescriptlang.org/docs/handbook/compiler-options.html). The first rule we set is `noImplicitAny` which will enforce the use of type declarations (more about those later) when the type would otherwise be inferred as `any`. The second rule defines the target ECMAScript version (in this case [ES5](https://kangax.github.io/compat-table/es5/)) for the compiled JavaScript files. In the third line we set the [moduleResolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) mode for the [TypeScript](https://www.typescriptlang.org/) compiler as `node`, which allows the importing of dependencies from the folder `node_modules` (where [Yarn](https://yarnpkg.com/lang/en/) saves them by default) by using non-relative imports. 
+
+On the first row
+```json
+    "compilerOptions": {
+```
+we start by defining the [compilerOptions](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
+
+The first rule we set
+```json
+        "noImplicitAny": true,
+```
+is `noImplicitAny` which will enforce the use of type declarations (more about those later) when the type would otherwise be inferred as `any`.
+
+The second rule
+```json
+        "target": "es5",
+```
+defines the target ECMAScript version (in this case [ES5](https://kangax.github.io/compat-table/es5/)) for the compiled JavaScript files.
+
+In the third line
+```json
+        "moduleResolution": "node"
+```
+we set the [moduleResolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) mode for the [TypeScript](https://www.typescriptlang.org/) compiler as `node`, which allows the importing of dependencies from the folder `node_modules` (where [Yarn](https://yarnpkg.com/lang/en/) saves them by default) by using non-relative imports. 
+
+---
+
+On the sixth line
+```json
+    "files": [
+```
+we set the files [TypeScript](https://www.typescriptlang.org/) will compile.
+
+In this case we use a [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)) to indicate the [TypeScript](https://www.typescriptlang.org/) files on the seventh line.
+```json
+        "src/**/*.ts"
+```
+This glob will match all files in the `src` folder (recursively) with the extension `.ts`.
 
 ### <a name="startcoding">Start coding</a>
 
