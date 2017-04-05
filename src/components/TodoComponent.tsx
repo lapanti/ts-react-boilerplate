@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { Actions } from '../redux/reducer';
 import Todo from '../common/Todo';
 
 export interface ITodoComponent {
-    todo: Todo;
-    setDone: (i: number) => Dispatch<Actions>;
+    readonly todo: Todo;
+    setDone(i: number);
 }
 
 const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone }) => (
