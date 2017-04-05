@@ -81,7 +81,7 @@ exports[`IndexView should render with correct props 2`] = `
       todo={
         Todo {
           "done": false,
-          "number": 0,
+          "id": 0,
           "setDone": [Function],
           "title": "title",
         }
@@ -92,7 +92,7 @@ exports[`IndexView should render with correct props 2`] = `
       todo={
         Todo {
           "done": true,
-          "number": 1,
+          "id": 1,
           "setDone": [Function],
           "title": "testing",
         }
