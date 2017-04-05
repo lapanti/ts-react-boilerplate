@@ -13,3 +13,6 @@
     * [Alternatives](/docs/COMMON.md#alternatives)
 * [Components](/docs/COMPONENTS.md)
 * [Modules](/docs/MODULES.md)
+* [Redux](/docs/REDUX.md)
+* [Styles](/docs/STYLES.md)
+* [Tests](/docs/TESTS.md)
