@@ -135,9 +135,7 @@ It's time to start linting you code by using [TSLint](https://palantir.github.io
 The lint command can now be run with `yarn run lint:ts`. This will now run [TSLint](https://palantir.github.io/tslint/) with its default settings. However, that might not always be enough for you and if you want to define the rules for your own codebase more accurately, you can create a `tslint.json` in the root folder and populate it with rules according to [TSLint rules](https://palantir.github.io/tslint/rules/). For example in the boilerplate the `tslint.json` looks like that:
 ```json
 {
-    "extends": ["tslint-react"], // We'll go over this later
     "rules": {
-        "jsx-no-lambda": false, // This is a part of tslint-react and disallows functions inside a React component's redner()-method
         "no-any": true, // Disallows use of any as a type declaration
         "no-magic-numbers": true, // Disallow magic numbers
         "only-arrow-functions": [true], // Enforces the use of arrow functions instead of the traditional syntax
@@ -152,7 +150,7 @@ The lint command can now be run with `yarn run lint:ts`. This will now run [TSLi
         "arrow-return-shorthand": [true], // Suggests one to use shorthand arrow functions when possible
         "class-name": true, // Enforces PascalCased class names
         "interface-name": [true, "always-prefix"], // Enforces all interfaces to follow PascalCasing and be prefixed with I
-        "quotemark": [true, "single", "jsx-double"] // Enforces the use of single quotation marks except in React
+        "quotemark": [true, "single"] // Enforces the use of single quotation marks
     }
 }
 ```
