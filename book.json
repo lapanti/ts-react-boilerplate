@@ -4,7 +4,7 @@
     "plugins": ["edit-link", "prism", "anker-enable", "github", "advanced-emoji", "-sharing"],
     "pluginsConfig": {
         "theme-default": {
-            "showLevel": true
+            "showLevel": false
         },
         "edit-link": {
             "base": "https://github.com/Lapanti/ts-react-boilerplate/tree/master",
