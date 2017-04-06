@@ -18,7 +18,7 @@
     * [TodoComponent](/docs/COMPONENTS.md#todocomponent)
     * [Loader](/docs/COMPONENTS.md#loader)
     * [Alternatives](/docs/COMPONENTS.md#alternatives)
-* [Modules](/docs/MODULES.md)
 * [Redux](/docs/REDUX.md)
+* [Modules](/docs/MODULES.md)
 * [Styles](/docs/STYLES.md)
 * [Tests](/docs/TESTS.md)

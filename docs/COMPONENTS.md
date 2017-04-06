@@ -4,19 +4,19 @@ Next we will start writing out our components. This will serve as a good introdu
 
 ### <a name="initialize">Initialize</a>
 
-1. First we will add the needed dependencies for developing a [React](https://facebook.github.io/react/) application:
+1. First we will add the needed dependencies for developing a **React** application:
 ```
 yarn add react
 ```
-2. And the needed developer dependencies for [React](https://facebook.github.io/react/) development (with [TypeScript](https://www.typescriptlang.org/)):
+2. And the needed developer dependencies for **React** development (with [TypeScript](https://www.typescriptlang.org/)):
 ```
 yarn add -D @types/react tslint-react
 ```
-The package `@types/react` gives us type definitions for [React](https://facebook.github.io/react/) and [tslint-react](https://github.com/palantir/tslint-react) allows us to use [TSLint](https://palantir.github.io/tslint/) to lint our [React](https://facebook.github.io/react/) components.
+The package `@types/react` gives us type definitions for **React** and [tslint-react](https://github.com/palantir/tslint-react) allows us to use [TSLint](https://palantir.github.io/tslint/) to lint our **React** components.
 
 ### <a name="configuring">Configuring for React</a>
 
-First we will configure [TypeScript](https://www.typescriptlang.org/) to work with [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) by adding the following line to our [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html):
+First we will configure **TypeScript** to work with [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) by adding the following line to our [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html):
 ```json
 {
     "compilerOptions": {
@@ -30,11 +30,7 @@ As we are not using another transformation step setting [jsx](https://www.typesc
 
 ---
 
-To allow us to use our previously set [TSLint](https://palantir.github.io/tslint/) we will have to install another dependency:
-```
-yarn add -D tslint-react
-```
-[tslint-react](https://github.com/palantir/tslint-react) allows us to use [TSLint](https://palantir.github.io/tslint/) to lint [jsx](https://www.typescriptlang.org/docs/handbook/jsx.html) and thus we add the following lines to the file `tslint.json`:
+To use **tslint-react** we add the following lines to the file `tslint.json`:
 ```json
 {
     "extends": ["tslint-react"], // This will allow us to use tslint-react-specific rules
@@ -69,7 +65,7 @@ In the first row
 ```typescript
 import * as React from 'react';
 ```
-we import all the functionalities provided by [React](https://facebook.github.io/react/) under the name `React` (`* as React`), including the ability to write JSX (*those things that look like HTML*).
+we import all the functionalities provided by **React** under the name `React` (`* as React`), including the ability to write JSX (*those things that look like HTML*).
 
 ---
 
@@ -80,8 +76,8 @@ interface IButtonProps {
     readonly text: string;
 }
 ```
-we define an [interface](https://www.typescriptlang.org/docs/handbook/interfaces.html) to denote the [properties](https://facebook.github.io/react/docs/components-and-props.html) our [component](https://facebook.github.io/react/docs/components-and-props.html) accepts (and in this case needs). `click()` defines a function, which will be known as `click` inside our `Button` and as we have only defined that it takes no arguments, we also tell the compiler that we don't care if it returns anything, just that it can be called. `readonly text: string` on the other hand defines a [readonly](https://basarat.gitbooks.io/typescript/docs/types/readonly.html) (*an immutable property*) called `text` inside our `Button`, that is of the type [string](https://www.typescriptlang.org/docs/handbook/basic-types.html).
-> [Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html) are shapes we define, meaning that we do not care what the actual implementation is, just that it has those types of values with those names. They cannot be instantiated as such and thus cannot contain default values like [classes](https://www.typescriptlang.org/docs/handbook/classes.html).
+we define an [interface](https://www.typescriptlang.org/docs/handbook/interfaces.html) to denote the [properties](https://facebook.github.io/react/docs/components-and-props.html) (*or props for short*) our **component** accepts (*and in this case needs*). `click()` defines a function, which will be known as `click` inside our `Button` and as we have only defined that it takes no arguments, we also tell the compiler that we don't care if it returns anything, just that it can be called. `readonly text: string` on the other hand defines a [readonly](https://basarat.gitbooks.io/typescript/docs/types/readonly.html) (*an immutable property*) called `text` inside our `Button`, that is of the type [string](https://www.typescriptlang.org/docs/handbook/basic-types.html).
+> **Interfaces** are shapes we define, meaning that we do not care what the actual implementation is, just that it has those types of values with those names. They cannot be instantiated as such and thus cannot contain default values like [classes](https://www.typescriptlang.org/docs/handbook/classes.html).
 
 ---
 
@@ -91,7 +87,7 @@ const Button: React.StatelessComponent<IButtonProps> = ({ click, text }) => (
     <input className="btn" type="submit" onClick={() => click()} value={text} />
 );
 ```
-we define a [constant](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) (an immutable variable) called `Button` which is of the type [React.StatelessComponent<IButtonProps>](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc), meaning it is a [React component](https://facebook.github.io/react/docs/react-component.html), which does not have an internal [state](https://facebook.github.io/react-native/docs/state.html), but only [properties](https://facebook.github.io/react/docs/components-and-props.html) of type `IButtonProps`. [Stateless components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc) in [React](https://facebook.github.io/react/) only need to define their [render](https://facebook.github.io/react/docs/react-api.html)-method and using an [ES6 arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and a [destructuring assignment](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) we can return JSX with our [properties](https://facebook.github.io/react/docs/components-and-props.html) already defined as simple variables (*in this case "click" and "text"*). The actual return here is a simple HTML [input](https://facebook.github.io/react/docs/forms.html) element with a class of `btn` (*in React you define classes with the property "className"*), a type of `submit`, an [`onClick`-handler](https://facebook.github.io/react/docs/handling-events.html) that will simply call the `click`-property and a value of `text` (*in submit buttons the value is the text in the button*).
+we define a [constant](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) (an immutable variable) called `Button` which is of the type [React.StatelessComponent<IButtonProps>](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc), meaning it is a [React component](https://facebook.github.io/react/docs/react-component.html), which does not have an internal [state](https://facebook.github.io/react-native/docs/state.html), but only **props** of type `IButtonProps`. [Stateless components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc) in **React** only need to define their [render](https://facebook.github.io/react/docs/react-api.html)-method and using an [ES6 arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and a [destructuring assignment](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) we can return JSX with our **props** already defined as simple variables (*in this case "click" and "text"*). The actual return here is a simple HTML [input](https://facebook.github.io/react/docs/forms.html) element with a class of `btn` (*in React you define classes with the property "className"*), a type of `submit`, an [`onClick`-handler](https://facebook.github.io/react/docs/handling-events.html) that will simply call the `click`-property and a value of `text` (*in submit buttons the value is the text in the button*).
 > You need to surround JSX with normal braces.
 
 ---
@@ -133,11 +129,11 @@ which is mostly very similar to our `Button`. The biggest differences here are t
 ```typescript
 import Todo from '../common/Todo';
 ```
-which imports our `Todo`-class using a relative path (*the compiler will look for the file relative to the current file*) and the second property in our [interface](https://www.typescriptlang.org/docs/handbook/interfaces.html)
+which imports our `Todo`-class using a relative path (*the compiler will look for the file relative to the current file*) and the second property in our `interface`
 ```typescript
     setDone(i: number);
 ```
-which defines a function called `setDone` that takes one argument, which is a [number](https://www.typescriptlang.org/docs/handbook/basic-types.html).
+which defines a function called `setDone` that takes one argument, which is a `number`.
 
 ### <a name="loader">Loader</a>
 
@@ -153,11 +149,11 @@ const Loader: React.StatelessComponent<undefined> = () => (
 
 export default Loader;
 ```
-which uses all previously introduced tools, except this time we have defined the [properties](https://facebook.github.io/react/docs/components-and-props.html) it receives as [undefined](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html), meaning that it does not take any [properties](https://facebook.github.io/react/docs/components-and-props.html) at all.
+which uses all previously introduced tools, except this time we have defined the **props** it receives as [undefined](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html), meaning that it does not take any **props** at all.
 
 ### <a name="alternatives">Alternatives</a>
 
-Below you can find alternatives to [React](https://facebook.github.io/react/), although I would suggest [React](https://facebook.github.io/react/) unless you have specific needs, which other frameworks solve better, as it also allows for [mobile development with React Native](https://facebook.github.io/react-native/).
+Below you can find alternatives to **React**, although I would suggest **React** unless you have specific needs, which other frameworks solve better, as it also allows for [mobile development with React Native](https://facebook.github.io/react-native/).
 - [AngularJS](https://angularjs.org/), possibly the most popular framework after [React](https://facebook.github.io/react/)
 - [elm](http://elm-lang.org/), a functional alternative
 - [Cycle.js](https://cycle.js.org/), a functional reactive alternative
