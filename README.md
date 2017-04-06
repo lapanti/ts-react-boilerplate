@@ -45,11 +45,11 @@ This is all you need to get started in developing your own web application, usin
 ## <a name="tipsandsuggestions">Tips and suggestions</a>
 - Make sure everything has a type (the more you squeeze out of the compiler the easier you're going to have it while developing)
 - Follow [BEM](http://getbem.com/naming/)-naming with CSS
-- Follow [Redux-ducks pattern](https://github.com/erikras/ducks-modular-redux) except that name the reducers as according to the file (see [IndexReducer.tsx](src/modules/index/IndexReducer.tsx) for an example)
+- Follow [Redux-ducks pattern](https://github.com/erikras/ducks-modular-redux) except that name the reducers as according to the file (see [IndexReducer.tsx](/src/modules/index/IndexReducer.tsx) for an example)
 
 ## <a name="dockerization">How to Docker</a>
-The [Dockerfile](Dockerfile) is where you can find the configuration to build a [Docker](https://www.docker.com/) image out of your application. The first line of the `Dockerfile` (starting with `FROM`) includes the base for your Dockerfile, feel free to change it if you want to.
-1. Put your email to the [fourth line in the Dockerfile](Dockerfile#L4)
+The [Dockerfile](/Dockerfile) is where you can find the configuration to build a [Docker](https://www.docker.com/) image out of your application. The first line of the `Dockerfile` (starting with `FROM`) includes the base for your Dockerfile, feel free to change it if you want to.
+1. Put your email to the [fourth line in the Dockerfile](/Dockerfile#L4)
 2. In your console run `docker build .`
 3. In your console run `docker run -d -p 8080:8080 bd9b1d6725bc` **but** replace `bd9b1d6725bc` with the image ID you received from the previous command
 4. Host your Docker image in your favorite cloud or local server (the web is filled with guides for this)
