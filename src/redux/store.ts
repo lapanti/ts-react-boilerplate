@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, Store } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import reducer, { epics, State } from './reducer';
 
@@ -10,12 +10,10 @@ delete (<any>window).__PRELOADED_STATE__;
 
 const epicMiddleware = createEpicMiddleware(epics);
 
-const configureStore = () => (
-    createStore(
-        reducer,
-        preloadedState,
-        applyMiddleware(epicMiddleware),
-    )
+const configureStore = (): Store<State> => createStore(
+    reducer,
+    preloadedState,
+    applyMiddleware(epicMiddleware),
 );
 
 export default configureStore;
