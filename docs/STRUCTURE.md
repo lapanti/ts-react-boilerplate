@@ -28,7 +28,7 @@ In this folder we will have common components, such as buttons, links and inputs
 
 ## Modules
 
-In this folder we will have all modules, which can basically be thought of as pages (or parts of pages) and their functionalities. A deeper dive is [here](/MODULES.md).
+In this folder we will have all modules, which can basically be thought of as pages (or parts of pages) and their functionalities. This will consist of [views](/VIEWS.md), [containers](/CONTAINERS.md) and [reducers](/REDUCERS.md).
 
 ## Redux
 
