@@ -23,6 +23,7 @@
     * [Creating utilities](/docs/REDUX.md#utilities)
     * [Reducer](/docs/REDUX.md#reducer)
     * [Store](/docs/REDUX.md#store)
-* [Modules](/docs/MODULES.md)
+* [Views](/docs/VIEWS.md)
+    * [Begin](/docs/VIEWS.md#begin)
 * [Styles](/docs/STYLES.md)
 * [Tests](/docs/TESTS.md)
