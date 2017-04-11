@@ -14,6 +14,7 @@ exports[`TodoComponent should render correctly 1`] = `
     className="todo__number"
   >
     1
+    :
   </span>
   <span
     className="todo__title"
@@ -37,6 +38,7 @@ exports[`TodoComponent should render correctly 2`] = `
     className="todo__number"
   >
     0
+    :
   </span>
   <span
     className="todo__title"

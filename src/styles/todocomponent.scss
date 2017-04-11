@@ -1,0 +1,19 @@
+@import '_variables.scss';
+
+.todo {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+
+    &__checkbox {
+        cursor: pointer;
+    }
+
+    &__number {
+        margin-left: 5px;
+    }
+
+    &__title {
+        margin-left: 10px;
+    }
+}

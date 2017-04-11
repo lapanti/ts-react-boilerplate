@@ -1,0 +1,43 @@
+@import '_variables.scss';
+
+.index {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__header {
+        color: $primary-color;
+    }
+
+    &__form {
+        align-items: inherit;
+        display: flex;
+        flex-direction: inherit;
+        justify-content: inherit;
+
+        &__label {
+            margin-bottom: 5px;
+        }
+
+        &__input {
+            background-color: inherit;
+            border: 0;
+            border-bottom: 1px solid $primary-color;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 250px;
+
+            &:focus {
+                border-bottom: 2px solid $secondary-color;
+                outline: none;
+            }
+        }
+    }
+
+    &__todo-container {
+        display: flex;
+        flex-direction: inherit;
+        justify-content: flex-start;
+    }
+}
