@@ -8,9 +8,7 @@ export interface IButtonProps {
 }
 
 const Button: React.StatelessComponent<IButtonProps> = ({ click, text }) => (
-    <button className="button" onClick={() => click()}>
-        {text}
-    </button>
+    <input className="btn" type="submit" onClick={() => click()} value={text} />
 );
 
 export default Button;

@@ -1,0 +1,10 @@
+@import '_variables.scss';
+@import 'index.scss';
+@import 'button.scss';
+@import 'todocomponent.scss';
+@import 'loader.scss';
+
+body {
+    background-color: $tertiary-color;
+    font-family: 'Roboto', sans-serif;
+}
