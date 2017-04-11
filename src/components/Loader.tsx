@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Loader: React.StatelessComponent<undefined> = () => console.log('Loader should show') || (
+const Loader: React.StatelessComponent<undefined> = () => (
     <div className="loader">
         <div className="loader__spinner" />
     </div>
