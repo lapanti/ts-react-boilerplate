@@ -16,7 +16,7 @@ const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone
             checked={todo.done}
             onChange={() => !todo.done && setDone(todo.number)}
         />
-        <span className="todo__number">{todo.number}</span>
+        <span className="todo__number">{todo.number}:</span>
         <span className="todo__title">{todo.title}</span>
     </div>
 );

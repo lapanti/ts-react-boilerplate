@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Loading should render correctly 1`] = `
-<i
-  className="loading"
+exports[`Loader should render correctly 1`] = `
+<div
+  className="loader"
 >
-  Loading
-</i>
+  <div
+    className="loader__spinner"
+  />
+</div>
 `;

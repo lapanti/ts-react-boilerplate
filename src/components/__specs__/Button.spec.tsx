@@ -13,7 +13,7 @@ describe('Button', () => {
 
     it('should call the correct function on click', () => {
         for (let i = 0; i < testTimes; i++) {
-            wrapper.find('.button').simulate('click');
+            wrapper.find('.btn').simulate('click');
         }
         expect(click).toHaveBeenCalledTimes(testTimes); 
     });
