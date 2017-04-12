@@ -103,7 +103,7 @@ After declaring the **const** we define `IndexView` to be a function, that fulfi
 
 ---
 
-For the actual content inside the brackets you can think of it as "HTML on steroids", beginning, as is semantically correct with a `main` tag
+For the actual content inside the brackets you can think of it as "HTML on steroids", beginning, as is semantically correct with a [`main`](https://developer.mozilla.org/en/docs/Web/HTML/Element/main) tag
 ```typescript
     <main className="index">
     </main>
@@ -124,7 +124,7 @@ which means, that depending if the **prop** `loading` is true (*using [logical o
 
 ---
 
-
+Next up we define the title and a form to add a new `Todo`
 ```typescript
     <main className="index">
     ...
@@ -144,3 +144,24 @@ which means, that depending if the **prop** `loading` is true (*using [logical o
         </form>
     </main>
 ```
+where we first define the title (*in this case a static string `Todo app`*). Next we define a form to create new `Todos` which introduces us to a lot of nice features of **React**, but first we do a little *"hack"* as we want to enable the user to press the `enter`-key when submitting a new `Todo` but we don't want to send the form to a new page, we set the value of `onSubmit` (*the handler for a form's submit method in React*) as `e => e.preventDefault()` where `e` is the event received and it's function `.preventDefault()` will (*as its name implies*) prevent the default functionality (*in this case send the form data to the current url, causing a reload*).
+
+Next we define a label for the `input`-field utilizing **React**'s `htmlFor`-value which is an alias for the [for](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)-attribute. Then we define the actual `input`-field for inputting a `Todo`, which is a simple text `input`, but we also make it [autofocus](https://developer.mozilla.org/en/docs/Web/HTML/Element/input) (*if you open the page, you can start typing into it directly*) and make it a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components), meaning that whenever the value of `title` changes, the `input` will also update. We also add the `onChange`-listener to actually set the new `title` the user has typed in. Finally we create a simple `Button` (*we defined earlier in [components](/COMPONENTS.md#button)*) to submit the form.
+
+---
+
+Finally we want to of course show all the `Todo`s created
+```typescript
+    <main className="index">
+        ...
+        <section className="index__todo-container">
+            {todos.map(t => <TodoComponent todo={t} setDone={setDone} key={t.id} />)}
+        </section>
+    </main>
+```
+where we first encapsulate it into a semantic tag called [`section`](https://developer.mozilla.org/en/docs/Web/HTML/Element/section). Then we want to create a new `TodoComponent` (*as we defined in [components](/COMPONENTS.md#todocomponent)*) for every `Todo` in our current state, which can be achieved by a simple [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) (*I highly recommend getting to know all the major Array-functions*). Here you want to also remember to add a property for our `TodoComponent` it isn't expecting to receive: [`key`](https://facebook.github.io/react/docs/lists-and-keys.html) which **React** uses to distinguish between tags in a list (*it has to be unique inside the list*).
+
+### <a name="alternatives">Alternatives</a>
+
+- If you want something a bit simpler you can try [Vue.js](https://vuejs.org/)
+- Or the classic [jQuery](https://jquery.com/)

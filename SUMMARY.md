@@ -25,5 +25,6 @@
     * [Store](/docs/REDUX.md#store)
 * [Views](/docs/VIEWS.md)
     * [Begin](/docs/VIEWS.md#begin)
+    * [Alternatives](/docs/VIEWS.md#alternatives)
 * [Styles](/docs/STYLES.md)
 * [Tests](/docs/TESTS.md)
