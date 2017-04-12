@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface IButtonProps {
-    click();
+    click(): void;
     readonly text: string;
 }
 

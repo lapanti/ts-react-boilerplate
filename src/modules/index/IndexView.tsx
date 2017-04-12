@@ -11,9 +11,9 @@ export interface IIndexState {
 }
 
 export interface IIndexDispatch {
-    setTitle(n: string);
-    saveTodo();
-    setDone(i: number);
+    setTitle(n: string): void;
+    saveTodo(): void;
+    setDone(i: number): void;
 }
 
 export type IIndexProps = IIndexState & IIndexDispatch;

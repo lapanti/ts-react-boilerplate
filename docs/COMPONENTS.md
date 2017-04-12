@@ -50,7 +50,7 @@ We will start with the simplest component that utilizes all the tools we need fo
 import * as React from 'react';
 
 interface IButtonProps {
-    click();
+    click(): void;
     readonly text: string;
 }
 
@@ -72,11 +72,11 @@ we import all the functionalities provided by **React** under the name `React` (
 On the third to sixth rows
 ```typescript
 interface IButtonProps {
-    click();
+    click(): void;
     readonly text: string;
 }
 ```
-we define an [interface](https://www.typescriptlang.org/docs/handbook/interfaces.html) to denote the [properties](https://facebook.github.io/react/docs/components-and-props.html) (*or props for short*) our **component** accepts (*and in this case needs*). `click()` defines a function, which will be known as `click` inside our `Button` and as we have only defined that it takes no arguments, we also tell the compiler that we don't care if it returns anything, just that it can be called. `readonly text: string` on the other hand defines a [readonly](https://basarat.gitbooks.io/typescript/docs/types/readonly.html) (*an immutable property*) called `text` inside our `Button`, that is of the type [string](https://www.typescriptlang.org/docs/handbook/basic-types.html).
+we define an [interface](https://www.typescriptlang.org/docs/handbook/interfaces.html) to denote the [properties](https://facebook.github.io/react/docs/components-and-props.html) (*or props for short*) our **component** accepts (*and in this case needs*). `click()` defines a function, which will be known as `click` inside our `Button` and as we have only defined that it takes no arguments, we also tell the compiler that we don't care if it returns anything, just that it can be called, using the return type of `void`. `readonly text: string` on the other hand defines a [readonly](https://basarat.gitbooks.io/typescript/docs/types/readonly.html) (*an immutable property*) called `text` inside our `Button`, that is of the type [string](https://www.typescriptlang.org/docs/handbook/basic-types.html).
 > **Interfaces** are shapes we define, meaning that we do not care what the actual implementation is, just that it has those types of values with those names. They cannot be instantiated as such and thus cannot contain default values like [classes](https://www.typescriptlang.org/docs/handbook/classes.html).
 
 ---
@@ -107,7 +107,7 @@ import Todo from '../common/Todo';
 
 export interface ITodoComponent {
     readonly todo: Todo;
-    setDone(i: number);
+    setDone(i: number): void;
 }
 
 const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone }) => (
@@ -131,7 +131,7 @@ import Todo from '../common/Todo';
 ```
 which imports our `Todo`-class using a relative path (*the compiler will look for the file relative to the current file*) and the second property in our `interface`
 ```typescript
-    setDone(i: number);
+    setDone(i: number): void;
 ```
 which defines a function called `setDone` that takes one argument, which is a `number`.
 

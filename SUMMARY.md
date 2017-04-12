@@ -26,5 +26,8 @@
 * [Views](/docs/VIEWS.md)
     * [Begin](/docs/VIEWS.md#begin)
     * [Alternatives](/docs/VIEWS.md#alternatives)
+* [Containers](/docs/CONTAINERS.md)
+    * [Initialize](/docs/CONTAINERS.md#initialize)
+    * [Begin](/docs/CONTAINERS.md#begin)
 * [Styles](/docs/STYLES.md)
 * [Tests](/docs/TESTS.md)
