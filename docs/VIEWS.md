@@ -5,7 +5,7 @@ Now we are ready to start working towards the beef of the application: different
 ### <a name="begin">Begin</a>
 
 We will begin by creating a file called `IndexView.tsx` (*remember that 'x' in the end of the file type means that it contains [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html)*) inside a folder called `index` inside the `components`-folder:
-> All of our pages will be inside folders named after the view, in this case **Index**
+> All of our pages will be inside folders named after the page, in this case **Index** and the view will be named `[Pagename]View.tsx`
 
 ```typescript
 import * as React from 'react';
@@ -21,9 +21,9 @@ interface IIndexState {
 }
 
 interface IIndexDispatch {
-    setTitle(n: string);
-    saveTodo();
-    setDone(i: number);
+    setTitle(n: string): void;
+    saveTodo(): void;
+    setDone(i: number): void;
 }
 
 type IIndexProps = IIndexState & IIndexDispatch;
@@ -72,12 +72,13 @@ is an `interface` that holds the "state"-values for our `View`, e.g. the stuff t
 The second `interface` we declare, called `IIndexDispatch`
 ```typescript
 interface IIndexDispatch {
-    setTitle(n: string);
-    saveTodo();
-    setDone(i: number);
+    setTitle(n: string): void;
+    saveTodo(): void;
+    setDone(i: number): void;
 }
 ```
 is an `interface` that holds all the "dispatch"-functions for our `View`, e.g. all the functionality that our users can trigger, in this case a function (`setTitle(n: string)`) to change the current `title` (*that takes a string as an argument*), a function (`saveTodo()`) to save the new `Todo` and a function (`setDone(i: number)`) to set an existing `Todo` as done (*that takes the number of the `Todo` as argument*).
+> Having [`void`](https://www.typescriptlang.org/docs/handbook/basic-types.html) as a return type allows us to not care about the return type (*which we don't need here*) without having an implicit any
 
 ---
 
