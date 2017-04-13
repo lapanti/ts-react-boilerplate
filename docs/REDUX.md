@@ -23,7 +23,7 @@ export const DefaultAction: DefaultAction = { type: '' };
 
 ### <a name="reducer">Reducer</a>
 
-Now we will define our root-reducer in a file called `store.ts` inside the folder `redux`:
+Now we will define our root-reducer in a file called `reducer.ts` inside the folder `redux`:
 ```typescript
 import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';

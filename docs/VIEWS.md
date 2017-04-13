@@ -2,7 +2,7 @@
 
 Now we are ready to start working towards the beef of the application: different pages (or views).
 
-### <a name="begin">Begin</a>
+### <a name="indexview">IndexView</a>
 
 We will begin by creating a file called `IndexView.tsx` (*remember that 'x' in the end of the file type means that it contains [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html)*) inside a folder called `index` inside the `components`-folder:
 > All of our pages will be inside folders named after the page, in this case **Index** and the view will be named `[Pagename]View.tsx`

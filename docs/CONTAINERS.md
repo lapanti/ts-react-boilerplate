@@ -13,7 +13,7 @@ and the type definitions for it
 yarn add -D @types/react-redux
 ```
 
-### <a name="begin">Begin</a>
+### <a name="indexcontainer">IndexContainer</a>
 
 We begin by creating a file called `IndexContainer.ts` inside our `index`-folder inside `src/modules`
 > All containers will have the same "prefix" as their accompanied **views**, a.k.a. `[Pagename]Container.ts`
