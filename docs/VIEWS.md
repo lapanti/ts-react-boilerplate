@@ -116,7 +116,7 @@ which will hold all the content of our `IndexView` (*and here we begin the intro
 Next is our first tag that is different with different props
 ```typescript
 import Loader from '../../components/Loader';
-...
+// ...
     <main className="index">
         {loading && <Loader />}
     </main>
@@ -128,7 +128,7 @@ which means, that depending if the **prop** `loading` is true (*using [logical o
 Next up we define the title and a form to add a new `Todo`
 ```typescript
     <main className="index">
-    ...
+    // ...
 
         <h1 className="index__header">Todo app</h1>
         <form className="index__form" onSubmit={e => e.preventDefault()}>
@@ -154,7 +154,7 @@ Next we define a label for the `input`-field utilizing **React**'s `htmlFor`-val
 Finally we want to of course show all the `Todo`s created
 ```typescript
     <main className="index">
-        ...
+        // ...
         <section className="index__todo-container">
             {todos.map(t => <TodoComponent todo={t} setDone={setDone} key={t.id} />)}
         </section>
