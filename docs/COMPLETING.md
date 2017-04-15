@@ -138,4 +138,57 @@ import Routes from './modules/Routes';
 ```
 we keep the UI in sync with the URL using a [`Router`](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#router) from **React Router**, which takes as the first argument [`history`](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#histories), where we give `browserHistory` as it most closely mimics the way a browser's history works and as the second argument `routes` we give our `Routes` component from before.
 
+###<a name="indexhtml">Index.html</a>
+
+Finally we write an `index.html` in our root-folder
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Todo app</title>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="js/bundle.js"></script>
+    </body>
+</html>
+```
+which is just a very simple `HTML`-file, which imports our (*soon-to-be-bundled*) **JavaScript** from the path `/js/bundle.js` and contains a `div` with the id `app` so our `index.ts` works.
+
 ###<a name="scripts">Scripts</a>
+
+Now as we have everything necessary for our application, it's time to get it working!
+
+We'll begin by installing a couple of new dependencies
+```
+yarn add -D browserify budo tsify
+```
+from which [browserify](http://browserify.org/) allows us to do `import`-statements in client code, [budō](https://github.com/mattdesl/budo) is a lightweight server to host client code (*it uses browserify under the hood*) and [tsify](https://www.npmjs.com/package/tsify) is a **browserify**-plugin to use it with **TypeScript**.
+
+---
+
+First it's time to write our development script, so head on over to your `package.json` and add the following
+```json
+    // ...
+    "scripts": {
+        "develop": "budo src/index.tsx:js/bundle.js --live --verbose -- -p tsify"
+    }
+```
+which allows you to start the **budō** server by entering `yarn run develop` into your console (*inside the root folder of your app*). It will run until it faces an error it can't recover from or you press `ctrl+c`. The arguments given to **budō** are firstly, the name of you application entry file (*with a relative path*), followed by the double colon with the path and name your `index.html` (*budō expects to find it in your root folder*) expects to find your application code. `--live` enables [LiveReload](http://livereload.com/) (*you can install a plugin to [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-gb/firefox/addon/livereload/) to take full advantage of it*), which automatically refreshes your browser when the source code changes. `--verbose` enables verbose output from **budō** and then all arguments after the ` -- ` will go to the **browserify** **budō** is running, in this case a plugin **tsify** to compile our **TypeScript** files.
+
+---
+
+Now it's time to build our application to be hosted on the Internet, so add the following line to your `scripts` inside `package.json`
+```json
+    // ...
+    "scripts": {
+        // ...
+        "build": "mkdir -p dist/js && browserify src/index.tsx -p tsify > dist/js/bundle.js"
+    }
+```
+which will first make sure that the folder `dist/js` is there and then build your application with **browserify**. For **browserify** we give as first argument the entry file, then a plugin (*again, **tsify** to use **TypeScript** with **browserify***) and finally after the `>` the output file name (*with it's relative path*). Apart from this script (*run by `yarn run build`*) you only need to copy your `index.html` file to the `dist`-folder and your application is complete!
+
+### <a name="alternatives">Alternatives</a>
+
+- An alternative for **browserify** is [webpack](https://webpack.github.io/), which is maybe a bit more popular these days, but I personally dislike the amount of configuration (*and the way the configuration is achieved*) it requires
