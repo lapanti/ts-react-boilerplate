@@ -400,6 +400,18 @@ describe('fetchTodoEpic', () => {
 ```
 where we use [nock](https://github.com/node-nock/nock) to mock the API responses.
 
+### Scripts
+
+Finally we also want to run our tests! So back into our `package.json`
+```json
+    "scripts": {
+        "test": "yarn run lint:sass && yarn run lint:ts && jest",
+        "test:watch": "jest --watch",
+        "test:ci": "yarn run lint:sass && yarn run lint:ts && jest --runInBand --forceExit",
+    }
+```
+where the first command `test` will run first our `lint`-scripts and then **Jest** with its default configuration. `test:watch` will run **Jest** in watch mode, so when you're working on your tests, it will only run the ones your changes affect, saving time. The last one `test:ci` adds a couple of flags to the **Jest** command, `--runInBand` which will run all tests in a single process (*easier to spot errors*) and `--forceExit` to ensure **Jest** will shut down after tests (*[Travis](https://travis-ci.org) can freeze without this sometimes*).
+
 ### Alternatives
 
 - Possibly the best known alternative to **Jest** is [Mocha](https://mochajs.org/)
