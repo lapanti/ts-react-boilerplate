@@ -2,7 +2,7 @@
 
 Now we are ready to start working towards the beef of the application: different pages (or views).
 
-### <a name="indexview">IndexView</a>
+### IndexView
 
 We will begin by creating a file called `IndexView.tsx` (*remember that 'x' in the end of the file type means that it contains [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html)*) inside a folder called `index` inside the `components`-folder:
 > All of our pages will be inside folders named after the page, in this case **Index** and the view will be named `[Pagename]View.tsx`
@@ -162,7 +162,7 @@ Finally we want to of course show all the `Todo`s created
 ```
 where we first encapsulate it into a semantic tag called [`section`](https://developer.mozilla.org/en/docs/Web/HTML/Element/section). Then we want to create a new `TodoComponent` (*as we defined in [components](/COMPONENTS.md#todocomponent)*) for every `Todo` in our current state, which can be achieved by a simple [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) (*I highly recommend getting to know all the major Array-functions*). Here you want to also remember to add a property for our `TodoComponent` it isn't expecting to receive: [`key`](https://facebook.github.io/react/docs/lists-and-keys.html) which **React** uses to distinguish between tags in a list (*it has to be unique inside the list*).
 
-### <a name="alternatives">Alternatives</a>
+### Alternatives
 
 - If you want something a bit simpler you can try [Vue.js](https://vuejs.org/)
 - Or the classic [jQuery](https://jquery.com/)

@@ -2,7 +2,7 @@
 
 Next we will start writing out our components. This will serve as a good introduction to [React](https://facebook.github.io/react/).
 
-### <a name="initialize">Initialize</a>
+### Initialize
 
 1. First we will add the needed dependencies for developing a **React** application:
 ```
@@ -14,7 +14,7 @@ yarn add -D @types/react tslint-react
 ```
 The package `@types/react` gives us type definitions for **React** and [tslint-react](https://github.com/palantir/tslint-react) allows us to use [TSLint](https://palantir.github.io/tslint/) to lint our **React** components.
 
-### <a name="configuring">Configuring for React</a>
+### Configuring for React
 
 First we will configure **TypeScript** to work with [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) by adding the following line to our [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html):
 ```json
@@ -42,7 +42,7 @@ To use **tslint-react** we add the following lines to the file `tslint.json`:
 }
 ```
 
-### <a name="button">Button</a>
+### Button
 
 We will start with the simplest component that utilizes all the tools we need for most components, a `Button`, so go ahead and create a file `Button.tsx` (*the extension defines the file as a TypeScript-file that has JSX in it*) in the folder `components`:
 
@@ -98,7 +98,7 @@ export default Button;
 ```
 we export our `Button` as the default export of the module.
 
-### <a name="todocomponent">TodoComponent</a>
+### TodoComponent
 
 Next we will define a component to visualize our `Todo`-class from the previous section, creating a file called `TodoComponent.tsx` in the `components`-folder:
 ```typescript
@@ -135,7 +135,7 @@ which imports our `Todo`-class using a relative path (*the compiler will look fo
 ```
 which defines a function called `setDone` that takes one argument, which is a `number`.
 
-### <a name="loader">Loader</a>
+### Loader
 
 Lastly we implement our third and simplest component, called a `Loader`, in a file called `Loader.tsx` in the `components`-directory
 ```typescript
@@ -151,7 +151,7 @@ export default Loader;
 ```
 which uses all previously introduced tools, except this time we have defined the **props** it receives as [undefined](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html), meaning that it does not take any **props** at all.
 
-### <a name="alternatives">Alternatives</a>
+### Alternatives
 
 Below you can find alternatives to **React**, although I would suggest **React** unless you have specific needs, which other frameworks solve better, as it also allows for [mobile development with React Native](https://facebook.github.io/react-native/).
 - [AngularJS](https://angularjs.org/), possibly the most popular framework after [React](https://facebook.github.io/react/)

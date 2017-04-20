@@ -2,7 +2,7 @@
 
 Now we build our business logic, also known as **reducers**. Stay calm, this will be a bit more complicated then anything before.
 
-### <a name="indexreducer">IndexReducer</a>
+### IndexReducer
 
 We begin by creating a file called `IndexReducer.ts` in the `src/modules/index`-folder
 > Our **reducers** follow the naming pattern of `[Foldername]Reducer`
@@ -302,7 +302,7 @@ Next we do the actual logic which all **reducers** are built upon
 which is a [`switch`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch)-statement over the type-property of the incoming **action**. In each `case` we do something (*except the `default`-one, where you traditionally just return the incoming **state***) to add value to that **action**, such as setting the `title` to the `payload` in the **action** in case the **action** is a `SET_TITLE`-action. Notice how we are using the [spread syntax](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator) to immutably create a new version of the state, thus holding true to the immutability of **reducers**.
 > Other options are to use [`Object.assign({}, ...)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) or [Immutable](https://facebook.github.io/immutable-js/)
 
-### <a name="connecting">Connecting the reducer</a>
+### Connecting the reducer
 
 Remember our [root-reducer](/REDUX.md#reducer)? Now we connect our `IndexReducer` to it.
 

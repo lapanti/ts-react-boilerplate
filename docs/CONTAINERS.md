@@ -2,7 +2,7 @@
 
 Next up we want to bind our [Views](/VIEWS.md) to our [Reducers](/REDUCERS.md), a.k.a. define how we get the **props** from our [state](http://redux.js.org/docs/basics/Reducers.html).
 
-### <a name="initialize">Initialize</a>
+### Initialize
 
 First up we need to add a new dependency, [react-redux](https://github.com/reactjs/react-redux) to connect our **React** views to our **state**
 ```
@@ -13,7 +13,7 @@ and the type definitions for it
 yarn add -D @types/react-redux
 ```
 
-### <a name="indexcontainer">IndexContainer</a>
+### IndexContainer
 
 We begin by creating a file called `IndexContainer.ts` inside our `index`-folder inside `src/modules`
 > All containers will have the same "prefix" as their accompanied **views**, a.k.a. `[Pagename]Container.ts`

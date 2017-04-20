@@ -2,7 +2,7 @@
 
 Now we finally get to build our **React**-application into something that can be run and will actually do something! Here we make the assumption that you are going to build a medium- to large-sized application and show how to do these things in a more modular way, but for smaller applications some of these parts can be merged with the `IndexView` and some can be left out completely.
 
-### <a name="initialize">Initialize</a>
+### Initialize
 
 We begin by installing new dependencies called [React Router](https://github.com/ReactTraining/react-router) and [ReactDOM](https://facebook.github.io/react/docs/react-dom.html)
 ```
@@ -16,7 +16,7 @@ yarn add -D @types/react-router @types/react-dom
 ```
 > If you want to include your **route-state** in **Redux** you might want to look at [react-router-redux](https://github.com/reactjs/react-router-redux)
 
-### <a name="app">App</a>
+### App
 
 We begin by writing an `App.ts` file into the `src/modules`-folder
 ```typescript
@@ -189,6 +189,6 @@ Now it's time to build our application to be hosted on the Internet, so add the 
 ```
 which will first make sure that the folder `dist/js` is there and then build your application with **browserify**. For **browserify** we give as first argument the entry file, then a plugin (*again, **tsify** to use **TypeScript** with **browserify***) and finally after the `>` the output file name (*with it's relative path*). Apart from this script (*run by `yarn run build`*) you only need to copy your `index.html` file to the `dist`-folder and your application is complete!
 
-### <a name="alternatives">Alternatives</a>
+### Alternatives
 
 - An alternative for **browserify** is [webpack](https://webpack.github.io/), which is maybe a bit more popular these days, but I personally dislike the amount of configuration (*and the way the configuration is achieved*) it requires
