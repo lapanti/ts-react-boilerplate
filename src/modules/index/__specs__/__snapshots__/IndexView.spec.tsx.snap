@@ -33,7 +33,7 @@ exports[`IndexView should render with correct props 1`] = `
     />
   </form>
   <br />
-  <main
+  <section
     className="index__todo-container"
   />
 </main>
@@ -73,7 +73,7 @@ exports[`IndexView should render with correct props 2`] = `
     />
   </form>
   <br />
-  <main
+  <section
     className="index__todo-container"
   >
     <TodoComponent
@@ -98,6 +98,6 @@ exports[`IndexView should render with correct props 2`] = `
         }
       }
     />
-  </main>
+  </section>
 </main>
 `;
