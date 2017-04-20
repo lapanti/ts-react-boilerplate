@@ -3,7 +3,7 @@
 Next we will setup [redux](http://redux.js.org/) to handle the state for our application (*redux allows us to keep our components pure, helping testing and predictability*).
 > You can think of **redux** as an implementation of the [Flux](https://facebook.github.io/flux/) pattern.
 
-### <a name="initialize">Initialize</a>
+### Initialize
 
 1. This time we will only need to add the necessary dependencies to allow development with **redux**:
 ```
@@ -12,7 +12,7 @@ yarn add redux redux-observable rxjs
 *This time we don't need to add type-packages, as all of the added dependencies are either built with [TypeScript](https://www.typescriptlang.org/) or contain type definitions for it.*
 > [Redux-observable](https://redux-observable.js.org/) is our choice for allowing side effects, such as [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started)-calls in **redux**. [RxJS](http://reactivex.io/) is a peer dependency for **redux-observable**. If you want something else you can check the [alternatives](#alternatives).
 
-### <a name="utils">Creating utilities</a>
+### Creating utilities
 
 We will begin by creating a file called `utils.js` inside the folder `redux` in `src`. This file will contain helpers for our **redux** functionalities and will serve as good introduction into one of its most basic building blocks. The file will initially look like this:
 ```typescript
@@ -21,7 +21,7 @@ export const DefaultAction: DefaultAction = { type: '' };
 ```
 [Actions](http://redux.js.org/docs/basics/Actions.html) are the only way to send new content to the **redux**-state, and are usually in the form of an object with the properties `type` (*a unique string*) and an optional `payload` (*something to pass to the state*). Here we have defined a `DefaultAction` which will allow our reducers to pass unnecessary actions forward [without losing type-safety](https://spin.atomicobject.com/2016/09/27/typed-redux-reducers-typescript-2-0/). The empty string as a `type` ensures that it doesn't intersect with any of our own actions.
 
-### <a name="reducer">Reducer</a>
+### Reducer
 
 Now we will define our root-reducer in a file called `reducer.ts` inside the folder `redux`:
 ```typescript
@@ -48,7 +48,7 @@ This file will allow us to export all of the following:
 - Our combined [epics](https://redux-observable.js.org/docs/basics/Epics.html) (*more about epics later*) made with [combineEpics](https://redux-observable.js.org/docs/api/combineEpics.html)
 - The type of all of our actions
 
-### <a name="store">Store</a>
+### Store
 
 Now we will define our store creator (*having it as a separate function helps us in doing [server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md), but if you don't want to do it you can define this function later*) in a file called `store.ts` inside the `redux`-folder:
 ```typescript
@@ -93,7 +93,7 @@ export default configureStore;
 
 Now we have everything set up to start doing the beef of the application, a.k.a. the views!
 
-### <a name="alternatives">Alternatives</a>
+### Alternatives
 
 If **redux** doesn't float your boat, you can always try [MobX](https://github.com/mobxjs/mobx), but **redux** is maybe the more used one at this point.
 

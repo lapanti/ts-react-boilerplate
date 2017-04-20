@@ -2,7 +2,7 @@
 
 Next up we are going to add styles to our not-so-fancy-yet application. We are going to use [Sass](http://sass-lang.com/) as it's perhaps the most widely used **CSS preprocessor** (*and you should use one, as it helps you with managing your styles*).
 
-### <a name="initialize">Initialize</a>
+### Initialize
 
 First we will again add some dependencies to our project
 ```
@@ -26,7 +26,7 @@ rules:
 ```
 from which the first command `merge-default-rules` indicates that I do not want to use the default rules as a basis, the second defines that for [BEM naming](http://getbem.com/naming/) the maximum depth is four, the third that I don't allow class names that start with an underscore and that they must follow `hyphenatedbem`-convention, the fourth that I want declarations to be before nesting and the last that extends must be bedore declarations.
 
-### <a name="stylesscss">Styles.scss</a>
+### Styles.scss
 
 All of our style-sheets will live inside a folder `src/styles` and the first will be the "main"-stylesheet, called `styles.scss` (*`scss` is the **Sass** file extension*)
 ```scss
@@ -47,7 +47,7 @@ and at this point it only [imports](http://sass-lang.com/guide) our other (*soon
 ```
 which will include the font from Google's CDN.
 
-### <a name="variables">Variables</a>
+### Variables
 
 Next we will define those things we call `variables` in **Sass** in their own file called `_variables.scss`
 ```scss
@@ -289,7 +289,7 @@ Now to get the `build`-script to also build our styles
 ```
 where we again rename our old `build`-script into `build:client` and then create a new script `build:sass`. Again we first make sure that the folder exists and then just build the **Sass**-files with **node-sass**'s default settings (*you can add compatibility and other plugins there as well*). The new `build`-script will simply first build the **Sass**-files and then the **TypeScript**-files.
 
-### <a name="alternatives">Alternatives</a>
+### Alternatives
 
 - [Less](http://lesscss.org/), another CSS preprocessor
 - [Stylus](http://stylus-lang.com/), the "third" CSS preprocessor (*Sass and Less are older*)

@@ -17,7 +17,7 @@ yarn add -D typescript tslint
 3. Open your project in an editor like [Visual Studio Code](https://code.visualstudio.com/) or [Atom](https://atom.io/), though I recommend **Visual Studio Code** as it has [IntelliSense](https://en.wikipedia.org/wiki/Intelligent_code_completion).
 4. Create the file `Todo.ts` inside a folder called `common` which will in turn be inside `src` that is located at the root of your application.
 
-### <a name="configuring">Configuring TypeScript</a>
+### Configuring TypeScript
 
 Next we will configure **TypeScript** by creating a file in the root folder called [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html). `tsconfig.json` indicates to **TypeScript** that the folder is a **TypeScript** project. Start by writing the following content into your `tsconfig.json`:
 ```json
@@ -71,7 +71,7 @@ In this case we use a [glob pattern](https://en.wikipedia.org/wiki/Glob_(program
 ```
 This glob will match all files in the `src` folder (recursively) with the extension `.ts`.
 
-### <a name="startcoding">Start coding</a>
+### Start coding
 
 We will begin by creating a class that defines our Todo-items. A Todo should have an id (to differentiate between todos), a title (tha actual todo) and information on whether the todo has been completed or not. Here we see the benefit of using **TypeScript**, as it allows us to define the actual information contained in a Todo (in plain JavaScript and all other dynamically typed languages you as a developer have to keep track of such things). I'll first show you the class in its simplest form and then explain what each keyword means.
 
@@ -123,7 +123,7 @@ are otherwise the same as the first one, except the property `title` has a **typ
 
 Congratulations, you have now created your very first **TypeScript** `class`!
 
-### <a name="linting">Linting</a>
+### Linting
 
 It's time to start linting you code by using [TSLint](https://palantir.github.io/tslint/). Let's begin by creating a [Yarn script](https://yarnpkg.com/lang/en/docs/cli/run/) to run **TSLint**:
 ```json
@@ -155,7 +155,7 @@ The lint command can now be run with `yarn run lint:ts`. This will now run **TSL
 }
 ```
 
-### <a name="alternatives">Alternatives</a>
+### Alternatives
 
 Below you can find alternatives to TypeScript, if you don't fancy it as much as I:
 - [Flow](http://simplefocus.com/flowtype/)

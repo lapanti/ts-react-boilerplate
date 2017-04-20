@@ -2,14 +2,14 @@
 
 Even though this part was left as the last one, it is one of the most important parts of a software project and this will only be one way of doing tests.
 
-### <a name="initialize">Initialize</a>
+### Initialize
 
 For our testing framework we are going to use [Jest](https://facebook.github.io/jest/), with [Enzyme](https://github.com/airbnb/enzyme) for [BDD testing](https://en.wikipedia.org/wiki/Behavior-driven_development), [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json) for [snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html), [ts-jest](https://github.com/kulshekhar/ts-jest) so **Jest** plays nice with **TypeScript** and [react-test-renderer](https://www.npmjs.com/package/react-test-renderer) for rendering **React**-components
 ```
     yarn add -D jest ts-jest enzyme enzyme-to-json react-test-renderer
 ```
 
-### <a name="linting">Linting</a>
+### Linting
 
 Let's start with the easiest part, linting our codebase. For the **TypeScript** code we'll simply need to add the following script to `package.json`
 ```json
@@ -27,7 +27,7 @@ For our **Sass** files it will be similarly simple
 ```
 by running **sass-lint** on the files mathing our **glob pattern**, adding the `v`-flag for verbose output and `max-warnings` to only allow for one warning (*you can omit it if you dare*).
 
-### <a name="tsjest">TS-Jest and enzyme-to-json</a>
+### TS-Jest and enzyme-to-json
 
 We will also need to make some setting for **Jest** in our `package.json` to use **ts-jest** and **enzyme-to-json** with our code
 ```json
@@ -43,7 +43,7 @@ We will also need to make some setting for **Jest** in our `package.json` to use
 ```
 where the first setting `snapshotSerializers` sets **Jest** to use **enzyme-to-json** for serializing, `testRegex` makes it so that **Jest** looks for tests in folders named `__specs__` with the extension `spec.ts` or `spec.tsx` and the rest are there so that it uses **TS-Jest** to build the code.
 
-### <a name="button">Button</a>
+### Button
 
 We will start with one of the simple components, in this case the `Button`. With all our tests we will follow the convention of having the tests in a folder next to the testable code called `__specs__` named `[TestableCode].spec.ts` or `*.tsx` if it includes **JSX** like this
 ```
@@ -130,7 +130,7 @@ Finally we simulate user interaction and ensure it has the correct result
 ```
 where we first define the number of times we want to simulate a click, then using `find` (*which takes a CSS-selector to find the correct HTML-element*) we simulate a `click`-event and test that the mock function was called the correct amount of times.
 
-### <a name="loader">Loader</a>
+### Loader
 
 Next up we create a simple snapshot test for our `Loader`-component
 ```typescript
@@ -146,7 +146,7 @@ describe('Loader', () => (
 ```
 where everything is very similar to the `Button`-tests.
 
-### <a name="todocomponent">TodoComponent</a>
+### TodoComponent
 
 Then for our last component `TodoComponent` we do, once again, similar tests
 ```typescript
@@ -179,7 +179,7 @@ describe('TodoComponent', () => {
 ```
 where the only difference is that we create two renders and as the `setDone` function shouldn't be called when the **Todo** is already done we ensure that it behaves as such.
 
-### <a name="indexview">IndexView</a>
+### IndexView
 
 Next up we create tests for our `IndexView`
 ```typescript
@@ -242,7 +242,7 @@ The biggest difference here is that for the simulation function
 ```
 where we give the `change` function a value to send with the event and test that it goes to the correct function.
 
-### <a name="indexreducer">IndexReducer</a>
+### IndexReducer
 
 For the `IndexReducer` we are not going to use **enzyme**, but rather normal **Jest** functions
 ```typescript
@@ -400,7 +400,7 @@ describe('fetchTodoEpic', () => {
 ```
 where we use [nock](https://github.com/node-nock/nock) to mock the API responses.
 
-### <a name="alternatives">Alternatives</a>
+### Alternatives
 
 - Possibly the best known alternative to **Jest** is [Mocha](https://mochajs.org/)
     - [Jasmine](https://jasmine.github.io/) is one of the tools often used to extend **Mocha**
