@@ -39,7 +39,7 @@ describe('IndexReducer', () => {
 
     it('should trigger the correct action on saveTodoEpic', async () => (
         await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined)
-            .subscribe(actionReceived => expect(actionReceived).toEqual([{ type: SAVE_TODO_SUCCESS }]))
+            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }))
     ));
 
     it('should set the correct values on saveTodoSuccess', () => {
@@ -63,10 +63,7 @@ describe('IndexReducer', () => {
 
     it('should trigger the correct action on setDoneEpic', async () => (
         await setDoneEpic(ActionsObservable.of(setDone(0)), undefined)
-            .subscribe(actionReceived => expect(actionReceived).toEqual([{
-                type: SET_DONE_SUCCESS,
-                payload: 0,
-            }]))
+            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SET_DONE_SUCCESS, payload: 0 }))
     ));
 
     it('should set the correct values on setDoneSuccess', () => {
