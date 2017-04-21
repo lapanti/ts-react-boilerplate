@@ -144,4 +144,80 @@ Next up we set up **Express** to serve our static assets
 app.use('/js', express.static(path.join('js'), { redirect: false }));
 app.use('/styles', express.static(path.join('styles'), { redirect: false }));
 ```
-with [`use`]()
+with [`use`](https://expressjs.com/en/4x/api.html#app.use) you can set a middleware-function to a specific path, in this case [`express.static`](https://expressjs.com/en/4x/api.html#express.static), which will serve static files from a relative path.
+> [`path.join`](https://nodejs.org/api/path.html#path_path_join_paths) will create a path using platform-specific separators.
+
+---
+
+Next is the beef of our server application, the actualy server-side rendering
+```typescript
+app.use((req: express.Request, res: express.Response) => {
+    match({ routes: Routes, location: req.url }, (err, redirect, props) => {
+        const store = createStore<State>(reducer, applyMiddleware(createEpicMiddleware(epics)));
+        const html = renderToString(
+            <Provider store={store}>
+                <RouterContext {...props} />
+            </Provider>,
+        );
+        res.send(renderHtml(html, store.getState()));
+    });
+});
+```
+where we use **react-router** to match the current path to our client code, create a store and render the application as `html` and finally send it to the client.
+
+---
+
+Finally we start the application itself
+```typescript
+app.listen(port, () => console.log(`App is listening on ${port}`));
+```
+
+---
+
+Of course we need to also add the scripts to actually run our server, starting with the build-script
+```json
+    "scripts": {
+        "build:server": "mkdir -p dist && browserify src/server.tsx --node -p tsify > dist/server.js",
+        "build": "yarn run build:server && yarn run build:sass && yarn run build:client",
+    }
+```
+where we first make the build script for our server, otherwise the same as our `build:client`, but adding the `node` flag to **browserify**. Secondly add the `build:server` as part of our original `build`-script.
+
+---
+
+Finally we create the actual `start`-script which will run our application
+```json
+    "scripts": {
+        "start": "NODE_ENV=production node dist/server.js",
+    }
+```
+which is very simple, just setting the `production`-flag for our `NODE_ENV` and starting the `server` with **node**.
+
+That's it, you should now have fully working server-side rendered application!
+
+### Docker
+
+If you want to [dockerize](https://www.docker.com/) your application you need to add a `Dockerfile` to your application's root folder (*which is just a file named `Dockerfile`*)
+```
+FROM node:4-onbuild
+
+LABEL maintainer "your.email.here@domain.com"
+
+COPY dist/ /
+
+ENV NODE_ENV=production
+
+EXPOSE 8080
+
+CMD node /server.js
+```
+which tells **Docker** how to build your container (*installation instructions for **Docker** can be found [here](https://docs.docker.com/engine/installation/)*).
+
+To start your new **Docker**-container you can just run
+```
+docker build .
+```
+then take the image id given by the build command and use it here
+````
+docker run -d -p 8080:8080 IMAGEID
+```
