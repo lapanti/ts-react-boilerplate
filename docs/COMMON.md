@@ -136,7 +136,7 @@ The lint command can now be run with `yarn run lint:ts`. This will now run **TSL
 ```json
 {
     "rules": {
-        "no-any": true, // Disallows use of any as a type declaration
+        "no-any": false, // Allows use of any as a type declaration
         "no-magic-numbers": true, // Disallow magic numbers
         "only-arrow-functions": [true], // Enforces the use of arrow functions instead of the traditional syntax
         "curly": true, // Enforces curly braces in all ifs/fors/dos/whiles

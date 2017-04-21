@@ -60,7 +60,6 @@
     "rxjs": "^5.2.0"
   },
   "devDependencies": {
-    "@types/es6-shim": "^0.31.33",
     "@types/express": "^4.0.35",
     "@types/jest": "^19.2.2",
     "@types/nock": "^8.2.1",

@@ -22,9 +22,7 @@ We begin by writing an `App.ts` file into the `src/modules`-folder
 ```typescript
 import * as React from 'react';
 
-/* tslint:disable:no-any */
 const App: React.StatelessComponent<any> = props => (
-    /* tslint:enable:no-any */
     <div className="app-base">
         {props.children}
     </div>
