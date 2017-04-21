@@ -287,7 +287,7 @@ describe('IndexReducer', () => {
 
     it('should trigger the correct action on saveTodoEpic', async () => (
         await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined)
-            .subscribe(actionReceived => expect(actionReceived).toEqual([{ type: SAVE_TODO_SUCCESS }]))
+            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }))
     ));
 
     it('should set the correct values on saveTodoSuccess', () => {
@@ -311,10 +311,7 @@ describe('IndexReducer', () => {
 
     it('should trigger the correct action on setDoneEpic', async () => (
         await setDoneEpic(ActionsObservable.of(setDone(0)), undefined)
-            .subscribe(actionReceived => expect(actionReceived).toEqual([{
-                type: SET_DONE_SUCCESS,
-                payload: 0,
-            }]))
+            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SET_DONE_SUCCESS, payload: 0 }))
     ));
 
     it('should set the correct values on setDoneSuccess', () => {
@@ -357,7 +354,7 @@ import { SAVE_TODO_SUCCESS, saveTodo } from '../IndexReducer';
 // ...
     it('should trigger the correct action on saveTodoEpic', async () => (
         await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined)
-            .subscribe(actionReceived => expect(actionReceived).toEqual([{ type: SAVE_TODO_SUCCESS }]));
+            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }));
     ));
 ```
 where we have to use an [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) function, as **Observables** are not synchronous. We use `ActionsObservable.of` to create an **Observable** out of our **action creator** and give our **epic** an `undefined` as the second argument (*which, if you remember is defined as a type of `undefined` in `IndexReducer`*). After that we [`subscribe`](http://reactivex.io/documentation/operators/subscribe.html) to our new **Observable** returned by `saveTodoEpic` and check that the action received matches what we expect.
@@ -386,7 +383,7 @@ describe('fetchTodoEpic', () => {
             .get('/lastparam')
             .reply(200, payload, { 'Content-Type': 'application/json' });
         return await fetchTagsEpic(ActionsObservable.of(fetchTodo()), { getState: () => new State(), dispatch: () => {} })
-            .subscribe(actionReceived => expect(actionReceived).toEqual(fetchTodoSuccess(payload)));
+            .forEach(actionReceived => expect(actionReceived).toEqual(fetchTodoSuccess(payload)));
     });
     it('should fail correctly', async () => {
         const payload = 'ERROR';
@@ -394,7 +391,7 @@ describe('fetchTodoEpic', () => {
             .get('/lastparam')
             .replyWithError(payload);
         return await fetchTagsEpic(ActionsObservable.of(fetchTodo()), { getState: () => new State(), dispatch: () => {} })
-            .subscribe(actionReceived => expect(actionReceived).toEqual(fetchTodoFail(payload)));
+            .forEach(actionReceived => expect(actionReceived).toEqual(fetchTodoFail(payload)));
     });
 });
 ```
