@@ -8,4 +8,6 @@ script: "yarn run test:ci"
 
 after_script:
   - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  - "git config --global user.email \"laurilavanti@gmail.com\""
+  - "git config --global user.name \"Travis CI\""
   - "yarn run docs:publish"
