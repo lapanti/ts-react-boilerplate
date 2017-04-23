@@ -291,15 +291,19 @@ describe('IndexReducer', () => {
     ));
 
     it('should set the correct values on saveTodoSuccess', () => {
-        const initialState: IndexState = { title: 'TEST', todos: [], loading: true };
+        /* tslint:disable:no-magic-numbers */
+        const testT = new Todo(1, 'Doing', true);
+        const initialState: IndexState = { title: 'TEST', todos: [testT], loading: true };
         const saveTodoSuccessAction: SaveTodoSuccessAction = saveTodoSuccess();
         expect(saveTodoSuccessAction).toEqual({ type: SAVE_TODO_SUCCESS });
         const newState: IndexState = IndexReducer(initialState, saveTodoSuccessAction);
         expect(newState.title).toEqual('');
-        expect(newState.todos[0].done).toBeFalsy();
-        expect(newState.todos[0].id).toEqual(1);
-        expect(newState.todos[0].title).toEqual(initialState.title);
+        expect(newState.todos.length).toEqual(2);
+        expect(newState.todos[1].done).toBeFalsy();
+        expect(newState.todos[1].id).toEqual(2);
+        expect(newState.todos[1].title).toEqual(initialState.title);
         expect(newState.loading).toBeFalsy();
+        /* tslint:enable:no-magic-numbers */
     });
 
     it('should set the correct values on setDone', () => {
