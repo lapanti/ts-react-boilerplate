@@ -1,0 +1,17 @@
+engines:
+  tslint:
+    enabled: true
+    channel: beta
+  scss-lint:
+    enabled: true
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "src/**/*"
+  - "**.ts"
+  - "**.tsx"
+  - "**.scss"
+exclude_paths:
+- dist/
+- node_modules/
