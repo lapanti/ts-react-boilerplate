@@ -1,17 +1,12 @@
-/**
- * To ensure that we don't link different components together
- * we create "shared" classes in a separate classes-folder, such
- * as this Todo-class, which is required by multiple components
- */
 export default class Todo {
-    constructor(number: number, title: string, done?: boolean) {
-        this.number = number;
+    constructor(id: number, title: string, done?: boolean) {
+        this.id = id;
         this.title = title;
         this.done = done || false;
     }
-    readonly number: number;
+    readonly id: number;
     readonly title: string;
     readonly done: boolean;
 
-    setDone = (): Todo => new Todo(this.number, this.title, true);
+    setDone = (): Todo => new Todo(this.id, this.title, true);
 }

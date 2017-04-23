@@ -2,7 +2,7 @@
     "extends": ["tslint-react"],
     "rules": {
         "jsx-no-lambda": false,
-        "no-any": true,
+        "no-any": false,
         "no-magic-numbers": true,
         "only-arrow-functions": [true],
         "curly": true,

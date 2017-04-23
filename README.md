@@ -1,12 +1,12 @@
 # A very opinionated frontend boilerplate
-[![Build Status](https://travis-ci.org/Lapanti/ts-react-boilerplate.svg?branch=master&style=flat)](https://travis-ci.org/Lapanti/ts-react-boilerplate) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)](https://opensource.org/licenses/MIT) [![Dependency Status](https://david-dm.org/lapanti/ts-react-boilerplate.svg?style=flat)](https://david-dm.org/lapanti/ts-react-boilerplate) [![DevDependency Status](https://david-dm.org/lapanti/ts-react-boilerplate.svg?type=dev&style=flat)](https://david-dm.org/lapanti/ts-react-boilerplate?type=dev) [![Coverage Status](https://coveralls.io/repos/github/Lapanti/ts-react-boilerplate/badge.svg?branch=master&style=flat)](https://coveralls.io/github/Lapanti/ts-react-boilerplate?branch=master)
+[![Build Status](https://img.shields.io/travis/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/Lapanti/ts-react-boilerplate) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Dependency Status](https://david-dm.org/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate) [![DevDependency Status](https://img.shields.io/david/dev/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate?type=dev) [![Coverage Status](https://img.shields.io/coveralls/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://coveralls.io/github/Lapanti/ts-react-boilerplate?branch=master) [![Code Climate](https://img.shields.io/codeclimate/github/Lapanti/ts-react-boilerplate.svg?style=flat-square)](https://codeclimate.com/github/Lapanti/ts-react-boilerplate) [![Code Climate](https://img.shields.io/codeclimate/issues/github/Lapanti/ts-react-boilerplate.svg?style=flat-square)](https://codeclimate.com/github/Lapanti/ts-react-boilerplate/issues)
 
 ## Purpose
 
-This is all you need to get started in developing your own web application, using TypeScript, React, server-side rendering and all the other hip tools. All the source code is well-documented and explains its purpose. You can read the [getting started guide here](#getstarted)
+This is all you need to get started in developing your own web application, using TypeScript, React, server-side rendering and all the other hip tools. If you know what you are doing, you can follow the [quick start guide](#quickstart) or you can go learn with the walk-through starting [here](/docs/STRUCTURE.md).
 
 ## Contents
-- [Getting started](#getstarted)
+- [Quick start guide](#quickstart)
     - [Requirements](#requirements)
     - [Download the source code](#download)
     - [Starting development](#startingdevelopment)
@@ -19,7 +19,7 @@ This is all you need to get started in developing your own web application, usin
     - [Roadmap](#roadmap)
 - [License and contact information](#license)
 
-## <a name="getstarted">Getting started</a>
+## <a name="quickstart">Quick start guide</a>
 
 ### <a name="requirements">Requirements</a>
 - If you don't already have it, install [Node](https://nodejs.org/en/download/)
@@ -45,11 +45,11 @@ This is all you need to get started in developing your own web application, usin
 ## <a name="tipsandsuggestions">Tips and suggestions</a>
 - Make sure everything has a type (the more you squeeze out of the compiler the easier you're going to have it while developing)
 - Follow [BEM](http://getbem.com/naming/)-naming with CSS
-- Follow [Redux-ducks pattern](https://github.com/erikras/ducks-modular-redux) except that name the reducers as according to the file (see [IndexReducer.tsx](src/modules/index/IndexReducer.tsx) for an example)
+- Follow [Redux-ducks pattern](https://github.com/erikras/ducks-modular-redux) except that name the reducers as according to the file (see [IndexReducer.tsx](/src/modules/index/IndexReducer.tsx) for an example)
 
 ## <a name="dockerization">How to Docker</a>
-The [Dockerfile](Dockerfile) is where you can find the configuration to build a [Docker](https://www.docker.com/) image out of your application. The first line of the `Dockerfile` (starting with `FROM`) includes the base for your Dockerfile, feel free to change it if you want to.
-1. Put your email to the [fourth line in the Dockerfile](Dockerfile#L4)
+The [Dockerfile](/Dockerfile) is where you can find the configuration to build a [Docker](https://www.docker.com/) image out of your application. The first line of the `Dockerfile` (starting with `FROM`) includes the base for your Dockerfile, feel free to change it if you want to.
+1. Put your email to the [fourth line in the Dockerfile](/Dockerfile#L4)
 2. In your console run `docker build .`
 3. In your console run `docker run -d -p 8080:8080 bd9b1d6725bc` **but** replace `bd9b1d6725bc` with the image ID you received from the previous command
 4. Host your Docker image in your favorite cloud or local server (the web is filled with guides for this)
