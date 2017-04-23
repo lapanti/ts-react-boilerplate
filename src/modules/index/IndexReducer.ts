@@ -1,5 +1,5 @@
 import { MiddlewareAPI } from 'redux';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/map';
