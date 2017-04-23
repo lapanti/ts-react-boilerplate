@@ -6,4 +6,6 @@ cache: yarn
 
 script: "yarn run test:ci"
 
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+after_script:
+  - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  - "yarn run docs:publish"
