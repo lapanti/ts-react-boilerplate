@@ -6,12 +6,12 @@ script: yarn run test:ci
 after_script:
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 after_success:
-- [[ $TRAVIS_BRANCH == "master" ]] && git config --global user.email "laurilavanti@gmail.com"
-- [[ $TRAVIS_BRANCH == "master" ]] && git config --global user.name "Travis CI"
-- [[ $TRAVIS_BRANCH == "master" ]] && chmod 600 deploy_key
-- [[ $TRAVIS_BRANCH == "master" ]] && eval `ssh-agent -s`
-- [[ $TRAVIS_BRANCH == "master" ]] && ssh-add deploy_key
-- [[ $TRAVIS_BRANCH == "master" ]] && yarn run docs:publish
+- "[[ $TRAVIS_BRANCH == \"master\" ]] && git config --global user.email \"laurilavanti@gmail.com\""
+- "[[ $TRAVIS_BRANCH == \"master\" ]] && git config --global user.name \"Travis CI\""
+- "[[ $TRAVIS_BRANCH == \"master\" ]] && chmod 600 deploy_key"
+- "[[ $TRAVIS_BRANCH == \"master\" ]] && eval `ssh-agent -s`"
+- "[[ $TRAVIS_BRANCH == \"master\" ]] && ssh-add deploy_key"
+- "[[ $TRAVIS_BRANCH == \"master\" ]] && yarn run docs:publish"
 before_install:
 - openssl aes-256-cbc -K $encrypted_5a1a1505749b_key -iv $encrypted_5a1a1505749b_iv
   -in deploy_key.enc -out deploy_key -d
