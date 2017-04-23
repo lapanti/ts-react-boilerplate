@@ -1,13 +1,16 @@
 language: node_js
 node_js:
-  - "node"
-
+- node
 cache: yarn
-
-script: "yarn run test:ci"
-
+script: yarn run test:ci
 after_script:
-  - "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
-  - "git config --global user.email \"laurilavanti@gmail.com\""
-  - "git config --global user.name \"Travis CI\""
-  - "yarn run docs:publish"
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+- git config --global user.email "laurilavanti@gmail.com"
+- git config --global user.name "Travis CI"
+- chmod 600 deploy_key
+- eval `ssh-agent -s`
+- ssh-add deploy_key
+- yarn run docs:publish
+before_install:
+- openssl aes-256-cbc -K $encrypted_5a1a1505749b_key -iv $encrypted_5a1a1505749b_iv
+  -in deploy_key.enc -out deploy_key -d
