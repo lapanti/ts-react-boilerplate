@@ -18,7 +18,8 @@
       "ts",
       "tsx",
       "js"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/jest/setup.js"
   },
   "scripts": {
     "lint:sass": "sass-lint src/**/*.scss -v --max-warnings 1",
