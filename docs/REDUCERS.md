@@ -9,7 +9,7 @@ We begin by creating a file called `IndexReducer.ts` in the `src/modules/index`-
 
 ```typescript
 import { MiddlewareAPI } from 'redux';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 import { ajax } from 'rxjs/observable/dom/ajax';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/map';
@@ -154,7 +154,7 @@ to allow us to later define when we want to receive an **action** for our `Index
 
 Next we define our [Epics](https://redux-observable.js.org/docs/basics/Epics.html)
 ```typescript
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mapTo';
@@ -201,6 +201,7 @@ The third and fourth line
 include the actual functionality of our **Epic**. In this case **after** we receive an **action** of the type `SET_DONE` we wait for 1 second (*`delay`takes milliseconds as argument*) and then we return an **action** of the type `SAVE_TODO_SUCCESS` (*in this case using [`mapTo`](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mapTo) as we just want to return a new **Action***).
 > If you wanted to return multiple actions, say `SET_DONE_SUCCESS` and an imaginary `SEND_PUSH_NOTIFICATION` you could do it using [`mergeMap`](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mergeMap), which is kind of like `flatMap`, like so:
 ```typescript
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/mergeMap';
 ...
