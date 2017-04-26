@@ -28,7 +28,7 @@
     "test:watch": "jest --watch",
     "test:ci": "yarn run lint:sass && yarn run lint:ts && jest --runInBand --forceExit --coverage",
     "develop:sass": "mkdir -p dist/styles && node-sass -w -r src/styles -o dist/styles",
-    "develop:client": "budo src/index.tsx:js/bundle.js --live --verbose -- -p tsify",
+    "develop:client": "budo src/index.tsx:js/bundle.js --live --verbose --pushstate -- -p tsify",
     "develop": "NODE_ENV=development concurrently -p \"[{name}]\" -n \"BROWSERIFY,SASS\" -c \"bgBlue,bgMagenta\" -k \"yarn run develop:client\" \"yarn run develop:sass\"",
     "build:server": "mkdir -p dist && browserify src/server.tsx --node -p tsify > dist/server.js",
     "build:sass": "mkdir -p dist/styles && node-sass src/styles/styles.scss dist/styles/styles.css",
