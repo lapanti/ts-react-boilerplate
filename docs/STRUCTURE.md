@@ -20,24 +20,24 @@ package.json
 ```
 ## Common
 
-In this folder we will have common files needed by modules and components alike, such as classes to define information needed in multiple places. We dive more deeply into it [here](/COMMON.md).
+In this folder we will have common files needed by modules and components alike, such as classes to define information needed in multiple places. We dive more deeply into it [here](/docs/COMMON.md).
 
 ## Components
 
-In this folder we will have common components, such as buttons, links and inputs. A deeper dive can be found [here](/COMPONENTS.md).
+In this folder we will have common components, such as buttons, links and inputs. A deeper dive can be found [here](/docs/COMPONENTS.md).
 
 ## Modules
 
-In this folder we will have all modules, which can basically be thought of as pages (or parts of pages) and their functionalities. This will consist of [views](/VIEWS.md), [containers](/CONTAINERS.md) and [reducers](/REDUCERS.md).
+In this folder we will have all modules, which can basically be thought of as pages (or parts of pages) and their functionalities. This will consist of [views](/docs/VIEWS.md), [containers](/docs/CONTAINERS.md) and [reducers](/docs/REDUCERS.md).
 
 ## Redux
 
-In this folder we will have common redux files, such as a store, utilities etc. A deeper dive can be found [here](/REDUX.md).
+In this folder we will have common redux files, such as a store, utilities etc. A deeper dive can be found [here](/docs/REDUX.md).
 
 ## Styles
 
-In this folder we will include all the stylesheets for the application. A deeper dive can be found [here](/STYLES.md).
+In this folder we will include all the stylesheets for the application. A deeper dive can be found [here](/docs/STYLES.md).
 
 ## Tests
 
-Tests for each file will be contained in a folder called `__specs__` in the same directory as the file itself. You can read more about testing [here](/TESTS.md)
+Tests for each file will be contained in a folder called `__specs__` in the same directory as the file itself. You can read more about testing [here](/docs/TESTS.md)
