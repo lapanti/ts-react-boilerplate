@@ -11,9 +11,8 @@ import reducer, { epics, State } from './redux/reducer';
 import Routes from './modules/Routes';
 
 const normalizePort = (val: number | string): number | string | boolean => {
-    /* tslint:disable:no-magic-numbers */
-    const port: number = (typeof val === 'string') ? parseInt(val, 10) : val;
-    /* tslint:enable:no-magic-numbers */
+    const base = 10;
+    const port: number = typeof val === 'string' ? parseInt(val, base) : val;
     return isNaN(port) ? val : port >= 0 ? port : false;
 };
 
@@ -42,8 +41,8 @@ const defaultPort = 8080;
 const port = normalizePort(process.env.PORT || defaultPort);
 const app = express();
 
-app.use('/js', express.static(path.join('dist', 'js'), { redirect: false }));
-app.use('/styles', express.static(path.join('dist', 'styles'), { redirect: false }));
+app.use('/js', express.static(path.join('js'), { redirect: false }));
+app.use('/styles', express.static(path.join('styles'), { redirect: false }));
 
 app.use((req: express.Request, res: express.Response) => {
     match({ routes: Routes, location: req.url }, (err, redirect, props) => {
