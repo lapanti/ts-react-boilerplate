@@ -3,7 +3,7 @@ import Todo from '../common/Todo';
 
 export interface ITodoComponent {
     readonly todo: Todo;
-    setDone(i: number);
+    setDone(i: number): void;
 }
 
 const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone }) => (
