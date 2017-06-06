@@ -1,6 +1,4 @@
-import { MiddlewareAPI } from 'redux';
-import { Observable } from 'rxjs/Observable';
-import { ajax } from 'rxjs/observable/dom/ajax';
+import { Observable } from 'rxjs/observable';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mapTo';
@@ -50,6 +48,8 @@ export const setDoneEpic: Epic<IndexActions, undefined> = (action$: ActionsObser
         .delay(testDelay)
         .map((action: SetDoneAction) => setDoneSuccess(action.payload));
 
+export const IndexEpics = combineEpics(saveTodoEpic, setDoneEpic);
+
 const IndexReducer = (state: IndexState = new IndexState(), action: IndexActions = DefaultAction): IndexState => {
     switch (action.type) {
         case SET_TITLE:
@@ -68,14 +68,12 @@ const IndexReducer = (state: IndexState = new IndexState(), action: IndexActions
         case SET_DONE_SUCCESS:
             return {
                 ...state,
-                todos: state.todos.map(t => t.number === action.payload ? t.setDone() : t),
+                todos: state.todos.map(t => t.id === action.payload ? t.setDone() : t),
                 loading: false,
             };
         default:
             return state;
     }
 };
-
-export const IndexEpics = combineEpics(saveTodoEpic, setDoneEpic);
 
 export default IndexReducer;
