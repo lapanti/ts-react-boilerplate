@@ -4,92 +4,87 @@ Now we finally get to build our **React**-application into something that can be
 
 ### Initialize
 
-We begin by installing new dependencies called [React Router](https://github.com/ReactTraining/react-router) and [ReactDOM](https://facebook.github.io/react/docs/react-dom.html)
+We begin by installing new dependencies called [React Router](https://reacttraining.com/react-router/) and [ReactDOM](https://facebook.github.io/react/docs/react-dom.html)
 ```
-yarn add react-router react-dom
+yarn add react-router-dom react-dom
 ```
 which adds the capability to define which URL equals which view and to render our **React** application to the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction), respectively.
 
 And of course the types for them
 ```
-yarn add -D @types/react-router @types/react-dom
+yarn add -D @types/react-router-dom @types/react-dom
 ```
-> If you want to include your **route-state** in **Redux** you might want to look at [react-router-redux](https://github.com/reactjs/react-router-redux)
 
-### App
+### AppView
 
-We begin by writing an `App.ts` file into the `src/modules`-folder
+We begin by writing an `AppView.ts` file into the `src/modules`-folder
 ```typescript
 import * as React from 'react';
+import { Route, Switch, RouteComponentProps } from 'react-router-dom';
+import IndexContainer from './index/IndexContainer';
+import PageNotFound from '../components/PageNotFound';
 
-const App: React.StatelessComponent<any> = props => (
+export type IAppViewProps = RouteComponentProps<undefined>;
+
+const AppView: React.StatelessComponent<IAppViewProps> = () => (
     <div className="app-base">
-        {props.children}
+        <Switch>
+            <Route path="/" exact component={IndexContainer} />
+            <Route component={PageNotFound} />
+        </Switch>
     </div>
 );
 
-export default App;
+export default AppView;
 ```
-which is just a simple **view** that will contain all the common styles and elements for all pages. The line of importance is the seventh one `{props.children}` which tells **React** to render the children property as **React views** inside the `div`.
+which is a fairly simple view, except for the `<Switch>`-clause and `RouteComponentProps`.
+> All views that go through **React Router** get some extra properties, which are included in `RouteComponentProps<Params`, where `Params` can be used to define possible parameters for the URL.
 
-### <a name="routes">Routes</a>
+The [`<Switch>`](https://reacttraining.com/react-router/web/api/Switch) element is used to render a single view out of all [`Route`s](https://reacttraining.com/react-router/web/api/Route) inside the `<Switch>`. `Route`s have three main properties you should remember:
+1. `path` which indicates what URL the view matches to (*it can be used to define parameters as well*)
+2. `exact` which indicates that the view should only match if the URL matches `path` exactly
+3. `component` which defines the actual view to render
 
-Next we define our **React Router** routes in a file called `Routes.tsx` inside `src/modules`
+### AppContainer
+
+Next we create a very simple **container** for `AppView` called `AppContainer`, which is situated in the same `src/modules`-folder
 ```typescript
-import * as React from 'react';
-import { Route, IndexRoute } from 'react-router';
-import App from './App';
-import IndexContainer from './index/IndexContainer';
+import { connect } from 'react-redux';
+import AppView, { IAppViewProps } from './AppView'; //tslint:disable-line:no-unused-variable
 
-const Routes = (
-    <Route path="/" component={App}>
-        <IndexRoute component={IndexContainer} />
-    </Route>
-);
-
-export default Routes;
+export default connect<{}, undefined, IAppViewProps>(() => ({}))(AppView);
 ```
+which we use just to wrap `AppView` so that it can be used in routes.
 
----
+### IndexView
 
-On the seventh line we define that the root URL matches our previously made `App`
+For `IndexView` we also need to add `RouteComponentProps`, so just add the following
 ```typescript
-import * as React from 'react';
-import { Route } from 'react-router';
-import App from './App';
+import { RouteComponentProps } from 'react-router-dom';
 // ...
-    <Route path="/" component={App}>
-        // ...
-    </Route>
+export type IIndexProps = IIndexState & IIndexDispatch & RouteComponentProps<undefined>;
 ```
-using [`Route`](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#route) which takes as the first argument `path` the URL this `Route` should match to (*relative URL*) and as the second argument `component` the component to render.
 
----
-
-On the eighth line we define our [`IndexRoute`](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#indexroute-1) for the root path to be `IndexContainer`
-```typescript
-import * as React from 'react';
-import { IndexRoute } from 'react-router';
-import IndexContainer from './index/IndexContainer';
-// ...
-        <IndexRoute component={IndexContainer} />
-```
-which is a special type of `Route` as it defines the `component` it received as the child for it's parent's route (*meaning that for the parent's path, this is the innermost component to show*). Notice that we are setting the `Container` as the `component` instead of the `View`. This is what allows us to connect **Redux** to our **React**-components in the next phase.
-
-### <a name="index">index</a>
+### index
 
 Finally we create a file `index.ts` inside `src`
 ```typescript
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 import configureStore from './redux/store';
-import Routes from './modules/Routes';
+import AppContainer from './modules/AppContainer';
+
+const history = createHistory();
 
 ReactDOM.render((
-    <Provider store={configureStore()}>
-        <Router history={browserHistory} routes={Routes} />
+    <Provider store={configureStore(history)}>
+        <ConnectedRouter history={history}>
+            <Route component={AppContainer} />
+        </ConnectedRouter>
     </Provider>
     ), document.getElementById('app'),
 );
@@ -98,7 +93,7 @@ which is the entry file to our application that ties everything together.
 
 ---
 
-On the eighth line
+On the 12. line
 ```typescript
 import * as ReactDOM from 'react-dom';
 
@@ -111,32 +106,37 @@ we [render](https://facebook.github.io/react/docs/react-dom.html#render) our **R
 
 ---
 
-On the ninth line
+On the 13. line
 ```typescript
 import * as React from 'react';
 import { Provider } from 'react-redux';
+import createHistory from 'history/createBrowserHistory';
 import configureStore from './redux/store';
+const history = createHistory();
 // ...
-    <Provider store={configureStore()}>
+    <Provider store={configureStore(history)}>
         // ...
     </Provider>
 ```
-which wraps our **React** application with **Redux** using [`Provider`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#provider-store) from **react-redux**, which takes a single parameter `store`, for which we provide our store as we defined it in [Redux](/REDUX.md#store).
+which wraps our **React** application with **Redux** using [`Provider`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#provider-store) from **react-redux**, which takes a single parameter `store`, for which we provide our store as we defined it in [Redux](/REDUX.md#store). `history/createBrowserHistory` is used to create a wrapper around the browser history we can use.
 
 ---
 
-On the tenth line
+On the 14. line
 ```typescript
 import * as React from 'react';
-import { Router, browserHistory } from 'react-router';
-import Routes from './modules/Routes';
+import { Route } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
+import AppContainer from './modules/AppContainer';
 // ...
-        <Router history={browserHistory} routes={Routes} />
+        <ConnectedRouter history={history}>
+            <Route component={AppContainer} />
+        </ConnectedRouter>
 // ...
 ```
-we keep the UI in sync with the URL using a [`Router`](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#router) from **React Router**, which takes as the first argument [`history`](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#histories), where we give `browserHistory` as it most closely mimics the way a browser's history works and as the second argument `routes` we give our `Routes` component from before.
+we keep the UI in sync with the URL using a [`ConnectedRouter`](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) from **react-router-redux**, which takes as argument a [`history`](https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#histories), where we give `history` we created previously. Here we define a single `Route` which renders `AppContainer` for all URL routes.
 
-###<a name="indexhtml">Index.html</a>
+### Index.html
 
 Finally we write an `index.html` in our root-folder
 ```html
@@ -154,7 +154,7 @@ Finally we write an `index.html` in our root-folder
 ```
 which is just a very simple `HTML`-file, which imports our (*soon-to-be-bundled*) **JavaScript** from the path `/js/bundle.js` and contains a `div` with the id `app` so our `index.ts` works.
 
-###<a name="scripts">Scripts</a>
+### Scripts
 
 Now as we have everything necessary for our application, it's time to get it working!
 

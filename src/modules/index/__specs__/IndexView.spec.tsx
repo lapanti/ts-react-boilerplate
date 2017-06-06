@@ -28,7 +28,7 @@ describe('IndexView', () => {
         <IndexView
             title={testTitle}
             todos={[testTodo1, testTodo2]}
-            loading={true}
+            loading
             setTitle={testSetTitle}
             saveTodo={testSaveTodo}
             setDone={testSetDone}

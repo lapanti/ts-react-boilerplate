@@ -11,15 +11,9 @@ For our testing framework we are going to use [Jest](https://facebook.github.io/
 
 ### Linting
 
-Let's start with the easiest part, linting our codebase. For the **TypeScript** code we'll simply need to add the following script to `package.json`
-```json
-    "scripts": {
-        "lint:ts": "tslint 'src/**/*.{ts,tsx}'",
-    }
-```
-which will run **tslint** on the files matching the [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)).
+Let's start with the easiest part, linting our codebase. For the **TypeScript** code we already have our linting script setup under `lint:ts`.
 
-For our **Sass** files it will be similarly simple
+For our **Sass** files it will be simply
 ```json
     "scripts": {
         "lint:sass": "sass-lint src/**/*.scss -v --max-warnings 1",
@@ -36,7 +30,6 @@ We will also need to make some setting for **Jest** in our `package.json` to use
         "transform": {
             ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
-        "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
         "testRegex": "(/__specs__/.*|\\.(spec))\\.(ts|tsx)$",
         "moduleFileExtensions": ["ts", "tsx", "js"]
     }
@@ -179,6 +172,21 @@ describe('TodoComponent', () => {
 ```
 where the only difference is that we create two renders and as the `setDone` function shouldn't be called when the **Todo** is already done we ensure that it behaves as such.
 
+### PageNotFound
+
+For `PageNotFound` we only need to make a simple snapshot-test
+```typescript
+import * as React from 'react';
+import { shallow } from 'enzyme';
+import PageNotFound from '../PageNotFound';
+
+describe('PageNotFound', () => (
+    it('should render correctly', () => (
+        expect(shallow(<PageNotFound />)).toMatchSnapshot()
+    ))
+));
+```
+
 ### IndexView
 
 Next up we create tests for our `IndexView`
@@ -203,16 +211,22 @@ describe('IndexView', () => {
             setTitle={testSetTitle}
             saveTodo={testSaveTodo}
             setDone={testSetDone}
+            match={{ params: undefined, isExact: true, path: '', url: '' }}
+            location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
+            history={createHistory()}
         />
     ));
     const wrapperMaximumProps = shallow((
         <IndexView
             title={testTitle}
             todos={[testTodo1, testTodo2]}
-            loading={true}
+            loading
             setTitle={testSetTitle}
             saveTodo={testSaveTodo}
             setDone={testSetDone}
+            match={{ params: undefined, isExact: true, path: '', url: '' }}
+            location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
+            history={createHistory()}
         />
     ));
 
@@ -400,6 +414,38 @@ describe('fetchTodoEpic', () => {
 });
 ```
 where we use [nock](https://github.com/node-nock/nock) to mock the API responses.
+
+### AppView
+
+We also add simple snapshot tests for our `AppView`
+```typescript
+import * as React from 'react';
+import { shallow } from 'enzyme';
+import createHistory from 'history/createBrowserHistory';
+import AppView from '../AppView';
+
+describe('AppView', () => {
+    const index = (
+        <AppView
+            match={{ params: undefined, isExact: true, path: '', url: '' }}
+            location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
+            history={createHistory()}
+        />
+    );
+    const notFound = (
+        <AppView
+            match={{ params: undefined, isExact: false, path: '', url: '' }}
+            location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
+            history={createHistory()}
+        />
+    );
+
+    it('should render correctly', () => {
+        expect(shallow(index)).toMatchSnapshot();
+        expect(shallow(notFound)).toMatchSnapshot();
+    });
+});
+```
 
 ### Scripts
 

@@ -59,7 +59,7 @@ $modal-background: rgba(100, 100, 100, .8);
 ```
 where the underscore in the beginning of the file name is just a convention to differentiate it from regular style files. Inside it we define four different colors (*using comments to define the variable "blocks" of colors, sizes etc. is just another convention*), a primary color, secondary color, tertiary color and a color for the background of a modal. All variables in **Sass** must begin with the dollar `$` sign.
 
-### <a name="index">Index</a>
+### Index
 
 Next up is the styles for the `Index`-page, inside a file called `index.scss`
 ```scss
@@ -135,7 +135,7 @@ where we see that first we have defined a block for the class `index`, which sty
 ```
 > This shows us the power of **BEM** as it ties very nicely with the nesting in **Sass**
 
-### <a name="button">Button</a>
+### Button
 
 In a file called `button.scss` we are going to write our styles for the `Button`-component
 ```scss
@@ -150,7 +150,7 @@ In a file called `button.scss` we are going to write our styles for the `Button`
 ```
 which are very simple, like the component itself.
 
-### <a name="todocomponent">TodoComponent</a>
+### TodoComponent
 
 The styles for our `TodoComponent` will be set in a file called `todocomponent.scss`
 ```scss
@@ -176,7 +176,7 @@ The styles for our `TodoComponent` will be set in a file called `todocomponent.s
 ```
 which is a rather simple style as well, just a little **flexbox** in there.
 
-### <a name="loader">Loader</a>
+### Loader
 
 Now this is something a bit more interesting, we are going to make our `Loader`-component finally come to life, by creating the styles for it inside `loader.scss``
 ```scss
@@ -257,7 +257,7 @@ where you define the style for the object being styled at different points of th
 
 The `:before` selector on the other hand is used to create a child (*it must have something set to it's `content` property to show*) for the element, that is used to create some kind of styling otherwise impossible to create, for example in our case the actual spinning element.
 
-### <a name="scripts">Scripts</a>
+### Scripts
 
 Now that we have our styles set up, we need to include them in our application and to do that, we are going to set up two new scripts to our `package.json` and as we want to be able to refresh both the styles and the code while developing, we are going to add a new dependency called [concurrently](https://github.com/kimmobrunfeldt/concurrently)
 ```

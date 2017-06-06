@@ -29,7 +29,7 @@ const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loadin
                 className="index__form__input"
                 name="newtodo"
                 type="text"
-                autoFocus={true}
+                autoFocus
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />
