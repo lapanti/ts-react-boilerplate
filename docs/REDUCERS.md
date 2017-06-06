@@ -1,6 +1,6 @@
 # Reducers
 
-Now we build our business logic, also known as **reducers**. Stay calm, this will be a bit more complicated then anything before.
+Now we build our business logic, also known as **reducers**. Stay calm, this will be a bit more complicated than anything before.
 
 ### IndexReducer
 
@@ -173,7 +173,7 @@ const setDoneEpic: Epic<IndexActions, undefined> = (action$: ActionsObservable<I
 export const IndexEpics = combineEpics(saveTodoEpic, setDoneEpic);
 ```
 which are [redux-observable's](https://redux-observable.js.org) way of handling side-effects in **Redux** (*like AJAX calls etc.*). At the end we combine all our **Epics** in this file to a single exportable **Epic** called `IndexEpics` (*so we only need to import one variable when we want access to these later*).
-> The importing part may look a little weird, but it's because [RxJS](http://reactivex.io/rxjs/) is a rather large library, we can either import everything using `import * as RxJS from 'rxjs'` or import only the parts we need as shown above, which will allow any proper [minifier](https://developers.google.com/speed/docs/insights/MinifyResources) like [UglifyJS](https://github.com/mishoo/UglifyJS) include only the needed parts from **RxJS**
+> The importing part may look a little weird, but it's because [RxJS](http://reactivex.io/rxjs/) is a rather large library, we can either import everything using `import * as RxJS from 'rxjs'` or import only the parts we need as shown above, which will allow any proper [minifier](https://developers.google.com/speed/docs/insights/MinifyResources) like [UglifyJS](https://github.com/mishoo/UglifyJS) to include only the needed parts from **RxJS**
 
 The first line
 ```typescript
@@ -224,15 +224,16 @@ to return an action of the type `SET_DONE_SUCCESS`, using the payload of the inc
 ```typescript
 import { ajax } from 'rxjs/observable/dom/ajax';
 ...
-    action$.ofType(AJAX_CALL).mergeMap((action: AjaxCallAction) =>
+    action$.ofType(AJAX_CALL).mergeMap((action: AjaxCallAction) => {
         // For a get JSON call
         ajax.getJSON('url', { headers: 'go here' })
             .map(response => someAction(response))
-            .catch(err => errorAction(err)));
+            .catch(err => errorAction(err));
         // For all other calls, just select the correct verb
         ajax.post('url', payload, { headers: 'go here' })
             .map(response => someAction(response))
             .catch(err => errorAction(err));
+    });
 ```
 > **Redux-observable** is built upon [RxJS](http://reactivex.io/), the JavaScript implemention of **ReactiveX** and most issues you will run into will be **RxJS** issues
 
@@ -266,7 +267,7 @@ const IndexReducer = (state: IndexState = new IndexState(), action: IndexActions
     }
 };
 ```
-for which I suggest to break from the **redux-ducks** pattern by using the naming convention of `[Pagename]Reducer`. The important thing to remember with **reducers** is that they have to be [functional](https://en.wikipedia.org/wiki/Functional_programming), a.k.a. they are not allowed to mutate the incoming information.
+for which I suggest to break from the **redux-ducks** pattern by using the naming convention of `[Pagename]Reducer`. The important thing to remember with **reducers** is that they have to be [functional](https://en.wikipedia.org/wiki/Functional_programming), a.k.a. they are not allowed to mutate the incoming information or have side-effects.
 
 On the first line we define the signature of our `IndexReducer`
 ```typescript

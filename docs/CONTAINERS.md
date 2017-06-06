@@ -57,7 +57,7 @@ where we get the required information from the `State` and return it with the co
 
 ---
 
-Next up we define a function to get the correct functions require by our `IndexView` e.g. `IIndexDispatch`
+Next up we define a function to get the correct functions require by our `IndexView` i.e. `IIndexDispatch`
 ```typescript
 import { bindActionCreators, Dispatch } from 'redux';
 import { Actions } from '../../redux/reducer';
@@ -70,7 +70,7 @@ const dispatchToProps = (dispatch: Dispatch<Actions>): IIndexDispatch => ({
     setDone: bindActionCreators(setDone, dispatch),
 });
 ```
-where use the function [`bindActionCreator`](http://redux.js.org/docs/api/bindActionCreators.html) which allows us to simply call the bound function to create an `Action` and `dispatch` them to the `store`. Defining `dispatch` as type of `Dispatch<Actions>` allows us to specify that our `dispatch`-function will only dispatch actions of type `Actions` (*a.k.a. our own actions*).
+where use the function [`bindActionCreators`](http://redux.js.org/docs/api/bindActionCreators.html) which allows us to simply call the bound function to create an `Action` and `dispatch` them to the `store`. Defining `dispatch` as type of `Dispatch<Actions>` allows us to specify that our `dispatch`-function will only dispatch actions of type `Actions` (*a.k.a. our own actions*).
 
 ---
 
