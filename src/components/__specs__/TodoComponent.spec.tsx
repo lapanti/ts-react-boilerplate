@@ -17,7 +17,7 @@ describe('TodoComponent', () => {
 
     it('should call setDone correctly', () => {
         wrapper1.find('.todo__checkbox').simulate('change');
-        expect(setDone).toBeCalledWith(testTodo1.number);
+        expect(setDone).toBeCalledWith(testTodo1.id);
         expect(setDone).toHaveBeenCalledTimes(1);
         wrapper2.find('.todo__checkbox').simulate('change');
         expect(setDone).toHaveBeenCalledTimes(1);
