@@ -80,7 +80,7 @@ The following are all the dependencies of the project, with the reasoning behind
 - :two_hearts: [concurrently](https://github.com/kimmobrunfeldt/concurrently) to run multiple script concurrently
 
 ## <a name="contributing">Contributing</a>
-First read the (as-of-yet-nonexistent) CONTRIBUTING guideline
+Read the [contribution guidelines](./CONTRIBUTING.md)
 
 ### <a name="development">Development</a>
 1. Clone this repo (or fork and clone)
