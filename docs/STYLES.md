@@ -24,7 +24,7 @@ rules:
   declarations-before-nesting: true
   extends-before-declarations: true
 ```
-from which the first command `merge-default-rules` indicates that I do not want to use the default rules as a basis, the second defines that for [BEM naming](http://getbem.com/naming/) the maximum depth is four, the third that I don't allow class names that start with an underscore and that they must follow `hyphenatedbem`-convention, the fourth that I want declarations to be before nesting and the last that extends must be bedore declarations.
+from which the first command `merge-default-rules` indicates that I do not want to use the default rules as a basis, the second defines that for [BEM naming](http://getbem.com/naming/) the maximum depth is four, the third that I don't allow class names that start with an underscore and that they must follow `hyphenatedbem`-convention, the fourth that I want style declarations to be before nested selectors and the last that possible [`@extend`](http://sass-lang.com/guide) must be before style declarations.
 
 ### Styles.scss
 
@@ -133,7 +133,7 @@ where we see that first we have defined a block for the class `index`, which sty
     color: #343488;
 }
 ```
-> This shows us the power of **BEM** as it ties very nicely with the nesting in **Sass**
+> This shows us one the uses of **BEM** as it ties very nicely with the nesting in **Sass**. You can read more about the reasoning behind **BEM** [here](http://getbem.com/faq/#why-bem), but the main point is that **BEM** is as modular and independent as most JavaScript modules, while keeping it similar for every developer.
 
 ### <a name="button">Button</a>
 
