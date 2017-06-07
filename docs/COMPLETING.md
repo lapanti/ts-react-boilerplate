@@ -173,7 +173,7 @@ First it's time to write our development script, so head on over to your `packag
         "develop": "budo src/index.tsx:js/bundle.js --live --verbose -- -p tsify"
     }
 ```
-which allows you to start the **budō** server by entering `yarn run develop` into your console (*inside the root folder of your app*). It will run until it faces an error it can't recover from or you press `ctrl+c`. The arguments given to **budō** are firstly, the name of you application entry file (*with a relative path*), followed by the double colon with the path and name your `index.html` (*budō expects to find it in your root folder*) expects to find your application code. `--live` enables [LiveReload](http://livereload.com/) (*you can install a plugin to [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-gb/firefox/addon/livereload/) to take full advantage of it*), which automatically refreshes your browser when the source code changes. `--verbose` enables verbose output from **budō** and then all arguments after the ` -- ` will go to the **browserify** **budō** is running, in this case a plugin **tsify** to compile our **TypeScript** files.
+which allows you to start the **budō** server by entering `yarn run develop` into your console (*inside the root folder of your app*). It will run until it faces an error it can't recover from or you press `ctrl+c`. The arguments given to **budō** are firstly, the name of your application entry file (*with a relative path*), followed by a double colon with the path and name of your `index.html` (*relative to root folder*) expects to find your application code. `--live` enables [LiveReload](http://livereload.com/) (*you can install a plugin to [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-gb/firefox/addon/livereload/) to take full advantage of it*), which automatically refreshes your browser when the source code changes. `--verbose` enables verbose output from **budō** and then all arguments after the ` -- ` will go to the **browserify** **budō** is running, in this case a plugin **tsify** to compile our **TypeScript** files.
 
 ---
 
@@ -185,7 +185,7 @@ Now it's time to build our application to be hosted on the Internet, so add the 
         "build": "mkdir -p dist/js && browserify src/index.tsx -p tsify > dist/js/bundle.js"
     }
 ```
-which will first make sure that the folder `dist/js` is there and then build your application with **browserify**. For **browserify** we give as first argument the entry file, then a plugin (*again, **tsify** to use **TypeScript** with **browserify***) and finally after the `>` the output file name (*with it's relative path*). Apart from this script (*run by `yarn run build`*) you only need to copy your `index.html` file to the `dist`-folder and your application is complete!
+which will first make sure that the folder `dist/js` is there and then build your application with **browserify**. For **browserify** we give as first argument the entry file, then a plugin (*again, **tsify** to use **TypeScript** with **browserify***) and finally after the `>` the output file name (*with its relative path*). Apart from this script (*run by `yarn run build`*) you only need to copy your `index.html` file to the `dist`-folder and your application is complete!
 
 ### Alternatives
 

@@ -4,7 +4,7 @@ Here we go through things you might not need, but might want to include in your 
 
 ### Server-side rendering
 
-Server-side rendering is the act of having a server render your **React**-application and sending it as an html file to the client, which can considerably reduce initial loading times. This is usually achieved by adding a [node](https://nodejs.org/en/)-server to your application and then hosting your code on a server.
+Server-side rendering is the act of having a server render your **React**-application and sending it as an html file to the client, which can considerably reduce initial loading times and enables a lot of SEO. This is usually achieved by adding a [node](https://nodejs.org/en/)-server to your application and then hosting your code on a server.
 
 For our needs, we'll use [Express](https://expressjs.com/), starting with installing the new, required dependencies (*[http-status-enum](https://github.com/KyleNeedham/http-status-enum) is just a simple enumeration of HTTP Status Codes for TypeScript*)
 ```
@@ -181,7 +181,8 @@ app.use((req: express.Request, res: express.Response) => {
     }
 });
 ```
-where we use **react-router** to match the current path to our client code, create a store and render the application as `html` (*if `context.url` is present, it means that our application returned a redirect and we'll redirect the user appropriately*) and finally send it to the client.
+
+where we use **react-router** to match the current path to our client code, where the [`match`](http://knowbody.github.io/react-router-docs/api/match.html)-function matches the current route without rendering. Afterwards we create a store and render the application as `html` and finally send it to the client.
 
 ---
 

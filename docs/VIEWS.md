@@ -65,7 +65,7 @@ interface IIndexState {
     loading: boolean;
 }
 ```
-is an `interface` that holds the "state"-values for our `View`, e.g. the stuff that defines what is shown to the user, in this case a title (*the title of the current `Todo` being created*), a list of `Todo`s (*the current `Todo`s*) and a boolean that indicates whether or not some kind of [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started)-call is currently running.
+is an `interface` that holds the "state"-values for our `View`, i.e. the stuff that defines what is shown to the user, in this case a title (*the title of the current `Todo` being created*), a list of `Todo`s (*the current `Todo`s*) and a boolean that indicates whether or not some kind of long-taking call is currently running.
 
 ---
 
@@ -77,7 +77,7 @@ interface IIndexDispatch {
     setDone(i: number): void;
 }
 ```
-is an `interface` that holds all the "dispatch"-functions for our `View`, e.g. all the functionality that our users can trigger, in this case a function (`setTitle(n: string)`) to change the current `title` (*that takes a string as an argument*), a function (`saveTodo()`) to save the new `Todo` and a function (`setDone(i: number)`) to set an existing `Todo` as done (*that takes the number of the `Todo` as argument*).
+is an `interface` that holds all the "dispatch"-functions for our `View`, i.e. all the functionality that our users can trigger, in this case a function (`setTitle(n: string)`) to change the current `title` (*that takes a string as an argument*), a function (`saveTodo()`) to save the new `Todo` and a function (`setDone(i: number)`) to set an existing `Todo` as done (*that takes the number of the `Todo` as argument*).
 > Having [`void`](https://www.typescriptlang.org/docs/handbook/basic-types.html) as a return type allows us to not care about the return type (*which we don't need here*) without having an implicit any
 
 ---
@@ -147,7 +147,7 @@ Next up we define the title and a form to add a new `Todo`
 ```
 where we first define the title (*in this case a static string `Todo app`*). Next we define a form to create new `Todos` which introduces us to a lot of nice features of **React**, but first we do a little *"hack"* as we want to enable the user to press the `enter`-key when submitting a new `Todo` but we don't want to send the form to a new page, we set the value of `onSubmit` (*the handler for a form's submit method in React*) as `e => e.preventDefault()` where `e` is the event received and it's function `.preventDefault()` will (*as its name implies*) prevent the default functionality (*in this case send the form data to the current url, causing a reload*).
 
-Next we define a label for the `input`-field utilizing **React**'s `htmlFor`-value which is an alias for the [for](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)-attribute. Then we define the actual `input`-field for inputting a `Todo`, which is a simple text `input`, but we also make it [autofocus](https://developer.mozilla.org/en/docs/Web/HTML/Element/input) (*if you open the page, you can start typing into it directly*) and make it a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components), meaning that whenever the value of `title` changes, the `input` will also update. We also add the `onChange`-listener to actually set the new `title` the user has typed in. Finally we create a simple `Button` (*we defined earlier in [components](/COMPONENTS.md#button)*) to submit the form.
+Next we define a label for the `input`-field utilizing **React**'s `htmlFor`-value which is an alias for the [for](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)-attribute, except it uses the `name`-field instead of `id` for matching. Then we define the actual `input`-field for inputting a `Todo`, which is a simple text `input`, but we also make it [autofocus](https://developer.mozilla.org/en/docs/Web/HTML/Element/input) (*if you open the page, you can start typing into it directly*) and make it a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components), meaning that whenever the value of `title` changes, the `input` will also update. We also add the `onChange`-listener to actually set the new `title` the user has typed in. Finally we create a simple `Button` (*we defined earlier in [components](/COMPONENTS.md#button)*) to submit the form.
 
 ---
 

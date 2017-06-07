@@ -103,7 +103,7 @@ export default class Todo {
 
 ---
 
-In the first line
+On the first line
 ```typescript
 export default class Todo {
 ```
@@ -118,7 +118,7 @@ import { Todo } from '../path/to/Todo.ts'
 to get a hold of our new `Todo`-class.
 > Remember that a module can only have one default export.
 
-After the export-clause we define the `class Todo`. In **TypeScript** a [class](https://www.typescriptlang.org/docs/handbook/classes.html) is something you can instantiate (create an instance of), that can inherit other classes (have their properties as well).
+After the export-clause we define the `class Todo`. In **TypeScript** a [class](https://www.typescriptlang.org/docs/handbook/classes.html) is something you can instantiate (create an instance of), and that can inherit other classes (have their properties as well).
 
 ---
 
@@ -143,7 +143,7 @@ Congratulations, you have now created your very first **TypeScript** `class`!
 
 ### Linting
 
-It's time to start linting you code by using [TSLint](https://palantir.github.io/tslint/). Let's begin by creating a [Yarn script](https://yarnpkg.com/lang/en/docs/cli/run/) to run **TSLint**:
+It's time to start linting your code by using [TSLint](https://palantir.github.io/tslint/). Let's begin by creating a [Yarn script](https://yarnpkg.com/lang/en/docs/cli/run/) to run **TSLint**:
 ```json
 // In package.json
 "scripts": {
@@ -177,6 +177,6 @@ The lint command can now be run with `yarn run lint:ts`. This will now run **TSL
 
 ### Alternatives
 
-Below you can find alternatives to TypeScript, if you don't fancy it as much as I:
+Below you can find alternatives to TypeScript, if you don't fancy it as much as I do:
 - [Flow](http://simplefocus.com/flowtype/)
 - [PureScript](http://www.purescript.org/)

@@ -1,7 +1,7 @@
 # Redux
 
 Next we will setup [redux](http://redux.js.org/) to handle the state for our application (*redux allows us to keep our components pure, helping testing and predictability*).
-> You can think of **redux** as an implementation of the [Flux](https://facebook.github.io/flux/) pattern.
+> You can think of **redux** as an implementation of the [Flux](https://facebook.github.io/flux/) pattern, where the main point is that data flows into a single direction.
 
 ### Initialize
 
@@ -22,7 +22,7 @@ We will begin by creating a file called `utils.js` inside the folder `redux` in 
 export type DefaultAction = { type: '' };
 export const DefaultAction: DefaultAction = { type: '' };
 ```
-[Actions](http://redux.js.org/docs/basics/Actions.html) are the only way to send new content to the **redux**-state, and are usually in the form of an object with the properties `type` (*a unique string*) and an optional `payload` (*something to pass to the state*). Here we have defined a `DefaultAction` which will allow our reducers to pass unnecessary actions forward [without losing type-safety](https://spin.atomicobject.com/2016/09/27/typed-redux-reducers-typescript-2-0/). The empty string as a `type` ensures that it doesn't intersect with any of our own actions.
+[Actions](http://redux.js.org/docs/basics/Actions.html) are the only way to send new content to the **redux**-state, and are usually in the form of an object with the properties `type` (*a unique string*) and an optional `payload` (*something to pass to the reducer*). Here we have defined a `DefaultAction` which will allow our reducers to pass unnecessary actions forward [without losing type-safety](https://spin.atomicobject.com/2016/09/27/typed-redux-reducers-typescript-2-0/). The empty string as a `type` ensures that it doesn't intersect with any of our own actions.
 
 ### Reducer
 
@@ -57,7 +57,7 @@ This file will allow us to export all of the following:
 
 ### Store
 
-Now we will define our store creator (*having it as a separate function helps us in doing [server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md), but if you don't want to do it you can define this function later*) in a file called `store.ts` inside the `redux`-folder:
+Now we will define our store creator. Having it as a separate function helps us in doing [server-side rendering](https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md) but if you don't want to do it you can define this function later. The store creator goes in a file called `store.ts` inside the `redux`-folder:
 ```typescript
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
@@ -98,6 +98,7 @@ const configureStore = (history: History) => createStore<State>(
 );
 export default configureStore;
 ```
+
 [createStore](http://redux.js.org/docs/api/createStore.html) is the function that creates a **Store** for **redux** and as it's first argument it takes the root-reducer and as the second one all the applicable middleware (*combined with [applyMiddleware](http://redux.js.org/docs/api/applyMiddleware.html)*), in this case our **epicMiddleware** and **routerMiddleware**. The function `configureStore` takes a `History` as an argument, to allow us to call it with different types of histories.
 
 ---

@@ -88,7 +88,7 @@ const Button: React.StatelessComponent<IButtonProps> = ({ click, text }) => (
 );
 ```
 we define a [constant](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) (an immutable variable) called `Button` which is of the type [React.StatelessComponent<IButtonProps>](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc), meaning it is a [React component](https://facebook.github.io/react/docs/react-component.html), which does not have an internal [state](https://facebook.github.io/react-native/docs/state.html), but only **props** of type `IButtonProps`. [Stateless components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc) in **React** only need to define their [render](https://facebook.github.io/react/docs/react-api.html)-method and using an [ES6 arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and a [destructuring assignment](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) we can return JSX with our **props** already defined as simple variables (*in this case "click" and "text"*). The actual return here is a simple HTML [input](https://facebook.github.io/react/docs/forms.html) element with a class of `btn` (*in React you define classes with the property "className"*), a type of `submit`, an [`onClick`-handler](https://facebook.github.io/react/docs/handling-events.html) that will simply call the `click`-property and a value of `text` (*in submit buttons the value is the text in the button*).
-> You need to surround JSX with normal braces.
+> You need to surround JSX with parentheses.
 
 ---
 
@@ -129,7 +129,7 @@ which is mostly very similar to our `Button`. The biggest differences here are t
 ```typescript
 import Todo from '../common/Todo';
 ```
-which imports our `Todo`-class using a relative path (*the compiler will look for the file relative to the current file*) and the second property in our `interface`
+which imports our `Todo`-class using a relative path (*the TypeScript compiler will look for the file relative to the current file*) and the second property in our `interface`
 ```typescript
     setDone(i: number): void;
 ```
