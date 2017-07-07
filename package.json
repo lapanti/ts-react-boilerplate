@@ -52,8 +52,14 @@
     "docs:publish": "yarn docs:clean && yarn docs:build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m \"Update book\" && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am \"Update book\" && git push git@github.com:Lapanti/ts-react-boilerplate gh-pages --force"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write", "git add"],
-    "*.scss": ["prettier --single-quote --print-width 120 --tab-width 4 --write", "git add"]
+    "*.{ts,tsx}": [
+      "prettier --single-quote --print-width 120 --tab-width 4 --trailing-comma all --write",
+      "git add"
+    ],
+    "*.scss": [
+      "prettier --single-quote --print-width 120 --tab-width 4 --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "express": "^4.15.3",
@@ -102,6 +108,7 @@
     "ts-jest": "^20.0.5",
     "tsify": "^3.0.1",
     "tslint": "^5.4.2",
+    "tslint-config-prettier": "^1.1.0",
     "tslint-react": "^3.0.0",
     "typescript": "^2.3.4"
   }

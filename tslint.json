@@ -1,8 +1,8 @@
 {
-    "extends": ["tslint-react"],
+    "extends": ["tslint-react", "tslint-config-prettier"],
     "rules": {
         "jsx-no-lambda": false,
-        "jsx-boolean-value": false,
+        "jsx-boolean-value": ["never"],
         "no-any": false,
         "no-magic-numbers": true,
         "only-arrow-functions": [true],
@@ -18,7 +18,7 @@
         "class-name": true,
         "interface-name": [true, "always-prefix"],
         "quotemark": [true, "single", "jsx-double"],
-        "no-unused-variable": [true, { "ignore-pattern": "^I"}],
+        "no-unused-variable": [true, {"ignore-pattern": "^I"}],
         "no-unused-expression": [true, "allow-fast-null-checks"]
     }
 }
