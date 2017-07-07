@@ -12,10 +12,11 @@ const composeEnhancers = (<any>window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || c
 
 const epicMiddleware = createEpicMiddleware(epics);
 
-const configureStore = (history: History) => createStore<State>(
-    reducer,
-    preloadedState,
-    composeEnhancers(applyMiddleware(routerMiddleware(history), epicMiddleware)),
-);
+const configureStore = (history: History) =>
+    createStore<State>(
+        reducer,
+        preloadedState,
+        composeEnhancers(applyMiddleware(routerMiddleware(history), epicMiddleware)),
+    );
 
 export default configureStore;

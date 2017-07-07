@@ -10,7 +10,7 @@
     top: -50vh;
     width: 200vw;
     z-index: 1000;
-    
+
     &__spinner:before {
         animation: spinner .6s linear infinite;
         border: 2px solid #cccccc;

@@ -5,13 +5,12 @@ import PageNotFound from '../components/PageNotFound';
 
 export type IAppViewProps = RouteComponentProps<undefined>;
 
-const AppView: React.StatelessComponent<IAppViewProps> = () => (
+const AppView: React.StatelessComponent<IAppViewProps> = () =>
     <div className="app-base">
         <Switch>
             <Route path="/" exact component={IndexContainer} />
             <Route component={PageNotFound} />
         </Switch>
-    </div>
-);
+    </div>;
 
 export default AppView;

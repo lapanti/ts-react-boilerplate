@@ -11,7 +11,7 @@ describe('IndexView', () => {
     const testSetTitle = jest.fn();
     const testSaveTodo = jest.fn();
     const testSetDone = jest.fn();
-    const wrapperMinimalProps = shallow((
+    const wrapperMinimalProps = shallow(
         <IndexView
             title=""
             todos={[]}
@@ -22,9 +22,9 @@ describe('IndexView', () => {
             match={{ params: undefined, isExact: true, path: '', url: '' }}
             location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
             history={createHistory()}
-        />
-    ));
-    const wrapperMaximumProps = shallow((
+        />,
+    );
+    const wrapperMaximumProps = shallow(
         <IndexView
             title={testTitle}
             todos={[testTodo1, testTodo2]}
@@ -35,8 +35,8 @@ describe('IndexView', () => {
             match={{ params: undefined, isExact: true, path: '', url: '' }}
             location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
             history={createHistory()}
-        />
-    ));
+        />,
+    );
 
     it('should render with correct props', () => {
         expect(wrapperMinimalProps).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe('IndexView', () => {
 
     it('should call the correct functions when typing to input field', () => {
         const testValue = 'A_TEST_VALUE';
-        wrapperMinimalProps.find('[type="text"]').simulate('change', { target: { value: testValue }});
+        wrapperMinimalProps.find('[type="text"]').simulate('change', { target: { value: testValue } });
         expect(testSetTitle).toBeCalledWith(testValue);
     });
 });

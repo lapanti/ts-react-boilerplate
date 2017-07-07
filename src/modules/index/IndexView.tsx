@@ -19,12 +19,14 @@ export interface IIndexDispatch {
 
 export type IIndexProps = IIndexState & IIndexDispatch & RouteComponentProps<undefined>;
 
-const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) => (
+const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) =>
     <main className="index">
         {loading && <Loader />}
         <h1 className="index__header">Todo app</h1>
         <form className="index__form" onSubmit={e => e.preventDefault()}>
-            <label className="index__form__label" htmlFor="newtodo">Add a new todo:</label>
+            <label className="index__form__label" htmlFor="newtodo">
+                Add a new todo:
+            </label>
             <input
                 className="index__form__input"
                 name="newtodo"
@@ -39,7 +41,6 @@ const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loadin
         <section className="index__todo-container">
             {todos.map(t => <TodoComponent todo={t} setDone={setDone} key={t.id} />)}
         </section>
-    </main>
-);
+    </main>;
 
 export default IndexView;
