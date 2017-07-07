@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
+import createHistory from 'history/createBrowserHistory';
 import IndexView from '../IndexView';
 import Todo from '../../../common/Todo';
 
@@ -18,16 +19,22 @@ describe('IndexView', () => {
             setTitle={testSetTitle}
             saveTodo={testSaveTodo}
             setDone={testSetDone}
+            match={{ params: undefined, isExact: true, path: '', url: '' }}
+            location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
+            history={createHistory()}
         />
     ));
     const wrapperMaximumProps = shallow((
         <IndexView
             title={testTitle}
             todos={[testTodo1, testTodo2]}
-            loading={true}
+            loading
             setTitle={testSetTitle}
             saveTodo={testSaveTodo}
             setDone={testSetDone}
+            match={{ params: undefined, isExact: true, path: '', url: '' }}
+            location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
+            history={createHistory()}
         />
     ));
 

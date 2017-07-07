@@ -6,9 +6,9 @@ Here we go through things you might not need, but might want to include in your 
 
 Server-side rendering is the act of having a server render your **React**-application and sending it as an html file to the client, which can considerably reduce initial loading times and enables a lot of SEO. This is usually achieved by adding a [node](https://nodejs.org/en/)-server to your application and then hosting your code on a server.
 
-For our needs, we'll use [Express](https://expressjs.com/), starting with installing the new, required dependencies
+For our needs, we'll use [Express](https://expressjs.com/), starting with installing the new, required dependencies (*[http-status-enum](https://github.com/KyleNeedham/http-status-enum) is just a simple enumeration of HTTP Status Codes for TypeScript*)
 ```
-    yarn add express
+    yarn add express http-status-enum
     yarn add -D @types/express
 ```
 
@@ -17,16 +17,18 @@ For our needs, we'll use [Express](https://expressjs.com/), starting with instal
 Now the actual server we run will live in a file called `server.tsx` inside the `src`-folder
 ```typescript
 import * as path from 'path';
-import * as http from 'http';
 import * as express from 'express';
 import * as React from 'react';
+import HttpStatus from 'http-status-enum';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
-import { match, RouterContext } from 'react-router';
+import { StaticRouter, Route } from 'react-router-dom';
+import { routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createMemoryHistory';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import reducer, { epics, State } from './redux/reducer';
-import Routes from './modules/Routes';
+import AppContainer from './modules/AppContainer';
 
 const normalizePort = (val: number | string): number | string | boolean => {
     const base = 10;
@@ -63,15 +65,23 @@ app.use('/js', express.static(path.join('js'), { redirect: false }));
 app.use('/styles', express.static(path.join('styles'), { redirect: false }));
 
 app.use((req: express.Request, res: express.Response) => {
-    match({ routes: Routes, location: req.url }, (err, redirect, props) => {
-        const store = createStore<State>(reducer, applyMiddleware(createEpicMiddleware(epics)));
-        const html = renderToString(
-            <Provider store={store}>
-                <RouterContext {...props} />
-            </Provider>,
-        );
+    const store = createStore<State>(reducer, applyMiddleware(
+        routerMiddleware(createHistory()),
+        createEpicMiddleware(epics),
+    ));
+    const context: { url?: string } = {};
+    const html = renderToString(
+        <Provider store={store}>
+            <StaticRouter location={req.url} context={context}>
+                <Route component={AppContainer} />
+            </StaticRouter>
+        </Provider>,
+    );
+    if (context.url) {
+        res.redirect(HttpStatus.MOVED_PERMANENTLY, context.url);
+    } else {
         res.send(renderHtml(html, store.getState()));
-    });
+    }
 });
 
 app.listen(port, () => console.log(`App is listening on ${port}`));
@@ -120,7 +130,7 @@ where the biggest point is `window.__PRELOADED_STATE__` which lets us set the **
 // Below is a necessary hack to access __PRELOADED_STATE__ on the global window object
 const preloadedState: State = (<any>window).__PRELOADED_STATE__;
 delete (<any>window).__PRELOADED_STATE__;
-const configureStore = (): Store<State> => createStore(
+const configureStore = (history: History) => createStore<State>(
     reducer,
     preloadedState,
     applyMiddleware(epicMiddleware),
@@ -149,20 +159,29 @@ with [`use`](https://expressjs.com/en/4x/api.html#app.use) you can set a middlew
 
 ---
 
-Next is the beef of our server application, the actualy server-side rendering
+Next is the beef of our server application, the actual server-side rendering
 ```typescript
 app.use((req: express.Request, res: express.Response) => {
-    match({ routes: Routes, location: req.url }, (err, redirect, props) => {
-        const store = createStore<State>(reducer, applyMiddleware(createEpicMiddleware(epics)));
-        const html = renderToString(
-            <Provider store={store}>
-                <RouterContext {...props} />
-            </Provider>,
-        );
+    const store = createStore<State>(reducer, applyMiddleware(
+        routerMiddleware(createHistory()),
+        createEpicMiddleware(epics),
+    ));
+    const context: { url?: string } = {};
+    const html = renderToString(
+        <Provider store={store}>
+            <StaticRouter location={req.url} context={context}>
+                <Route component={AppContainer} />
+            </StaticRouter>
+        </Provider>,
+    );
+    if (context.url) {
+        res.redirect(HttpStatus.MOVED_PERMANENTLY, context.url);
+    } else {
         res.send(renderHtml(html, store.getState()));
-    });
+    }
 });
 ```
+
 where we use **react-router** to match the current path to our client code, where the [`match`](http://knowbody.github.io/react-router-docs/api/match.html)-function matches the current route without rendering. Afterwards we create a store and render the application as `html` and finally send it to the client.
 
 ---

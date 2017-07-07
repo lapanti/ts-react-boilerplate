@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import Todo from '../../common/Todo';
 import TodoComponent from '../../components/TodoComponent';
 import Button from '../../components/Button';
@@ -16,7 +17,7 @@ export interface IIndexDispatch {
     setDone(i: number): void;
 }
 
-export type IIndexProps = IIndexState & IIndexDispatch;
+export type IIndexProps = IIndexState & IIndexDispatch & RouteComponentProps<undefined>;
 
 const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) => (
     <main className="index">
@@ -28,7 +29,7 @@ const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loadin
                 className="index__form__input"
                 name="newtodo"
                 type="text"
-                autoFocus={true}
+                autoFocus
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />

@@ -38,7 +38,7 @@ const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loadin
                 className="index__form__input"
                 name="newtodo"
                 type="text"
-                autoFocus={true}
+                autoFocus
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />
@@ -137,7 +137,7 @@ Next up we define the title and a form to add a new `Todo`
                 className="index__form__input"
                 name="newtodo"
                 type="text"
-                autoFocus={true}
+                autoFocus
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />

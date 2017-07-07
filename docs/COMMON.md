@@ -2,7 +2,7 @@
 
 We will begin with the simplest piece, common (or shared) code. This will also serve as a good introduction to [TypeScript](https://www.typescriptlang.org/).
 
-### <a name="initialize">Initialize</a>
+### Initialize
 
 We will begin by creating the structure and installing the necessary dependencies (make sure you have [Yarn](https://yarnpkg.com/lang/en/) installed). Open up your console in the directory you want to build your application in and run the following commands:
 
@@ -25,12 +25,17 @@ Next we will configure **TypeScript** by creating a file in the root folder call
     "compilerOptions": {
         "noImplicitAny": true,
         "target": "es5",
-        "moduleResolution": "node"
+        "jsx": "react",
+        "moduleResolution": "node",
+        "lib": ["dom", "es2016", "es2017"],
+        "sourceMap": true
     },
-    "files": [
-        "src/**/*.ts"
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
     ]
 }
+
 ```
 
 On the first row
@@ -57,19 +62,32 @@ In the third line
 ```
 we set the [moduleResolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) mode for the **TypeScript** compiler as `node`, which allows the importing of dependencies from the folder `node_modules` (*where Yarn saves them by default*) by using non-relative imports. 
 
+On the fourth line
+```json
+        "lib": ["dom", "es2016", "es2017"]
+```
+we add support for DOM APIs like [`Window`](https://developer.mozilla.org/en/docs/Web/API/Window) and the newest features from [es2016](http://2ality.com/2016/01/ecmascript-2016.html) and [es2017](http://2ality.com/2016/02/ecmascript-2017.html).
+
+On the fifth line
+```json
+        "sourceMap": true
+```
+we tell the compiler to generate [source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
+
 ---
 
-On the sixth line
+On the seventh line
 ```json
-    "files": [
+    "include": [
 ```
 we set the files **TypeScript** will compile.
 
-In this case we use a [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)) to indicate the **TypeScript** files on the seventh line.
+In this case we use a [glob pattern](https://en.wikipedia.org/wiki/Glob_(programming)) to indicate the **TypeScript** files on the eight and ninth lines.
 ```json
-        "src/**/*.ts"
+        "src/**/*.ts",
+        "src/**/*.tsx"
 ```
-This glob will match all files in the `src` folder (recursively) with the extension `.ts`.
+These globs will match all files in the `src` folder (recursively) with the extension `.ts` or `.tsx`.
 
 ### Start coding
 
@@ -129,10 +147,10 @@ It's time to start linting your code by using [TSLint](https://palantir.github.i
 ```json
 // In package.json
 "scripts": {
-    "lint:ts": "tslint 'src/**/*.{ts,tsx}'"
+    "lint:ts": "tslint --type-check --project tsconfig.json"
 }
 ```
-The lint command can now be run with `yarn run lint:ts`. This will now run **TSLint** with its default settings. However, that might not always be enough for you and if you want to define the rules for your own codebase more accurately, you can create a `tslint.json` in the root folder and populate it with rules according to [TSLint rules](https://palantir.github.io/tslint/rules/). For example in the boilerplate the `tslint.json` looks like that:
+The lint command can now be run with `yarn run lint:ts`. This will now run **TSLint** with its default settings (*using tsconfig.json's settings*). However, that might not always be enough for you and if you want to define the rules for your own codebase more accurately, you can create a `tslint.json` in the root folder and populate it with rules according to [TSLint rules](https://palantir.github.io/tslint/rules/). For example in the boilerplate the `tslint.json` looks like that:
 ```json
 {
     "rules": {
@@ -150,7 +168,9 @@ The lint command can now be run with `yarn run lint:ts`. This will now run **TSL
         "arrow-return-shorthand": [true], // Suggests one to use shorthand arrow functions when possible
         "class-name": true, // Enforces PascalCased class names
         "interface-name": [true, "always-prefix"], // Enforces all interfaces to follow PascalCasing and be prefixed with I
-        "quotemark": [true, "single"] // Enforces the use of single quotation marks
+        "quotemark": [true, "single"], // Enforces the use of single quotation marks
+        "no-unused-variable": [true, { "ignore-pattern": "^I"}], // Warns about unused variables, unless they start with a capital I (interfaces)
+        "no-unused-expression": [true, "allow-fast-null-checks"] // Warns about unused expressions, unless it is a null check e.g. someVariable && someVariable.doSomething()
     }
 }
 ```

@@ -137,7 +137,7 @@ which defines a function called `setDone` that takes one argument, which is a `n
 
 ### Loader
 
-Lastly we implement our third and simplest component, called a `Loader`, in a file called `Loader.tsx` in the `components`-directory
+Next we implement our third and simplest component, called a `Loader`, in a file called `Loader.tsx` in the `components`-directory
 ```typescript
 import * as React from 'react';
 
@@ -150,6 +150,22 @@ const Loader: React.StatelessComponent<undefined> = () => (
 export default Loader;
 ```
 which uses all previously introduced tools, except this time we have defined the **props** it receives as [undefined](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html), meaning that it does not take any **props** at all.
+
+### PageNotFound
+
+Lastly we create a page to be shown whenever user enters a URL that is not found (*a 404*), called `PageNotFound` in the `components`-directory
+```typescript
+import * as React from 'react';
+
+const PageNotFound: React.StatelessComponent<undefined> = () => (
+    <div className="page-not-found">
+        404 - page not found
+    </div>
+);
+
+export default PageNotFound;
+```
+which is again a very simple component, very similar to `Loader`.
 
 ### Alternatives
 

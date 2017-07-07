@@ -7,10 +7,13 @@ Next we will setup [redux](http://redux.js.org/) to handle the state for our app
 
 1. This time we will only need to add the necessary dependencies to allow development with **redux**:
 ```
-yarn add redux redux-observable rxjs
+yarn add redux redux-observable rxjs react-router-redux@next history
 ```
-*This time we don't need to add type-packages, as all of the added dependencies are either built with [TypeScript](https://www.typescriptlang.org/) or contain type definitions for it.*
-> [Redux-observable](https://redux-observable.js.org/) is our choice for allowing side effects, such as [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started)-calls in **redux**. [RxJS](http://reactivex.io/) is a peer dependency for **redux-observable**. If you want something else you can check the [alternatives](#alternatives).
+2. Add the necessary type definitions (*redux, redux-observable and rxjs contain type definitions*):
+```
+yarn add -D @types/react-router-redux @types/history
+```
+> [Redux-observable](https://redux-observable.js.org/) is our choice for allowing side effects, such as [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started)-calls in **redux**. [RxJS](http://reactivex.io/) is a peer dependency for **redux-observable**. If you want something else you can check the [alternatives](#alternatives). [React-router-redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) is used to tie navigation events and browser history into **redux** when using [React Router](https://reacttraining.com/react-router/) (*which well setup later*), and [history](https://github.com/reacttraining/history) is needed to use **react-router-redux**.
 
 ### Creating utilities
 
@@ -27,26 +30,30 @@ Now we will define our root-reducer in a file called `reducer.ts` inside the fol
 ```typescript
 import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';
+import { routerReducer, RouterState, RouterAction, LocationChangeAction } from 'react-router-redux';
 import { DefaultAction } from './utils';
 
 const reducer = combineReducers<State>({
+    router: routerReducer,
 });
 
 export class State {
+    readonly router: RouterState = null;
 }
 
 export const epics = combineEpics(
 );
 
-export type Actions = DefaultAction;
+export type Actions = DefaultAction | LocationChangeAction | RouterAction;
 
 export default reducer;
 ```
 This file will allow us to export all of the following:
-- Our root reducer (*all specific reducers will be combined into this done, as according to [redux documentation](http://redux.js.org/docs/basics/Reducers.html#handling-actions), allowing our reducers to only handle a slice of the entire `state`*) made with [combineReducers](http://redux.js.org/docs/api/combineReducers.html)
+- Our root reducer (*all specific reducers will be combined into this one, as according to [redux documentation](http://redux.js.org/docs/basics/Reducers.html#handling-actions), allowing our reducers to only handle a slice of the entire `state`*) made with [combineReducers](http://redux.js.org/docs/api/combineReducers.html)
 - The class of our entire `state` (*defined as a class to allow initialization in for example tests*)
 - Our combined [epics](https://redux-observable.js.org/docs/basics/Epics.html) (*more about epics later*) made with [combineEpics](https://redux-observable.js.org/docs/api/combineEpics.html)
 - The type of all of our actions
+> We add the types of react-router-redux as well so type-checking knows to look for them if we need them (*this is only necessary if you use them somewhere*)
 
 ### Store
 
@@ -54,13 +61,15 @@ Now we will define our store creator. Having it as a separate function helps us 
 ```typescript
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
+import { History } from 'history';
+import { routerMiddleware } from 'react-router-redux';
 import reducer, { epics, State } from './reducer';
 
 const epicMiddleware = createEpicMiddleware(epics);
 
-const configureStore = (): Store<State> => createStore(
+const configureStore = (history: History) => createStore<State>(
     reducer,
-    applyMiddleware(epicMiddleware),
+    applyMiddleware(routerMiddleware(history), epicMiddleware),
 );
 
 export default configureStore;
@@ -80,14 +89,17 @@ const epicMiddleware = createEpicMiddleware(epics);
 And then on the seventh line we define our store creator method (*which is exported on the 14th line*):
 ```typescript
 import { createStore, applyMiddleware, Store } from 'redux';
+import { History } from 'history';
+import { routerMiddleware } from 'react-router-redux';
 import reducer, { State } from './reducer';
-const configureStore = (): Store<State> => createStore(
+const configureStore = (history: History) => createStore<State>(
     reducer,
-    applyMiddleware(epicMiddleware),
+    applyMiddleware(routerMiddleware(history), epicMiddleware),
 );
 export default configureStore;
 ```
-[createStore](http://redux.js.org/docs/api/createStore.html) is the function that creates a **Store** for **redux**, which takes care of the data flow in a **Flux** pattern (*the unidirectionality*). **Store** takes as it's first argument the root-reducer and as the second one all the applicable middleware (*combined with [applyMiddleware](http://redux.js.org/docs/api/applyMiddleware.html)*), in this case our **epicMiddleware**.
+
+[createStore](http://redux.js.org/docs/api/createStore.html) is the function that creates a **Store** for **redux** and as it's first argument it takes the root-reducer and as the second one all the applicable middleware (*combined with [applyMiddleware](http://redux.js.org/docs/api/applyMiddleware.html)*), in this case our **epicMiddleware** and **routerMiddleware**. The function `configureStore` takes a `History` as an argument, to allow us to call it with different types of histories.
 
 ---
 
