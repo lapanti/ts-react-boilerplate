@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import 'variables';
 
 .loader {
     animation: .8s fadein .2s linear forwards;
@@ -10,12 +10,12 @@
     top: -50vh;
     width: 200vw;
     z-index: 1000;
-    
-    &__spinner:before {
+
+    &__spinner::before {
         animation: spinner .6s linear infinite;
-        border: 2px solid #cccccc;
+        border: 2px solid $loader-border-color;
         border-radius: 50%;
-        border-top-color: #333333;
+        border-top-color: $loader-top-border-color;
         box-sizing: border-box;
         content: '';
         height: 120px;
@@ -38,6 +38,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
