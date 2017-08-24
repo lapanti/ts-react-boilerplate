@@ -2,8 +2,6 @@ engines:
   tslint:
     enabled: true
     channel: beta
-  scss-lint:
-    enabled: true
   fixme:
     enabled: true
 ratings:
