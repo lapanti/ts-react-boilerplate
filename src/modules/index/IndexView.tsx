@@ -1,19 +1,23 @@
 import * as React from 'react';
-import { Dispatch } from 'redux';
-import { Actions } from '../../redux/reducer';
+import { RouteComponentProps } from 'react-router-dom';
 import Todo from '../../common/Todo';
 import TodoComponent from '../../components/TodoComponent';
 import Button from '../../components/Button';
 import Loader from '../../components/Loader';
 
-export interface IIndexProps {
+export interface IIndexState {
     title: string;
     todos: Todo[];
     loading: boolean;
-    setTitle: (n: string) => Dispatch<Actions>;
-    saveTodo: () => Dispatch<Actions>;
-    setDone: (i: number) => Dispatch<Actions>;
 }
+
+export interface IIndexDispatch {
+    setTitle(n: string): void;
+    saveTodo(): void;
+    setDone(i: number): void;
+}
+
+export type IIndexProps = IIndexState & IIndexDispatch & RouteComponentProps<undefined>;
 
 const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) => (
     <main className="index">
@@ -25,16 +29,16 @@ const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loadin
                 className="index__form__input"
                 name="newtodo"
                 type="text"
-                autoFocus={true}
+                autoFocus
                 value={title}
                 onChange={e => setTitle(e.target.value)}
             />
             <Button click={saveTodo} text="Add" />
         </form>
         <br />
-        <main className="index__todo-container">
-            {todos.map(t => <TodoComponent todo={t} setDone={setDone} key={t.number} />)}
-        </main>
+        <section className="index__todo-container">
+            {todos.map(t => <TodoComponent todo={t} setDone={setDone} key={t.id} />)}
+        </section>
     </main>
 );
 

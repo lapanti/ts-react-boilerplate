@@ -2,7 +2,8 @@
     "extends": ["tslint-react"],
     "rules": {
         "jsx-no-lambda": false,
-        "no-any": true,
+        "jsx-boolean-value": false,
+        "no-any": false,
         "no-magic-numbers": true,
         "only-arrow-functions": [true],
         "curly": true,
@@ -16,6 +17,8 @@
         "arrow-return-shorthand": [true],
         "class-name": true,
         "interface-name": [true, "always-prefix"],
-        "quotemark": [true, "single", "jsx-double"]
+        "quotemark": [true, "single", "jsx-double"],
+        "no-unused-variable": [true, { "ignore-pattern": "^I"}],
+        "no-unused-expression": [true, "allow-fast-null-checks"]
     }
 }
