@@ -9,11 +9,3 @@ script: yarn run test:ci
 after_script:
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 - greenkeeper-lockfile-upload
-deploy:
-  provider: script
-  script: ./publish.sh
-  on:
-    branch: master
-before_install:
-- openssl aes-256-cbc -K $encrypted_5a1a1505749b_key -iv $encrypted_5a1a1505749b_iv
-  -in deploy_key.enc -out deploy_key -d
