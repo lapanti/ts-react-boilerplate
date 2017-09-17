@@ -77,7 +77,7 @@
     "concurrently": "^3.4.0",
     "coveralls": "^2.13.1",
     "enzyme": "^2.8.2",
-    "enzyme-to-json": "^1.5.1",
+    "enzyme-to-json": "^2.0.0",
     "gitbook-cli": "^2.3.0",
     "gitbook-plugin-advanced-emoji": "^0.2.2",
     "gitbook-plugin-anker-enable": "^0.0.4",
