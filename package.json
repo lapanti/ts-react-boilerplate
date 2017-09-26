@@ -54,7 +54,7 @@
     "history": "^4.6.1",
     "http-status-enum": "^1.0.2",
     "react": "^15.6.1",
-    "react-dom": "^15.5.4",
+    "react-dom": "^16.0.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",
