@@ -85,7 +85,7 @@
     "gitbook-plugin-github": "^3.0.0",
     "gitbook-plugin-prism": "^2.2.0",
     "gitbook-plugin-theme-default": "^1.0.6",
-    "jest": "^21.0.1",
+    "jest": "^22.0.0",
     "nock": "^9.0.13",
     "node-sass": "^4.5.3",
     "react-test-renderer": "^16.0.0",
