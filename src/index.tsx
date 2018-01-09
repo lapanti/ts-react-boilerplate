@@ -9,11 +9,11 @@ import AppContainer from './modules/AppContainer';
 
 const history = createHistory();
 
-ReactDOM.render((
+ReactDOM.render(
     <Provider store={configureStore(history)}>
         <ConnectedRouter history={history}>
             <Route component={AppContainer} />
         </ConnectedRouter>
-    </Provider>
-    ), document.getElementById('app'),
+    </Provider>,
+    document.getElementById('app'),
 );

@@ -37,10 +37,10 @@ describe('IndexReducer', () => {
         expect(newState.loading).toBeTruthy();
     });
 
-    it('should trigger the correct action on saveTodoEpic', async () => (
-        await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined)
-            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }))
-    ));
+    it('should trigger the correct action on saveTodoEpic', async () =>
+        await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined).forEach(actionReceived =>
+            expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }),
+        ));
 
     it('should set the correct values on saveTodoSuccess', () => {
         /* tslint:disable:no-magic-numbers */
@@ -65,10 +65,10 @@ describe('IndexReducer', () => {
         expect(newState.loading).toBeTruthy();
     });
 
-    it('should trigger the correct action on setDoneEpic', async () => (
-        await setDoneEpic(ActionsObservable.of(setDone(0)), undefined)
-            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SET_DONE_SUCCESS, payload: 0 }))
-    ));
+    it('should trigger the correct action on setDoneEpic', async () =>
+        await setDoneEpic(ActionsObservable.of(setDone(0)), undefined).forEach(actionReceived =>
+            expect(actionReceived).toEqual({ type: SET_DONE_SUCCESS, payload: 0 }),
+        ));
 
     it('should set the correct values on setDoneSuccess', () => {
         const initialState: IndexState = { title: '', todos: [new Todo(0, '')], loading: true };

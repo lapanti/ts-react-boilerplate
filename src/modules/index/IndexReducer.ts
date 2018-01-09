@@ -25,28 +25,33 @@ export const SET_DONE: SET_DONE = 'boilerplate/Index/SET_DONE';
 export type SET_DONE_SUCCESS = 'boilerplate/Index/SET_DONE_SUCCESS';
 export const SET_DONE_SUCCESS: SET_DONE_SUCCESS = 'boilerplate/Index/SET_DONE_SUCCESS';
 
-export type SetTitleAction = { type: SET_TITLE, payload: string };
+export type SetTitleAction = { type: SET_TITLE; payload: string };
 export const setTitle = (title: string): SetTitleAction => ({ type: SET_TITLE, payload: title });
 export type SaveTodoAction = { type: SAVE_TODO };
 export const saveTodo = (): SaveTodoAction => ({ type: SAVE_TODO });
 export type SaveTodoSuccessAction = { type: SAVE_TODO_SUCCESS };
 export const saveTodoSuccess = (): SaveTodoSuccessAction => ({ type: SAVE_TODO_SUCCESS });
-export type SetDoneAction = { type: SET_DONE, payload: number };
+export type SetDoneAction = { type: SET_DONE; payload: number };
 export const setDone = (i: number) => ({ type: SET_DONE, payload: i });
-export type SetDoneSuccessAction = { type: SET_DONE_SUCCESS, payload: number };
+export type SetDoneSuccessAction = { type: SET_DONE_SUCCESS; payload: number };
 export const setDoneSuccess = (i: number): SetDoneSuccessAction => ({ type: SET_DONE_SUCCESS, payload: i });
 
-export type IndexActions = SetTitleAction | SaveTodoAction | SaveTodoSuccessAction | SetDoneAction | SetDoneSuccessAction | DefaultAction;
+export type IndexActions =
+    | SetTitleAction
+    | SaveTodoAction
+    | SaveTodoSuccessAction
+    | SetDoneAction
+    | SetDoneSuccessAction
+    | DefaultAction;
 
-export const saveTodoEpic: Epic<IndexActions, undefined> = (action$: ActionsObservable<IndexActions>): Observable<IndexActions> =>
-    action$.ofType(SAVE_TODO)
-        .delay(testDelay)
-        .mapTo(saveTodoSuccess());
+export const saveTodoEpic: Epic<IndexActions, undefined> = (
+    action$: ActionsObservable<IndexActions>,
+): Observable<IndexActions> => action$.ofType(SAVE_TODO).delay(testDelay).mapTo(saveTodoSuccess());
 
-export const setDoneEpic: Epic<IndexActions, undefined> = (action$: ActionsObservable<IndexActions>): Observable<IndexActions> =>
-    action$.ofType(SET_DONE)
-        .delay(testDelay)
-        .map((action: SetDoneAction) => setDoneSuccess(action.payload));
+export const setDoneEpic: Epic<IndexActions, undefined> = (
+    action$: ActionsObservable<IndexActions>,
+): Observable<IndexActions> =>
+    action$.ofType(SET_DONE).delay(testDelay).map((action: SetDoneAction) => setDoneSuccess(action.payload));
 
 export const IndexEpics = combineEpics(saveTodoEpic, setDoneEpic);
 
@@ -68,7 +73,7 @@ const IndexReducer = (state: IndexState = new IndexState(), action: IndexActions
         case SET_DONE_SUCCESS:
             return {
                 ...state,
-                todos: state.todos.map(t => t.id === action.payload ? t.setDone() : t),
+                todos: state.todos.map(t => (t.id === action.payload ? t.setDone() : t)),
                 loading: false,
             };
         default:
