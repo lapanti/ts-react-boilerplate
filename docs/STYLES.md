@@ -30,7 +30,7 @@ from which the first command `merge-default-rules` indicates that I do not want 
 
 All of our style-sheets will live inside a folder `src/styles` and the first will be the "main"-stylesheet, called `styles.scss` (*`scss` is the **Sass** file extension*)
 ```scss
-@import '_variables.scss';
+@import 'variables.scss';
 @import 'index.scss';
 @import 'button.scss';
 @import 'todocomponent.scss';
@@ -49,7 +49,7 @@ which will include the font from Google's CDN.
 
 ### Variables
 
-Next we will define those things we call `variables` in **Sass** in their own file called `_variables.scss`
+Next we will define those things we call `variables` in **Sass** in their own file called `variables.scss`
 ```scss
 // Colors
 $primary-color: #343488;
@@ -63,7 +63,7 @@ where the underscore in the beginning of the file name is just a convention to d
 
 Next up is the styles for the `Index`-page, inside a file called `index.scss`
 ```scss
-@import '_variables.scss';
+@import 'variables.scss';
 
 .index {
     align-items: center;
@@ -109,7 +109,7 @@ Next up is the styles for the `Index`-page, inside a file called `index.scss`
 ```
 where we introduce **nesting**. I will just explain the simplest use case so you understand what is happening
 ```scss
-@import '_variables.scss';
+@import 'variables.scss';
 .index {
     align-items: center;
     display: flex;
@@ -139,7 +139,7 @@ where we see that first we have defined a block for the class `index`, which sty
 
 In a file called `button.scss` we are going to write our styles for the `Button`-component
 ```scss
-@import '_variables.scss';
+@import 'variables.scss';
 
 .btn {
     background-color: $tertiary-color;
@@ -154,7 +154,7 @@ which are very simple, like the component itself.
 
 The styles for our `TodoComponent` will be set in a file called `todocomponent.scss`
 ```scss
-@import '_variables.scss';
+@import 'variables.scss';
 
 .todo {
     display: flex;
@@ -180,7 +180,7 @@ which is a rather simple style as well, just a little **flexbox** in there.
 
 Now this is something a bit more interesting, we are going to make our `Loader`-component finally come to life, by creating the styles for it inside `loader.scss``
 ```scss
-@import '_variables.scss';
+@import 'variables.scss';
 
 .loader {
     animation: .8s fadein .2s linear forwards;

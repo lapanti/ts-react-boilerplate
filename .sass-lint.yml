@@ -9,3 +9,11 @@ rules:
     - convention: hyphenatedbem
   declarations-before-nesting: true
   extends-before-declarations: true
+  hex-notation:
+    - style: uppercase
+  indentation:
+    - size: 4
+  nesting-depth:
+    - max-depth: 4
+  hex-length:
+    - style: long

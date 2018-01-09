@@ -6,7 +6,7 @@ export interface ITodoComponent {
     setDone(i: number): void;
 }
 
-const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone }) => (
+const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone }) =>
     <div className="todo">
         <input
             className="todo__checkbox"
@@ -14,9 +14,12 @@ const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone
             checked={todo.done}
             onChange={() => !todo.done && setDone(todo.id)}
         />
-        <span className="todo__number">{todo.id}:</span>
-        <span className="todo__title">{todo.title}</span>
-    </div>
-);
+        <span className="todo__number">
+            {todo.id}:
+        </span>
+        <span className="todo__title">
+            {todo.title}
+        </span>
+    </div>;
 
 export default TodoComponent;

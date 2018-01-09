@@ -14,9 +14,7 @@ export class State {
     readonly index: IndexState = new IndexState();
 }
 
-export const epics = combineEpics(
-    IndexEpics,
-);
+export const epics = combineEpics(IndexEpics);
 
 export type Actions = DefaultAction | LocationChangeAction | RouterAction | IndexActions;
 

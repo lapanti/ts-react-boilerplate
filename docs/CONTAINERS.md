@@ -19,9 +19,8 @@ We begin by creating a file called `IndexContainer.ts` inside our `index`-folder
 > All containers will have the same "prefix" as their accompanied **views**, a.k.a. `[Pagename]Container.ts`
 
 ```typescript
-import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { State, Actions } from '../../redux/reducer';
+import { State } from '../../redux/reducer';
 import { setTitle, saveTodo, setDone } from './IndexReducer';
 import IndexView, { IIndexState, IIndexDispatch, IIndexProps } from './IndexView';
 
@@ -31,13 +30,11 @@ const stateToProps = (state: State): IIndexState => ({
     loading: state.index.loading,
 });
 
-const dispatchToProps = (dispatch: Dispatch<Actions>): IIndexDispatch => ({
-    setTitle: bindActionCreators(setTitle, dispatch),
-    saveTodo: bindActionCreators(saveTodo, dispatch),
-    setDone: bindActionCreators(setDone, dispatch),
-});
-
-export default connect<IIndexState, IIndexDispatch, IIndexProps>(stateToProps, dispatchToProps)(IndexView);
+export default connect<IIndexState, IIndexDispatch, IIndexProps>(stateToProps, {
+    setTitle,
+    saveTodo,
+    setDone,
+})(IndexView);
 ```
 
 ---
@@ -57,31 +54,34 @@ where we get the required information from the `State` and return it with the co
 
 ---
 
-Next up we define a function to get the correct functions require by our `IndexView` i.e. `IIndexDispatch`
+Thanks to a shorthand in `react-redux` we can just define the actions we need in the component by putting them in an object as the second argument for `connect`
 ```typescript
-import { bindActionCreators, Dispatch } from 'redux';
-import { Actions } from '../../redux/reducer';
+import { connect } from 'react-redux';
 import { setTitle, saveTodo, setDone } from './IndexReducer';
-import { IIndexDispatch } from './IndexView';
+import { IIndexState, IIndexDispatch, IIndexProps } from './IndexView';
 
-const dispatchToProps = (dispatch: Dispatch<Actions>): IIndexDispatch => ({
-    setTitle: bindActionCreators(setTitle, dispatch),
-    saveTodo: bindActionCreators(saveTodo, dispatch),
-    setDone: bindActionCreators(setDone, dispatch),
-});
+export default connect<IIndexState, IIndexDispatch, IIndexProps>(stateToProps, {
+    setTitle,
+    saveTodo,
+    setDone,
+})
 ```
-where use the function [`bindActionCreators`](http://redux.js.org/docs/api/bindActionCreators.html) which allows us to simply call the bound function to create an `Action` and `dispatch` them to the `store`. Defining `dispatch` as type of `Dispatch<Actions>` allows us to specify that our `dispatch`-function will only dispatch actions of type `Actions` (*a.k.a. our own actions*).
+where `connect` uses internally the function [`bindActionCreators`](http://redux.js.org/docs/api/bindActionCreators.html) for each action in the object and passes them on as functions that dispatch automatically. They will be named the same as they are in the object, so for example `setTitle` will be accessible as `this.props.setTitle` in the component.
 
 ---
 
 Finally we bind it all using **react-redux's** [`connect`](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
 ```typescript
 import { connect } from 'react-redux';
+import { setTitle, saveTodo, setDone } from './IndexReducer';
 import IndexView, { IIndexState, IIndexDispatch, IIndexProps } from './IndexView';
 
 const stateToProps = ...
-const dispatchToProps = ...
 
-export default connect<IIndexState, IIndexDispatch, IIndexProps>(stateToProps, dispatchToProps)(IndexView);
+export default connect<IIndexState, IIndexDispatch, IIndexProps>(stateToProps, {
+    setTitle,
+    saveTodo,
+    setDone,
+})(IndexView);
 ```
 where the first type argument is the type for the format we want to transform our **state** to (*in this case our `IIndexState`*), the second type argument is the format we want to transform the `dispatch`-function to (*in this case our `IIndexDispatch`*) and the last type argument is the type for the **props** our **view** expects. The first argument `connect` takes is a function to transform our **state** into the type of the first type argument and the second argument is a function to transform the `dispatch`-function into the second type argument (*here we also see for the first time a [curried function](https://en.wikipedia.org/wiki/Currying)*). The last argument is our **view** itself, which should be expecting **props** of the type of the third type argument.
