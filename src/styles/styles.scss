@@ -1,8 +1,8 @@
-@import '_variables.scss';
-@import 'index.scss';
-@import 'button.scss';
-@import 'todocomponent.scss';
-@import 'loader.scss';
+@import 'variables';
+@import 'index';
+@import 'button';
+@import 'todocomponent';
+@import 'loader';
 
 body {
     background-color: $tertiary-color;
