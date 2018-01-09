@@ -18,7 +18,7 @@ const normalizePort = (val: number | string): number | string | boolean => {
     return isNaN(port) ? val : port >= 0 ? port : false;
 };
 
-const renderHtml = (html: string, preloadedState: State) => (
+const renderHtml = (html: string, preloadedState: State) =>
     `
     <!doctype html>
     <html>
@@ -36,8 +36,7 @@ const renderHtml = (html: string, preloadedState: State) => (
             <script src="/js/bundle.js"></script>
         </body>
     </html>
-    `
-);
+    `;
 
 const defaultPort = 8080;
 const port = normalizePort(process.env.PORT || defaultPort);
@@ -47,10 +46,10 @@ app.use('/js', express.static(path.join('js'), { redirect: false }));
 app.use('/styles', express.static(path.join('styles'), { redirect: false }));
 
 app.use((req: express.Request, res: express.Response) => {
-    const store = createStore<State>(reducer, applyMiddleware(
-        routerMiddleware(createHistory()),
-        createEpicMiddleware(epics),
-    ));
+    const store = createStore<State>(
+        reducer,
+        applyMiddleware(routerMiddleware(createHistory()), createEpicMiddleware(epics)),
+    );
     const context: { url?: string } = {};
     const html = renderToString(
         <Provider store={store}>
