@@ -28,7 +28,7 @@ exports[`IndexView should render with correct props 1`] = `
       value=""
     />
     <Button
-      click={[Function]}
+      click={[MockFunction]}
       text="Add"
     />
   </form>
@@ -68,7 +68,7 @@ exports[`IndexView should render with correct props 2`] = `
       value="A title"
     />
     <Button
-      click={[Function]}
+      click={[MockFunction]}
       text="Add"
     />
   </form>
@@ -77,7 +77,8 @@ exports[`IndexView should render with correct props 2`] = `
     className="index__todo-container"
   >
     <TodoComponent
-      setDone={[Function]}
+      key="0"
+      setDone={[MockFunction]}
       todo={
         Todo {
           "done": false,
@@ -88,7 +89,8 @@ exports[`IndexView should render with correct props 2`] = `
       }
     />
     <TodoComponent
-      setDone={[Function]}
+      key="1"
+      setDone={[MockFunction]}
       todo={
         Todo {
           "done": true,
