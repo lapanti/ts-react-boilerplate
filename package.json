@@ -105,7 +105,7 @@
     "prettier": "^1.5.2",
     "react-test-renderer": "^16.0.0",
     "sass-lint": "^1.10.2",
-    "ts-jest": "^21.0.0",
+    "ts-jest": "^22.0.0",
     "tsify": "^3.0.1",
     "tslint": "^5.4.2",
     "tslint-config-prettier": "^1.1.0",
