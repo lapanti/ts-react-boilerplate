@@ -4,9 +4,32 @@ Even though this part was left as the last one, it is one of the most important 
 
 ### Initialize
 
-For our testing framework we are going to use [Jest](https://facebook.github.io/jest/), with [Enzyme](https://github.com/airbnb/enzyme) for [BDD testing](https://en.wikipedia.org/wiki/Behavior-driven_development), [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json) for [snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html), [ts-jest](https://github.com/kulshekhar/ts-jest) so **Jest** plays nice with **TypeScript** and [react-test-renderer](https://www.npmjs.com/package/react-test-renderer) for rendering **React**-components
+For our testing framework we are going to use [Jest](https://facebook.github.io/jest/), with [Enzyme](https://github.com/airbnb/enzyme) for [BDD testing](https://en.wikipedia.org/wiki/Behavior-driven_development), [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json) for [snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html), [ts-jest](https://github.com/kulshekhar/ts-jest) so **Jest** plays nice with **TypeScript** and [react-test-renderer](https://www.npmjs.com/package/react-test-renderer) for rendering **React**-components. Because of the new adapters in **Enzyme** we also need to add the appropriate [adapter](https://github.com/airbnb/enzyme/tree/master/packages/enzyme-adapter-react-16#upgrading-from-enzyme-2x-or-react--16) (in our case for **React** version 16)
 ```
-    yarn add -D jest ts-jest enzyme enzyme-to-json react-test-renderer
+    yarn add -D jest ts-jest enzyme enzyme-to-json react-test-renderer enzyme-adapter-react-16
+```
+
+### setup.js
+
+As **Enzyme** requires the adapter for **React** and on top of that error messages related to HTTP-calls can sometimes be incomprehensible, we need to create a small setup file to fix these things, so create a file called `setup.js` in `src/jest`-folder and fill it as follows:
+```javascript
+// Import adapter for enzyme
+var enzyme = require('enzyme');
+var Adapter = require('enzyme-adapter-react-16');
+enzyme.configure({ adapter: new Adapter() })
+
+// Log all jsDomErrors when using jsdom testEnvironment
+window._virtualConsole && window._virtualConsole.on('jsdomError', function (error) {
+  console.error('jsDomError', error.stack, error.detail);
+});
+```
+
+After that we need to register it for **Jest** so open up your `package.json` and add the following:
+```json
+    "jest": {
+        // Other content in the "jest"-object
+        "setupTestFrameworkScriptFile": "<rootDir>/src/jest/setup.js"
+    }
 ```
 
 ### Linting
