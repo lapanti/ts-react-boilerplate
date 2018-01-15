@@ -36,7 +36,7 @@ const normalizePort = (val: number | string): number | string | boolean => {
     return isNaN(port) ? val : port >= 0 ? port : false;
 };
 
-const renderHtml = (html: string, preloadedState: State) => (
+const renderHtml = (html: string, preloadedState: State) =>
     `
     <!doctype html>
     <html>
@@ -44,31 +44,29 @@ const renderHtml = (html: string, preloadedState: State) => (
             <meta charset="utf-8" />
             <title>Todo app</title>
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-            <link rel="stylesheet" href="/styles/styles.css">
+            <link rel="stylesheet" href="/assets/styles.css">
         </head>
         <body>
             <div id="app">${html}</div>
             <script>
                 window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
             </script>
-            <script src="/js/bundle.js"></script>
+            <script src="/assets/bundle.js"></script>
         </body>
     </html>
-    `
-);
+    `;
 
 const defaultPort = 8080;
 const port = normalizePort(process.env.PORT || defaultPort);
 const app = express();
 
-app.use('/js', express.static(path.join('js'), { redirect: false }));
-app.use('/styles', express.static(path.join('styles'), { redirect: false }));
+app.use('/assets', express.static(path.join('assets'), { redirect: false }));
 
 app.use((req: express.Request, res: express.Response) => {
-    const store = createStore<State>(reducer, applyMiddleware(
-        routerMiddleware(createHistory()),
-        createEpicMiddleware(epics),
-    ));
+    const store = createStore<State>(
+        reducer,
+        applyMiddleware(routerMiddleware(createHistory()), createEpicMiddleware(epics)),
+    );
     const context: { url?: string } = {};
     const html = renderToString(
         <Provider store={store}>
@@ -86,7 +84,7 @@ app.use((req: express.Request, res: express.Response) => {
 
 app.listen(port, () => console.log(`App is listening on ${port}`));
 ```
-which will serve the **React**-application on all other routes except `ROOT/js` and `ROOT/styles`, where our assets are served on.
+which will serve the **React**-application on all other routes except `ROOT/assets`, where our assets are served from.
 
 ---
 
@@ -193,21 +191,65 @@ app.listen(port, () => console.log(`App is listening on ${port}`));
 
 ---
 
-Of course we need to also add the scripts to actually run our server, starting with the build-script
-```json
-    "scripts": {
-        "build:server": "mkdir -p dist && browserify src/server.tsx --node -p tsify > dist/server.js",
-        "build": "yarn run build:server && yarn run build:sass && yarn run build:client",
-    }
+Of course we need to again make some changes to our **webpack** configurations, but this time only to the production configuration and then we need to create a configuration for the server code itself.
+
+For the production configuration we want to remove our `index.html` creation plugin as the server itself serves the index file, so remove the following lines:
+```javascript
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+// ...
+        new HtmlWebpackPlugin(),
 ```
-where we first make the build script for our server, otherwise the same as our `build:client`, but adding the `node` flag to **browserify**. Secondly add the `build:server` as part of our original `build`-script.
+after which, we can remove the plugin itself, by running
+```
+yarn remove html-webpack-plugin
+```
+
+---
+
+For the building of the server side code, we need to create another **webpack** configuration file, this time called `webpack.server.js`, which will have the following content:
+```javascript
+var path = require('path');
+var webpack = require('webpack');
+
+module.exports = {
+    target: 'node',
+    entry: path.resolve(__dirname, 'src', 'server.tsx'),
+    output: {
+        filename: 'server.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: ['babel-loader', 'awesome-typescript-loader'],
+                exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    }
+};
+```
+where we simply define the `entry` to be `server.tsx`, the output folder to be `dist` (*with the output file being `server.js`*) and make it process **TypeScript**.
+
+Then we also need to update our build scripts to include our server, so we change the old `build`-script into the following three scripts:
+```json
+"scripts": {
+    "build:server": "webpack -d --env=server -p --colors",
+    "build:client": "webpack -d --env=prod --colors",
+    "build": "yarn clean && concurrently --kill-others-on-fail -p \"{name}\" -n \"SERVER,CLIENT\" -c \"bgBlue,bgMagenta\" \"yarn build:server\" \"yarn build:client\"",
+}
+```
+where the `build:client`-script is the same as before, `build:server` calls **webpack** with our new server configuration and `build` runs both of these at the same time using **concurrecntly**.
 
 ---
 
 Finally we create the actual `start`-script which will run our application
 ```json
     "scripts": {
-        "start": "NODE_ENV=production node dist/server.js",
+        "start": "cd dist && NODE_ENV=production node server.js",
     }
 ```
 which is very simple, just setting the `production`-flag for our `NODE_ENV` and starting the `server` with **node**.

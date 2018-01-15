@@ -4,9 +4,9 @@ Even though this part was left as the last one, it is one of the most important 
 
 ### Initialize
 
-For our testing framework we are going to use [Jest](https://facebook.github.io/jest/), with [Enzyme](https://github.com/airbnb/enzyme) for [BDD testing](https://en.wikipedia.org/wiki/Behavior-driven_development), [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json) for [snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html), [ts-jest](https://github.com/kulshekhar/ts-jest) so **Jest** plays nice with **TypeScript** and [react-test-renderer](https://www.npmjs.com/package/react-test-renderer) for rendering **React**-components. Because of the new adapters in **Enzyme** we also need to add the appropriate [adapter](https://github.com/airbnb/enzyme/tree/master/packages/enzyme-adapter-react-16#upgrading-from-enzyme-2x-or-react--16) (in our case for **React** version 16)
+For our testing framework we are going to use [Jest](https://facebook.github.io/jest/), with [Enzyme](https://github.com/airbnb/enzyme) for [BDD testing](https://en.wikipedia.org/wiki/Behavior-driven_development), [enzyme-to-json](https://github.com/adriantoine/enzyme-to-json) for [snapshot testing](https://facebook.github.io/jest/docs/snapshot-testing.html), [ts-jest](https://github.com/kulshekhar/ts-jest) so **Jest** plays nice with **TypeScript** and [react-test-renderer](https://www.npmjs.com/package/react-test-renderer) for rendering **React**-components. Because of the new adapters in **Enzyme** we also need to add the appropriate [adapter](https://github.com/airbnb/enzyme/tree/master/packages/enzyme-adapter-react-16#upgrading-from-enzyme-2x-or-react--16) (in our case for **React** version 16) and finally we also add a little tool called [concurrently](https://github.com/kimmobrunfeldt/concurrently) to allow the simultaneous running of multiple **NPM** or **Yarn** scripts at the same time
 ```
-    yarn add -D jest ts-jest enzyme enzyme-to-json react-test-renderer enzyme-adapter-react-16
+    yarn add -D jest ts-jest enzyme enzyme-to-json react-test-renderer enzyme-adapter-react-16 concurrently
 ```
 
 ### setup.js
@@ -475,12 +475,12 @@ describe('AppView', () => {
 Finally we also want to run our tests! So back into our `package.json`
 ```json
     "scripts": {
-        "test": "yarn run lint:sass && yarn run lint:ts && jest",
+        "test": "concurrently --kill-others-on-fail -p \"{name}\" -n \"SASS-LINT,TS-LINT,JEST\" -c \"bgBlue,bgMagenta,bgCyan\" \"yarn lint:sass\" \"yarn lint:ts\" \"jest\"",
         "test:watch": "jest --watch",
         "test:ci": "yarn run lint:sass && yarn run lint:ts && jest --runInBand --forceExit",
     }
 ```
-where the first command `test` will run first our `lint`-scripts and then **Jest** with its default configuration. `test:watch` will run **Jest** in watch mode, so when you're working on your tests, it will only run the ones your changes affect, saving time. The last one `test:ci` adds a couple of flags to the **Jest** command, `--runInBand` which will run all tests in a single process (*easier to spot errors*) and `--forceExit` to ensure **Jest** will shut down after tests (*[Travis](https://travis-ci.org) can freeze without this sometimes*).
+where the first command `test` will run our `lint`-scripts and **Jest** with its default configuration (*`--kill-others-on-fail` will kill all three running processes if one test process fails*). `test:watch` will run **Jest** in watch mode, so when you're working on your tests, it will only run the ones your changes affect, saving time. The last one `test:ci` adds a couple of flags to the **Jest** command, `--runInBand` which will run all tests in a single process (*easier to spot errors*) and `--forceExit` to ensure **Jest** will shut down after tests (*[Travis](https://travis-ci.org) can freeze without this sometimes*).
 
 ### Alternatives
 

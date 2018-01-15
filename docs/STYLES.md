@@ -259,35 +259,52 @@ The `:before` selector on the other hand is used to create a child (*it must hav
 
 ### Scripts
 
-Now that we have our styles set up, we need to include them in our application and to do that, we are going to set up two new scripts to our `package.json` and as we want to be able to refresh both the styles and the code while developing, we are going to add a new dependency called [concurrently](https://github.com/kimmobrunfeldt/concurrently)
+Now that we have our styles set up, we need to include them in our application and to do that, we are going to update our **webpack** configurations and update our `index.tsx`-file a bit, beginning with the `index.tsx`-change, which is to add the following line as the last `import` statement:
+```typescript
+import './styles/styles.scss';
 ```
-    yarn add -D concurrently
-```
-which is a simple NPM tool for running multiple NPM (*or Yarn in this case*) scripts at the same time.
-
-Now we modify and add to get styles, starting with the `develop`-script
-```json
-    "scripts": {
-        "develop:sass": "mkdir -p dist/styles && node-sass -w -r src/styles -o dist/styles",
-        "develop:client": "budo src/index.tsx:js/bundle.js --live --verbose -- -p tsify",
-        "develop": "NODE_ENV=development concurrently -p \"[{name}]\" -n \"BUDO,SASS\" -c \"bgBlue,bgMagenta\" -k \"yarn run develop:client\" \"yarn run develop:sass\""
-    }
-```
-where we renamed our old `develop` script into `develop:client` and created `develop:sass`, which uses the `watch` and `recursive` modes of `node-sass` to watch the `src/styles`-folder and output it to `dist/styles`. For the new `develop` script we use **concurrently** to run our `develop:client` and `develop:sass` at the same time, setting a prefix of `BUDO` and `SASS` in blue and magenta respectively (*try it out to see how it looks like*).
-> Naming the scripts `something:subtask` is just another convention and you are free to do it another way
-
+which is because **webpack** only bundles files related to the `entry`-file (*our `index.tsx`*).
 
 ---
 
-Now to get the `build`-script to also build our styles
-```json
-    "scripts": {
-        "build:sass": "mkdir -p dist/styles && node-sass src/styles/styles.scss dist/styles/styles.css",
-        "build:client": "mkdir -p dist/js && browserify src/index.tsx -p tsify > dist/js/bundle.js",
-        "build": "yarn run build:sass && yarn run build:client",
+To use **webpack** with **Sass** we need to first add a couple of new development dependencies, so go ahead and:
+```
+yarn add -D style-loader css-loader sass-loader extract-text-webpack-plugin
+```
+where [`sass-loader`](https://webpack.js.org/loaders/sass-loader/#src/components/Sidebar/Sidebar.jsx) compiles our **Sass** to **CSS**, [`css-loader`](https://webpack.js.org/loaders/css-loader/#src/components/Sidebar/Sidebar.jsx) allows **webpack** to process **CSS**, [`style-loader`](https://webpack.js.org/loaders/style-loader/#src/components/Sidebar/Sidebar.jsx) injects said **CSS** straight into the HTML (*faster for development*) and [`extract-text-webpack-plugin`](https://webpack.js.org/plugins/extract-text-webpack-plugin/#src/components/Sidebar/Sidebar.jsx) extracts our **CSS** into a single file when doing production builds.
+
+For our development configuration we only need to add the following new rule to `webpack.dev.js`:
+```javascript
+    // ...
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            }
+        ]
     }
 ```
-where we again rename our old `build`-script into `build:client` and then create a new script `build:sass`. Again we first make sure that the folder exists and then just build the **Sass**-files with **node-sass**'s default settings (*you can add compatibility and other plugins there as well*). The new `build`-script will simply first build the **Sass**-files and then the **TypeScript**-files.
+where we tell **webpack** to process our **Sass** through the described loaders (*from right to left*).
+
+For our production build we need to do a few more changes into `webpack.prod.js`:
+```javascript
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// ...
+    module : {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+            }
+        ]
+    },
+    // ...
+    plugins: [
+        new ExtractTextPlugin(path.join('styles.css'))
+    ]
+```
+where at first we use `extract-text-webpack-plugin` to extract all processed **Sass** and then in `plugins` we tell it to save them in a file called `styles.css`.
 
 ### Alternatives
 
