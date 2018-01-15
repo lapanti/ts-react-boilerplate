@@ -1,7 +1,7 @@
 # A very opinionated frontend boilerplate
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Lapanti/ts-react-boilerplate.svg)](https://greenkeeper.io/)
-[![Build Status](https://img.shields.io/travis/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/Lapanti/ts-react-boilerplate) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Dependency Status](https://david-dm.org/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate) [![DevDependency Status](https://img.shields.io/david/dev/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate?type=dev) [![Coverage Status](https://img.shields.io/coveralls/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://coveralls.io/github/Lapanti/ts-react-boilerplate?branch=master)[![Code Climate](https://img.shields.io/codeclimate/github/Lapanti/ts-react-boilerplate.svg?style=flat-square)](https://codeclimate.com/github/Lapanti/ts-react-boilerplate) [![Code Climate](https://img.shields.io/codeclimate/issues/github/Lapanti/ts-react-boilerplate.svg?style=flat-square)](https://codeclimate.com/github/Lapanti/ts-react-boilerplate/issues)
+[![Build Status](https://img.shields.io/travis/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/Lapanti/ts-react-boilerplate) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT) [![Dependency Status](https://david-dm.org/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate) [![DevDependency Status](https://img.shields.io/david/dev/lapanti/ts-react-boilerplate.svg?style=flat-square)](https://david-dm.org/lapanti/ts-react-boilerplate?type=dev) [![Coverage Status](https://img.shields.io/coveralls/Lapanti/ts-react-boilerplate/master.svg?style=flat-square)](https://coveralls.io/github/Lapanti/ts-react-boilerplate?branch=master) [![Code Climate](https://img.shields.io/codeclimate/issues/github/Lapanti/ts-react-boilerplate.svg?style=flat-square)](https://codeclimate.com/github/Lapanti/ts-react-boilerplate/issues)
 
 ## Purpose
 
@@ -37,11 +37,10 @@ This is all you need to get started in developing your own web application, usin
 1. Open up the source code in your favorite TypeScript-capable editor (I recommend [Visual Studio Code](https://code.visualstudio.com/) if you don't have a preference)
 2. Run `yarn` in the console to install dependencies (it'll take a while on the first run, so go on and read ahead while you wait)
 3. Read through the comments in all the source files to get yourself acquinted with the ideas, concepts and patterns
-4. Start the application by running `yarn run develop` in your console (inside the folder you downloaded the code to) and open up your browser in the address it prints out
-    - If you want the use of [LiveReload](http://livereload.com/), install a browser extension in [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-gb/firefox/addon/livereload/)
-5. Create a deployable version of the application by running `yarn run build`
-6. Start the deployable version by running `yarn run start` or read the [How to Docker](#dockerization) guide to Dockerize your application
-7. To test your application, run `yarn run test`
+4. Start the application by running `yarn develop` in your console (inside the folder you downloaded the code to) and open up your browser in the address it prints out
+5. Create a deployable version of the application by running `yarn build`
+6. Start the deployable version by running `yarn start` or read the [How to Docker](#dockerization) guide to Dockerize your application
+7. To test your application, run `yarn test`
 8. Start modifying the code to build your own application
 
 ## <a name="tipsandsuggestions">Tips and suggestions</a>
@@ -68,9 +67,11 @@ The following are all the dependencies of the project, with the reasoning behind
 - :gift: [Redux](https://github.com/reactjs/redux) to handle state
     - :loop: [redux-observable](https://redux-observable.js.org/) to allow side-effects in Redux
         - :mag: [RxJs](https://github.com/ReactiveX/RxJS) for streams
-- :electric_plug: [browserify](http://browserify.org/) to bundle JS files
-    - :flashlight: [budō](https://github.com/mattdesl/budo) to host client while developing
-    - :punch: [tsify](https://github.com/TypeStrong/tsify) to compile TypeScript in the browserify pipe
+- :electric_plug: [webpack](https://webpack.js.org/) to bundle JS files
+    - :flashlight: [webpack-dev-server](https://webpack.js.org/configuration/dev-server/#src/components/Sidebar/Sidebar.jsx) to host client while developing
+    - :punch: [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader) to compile TypeScript in the webpack pipe
+    - :wave: [babel](https://babeljs.io) to transpile our compiled JavaScript to ES5 using [babel-loader](https://webpack.js.org/loaders/babel-loader/#src/components/Sidebar/Sidebar.jsx)
+    - :tongue: [sass-loader](https://webpack.js.org/loaders/sass-loader/#src/components/Sidebar/Sidebar.jsx) to compile SASS into CSS
 - :pray: [Jest](https://facebook.github.io/jest/) for testing
     - :metal: [ts-jest](https://github.com/kulshekhar/ts-jest) to run Jest with TypeScript
     - :ok_hand: [TSlint](https://palantir.github.io/tslint/) for linting
@@ -78,6 +79,7 @@ The following are all the dependencies of the project, with the reasoning behind
     - :question: [sass-lint](https://github.com/sasstools/sass-lint) to lint SASS
     - :bust_in_silhouette: [Enzyme](https://github.com/airbnb/enzyme) for snapshot and behavior testing
         - :cyclone: [Enzyme-to-JSON](https://github.com/adriantoine/enzyme-to-json) to enable Enzyme snapshots with Jest
+        - :foggy: [enzyme-adapter-react-16](https://github.com/airbnb/enzyme/tree/master/packages/enzyme-adapter-react-16) to use Enzyme with React 16
 - :nail_care: [SASS](https://github.com/sass/node-sass) for styles
 - :two_hearts: [concurrently](https://github.com/kimmobrunfeldt/concurrently) to run multiple script concurrently
 
@@ -89,15 +91,15 @@ Read the [contribution guidelines](./CONTRIBUTING.md)
 2. Navigate to the directory in console
 3. Run `yarn` in console
     - [Optional] Install livereload extension to your browser in [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) or [Firefox](https://addons.mozilla.org/en-gb/firefox/addon/livereload/)
-4. Run `yarn run develop` in console
+4. Run `yarn develop` in console
 5. Open your browser in the address printed to the console
 6. Modify the code with your favorite editor
 
 ### <a name="testing">Testing</a>
-- You can run all the tests with `yarn run test`
-    - *psst, you can update your snapshots with* `yarn run test -- -u`
-- You can run Jest tests in watch mode with `yarn run test:watch`
-- You can run all tests with coverage with `yarn run test:ci`
+- You can run all the tests with `yarn test`
+    - *psst, you can update your snapshots with* `yarn test -- -u`
+- You can run Jest tests in watch mode with `yarn test:watch`
+- You can run all tests with coverage with `yarn test:ci`
 
 ### <a name="roadmap">Roadmap</a>
 

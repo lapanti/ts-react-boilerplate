@@ -26,14 +26,14 @@ const renderHtml = (html: string, preloadedState: State) =>
             <meta charset="utf-8" />
             <title>Todo app</title>
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-            <link rel="stylesheet" href="/styles/styles.css">
+            <link rel="stylesheet" href="/assets/styles.css">
         </head>
         <body>
             <div id="app">${html}</div>
             <script>
                 window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
             </script>
-            <script src="/js/bundle.js"></script>
+            <script src="/assets/bundle.js"></script>
         </body>
     </html>
     `;
@@ -42,8 +42,7 @@ const defaultPort = 8080;
 const port = normalizePort(process.env.PORT || defaultPort);
 const app = express();
 
-app.use('/js', express.static(path.join('js'), { redirect: false }));
-app.use('/styles', express.static(path.join('styles'), { redirect: false }));
+app.use('/assets', express.static(path.join('assets'), { redirect: false }));
 
 app.use((req: express.Request, res: express.Response) => {
     const store = createStore<State>(

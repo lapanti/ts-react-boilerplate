@@ -12,6 +12,7 @@
 * [Reducers](/docs/REDUCERS.md)
 * [Containers](/docs/CONTAINERS.md)
 * [Completing React](/docs/COMPLETING.md)
+* [webpack](/docs/WEBPACK.md)
 * [Styles](/docs/STYLES.md)
 * [Testing](/docs/TESTING.md)
 * [Extras](/docs/EXTRAS.md)
