@@ -288,50 +288,45 @@ import Todo from '../../../common/Todo';
 import IndexReducer, {
     SET_TITLE,
     setTitle,
-    SetTitleAction,
     SAVE_TODO,
     saveTodo,
-    SaveTodoAction,
     saveTodoEpic,
     SAVE_TODO_SUCCESS,
     saveTodoSuccess,
-    SaveTodoSuccessAction,
     SET_DONE,
     setDone,
-    SetDoneAction,
     setDoneEpic,
     SET_DONE_SUCCESS,
     setDoneSuccess,
-    SetDoneSuccessAction,
     IndexState,
 } from '../IndexReducer';
 
 describe('IndexReducer', () => {
     it('should set the correct title as payload on setTitle', () => {
         const payload = 'THIS_IS_A_TEST_TITLE';
-        const setTitleAction: SetTitleAction = setTitle(payload);
+        const setTitleAction = setTitle(payload);
         expect(setTitleAction).toEqual({ type: SET_TITLE, payload });
         const newState: IndexState = IndexReducer(undefined, setTitleAction);
         expect(newState.title).toEqual(payload);
     });
 
     it('should set the correct values on saveTodo', () => {
-        const saveTodoAction: SaveTodoAction = saveTodo();
+        const saveTodoAction = saveTodo();
         expect(saveTodoAction).toEqual({ type: SAVE_TODO });
         const newState: IndexState = IndexReducer(undefined, saveTodoAction);
         expect(newState.loading).toBeTruthy();
     });
 
-    it('should trigger the correct action on saveTodoEpic', async () => (
-        await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined)
-            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }))
-    ));
+    it('should trigger the correct action on saveTodoEpic', async () =>
+        await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined, undefined).forEach(actionReceived =>
+            expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }),
+        ));
 
     it('should set the correct values on saveTodoSuccess', () => {
         /* tslint:disable:no-magic-numbers */
         const testT = new Todo(1, 'Doing', true);
         const initialState: IndexState = { title: 'TEST', todos: [testT], loading: true };
-        const saveTodoSuccessAction: SaveTodoSuccessAction = saveTodoSuccess();
+        const saveTodoSuccessAction = saveTodoSuccess();
         expect(saveTodoSuccessAction).toEqual({ type: SAVE_TODO_SUCCESS });
         const newState: IndexState = IndexReducer(initialState, saveTodoSuccessAction);
         expect(newState.title).toEqual('');
@@ -344,20 +339,20 @@ describe('IndexReducer', () => {
     });
 
     it('should set the correct values on setDone', () => {
-        const setDoneAction: SetDoneAction = setDone(0);
+        const setDoneAction = setDone(0);
         expect(setDoneAction).toEqual({ type: SET_DONE, payload: 0 });
         const newState: IndexState = IndexReducer(undefined, setDoneAction);
         expect(newState.loading).toBeTruthy();
     });
 
-    it('should trigger the correct action on setDoneEpic', async () => (
-        await setDoneEpic(ActionsObservable.of(setDone(0)), undefined)
-            .forEach(actionReceived => expect(actionReceived).toEqual({ type: SET_DONE_SUCCESS, payload: 0 }))
-    ));
+    it('should trigger the correct action on setDoneEpic', async () =>
+        await setDoneEpic(ActionsObservable.of(setDone(0)), undefined, undefined).forEach(actionReceived =>
+            expect(actionReceived).toEqual({ type: SET_DONE_SUCCESS, payload: 0 }),
+        ));
 
     it('should set the correct values on setDoneSuccess', () => {
         const initialState: IndexState = { title: '', todos: [new Todo(0, '')], loading: true };
-        const setDoneSuccessAction: SetDoneSuccessAction = setDoneSuccess(0);
+        const setDoneSuccessAction = setDoneSuccess(0);
         expect(setDoneSuccessAction).toEqual({ type: SET_DONE_SUCCESS, payload: 0 });
         const newState: IndexState = IndexReducer(initialState, setDoneSuccessAction);
         expect(newState.loading).toBeFalsy();
@@ -374,11 +369,11 @@ where we test each of our **action creator**-functions and **epics** (*we valida
 
 For the first **action creator** `setTitle` we do it as follows
 ```typescript
-import IndexReducer, { SET_TITLE, setTitle, SetTitleAction } from '../IndexReducer';
+import IndexReducer, { SET_TITLE, setTitle } from '../IndexReducer';
 // ...
     it('should set the correct title as payload on setTitle', () => {
         const payload = 'THIS_IS_A_TEST_TITLE';
-        const setTitleAction: SetTitleAction = setTitle(payload);
+        const setTitleAction = setTitle(payload);
         expect(setTitleAction).toEqual({ type: SET_TITLE, payload });
         const newState = IndexReducer(undefined, setTitleAction);
         expect(newState.title).toEqual(payload);
@@ -394,11 +389,11 @@ import { ActionsObservable } from 'redux-observable';
 import { SAVE_TODO_SUCCESS, saveTodo } from '../IndexReducer';
 // ...
     it('should trigger the correct action on saveTodoEpic', async () => (
-        await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined)
+        await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined, undefined)
             .forEach(actionReceived => expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }));
     ));
 ```
-where we have to use an [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) function, as **Observables** are not synchronous. We use `ActionsObservable.of` to create an **Observable** out of our **action creator** and give our **epic** an `undefined` as the second argument (*which, if you remember is defined as a type of `undefined` in `IndexReducer`*). After that we [`subscribe`](http://reactivex.io/documentation/operators/subscribe.html) to our new **Observable** returned by `saveTodoEpic` and check that the action received matches what we expect.
+where we have to use an [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) function, as **Observables** are not synchronous. We use `ActionsObservable.of` to create an **Observable** out of our **action creator** and give our **epic** an `undefined` as the second argument (*which, if you remember is defined as a type of `undefined` in `IndexReducer`*) and as the third one, as we don't use that feature. After that we [`subscribe`](http://reactivex.io/documentation/operators/subscribe.html) to our new **Observable** returned by `saveTodoEpic` and check that the action received matches what we expect.
 
 ---
 
@@ -423,7 +418,7 @@ describe('fetchTodoEpic', () => {
         nock('path/to/endpoint')
             .get('/lastparam')
             .reply(200, payload, { 'Content-Type': 'application/json' });
-        return await fetchTagsEpic(ActionsObservable.of(fetchTodo()), { getState: () => new State(), dispatch: () => {} })
+        return await fetchTagsEpic(ActionsObservable.of(fetchTodo()), { getState: () => new State(), dispatch: () => {} }, undefined)
             .forEach(actionReceived => expect(actionReceived).toEqual(fetchTodoSuccess(payload)));
     });
     it('should fail correctly', async () => {
@@ -431,7 +426,7 @@ describe('fetchTodoEpic', () => {
         nock('path/to/endpoint')
             .get('/lastparam')
             .replyWithError(payload);
-        return await fetchTagsEpic(ActionsObservable.of(fetchTodo()), { getState: () => new State(), dispatch: () => {} })
+        return await fetchTagsEpic(ActionsObservable.of(fetchTodo()), { getState: () => new State(), dispatch: () => {} }, undefined)
             .forEach(actionReceived => expect(actionReceived).toEqual(fetchTodoFail(payload)));
     });
 });

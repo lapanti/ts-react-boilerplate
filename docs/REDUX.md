@@ -15,14 +15,42 @@ yarn add -D @types/react-router-redux @types/history
 ```
 > [Redux-observable](https://redux-observable.js.org/) is our choice for allowing side effects, such as [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started)-calls in **redux**. [RxJS](http://reactivex.io/) is a peer dependency for **redux-observable**. If you want something else you can check the [alternatives](#alternatives). [React-router-redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) is used to tie navigation events and browser history into **redux** when using [React Router](https://reacttraining.com/react-router/) (*which well setup later*), and [history](https://github.com/reacttraining/history) is needed to use **react-router-redux**.
 
-### Creating utilities
+### Redux guards
 
-We will begin by creating a file called `utils.js` inside the folder `redux` in `src`. This file will contain helpers for our **redux** functionalities and will serve as good introduction into one of its most basic building blocks. The file will initially look like this:
+We will begin by creating a file called `guards.js` inside the folder `redux` in `src`. This file will contain some helper functions so that TypeScript will play nicely with **Redux**. The contents of the file are as follows:
 ```typescript
-export type DefaultAction = { type: '' };
-export const DefaultAction: DefaultAction = { type: '' };
+import { Action } from 'redux';
+
+export type IActionType<X> = X & { __actionType: string };
+
+const _devSet: { [key: string]: any } = {};
+
+export const makeAction = <Z extends {}>(type: string, typePrefix = '') => {
+    // Helpful check against copy-pasting duplicate type keys when creating
+    // new actions.
+    if (process.env.NODE_ENV === 'development') {
+        if (_devSet[type]) {
+            throw new Error(
+                'Attempted creating an action with an existing type key. ' + 'This is almost cetainly an error.',
+            );
+        }
+        _devSet[type] = type;
+    }
+    return <X extends (...args: any[]) => Z>(fn: X) => {
+        const returnFn: IActionType<X> = ((...args: any[]) => ({ ...(fn as any)(...args), type })) as any;
+        returnFn.__actionType = typePrefix + type;
+        return returnFn;
+    };
+};
+
+export const isAction = <T>(
+    action: Action,
+    actionCreator: IActionType<(...args: any[]) => T>,
+): action is T & Action => {
+    return action.type === actionCreator.__actionType;
+};
 ```
-[Actions](http://redux.js.org/docs/basics/Actions.html) are the only way to send new content to the **redux**-state, and are usually in the form of an object with the properties `type` (*a unique string*) and an optional `payload` (*something to pass to the reducer*). Here we have defined a `DefaultAction` which will allow our reducers to pass unnecessary actions forward [without losing type-safety](https://spin.atomicobject.com/2016/09/27/typed-redux-reducers-typescript-2-0/). The empty string as a `type` ensures that it doesn't intersect with any of our own actions.
+[Actions](http://redux.js.org/docs/basics/Actions.html) are the only way to send new content to the **redux**-state, and are usually in the form of an object with the properties `type` (*a unique string*) and an optional `payload` (*something to pass to the reducer*). However as **redux** has defined the `type` key to be of the type `any`, we lose type safety and that is why we alias the actual string to `__actionType`, which allows **TypeScript** to infer the type of an action implicitly, which is where `makeAction` comes in. The `_devSet` variable and the things related to it inside `makeAction` are for development, to ensure we don't create duplicate actions. The `isAction`-function is a [type guard](https://www.typescriptlang.org/docs/handbook/advanced-types.html) which allows us to use the action creators (*more about them in [reducers](./REDUCERS.md)*) own return type as the actual type for the action, giving us implicit, but safe, typings. You can read more about  [redux guards](https://github.com/quicksnap/redux-guards) [here](https://medium.com/@danschuman/redux-guards-for-typescript-1b2dc2ed4790). Don't worry if this seems too complex as it uses a lot of advanced features of **TypeScript** to work.
 
 ### Reducer
 
@@ -30,8 +58,7 @@ Now we will define our root-reducer in a file called `reducer.ts` inside the fol
 ```typescript
 import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';
-import { routerReducer, RouterState, RouterAction, LocationChangeAction } from 'react-router-redux';
-import { DefaultAction } from './utils';
+import { routerReducer, RouterState } from 'react-router-redux';
 
 const reducer = combineReducers<State>({
     router: routerReducer,
@@ -44,16 +71,12 @@ export class State {
 export const epics = combineEpics(
 );
 
-export type Actions = DefaultAction | LocationChangeAction | RouterAction;
-
 export default reducer;
 ```
 This file will allow us to export all of the following:
 - Our root reducer (*all specific reducers will be combined into this one, as according to [redux documentation](http://redux.js.org/docs/basics/Reducers.html#handling-actions), allowing our reducers to only handle a slice of the entire `state`*) made with [combineReducers](http://redux.js.org/docs/api/combineReducers.html)
 - The class of our entire `state` (*defined as a class to allow initialization in for example tests*)
 - Our combined [epics](https://redux-observable.js.org/docs/basics/Epics.html) (*more about epics later*) made with [combineEpics](https://redux-observable.js.org/docs/api/combineEpics.html)
-- The type of all of our actions
-> We add the types of react-router-redux as well so type-checking knows to look for them if we need them (*this is only necessary if you use them somewhere*)
 
 ### Store
 
