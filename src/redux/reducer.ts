@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';
-import { routerReducer, RouterState, RouterAction, LocationChangeAction } from 'react-router-redux';
-import { DefaultAction } from './utils';
-import IndexReducer, { IndexEpics, IndexState, IndexActions } from '../modules/index/IndexReducer';
+import { routerReducer, RouterState } from 'react-router-redux';
+import IndexReducer, { IndexEpics, IndexState } from '../modules/index/IndexReducer';
 
 const reducer = combineReducers<State>({
     router: routerReducer,
@@ -15,7 +14,5 @@ export class State {
 }
 
 export const epics = combineEpics(IndexEpics);
-
-export type Actions = DefaultAction | LocationChangeAction | RouterAction | IndexActions;
 
 export default reducer;
