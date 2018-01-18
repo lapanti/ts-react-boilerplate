@@ -12,7 +12,7 @@ module.exports = {
     ],
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist', 'js'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
     devtool: 'source-map',
@@ -44,7 +44,12 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
-        new CopyWebpackPlugin([{ from: path.resolve(__dirname, 'index.html') }]),
+        new CopyWebpackPlugin([
+            { from: path.resolve(__dirname, 'index.html') },
+            { from: path.resolve(__dirname, 'manifest.json'), to: 'assets' },
+            { from: path.resolve(__dirname, 'browserconfig.xml'), to: 'assets' },
+            { from: path.resolve(__dirname, 'src/icons'), to: 'assets/icons' }
+        ]),
         new webpack.EnvironmentPlugin({ 'NODE_ENV': 'development' }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),

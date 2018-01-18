@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: __dirname,
@@ -26,6 +27,11 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     plugins: [
+        new CopyWebpackPlugin([
+            { from: path.resolve(__dirname, 'manifest.json') },
+            { from: path.resolve(__dirname, 'browserconfig.xml') },
+            { from: path.resolve(__dirname, 'src/icons'), to: 'icons' }
+        ]),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
