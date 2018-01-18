@@ -367,6 +367,22 @@ which is very simple, just setting the `production`-flag for our `NODE_ENV` and 
 
 That's it, you should now have fully working server-side rendered application!
 
+### PWA
+
+PWA stands for [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/), which are websites that can behave like apps, e.g. work when offline, can be installed on the home screen etc. In order to begin transforming our service into a PWA, we first need to add some values to the `manifest.json`, replace applicable lines with information appropriate to your application:
+```json
+{
+    "name": "HN PWA",
+    "short_name": "HN PWA",
+    "description": "An example HN PWA with TypeScript and React",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "start_url": "/",
+    // ...
+}
+```
+where `name`, `short_name` and `description` should be self-evident, whereas `lang` defines the language of the application, `orientation` sets the wished [orientation](https://developer.mozilla.org/en-US/docs/Web/Manifest) for your app. `start_url` is one of the most important ones, as it sets the url your app opens into when it is opened from the home screen.
+
 ### Docker
 
 If you want to [dockerize](https://www.docker.com/) your application you need to add a `Dockerfile` to your application's root folder (*which is just a file named `Dockerfile`*)
