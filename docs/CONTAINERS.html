@@ -1,0 +1,477 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Containers · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="COMPLETING.html" />
+    
+    
+    <link rel="prev" href="REDUCERS.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Containers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="containers">Containers</h1>
+<p>Next up we want to bind our <a href="../VIEWS.md">Views</a> to our <a href="../REDUCERS.md">Reducers</a>, a.k.a. define how we get the <strong>props</strong> from our <a href="http://redux.js.org/docs/basics/Reducers.html" target="_blank">state</a>.</p>
+<h3 id="initialize">Initialize</h3>
+<p>First up we need to add a new dependency, <a href="https://github.com/reactjs/react-redux" target="_blank">react-redux</a> to connect our <strong>React</strong> views to our <strong>state</strong></p>
+<pre class="language-"><code>yarn add react-redux
+</code></pre><p>and the type definitions for it</p>
+<pre class="language-"><code>yarn add -D @types/react-redux
+</code></pre><h3 id="indexcontainer">IndexContainer</h3>
+<p>We begin by creating a file called <code>IndexContainer.ts</code> inside our <code>index</code>-folder inside <code>src/modules</code></p>
+<blockquote>
+<p>All containers will have the same &quot;prefix&quot; as their accompanied <strong>views</strong>, a.k.a. <code>[Pagename]Container.ts</code></p>
+</blockquote>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> State <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../../redux/reducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> setTitle<span class="token punctuation">,</span> saveTodo<span class="token punctuation">,</span> setDone <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./IndexReducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> IndexView<span class="token punctuation">,</span> <span class="token punctuation">{</span> IIndexState<span class="token punctuation">,</span> IIndexDispatch<span class="token punctuation">,</span> IIndexProps <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./IndexView&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> stateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">:</span> State<span class="token punctuation">)</span><span class="token punctuation">:</span> IIndexState <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> state<span class="token punctuation">.</span>index<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+    todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>index<span class="token punctuation">.</span>todos<span class="token punctuation">,</span>
+    loading<span class="token punctuation">:</span> state<span class="token punctuation">.</span>index<span class="token punctuation">.</span>loading<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> connect<span class="token operator">&lt;</span>IIndexState<span class="token punctuation">,</span> IIndexDispatch<span class="token punctuation">,</span> IIndexProps<span class="token operator">&gt;</span><span class="token punctuation">(</span>stateToProps<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    setTitle<span class="token punctuation">,</span>
+    saveTodo<span class="token punctuation">,</span>
+    setDone<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>IndexView<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<p>First we define a function to transform our <a href="../REDUX.md#reducer"><code>State</code></a> into the <code>IIndexState</code> required by our <code>IndexView</code></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> State <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../../redux/reducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> IIndexState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./IndexView&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> stateToProps <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">:</span> State<span class="token punctuation">)</span><span class="token punctuation">:</span> IIndexState <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> state<span class="token punctuation">.</span>index<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+    todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>index<span class="token punctuation">.</span>todos<span class="token punctuation">,</span>
+    loading<span class="token punctuation">:</span> state<span class="token punctuation">.</span>index<span class="token punctuation">.</span>loading<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>where we get the required information from the <code>State</code> and return it with the correct key.</p>
+<hr>
+<p>Thanks to a shorthand in <code>react-redux</code> we can just define the actions we need in the component by putting them in an object as the second argument for <code>connect</code></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> setTitle<span class="token punctuation">,</span> saveTodo<span class="token punctuation">,</span> setDone <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./IndexReducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> IIndexState<span class="token punctuation">,</span> IIndexDispatch<span class="token punctuation">,</span> IIndexProps <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./IndexView&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> connect<span class="token operator">&lt;</span>IIndexState<span class="token punctuation">,</span> IIndexDispatch<span class="token punctuation">,</span> IIndexProps<span class="token operator">&gt;</span><span class="token punctuation">(</span>stateToProps<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    setTitle<span class="token punctuation">,</span>
+    saveTodo<span class="token punctuation">,</span>
+    setDone<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>where <code>connect</code> uses internally the function <a href="http://redux.js.org/docs/api/bindActionCreators.html" target="_blank"><code>bindActionCreators</code></a> for each action in the object and passes them on as functions that dispatch automatically. They will be named the same as they are in the object, so for example <code>setTitle</code> will be accessible as <code>this.props.setTitle</code> in the component.</p>
+<hr>
+<p>Finally we bind it all using <strong>react-redux&apos;s</strong> <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options" target="_blank"><code>connect</code></a></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> setTitle<span class="token punctuation">,</span> saveTodo<span class="token punctuation">,</span> setDone <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./IndexReducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> IndexView<span class="token punctuation">,</span> <span class="token punctuation">{</span> IIndexState<span class="token punctuation">,</span> IIndexDispatch<span class="token punctuation">,</span> IIndexProps <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./IndexView&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> stateToProps <span class="token operator">=</span> <span class="token operator">...</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> connect<span class="token operator">&lt;</span>IIndexState<span class="token punctuation">,</span> IIndexDispatch<span class="token punctuation">,</span> IIndexProps<span class="token operator">&gt;</span><span class="token punctuation">(</span>stateToProps<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    setTitle<span class="token punctuation">,</span>
+    saveTodo<span class="token punctuation">,</span>
+    setDone<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>IndexView<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>where the first type argument is the type for the format we want to transform our <strong>state</strong> to (<em>in this case our <code>IIndexState</code></em>), the second type argument is the format we want to transform the <code>dispatch</code>-function to (<em>in this case our <code>IIndexDispatch</code></em>) and the last type argument is the type for the <strong>props</strong> our <strong>view</strong> expects. The first argument <code>connect</code> takes is a function to transform our <strong>state</strong> into the type of the first type argument and the second argument is a function to transform the <code>dispatch</code>-function into the second type argument (<em>here we also see for the first time a <a href="https://en.wikipedia.org/wiki/Currying" target="_blank">curried function</a></em>). The last argument is our <strong>view</strong> itself, which should be expecting <strong>props</strong> of the type of the third type argument.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="REDUCERS.html" class="navigation navigation-prev " aria-label="Previous page: Reducers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="COMPLETING.html" class="navigation navigation-next " aria-label="Next page: Completing React">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Containers","level":"2.7","depth":1,"next":{"title":"Completing React","level":"2.8","depth":1,"path":"docs/COMPLETING.md","ref":"docs/COMPLETING.md","articles":[]},"previous":{"title":"Reducers","level":"2.6","depth":1,"path":"docs/REDUCERS.md","ref":"docs/REDUCERS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/CONTAINERS.md","mtime":"2018-01-10T10:18:33.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

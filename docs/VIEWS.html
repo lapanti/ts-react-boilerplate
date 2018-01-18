@@ -1,0 +1,553 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Views · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="REDUCERS.html" />
+    
+    
+    <link rel="prev" href="REDUX.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Views</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="views">Views</h1>
+<p>Now we are ready to start working towards the beef of the application: different pages (or views).</p>
+<h3 id="indexview">IndexView</h3>
+<p>We will begin by creating a file called <code>IndexView.tsx</code> (<em>remember that &apos;x&apos; in the end of the file type means that it contains <a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank">jsx</a></em>) inside a folder called <code>index</code> inside the <code>components</code>-folder:</p>
+<blockquote>
+<p>All of our pages will be inside folders named after the page, in this case <strong>Index</strong> and the view will be named <code>[Pagename]View.tsx</code></p>
+</blockquote>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;../../common/Todo&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> TodoComponent <span class="token keyword">from</span> <span class="token string">&apos;../../components/TodoComponent&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Button <span class="token keyword">from</span> <span class="token string">&apos;../../components/Button&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Loader <span class="token keyword">from</span> <span class="token string">&apos;../../components/Loader&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IIndexState</span> <span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    todos<span class="token punctuation">:</span> Todo<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    loading<span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IIndexDispatch</span> <span class="token punctuation">{</span>
+    <span class="token function">setTitle</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token function">saveTodo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token function">setDone</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+type IIndexProps <span class="token operator">=</span> IIndexState <span class="token operator">&amp;</span> IIndexDispatch<span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> IndexView<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>IIndexProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> title<span class="token punctuation">,</span> todos<span class="token punctuation">,</span> loading<span class="token punctuation">,</span> setTitle<span class="token punctuation">,</span> saveTodo<span class="token punctuation">,</span> setDone <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>main className<span class="token operator">=</span><span class="token string">&quot;index&quot;</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>loading <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>Loader <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span>h1 className<span class="token operator">=</span><span class="token string">&quot;index__header&quot;</span><span class="token operator">&gt;</span>Todo app<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>form className<span class="token operator">=</span><span class="token string">&quot;index__form&quot;</span> onSubmit<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>label className<span class="token operator">=</span><span class="token string">&quot;index__form__label&quot;</span> htmlFor<span class="token operator">=</span><span class="token string">&quot;newtodo&quot;</span><span class="token operator">&gt;</span>Add a <span class="token keyword">new</span> <span class="token class-name">todo</span><span class="token punctuation">:</span><span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input
+                className<span class="token operator">=</span><span class="token string">&quot;index__form__input&quot;</span>
+                name<span class="token operator">=</span><span class="token string">&quot;newtodo&quot;</span>
+                type<span class="token operator">=</span><span class="token string">&quot;text&quot;</span>
+                autoFocus
+                value<span class="token operator">=</span><span class="token punctuation">{</span>title<span class="token punctuation">}</span>
+                onChange<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">setTitle</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span>
+            <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Button click<span class="token operator">=</span><span class="token punctuation">{</span>saveTodo<span class="token punctuation">}</span> text<span class="token operator">=</span><span class="token string">&quot;Add&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>br <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>section className<span class="token operator">=</span><span class="token string">&quot;index__todo-container&quot;</span><span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>TodoComponent todo<span class="token operator">=</span><span class="token punctuation">{</span>t<span class="token punctuation">}</span> setDone<span class="token operator">=</span><span class="token punctuation">{</span>setDone<span class="token punctuation">}</span> key<span class="token operator">=</span><span class="token punctuation">{</span>t<span class="token punctuation">.</span>id<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>section<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> IndexView<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<p>The first <a href="https://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank">interface</a> we declare, called <code>IIndexState</code></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;../../common/Todo&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">interface</span> <span class="token class-name">IIndexState</span> <span class="token punctuation">{</span>
+    title<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    todos<span class="token punctuation">:</span> Todo<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    loading<span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>is an <code>interface</code> that holds the &quot;state&quot;-values for our <code>View</code>, i.e. the stuff that defines what is shown to the user, in this case a title (<em>the title of the current <code>Todo</code> being created</em>), a list of <code>Todo</code>s (<em>the current <code>Todo</code>s</em>) and a boolean that indicates whether or not some kind of long-taking call is currently running.</p>
+<hr>
+<p>The second <code>interface</code> we declare, called <code>IIndexDispatch</code></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">IIndexDispatch</span> <span class="token punctuation">{</span>
+    <span class="token function">setTitle</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token function">saveTodo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    <span class="token function">setDone</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>is an <code>interface</code> that holds all the &quot;dispatch&quot;-functions for our <code>View</code>, i.e. all the functionality that our users can trigger, in this case a function (<code>setTitle(n: string)</code>) to change the current <code>title</code> (<em>that takes a string as an argument</em>), a function (<code>saveTodo()</code>) to save the new <code>Todo</code> and a function (<code>setDone(i: number)</code>) to set an existing <code>Todo</code> as done (<em>that takes the number of the <code>Todo</code> as argument</em>).</p>
+<blockquote>
+<p>Having <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank"><code>void</code></a> as a return type allows us to not care about the return type (<em>which we don&apos;t need here</em>) without having an implicit any</p>
+</blockquote>
+<hr>
+<p>Together <code>IIndexState</code> and <code>IIndexDispatch</code> form the type <code>IIndexProps</code></p>
+<pre class="language-"><code class="lang-typescript">type IIndexProps <span class="token operator">=</span> IIndexState <span class="token operator">&amp;</span> IIndexDispatch<span class="token punctuation">;</span>
+</code></pre>
+<p>which is the definition of all the <a href="https://facebook.github.io/react/docs/components-and-props.html" target="_blank">props</a> our <code>IndexView</code> will need to function.</p>
+<blockquote>
+<p>The <code>IIndexState &amp; IIndexDispatch</code> part defines that the type called <code>IIndexProps</code> is an <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank">intersection</a> of those two interfaces, meaning that to fulfill the type, the object needs to have all values present in both of the aforementioned interfaces.</p>
+</blockquote>
+<hr>
+<p>And now we get to the beef of it all, starting with declaring the actual <code>IndexView</code></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> IndexView<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>IIndexProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> title<span class="token punctuation">,</span> todos<span class="token punctuation">,</span> loading<span class="token punctuation">,</span> setTitle<span class="token punctuation">,</span> saveTodo<span class="token punctuation">,</span> setDone <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>in which we declare a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank">constant</a> called <code>IndexView</code> which is of the type <a href="https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc" target="_blank"><code>React.StatelessComponent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>IIndexProps</span><span class="token punctuation">&gt;</span></span></code></a>. <code>React.StatelessComponent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>T</span><span class="token punctuation">&gt;</span></span></code> is a type of <strong>React Component</strong> that does not have an internal state, only <strong>props</strong> and can be declared as a function that returns <code>jsx</code>, where the type of <strong>props</strong> received is put inside the angle brackets (<em>where <code>T</code> is now</em>).</p>
+<blockquote>
+<p>These kinds of declarations are called <a href="https://www.typescriptlang.org/docs/handbook/generics.html" target="_blank">type arguments or generics</a>, which allow you to define a function without knowing beforehand what the type of the argument or return value is.</p>
+</blockquote>
+<p>After declaring the <strong>const</strong> we define <code>IndexView</code> to be a function, that fulfills the <a href="https://facebook.github.io/react/docs/react-api.html" target="_blank">render</a> function, i.e. takes in an object containing the declared properties (<em>using <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">object destructuring</a> so we don&apos;t have to write <code>something.title</code>, instead of <code>title</code></em>) and returns <code>jsx</code> encapsulated in the brackets.</p>
+<hr>
+<p>For the actual content inside the brackets you can think of it as &quot;HTML on steroids&quot;, beginning, as is semantically correct with a <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/main" target="_blank"><code>main</code></a> tag</p>
+<pre class="language-"><code class="lang-typescript">    <span class="token operator">&lt;</span>main className<span class="token operator">=</span><span class="token string">&quot;index&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span>
+</code></pre>
+<p>which will hold all the content of our <code>IndexView</code> (<em>and here we begin the introduction of <a href="http://getbem.com/naming/" target="_blank">BEM</a>-naming</em>).</p>
+<hr>
+<p>Next is our first tag that is different with different props</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> Loader <span class="token keyword">from</span> <span class="token string">&apos;../../components/Loader&apos;</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+    <span class="token operator">&lt;</span>main className<span class="token operator">=</span><span class="token string">&quot;index&quot;</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>loading <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>Loader <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span>
+</code></pre>
+<p>which means, that depending if the <strong>prop</strong> <code>loading</code> is true (<em>using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators" target="_blank">logical operator</a>-shorthand that returns the right hand-side if the both sides evaluate as true</em>), we want to <strong>render</strong> the <code>Loader</code>-component we defined earlier in the <a href="../COMPONENTS.md">Components</a> section.</p>
+<hr>
+<p>Next up we define the title and a form to add a new <code>Todo</code></p>
+<pre class="language-"><code class="lang-typescript">    <span class="token operator">&lt;</span>main className<span class="token operator">=</span><span class="token string">&quot;index&quot;</span><span class="token operator">&gt;</span>
+    <span class="token comment" spellcheck="true">// ...</span>
+
+        <span class="token operator">&lt;</span>h1 className<span class="token operator">=</span><span class="token string">&quot;index__header&quot;</span><span class="token operator">&gt;</span>Todo app<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>form className<span class="token operator">=</span><span class="token string">&quot;index__form&quot;</span> onSubmit<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>label className<span class="token operator">=</span><span class="token string">&quot;index__form__label&quot;</span> htmlFor<span class="token operator">=</span><span class="token string">&quot;newtodo&quot;</span><span class="token operator">&gt;</span>Add a <span class="token keyword">new</span> <span class="token class-name">todo</span><span class="token punctuation">:</span><span class="token operator">&lt;</span><span class="token operator">/</span>label<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>input
+                className<span class="token operator">=</span><span class="token string">&quot;index__form__input&quot;</span>
+                name<span class="token operator">=</span><span class="token string">&quot;newtodo&quot;</span>
+                type<span class="token operator">=</span><span class="token string">&quot;text&quot;</span>
+                autoFocus
+                value<span class="token operator">=</span><span class="token punctuation">{</span>title<span class="token punctuation">}</span>
+                onChange<span class="token operator">=</span><span class="token punctuation">{</span>e <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">setTitle</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">}</span>
+            <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Button click<span class="token operator">=</span><span class="token punctuation">{</span>saveTodo<span class="token punctuation">}</span> text<span class="token operator">=</span><span class="token string">&quot;Add&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>form<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span>
+</code></pre>
+<p>where we first define the title (<em>in this case a static string <code>Todo app</code></em>). Next we define a form to create new <code>Todos</code> which introduces us to a lot of nice features of <strong>React</strong>, but first we do a little <em>&quot;hack&quot;</em> as we want to enable the user to press the <code>enter</code>-key when submitting a new <code>Todo</code> but we don&apos;t want to send the form to a new page, we set the value of <code>onSubmit</code> (<em>the handler for a form&apos;s submit method in React</em>) as <code>e =&gt; e.preventDefault()</code> where <code>e</code> is the event received and it&apos;s function <code>.preventDefault()</code> will (<em>as its name implies</em>) prevent the default functionality (<em>in this case send the form data to the current url, causing a reload</em>).</p>
+<p>Next we define a label for the <code>input</code>-field utilizing <strong>React</strong>&apos;s <code>htmlFor</code>-value which is an alias for the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label" target="_blank">for</a>-attribute, except it uses the <code>name</code>-field instead of <code>id</code> for matching. Then we define the actual <code>input</code>-field for inputting a <code>Todo</code>, which is a simple text <code>input</code>, but we also make it <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/input" target="_blank">autofocus</a> (<em>if you open the page, you can start typing into it directly</em>) and make it a <a href="https://facebook.github.io/react/docs/forms.html#controlled-components" target="_blank">controlled component</a>, meaning that whenever the value of <code>title</code> changes, the <code>input</code> will also update. We also add the <code>onChange</code>-listener to actually set the new <code>title</code> the user has typed in. Finally we create a simple <code>Button</code> (<em>we defined earlier in <a href="../COMPONENTS.md#button">components</a></em>) to submit the form.</p>
+<hr>
+<p>Finally we want to of course show all the <code>Todo</code>s created</p>
+<pre class="language-"><code class="lang-typescript">    <span class="token operator">&lt;</span>main className<span class="token operator">=</span><span class="token string">&quot;index&quot;</span><span class="token operator">&gt;</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+        <span class="token operator">&lt;</span>section className<span class="token operator">=</span><span class="token string">&quot;index__todo-container&quot;</span><span class="token operator">&gt;</span>
+            <span class="token punctuation">{</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span>TodoComponent todo<span class="token operator">=</span><span class="token punctuation">{</span>t<span class="token punctuation">}</span> setDone<span class="token operator">=</span><span class="token punctuation">{</span>setDone<span class="token punctuation">}</span> key<span class="token operator">=</span><span class="token punctuation">{</span>t<span class="token punctuation">.</span>id<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>section<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span>
+</code></pre>
+<p>where we first encapsulate it into a semantic tag called <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/section" target="_blank"><code>section</code></a>. Then we want to create a new <code>TodoComponent</code> (<em>as we defined in <a href="../COMPONENTS.md#todocomponent">components</a></em>) for every <code>Todo</code> in our current state, which can be achieved by a simple <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank"><code>map</code></a> (<em>I highly recommend getting to know all the major Array-functions</em>). Here you want to also remember to add a property for our <code>TodoComponent</code> it isn&apos;t expecting to receive: <a href="https://facebook.github.io/react/docs/lists-and-keys.html" target="_blank"><code>key</code></a> which <strong>React</strong> uses to distinguish between tags in a list (<em>it has to be unique inside the list</em>).</p>
+<h3 id="alternatives">Alternatives</h3>
+<ul>
+<li>If you want something a bit simpler you can try <a href="https://vuejs.org/" target="_blank">Vue.js</a></li>
+<li>Or the classic <a href="https://jquery.com/" target="_blank">jQuery</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="REDUX.html" class="navigation navigation-prev " aria-label="Previous page: Redux">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="REDUCERS.html" class="navigation navigation-next " aria-label="Next page: Reducers">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Views","level":"2.5","depth":1,"next":{"title":"Reducers","level":"2.6","depth":1,"path":"docs/REDUCERS.md","ref":"docs/REDUCERS.md","articles":[]},"previous":{"title":"Redux","level":"2.4","depth":1,"path":"docs/REDUX.md","ref":"docs/REDUX.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/VIEWS.md","mtime":"2018-01-10T09:30:26.901Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

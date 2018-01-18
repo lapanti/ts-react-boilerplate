@@ -1,0 +1,45 @@
+@import 'variables';
+
+.loader {
+    animation: .8s fadein .2s linear forwards;
+    background: $modal-background;
+    height: 200vh;
+    left: -50vw;
+    opacity: 0;
+    position: fixed;
+    top: -50vh;
+    width: 200vw;
+    z-index: 1000;
+
+    &__spinner::before {
+        animation: spinner .6s linear infinite;
+        border: 2px solid $loader-border-color;
+        border-radius: 50%;
+        border-top-color: $loader-top-border-color;
+        box-sizing: border-box;
+        content: '';
+        height: 120px;
+        left: 50%;
+        margin-left: -60px;
+        margin-top: -60px;
+        position: fixed;
+        top: 50%;
+        width: 120px;
+    }
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,19 @@
+options:
+  merge-default-rules: false
+rules:
+  bem-depth:
+    - 4
+    - max-depth: 4
+  class-name-format:
+    - allow-leading-underscore: false
+    - convention: hyphenatedbem
+  declarations-before-nesting: true
+  extends-before-declarations: true
+  hex-notation:
+    - style: uppercase
+  indentation:
+    - size: 4
+  nesting-depth:
+    - max-depth: 4
+  hex-length:
+    - style: long

@@ -1,0 +1,8 @@
+@import 'variables';
+
+.btn {
+    background-color: $tertiary-color;
+    border: 1px solid $primary-color;
+    border-radius: 50%;
+    cursor: pointer;
+}

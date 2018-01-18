@@ -1,0 +1,559 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Completing React · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="WEBPACK.html" />
+    
+    
+    <link rel="prev" href="CONTAINERS.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Completing React</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="completing-react">Completing React</h1>
+<p>Now we finally get to build our <strong>React</strong>-application into something that can be run and will actually do something! Here we make the assumption that you are going to build a medium- to large-sized application and show how to do these things in a more modular way, but for smaller applications some of these parts can be merged with the <code>IndexView</code> and some can be left out completely.</p>
+<h3 id="initialize">Initialize</h3>
+<p>We begin by installing new dependencies called <a href="https://reacttraining.com/react-router/" target="_blank">React Router</a> and <a href="https://facebook.github.io/react/docs/react-dom.html" target="_blank">ReactDOM</a></p>
+<pre class="language-"><code>yarn add react-router-dom react-dom
+</code></pre><p>which adds the capability to define which URL equals which view and to render our <strong>React</strong> application to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank">DOM</a>, respectively.</p>
+<p>And of course the types for them</p>
+<pre class="language-"><code>yarn add -D @types/react-router-dom @types/react-dom
+</code></pre><h3 id="appview">AppView</h3>
+<p>We begin by writing an <code>AppView.ts</code> file into the <code>src/modules</code>-folder</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Route<span class="token punctuation">,</span> Switch<span class="token punctuation">,</span> RouteComponentProps <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-dom&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> IndexContainer <span class="token keyword">from</span> <span class="token string">&apos;./index/IndexContainer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> PageNotFound <span class="token keyword">from</span> <span class="token string">&apos;../components/PageNotFound&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> type IAppViewProps <span class="token operator">=</span> RouteComponentProps<span class="token operator">&lt;</span>undefined<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> AppView<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>IAppViewProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app-base&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Switch<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> exact component<span class="token operator">=</span><span class="token punctuation">{</span>IndexContainer<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>PageNotFound<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Switch<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> AppView<span class="token punctuation">;</span>
+</code></pre>
+<p>which is a fairly simple view, except for the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Switch</span><span class="token punctuation">&gt;</span></span></code>-clause and <code>RouteComponentProps</code>.</p>
+<blockquote>
+<p>All views that go through <strong>React Router</strong> get some extra properties, which are included in <code>RouteComponentProps&lt;Params</code>, where <code>Params</code> can be used to define possible parameters for the URL.</p>
+</blockquote>
+<p>The <a href="https://reacttraining.com/react-router/web/api/Switch" target="_blank"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Switch</span><span class="token punctuation">&gt;</span></span></code></a> element is used to render a single view out of all <a href="https://reacttraining.com/react-router/web/api/Route" target="_blank"><code>Route</code>s</a> inside the <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Switch</span><span class="token punctuation">&gt;</span></span></code>. <code>Route</code>s have three main properties you should remember:</p>
+<ol>
+<li><code>path</code> which indicates what URL the view matches to (<em>it can be used to define parameters as well</em>)</li>
+<li><code>exact</code> which indicates that the view should only match if the URL matches <code>path</code> exactly</li>
+<li><code>component</code> which defines the actual view to render</li>
+</ol>
+<h3 id="appcontainer">AppContainer</h3>
+<p>Next we create a very simple <strong>container</strong> for <code>AppView</code> called <code>AppContainer</code>, which is situated in the same <code>src/modules</code>-folder</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> AppView<span class="token punctuation">,</span> <span class="token punctuation">{</span> IAppViewProps <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./AppView&apos;</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//tslint:disable-line:no-unused-variable</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> connect<span class="token operator">&lt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> undefined<span class="token punctuation">,</span> IAppViewProps<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span>AppView<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>which we use just to wrap <code>AppView</code> so that it can be used in routes.</p>
+<h3 id="indexview">IndexView</h3>
+<p>For <code>IndexView</code> we also need to add <code>RouteComponentProps</code>, so just add the following</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> RouteComponentProps <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-dom&apos;</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+<span class="token keyword">export</span> type IIndexProps <span class="token operator">=</span> IIndexState <span class="token operator">&amp;</span> IIndexDispatch <span class="token operator">&amp;</span> RouteComponentProps<span class="token operator">&lt;</span>undefined<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="index">index</h3>
+<p>Finally we create a file <code>index.ts</code> inside <code>src</code></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> as ReactDOM <span class="token keyword">from</span> <span class="token string">&apos;react-dom&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Route <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-dom&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ConnectedRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AppContainer as HotContainer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-hot-loader&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> createHistory <span class="token keyword">from</span> <span class="token string">&apos;history/createBrowserHistory&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> configureStore <span class="token keyword">from</span> <span class="token string">&apos;./redux/store&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> AppContainer <span class="token keyword">from</span> <span class="token string">&apos;./modules/AppContainer&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> history <span class="token operator">=</span> <span class="token function">createHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> render <span class="token operator">=</span> <span class="token punctuation">(</span>container<span class="token punctuation">:</span> React<span class="token punctuation">.</span>ComponentClass<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>HotContainer<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">configureStore</span><span class="token punctuation">(</span>history<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>ConnectedRouter history<span class="token operator">=</span><span class="token punctuation">{</span>history<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>container<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>ConnectedRouter<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>HotContainer<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;app&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">render</span><span class="token punctuation">(</span>AppContainer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">module</span> as <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span><span class="token keyword">module</span> as <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hot<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token string">&apos;./modules/AppContainer&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">render</span><span class="token punctuation">(</span>AppContainer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>which is the entry file to our application that ties everything together.</p>
+<hr>
+<p>On the 14. line</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as ReactDOM <span class="token keyword">from</span> <span class="token string">&apos;react-dom&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> render <span class="token operator">=</span> <span class="token punctuation">(</span>container<span class="token punctuation">:</span> React<span class="token punctuation">.</span>ComponentClass<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span>
+    <span class="token comment" spellcheck="true">// ...,</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">&apos;app&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>we <a href="https://facebook.github.io/react/docs/react-dom.html#render" target="_blank">render</a> our <strong>React</strong>-application to the <strong>DOM</strong> inside a div with the id <code>app</code> (<em>we&apos;ll come back to this</em>).</p>
+<hr>
+<p>On the 15. line</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> AppContainer as HotContainer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-hot-loader&apos;</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+    <span class="token operator">&lt;</span>HotContainer<span class="token operator">&gt;</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>HotContainer<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>we wrap our application into a container to enable <strong>Hot Module Replacement</strong> (more about it later in this section).</p>
+<hr>
+<p>On the 16. line</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> createHistory <span class="token keyword">from</span> <span class="token string">&apos;history/createBrowserHistory&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> configureStore <span class="token keyword">from</span> <span class="token string">&apos;./redux/store&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> history <span class="token operator">=</span> <span class="token function">createHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+        <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">configureStore</span><span class="token punctuation">(</span>history<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token comment" spellcheck="true">// ...</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span>
+</code></pre>
+<p>which wraps our <strong>React</strong> application with <strong>Redux</strong> using <a href="https://github.com/reactjs/react-redux/blob/master/docs/api.md#provider-store" target="_blank"><code>Provider</code></a> from <strong>react-redux</strong>, which takes a single parameter <code>store</code>, for which we provide our store as we defined it in <a href="../REDUX.md#store">Redux</a>. <code>history/createBrowserHistory</code> is used to create a wrapper around the browser history we can use.</p>
+<hr>
+<p>On the 17. line</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Route <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-dom&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ConnectedRouter <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> AppContainer <span class="token keyword">from</span> <span class="token string">&apos;./modules/AppContainer&apos;</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+        <span class="token operator">&lt;</span>ConnectedRouter history<span class="token operator">=</span><span class="token punctuation">{</span>history<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>AppContainer<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ConnectedRouter<span class="token operator">&gt;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+</code></pre>
+<p>we keep the UI in sync with the URL using a <a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux" target="_blank"><code>ConnectedRouter</code></a> from <strong>react-router-redux</strong>, which takes as argument a <a href="https://github.com/ReactTraining/react-router/blob/v3/docs/API.md#histories" target="_blank"><code>history</code></a>, where we give <code>history</code> we created previously. Here we define a single <code>Route</code> which renders <code>AppContainer</code> for all URL routes.</p>
+<hr>
+<p>Finally at the end</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">module</span> as <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">(</span><span class="token keyword">module</span> as <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">.</span>hot<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token string">&apos;./modules/AppContainer&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">render</span><span class="token punctuation">(</span>AppContainer<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>we do a little configuration to allow our container to be loaded by the <strong>Hot Module Replacement</strong>-system.</p>
+<h3 id="indexhtml">Index.html</h3>
+<p>Finally we write an <code>index.html</code> in our root-folder</p>
+<pre class="language-"><code class="lang-html"><span class="token doctype">&lt;!doctype html&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>utf-8<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>TS-React boilerplate<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/bundle.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>which is just a very simple <code>HTML</code>-file, which imports our (<em>soon-to-be-bundled</em>) <strong>JavaScript</strong> from the current folder <code>/bundle.js</code> and contains a <code>div</code> with the id <code>app</code> so our <code>index.ts</code> works.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="CONTAINERS.html" class="navigation navigation-prev " aria-label="Previous page: Containers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="WEBPACK.html" class="navigation navigation-next " aria-label="Next page: webpack">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Completing React","level":"2.8","depth":1,"next":{"title":"webpack","level":"2.9","depth":1,"path":"docs/WEBPACK.md","ref":"docs/WEBPACK.md","articles":[]},"previous":{"title":"Containers","level":"2.7","depth":1,"path":"docs/CONTAINERS.md","ref":"docs/CONTAINERS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/COMPLETING.md","mtime":"2018-01-15T09:51:48.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

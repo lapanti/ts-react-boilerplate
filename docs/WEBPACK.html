@@ -1,0 +1,549 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>webpack · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="STYLES.html" />
+    
+    
+    <link rel="prev" href="COMPLETING.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >webpack</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="webpack">webpack</h1>
+<p>Now as we have everything necessary for our application, it&apos;s time to get it working!</p>
+<h3 id="initialize">Initialize</h3>
+<p>We&apos;ll begin by installing a &quot;couple&quot; of new dependencies</p>
+<pre class="language-"><code>yarn add -D webpack webpack-dev-server source-map-loader react-hot-loader copy-webpack-plugin babel babel-cli babel-core babel-loader babel-preset-env awesome-typescript-loader html-webpack-plugin
+</code></pre><p>from which <a href="https://webpack.js.org/" target="_blank">webpack</a> is a very powerful tool for bundling and configuration, <a href="https://webpack.js.org/configuration/dev-server/#src/components/Sidebar/Sidebar.jsx" target="_blank">webpack-dev-server</a> is a lightweight server to host client code, <a href="https://webpack.js.org/loaders/source-map-loader/#src/components/Sidebar/Sidebar.jsx" target="_blank">source-map-loader</a> to allow errors and other messages to be pointed to the right source code lines while developing, <a href="https://github.com/gaearon/react-hot-loader" target="_blank">react-hot-loader</a> to allow for <a href="https://webpack.js.org/concepts/hot-module-replacement/" target="_blank">Hot Module Replcement (HMR)</a>, <a href="https://webpack.js.org/plugins/copy-webpack-plugin/#src/components/Sidebar/Sidebar.jsx" target="_blank">copy-webpack-plugin</a> to copy our <code>index.html</code> over to <strong>webpack</strong>&apos;s process, <a href="https://babeljs.io" target="_blank">babel</a> and it&apos;s plugins to speed up our process and <a href="https://github.com/s-panferov/awesome-typescript-loader" target="_blank">awesome-typescript-loader</a> to use <strong>webpack</strong> with <strong>TypeScript</strong>. Finally we also add <a href="https://github.com/jantimon/html-webpack-plugin" target="_blank">html-webpack-plugin</a> to generate an <code>index.html</code> for us in the build phase.</p>
+<hr>
+<p>First we need a couple of configuration files for <strong>webpack</strong> to get started. (<em>There are a few ways to have multiple different configurations for <strong>webpack</strong> simultaneously and the way I do it here is just one of them.</em>) Begin by creating a file in your root folder called <code>webpack.config.js</code>, which will look like this:</p>
+<pre class="language-"><code class="lang-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>env<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;./webpack.&apos;</span> <span class="token operator">+</span> env <span class="token operator">+</span> <span class="token string">&apos;.js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This file is simply a way to call one configuration file from our script and provide it with an environment variable that will call the corresponding configuration.</p>
+<hr>
+<p>To actually use <strong>Babel</strong> we need to give it a simple configuration inside our root folder within a file called <code>.babelrc</code>:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;presets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;babel-preset-env&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;react-hot-loader/babel&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>where the <code>presets</code> gives us automatic compilation down to ES5 via <a href="https://github.com/babel/babel/tree/master/packages/babel-preset-env" target="_blank"><code>babel-preset-env</code></a> and the <code>plugins</code> allows <strong>Babel</strong> to work together with our <strong>Hot Module Replacement</strong>.</p>
+<h3 id="development">Development</h3>
+<p>For our development configuration we will need another file in our root folder, called <code>webpack.dev.js</code> so create the file and type in the following:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;webpack&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> CopyWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;copy-webpack-plugin&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    context<span class="token punctuation">:</span> __dirname<span class="token punctuation">,</span>
+    entry<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&apos;react-hot-loader/patch&apos;</span><span class="token punctuation">,</span>
+        <span class="token string">&apos;webpack-dev-server/client?http://localhost:9966&apos;</span><span class="token punctuation">,</span>
+        <span class="token string">&apos;webpack/hot/only-dev-server&apos;</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;src&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;index.tsx&apos;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        filename<span class="token punctuation">:</span> <span class="token string">&apos;bundle.js&apos;</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        publicPath<span class="token punctuation">:</span> <span class="token string">&apos;/&apos;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    devtool<span class="token punctuation">:</span> <span class="token string">&apos;source-map&apos;</span><span class="token punctuation">,</span>
+    devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        hot<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        contentBase<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        publicPath<span class="token punctuation">:</span> <span class="token string">&apos;/&apos;</span><span class="token punctuation">,</span>
+        historyApiFallback<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                enforce<span class="token punctuation">:</span> <span class="token string">&apos;pre&apos;</span><span class="token punctuation">,</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+                loader<span class="token punctuation">:</span> <span class="token string">&apos;source-map-loader&apos;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.tsx?$/</span><span class="token punctuation">,</span>
+                use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;react-hot-loader/webpack&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;awesome-typescript-loader&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                exclude<span class="token punctuation">:</span> <span class="token regex">/node_modules/</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;.tsx&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;.ts&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;.js&apos;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">CopyWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;index.html&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>EnvironmentPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">&apos;NODE_ENV&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;development&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>HotModuleReplacementPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>NamedModulesPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>NoEmitOnErrorsPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Now there is a lot to digest, but we&apos;ll go through the sections one by one.</p>
+<p>The first section after <code>module.exports</code> (<em>which just tells JavaScript that when this file is called, we want the following lines to be called</em>), <code>context</code>, simply gives our configuration a location context to work in, in this case <code>__dirname</code>, which is a variable <strong>Node.JS</strong> gives us to point to our current location.</p>
+<p>The second section gets a little more interesting, <code>entry</code>, which contains a few lines of strings. The first tells <strong>webpack</strong> to use the <code>patch</code>-mode from <code>react-hot-loader</code>, meaning that we do not have to refresh the whole page when something changes in our code, only the affected parts will be updated. The second line <code>webpack-dev-server/client?http://localhost:9966</code> tells webpack where we want our <code>webpack-dev-server</code> to run (<em>in this case inside port <code>9966</code></em>). The third line <code>webpack/hot/only-dev-server</code> tells <code>webpack-dev-server</code> that we want to do <strong>HMR</strong>. Finally the fourth line <code>path.resolve(__dirname, &apos;src&apos;, &apos;index.tsx&apos;)</code> is the most important one, as it tells <em>webpack</em> where our application actually starts from, a.k.a. the <em>entry</em> file.</p>
+<p>The third section, <code>output</code> tells <strong>webpack</strong> where we want our compiled and bundled code to come out to. The first line <code>filename</code> tells <strong>webpack</strong> to store our bundled file as <code>bundle.js</code>. The second line configures the location for our <code>bundle.js</code> under <code>path</code>, in this case a folder <code>js</code> inside <code>dist</code>. Finally the <a href="https://webpack.js.org/guides/public-path/" target="_blank"><code>publicPath</code></a> variable sets the base path for all assets (such as images and stylesheets) for your application, in this case the same as the context folder.</p>
+<p>The fourth section <a href="https://webpack.js.org/configuration/devtool/#src/components/Sidebar/Sidebar.jsx" target="_blank"><code>devtool</code></a> is a simple section, which sets if and how source maps are generated, in our case, using <code>source-map-loader</code>.</p>
+<p>The fifth section <a href="https://webpack.js.org/configuration/dev-server/" target="_blank"><code>devServer</code></a> allows configuration for the development server. <code>hot</code> defines whether we want <strong>HMR</strong> or not (in our case yes), <code>contentBase</code> tells the server where to serve content from, in this case the <code>dist</code>-folder. <code>publicPath</code> defines where our files are accessible from the browser, in this case from the root. <code>historyApiFallback</code> will allow the server to serve <code>index.html</code> even if any other path is requested, as is the case when using <strong>react-router</strong>.</p>
+<p>The sixth section <a href="https://webpack.js.org/configuration/module/" target="_blank"><code>module</code></a> defines how different types of files are processed. In our case we have two different <code>rules</code>, one for <strong>JavaScript</strong> files and one for <strong>TypeScript</strong> files. The one for <strong>TypeScript</strong> files consists of a <code>test</code>, to see whether we want to use this rule or not, a <code>use</code>, meaning which loaders to use and an <code>exclude</code>, to determine excluded files. The <strong>JavaScript</strong> <code>rule</code> is <code>enforce</code>d as  <code>pre</code>, meaning it&apos;ll come into affect for files coming out of other rules (<em>a.k.a. our compiled <strong>TypeScript</strong> files</em>) and will be passed through to <code>source-map-loader</code>.</p>
+<p>The seventh section <a href="https://webpack.js.org/configuration/resolve/" target="_blank"><code>resolve</code></a> allows us to define <code>extensions</code> that will be resolved automatically. This means that in our source code when we <code>import</code> a file that ends in <code>.tsx</code>, <code>.ts</code> or <code>.js</code> we don&apos;t need to write the file extension type.</p>
+<p>The final section <a href="https://webpack.js.org/configuration/plugins/" target="_blank"><code>plugins</code></a> allows for customization of the <strong>webpack</strong> build process. The line <code>new CopyWebpackPlugin([{ from: path.resolve(__dirname, &apos;index.html&apos;) }])</code> copies our <code>index.html</code> to the same folder as our <code>bundle.js</code>. <code>new webpack.EnvironmentPlugin({ &apos;NODE_ENV&apos;: &apos;development&apos; })</code> sets the <a href="https://dzone.com/articles/what-you-should-know-about-node-env" target="_blank"><code>NODE_ENV</code></a> environment variable to <code>development</code> so our code is not minimized. <a href="https://webpack.js.org/plugins/hot-module-replacement-plugin/" target="_blank"><code>new webpack.HotModuleReplacementPlugin()</code></a> enables <strong>HMR</strong>. <a href="https://webpack.js.org/plugins/named-modules-plugin/" target="_blank"><code>new webpack.NamedModulesPlugin()</code></a> shows the relative path of modules when using <strong>HMR</strong> and <a href="https://webpack.js.org/plugins/no-emit-on-errors-plugin/" target="_blank"><code>new webpack.NoEmitOnErrorsPlugin()</code></a> will ensure no errors are emitted when calling non-existent assets in development.</p>
+<hr>
+<p>Now that we have our configuration file for the development process, we need to write a script for it, so head on over to your <code>package.json</code>-file and add the following lines to <code>scripts</code>:</p>
+<pre class="language-"><code class="lang-json">    // ...
+    <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;clean&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rm -rf dist&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;develop&quot;</span><span class="token operator">:</span> <span class="token string">&quot;yarn clean &amp;&amp; webpack-dev-server -d --env=dev --colors --port 9966&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>where <code>clean</code> removes our build folder and after that <code>develop</code> starts our development server inside port <code>9966</code> so go ahead and run it <code>yarn develop</code> and open up <code>http://localhost:9966</code> inside your browser.</p>
+<h3 id="production">Production</h3>
+<p>Next up we want to build our application to be hosted on the Internet, so we begin by creating a configuration file for webpack to use with <code>production</code> called <code>webpack.prod.js</code> (in our root folder):</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;webpack&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;html-webpack-plugin&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    context<span class="token punctuation">:</span> __dirname<span class="token punctuation">,</span>
+    entry<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;src&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;index.tsx&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        filename<span class="token punctuation">:</span> <span class="token string">&apos;bundle.js&apos;</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">&apos;dist&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;assets&apos;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.tsx?$/</span><span class="token punctuation">,</span>
+                use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;babel-loader&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;awesome-typescript-loader&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                exclude<span class="token punctuation">:</span> <span class="token regex">/node_modules/</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;.tsx&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;.ts&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;.js&apos;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DefinePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token string">&apos;process.env.NODE_ENV&apos;</span><span class="token punctuation">:</span> JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token string">&apos;production&apos;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The first two sections are very similar to our <code>development</code>-configuration, as the <code>context</code> is the same, and from <code>entry</code> we have simply removed the lines related to <strong>HMR</strong>.</p>
+<p>The third section <code>output</code> also has the same filename as before, but we have now changed the path where bundled assets should be stored.</p>
+<p>For the fourth section <code>module</code> we have removed the <code>source-map-loader</code> and replaced the <code>react-hot-loader</code> in <strong>TypeScript</strong> files with <code>babel-loader</code>.</p>
+<p>The fifth section <code>resolve</code> is identical to our development configuration and for the final section <code>plugins</code> we have removed most of the plugins and added the <code>HtmlWebpackPlugin</code> which will create an <code>index.html</code> for us. We have also set the <code>NODE_ENV</code> environment variable to <code>production</code>.</p>
+<hr>
+<p>Now that our configuration is complete, we need to make a script to actually build our files, so add the following line to your <code>package.json</code> inside the <code>scripts</code>-key:</p>
+<pre class="language-"><code class="lang-json">    // ...
+    <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        // ...
+        <span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;yarn clean &amp;&amp; webpack -d --env=prod --colors&quot;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>where we first delete our previous builds and then build again with the environment for <code>production</code>.</p>
+<h3 id="alternatives">Alternatives</h3>
+<ul>
+<li>An alternative for <strong>webpack</strong> is <a href="http://browserify.org/" target="_blank">browserify</a>, which I like more (as it is simpler and all configuration is in the scripts), but it does not have all the features I prefer, such as HMR with TypeScript</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="COMPLETING.html" class="navigation navigation-prev " aria-label="Previous page: Completing React">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="STYLES.html" class="navigation navigation-next " aria-label="Next page: Styles">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"webpack","level":"2.9","depth":1,"next":{"title":"Styles","level":"2.10","depth":1,"path":"docs/STYLES.md","ref":"docs/STYLES.md","articles":[]},"previous":{"title":"Completing React","level":"2.8","depth":1,"path":"docs/COMPLETING.md","ref":"docs/COMPLETING.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/WEBPACK.md","mtime":"2018-01-15T09:51:48.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

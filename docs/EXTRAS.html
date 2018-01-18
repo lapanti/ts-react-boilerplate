@@ -1,0 +1,748 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Extras · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="TESTING.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Extras</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="extras">Extras</h1>
+<p>Here we go through things you might not need, but might want to include in your project.</p>
+<h3 id="favicon">Favicon</h3>
+<p>A recommended feature of all websites, especially now with so many mobile devices browsing the internet, is to have a <a href="https://en.wikipedia.org/wiki/Favicon" target="_blank">favicon</a> in your website. A favicon is usually the logo of your company or website. In our case you can either use the ones you can find <a href="https://github.com/Lapanti/ts-react-boilerplate/tree/master/src/icons" target="_blank">here</a> or make your own. If you want to make your own, I suggest creating a 260 x 260 pixel image, which you then generate into all the useful formats using <a href="https://realfavicongenerator.net/" target="_blank">RealFaviconGenerator</a>.</p>
+<p>If you used <em>RealFaviconGenerator</em> you should now have the following files:</p>
+<ul>
+<li><code>android-chrome-192x192.png</code></li>
+<li><code>android-chrome-512x512.png</code></li>
+<li><code>apple-touch-icon.png</code></li>
+<li><code>favicon-16x16.png</code></li>
+<li><code>favicon-32x32.png</code></li>
+<li><code>favicon.ico</code></li>
+<li><code>mstile-150x150.png</code></li>
+<li><code>safari-pinned-tab.svg</code></li>
+<li><code>manifest.json</code></li>
+<li><code>browserconfig.xml</code>
+Now move <code>manifest.json</code> and <code>browserconfig.xml</code> to your root folder and the rest to <code>src/icons</code>.</li>
+</ul>
+<p>Now that we have everything in place, let&apos;s first update our <code>index.html</code> by adding the following parts to inside the <code>head</code> tag:</p>
+<pre class="language-"><code class="lang-html">        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>apple-touch-icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>180x180<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/icons/apple-touch-icon.png<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image/png<span class="token punctuation">&quot;</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>32x32<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/icons/favicon-32x32.png<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>image/png<span class="token punctuation">&quot;</span></span> <span class="token attr-name">sizes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>16x16<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/icons/favicon-16x16.png<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>manifest<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/manifest.json<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>mask-icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/icons/safari-pinned-tab.svg<span class="token punctuation">&quot;</span></span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#5bbad5<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>shortcut icon<span class="token punctuation">&quot;</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/icons/favicon.ico<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>msapplication-config<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/browserconfig.xml<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>theme-color<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>#FF8041<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+<p>where the first line is to have an icon present if an iPhone user <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html" target="_blank">saves your website</a> to their Home screen. The second, third and sixth line are for different sizes of the traditional browser favicon. The fourth line is for a <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">manifest.json</a> which does the same thing as the first line for Android users. The fifth line is an icon for Safari users when they <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html" target="_blank">pin your website</a>. The seventh line is to define a tile for Microsoft users when they <a href="https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85" target="_blank">pin your website</a>.aspx). The final line is a theme color for your website which is used for example by <a href="https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/" target="_blank">mobile browsers</a>.</p>
+<p>The contents of you <code>manifest.json</code> should look something like this:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;icons&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;src&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/assets/icons/android-chrome-192x192.png&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;sizes&quot;</span><span class="token operator">:</span> <span class="token string">&quot;192x192&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;image/png&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;src&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/assets/icons/android-chrome-512x512.png&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;sizes&quot;</span><span class="token operator">:</span> <span class="token string">&quot;512x512&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;image/png&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;theme_color&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#FF8041&quot;</span><span class="token punctuation">,</span> // Change this and the following line to match your website
+    <span class="token property">&quot;background_color&quot;</span><span class="token operator">:</span> <span class="token string">&quot;#FFFFFF&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;display&quot;</span><span class="token operator">:</span> <span class="token string">&quot;standalone&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>And the contents of your <code>browserconfig.xml</code> should look something like this:</p>
+<pre class="language-"><code class="lang-xml"><span class="token prolog">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>browserconfig</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>msapplication</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tile</span><span class="token punctuation">&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>square150x150logo</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/assets/icons/mstile-150x150.png<span class="token punctuation">&quot;</span></span><span class="token punctuation">/&gt;</span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TileColor</span><span class="token punctuation">&gt;</span></span>#FF8041<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>TileColor</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tile</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>msapplication</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>browserconfig</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<p>where you should change the <code>TileColor</code> to match your icon&apos;s background.</p>
+<hr>
+<p>Now we also need to update our <strong>webpack</strong> configurations to include our new icons and manifests into the project, so add the following to your <code>webpack.dev.js</code>:</p>
+<pre class="language-"><code class="lang-javascript">    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">CopyWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;index.html&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;manifest.json&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> <span class="token string">&apos;assets&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;browserconfig.xml&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> <span class="token string">&apos;assets&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;src/icons&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> <span class="token string">&apos;assets/icons&apos;</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">]</span>
+</code></pre>
+<p>And then add the following to your <code>webpack.prod.js</code>:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> CopyWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;copy-webpack-plugin&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">CopyWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;manifest.json&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;browserconfig.xml&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> <span class="token keyword">from</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;src/icons&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> to<span class="token punctuation">:</span> <span class="token string">&apos;icons&apos;</span> <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">// ...</span>
+    <span class="token punctuation">]</span>
+</code></pre>
+<h3 id="server-side-rendering">Server-side rendering</h3>
+<p>Server-side rendering is the act of having a server render your <strong>React</strong>-application and sending it as an html file to the client, which can considerably reduce initial loading times and enables a lot of SEO. This is usually achieved by adding a <a href="https://nodejs.org/en/" target="_blank">node</a>-server to your application and then hosting your code on a server.</p>
+<p>For our needs, we&apos;ll use <a href="https://expressjs.com/" target="_blank">Express</a>, starting with installing the new, required dependencies (<em><a href="https://github.com/KyleNeedham/http-status-enum" target="_blank">http-status-enum</a> is just a simple enumeration of HTTP Status Codes for TypeScript</em>)</p>
+<pre class="language-"><code>    yarn add express http-status-enum
+    yarn add -D @types/express
+</code></pre><hr>
+<p>Now the actual server we run will live in a file called <code>server.tsx</code> inside the <code>src</code>-folder</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as path <span class="token keyword">from</span> <span class="token string">&apos;path&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> as express <span class="token keyword">from</span> <span class="token string">&apos;express&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> HttpStatus <span class="token keyword">from</span> <span class="token string">&apos;http-status-enum&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Provider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> renderToString <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-dom/server&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> StaticRouter<span class="token punctuation">,</span> Route <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-dom&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> routerMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> createHistory <span class="token keyword">from</span> <span class="token string">&apos;history/createMemoryHistory&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> applyMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createEpicMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> reducer<span class="token punctuation">,</span> <span class="token punctuation">{</span> epics<span class="token punctuation">,</span> State <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./redux/reducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> AppContainer <span class="token keyword">from</span> <span class="token string">&apos;./modules/AppContainer&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> normalizePort <span class="token operator">=</span> <span class="token punctuation">(</span>val<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">|</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">|</span> <span class="token keyword">string</span> <span class="token operator">|</span> <span class="token keyword">boolean</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> base <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> port<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">=</span> <span class="token keyword">typeof</span> val <span class="token operator">===</span> <span class="token string">&apos;string&apos;</span> <span class="token operator">?</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> base<span class="token punctuation">)</span> <span class="token punctuation">:</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">isNaN</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span> <span class="token operator">?</span> val <span class="token punctuation">:</span> port <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">?</span> port <span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> renderHtml <span class="token operator">=</span> <span class="token punctuation">(</span>html<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> preloadedState<span class="token punctuation">:</span> State<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+    <span class="token template-string"><span class="token string">`
+    &lt;!doctype html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;utf-8&quot; /&gt;
+            &lt;title&gt;Todo app&lt;/title&gt;
+            &lt;link href=&quot;https://fonts.googleapis.com/css?family=Roboto&quot; rel=&quot;stylesheet&quot; /&gt;
+            &lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;180x180&quot; href=&quot;/assets/icons/apple-touch-icon.png&quot; /&gt;
+            &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;32x32&quot; href=&quot;/assets/icons/favicon-32x32.png&quot; /&gt;
+            &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;16x16&quot; href=&quot;/assets/icons/favicon-16x16.png&quot; /&gt;
+            &lt;link rel=&quot;manifest&quot; href=&quot;/assets/manifest.json&quot; /&gt;
+            &lt;link rel=&quot;mask-icon&quot; href=&quot;/assets/icons/safari-pinned-tab.svg&quot; color=&quot;#5bbad5&quot; /&gt;
+            &lt;link rel=&quot;shortcut icon&quot; href=&quot;/assets/icons/favicon.ico&quot; /&gt;
+            &lt;meta name=&quot;msapplication-config&quot; content=&quot;/assets/browserconfig.xml&quot; /&gt;
+            &lt;meta name=&quot;theme-color&quot; content=&quot;#FF8041&quot; /&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/styles.css&quot;&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div id=&quot;app&quot;&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>html<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/div&gt;
+            &lt;script&gt;
+                window.__PRELOADED_STATE__ = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>preloadedState<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/&lt;/g</span><span class="token punctuation">,</span> <span class="token string">&apos;\\u003c&apos;</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+            &lt;/script&gt;
+            &lt;script src=&quot;/assets/bundle.js&quot;&gt;&lt;/script&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+    `</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> defaultPort <span class="token operator">=</span> <span class="token number">8080</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token function">normalizePort</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>PORT <span class="token operator">||</span> defaultPort<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">&apos;/assets&apos;</span><span class="token punctuation">,</span> express<span class="token punctuation">.</span><span class="token keyword">static</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&apos;assets&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> redirect<span class="token punctuation">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> res<span class="token punctuation">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> store <span class="token operator">=</span> createStore<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+        reducer<span class="token punctuation">,</span>
+        <span class="token function">applyMiddleware</span><span class="token punctuation">(</span><span class="token function">routerMiddleware</span><span class="token punctuation">(</span><span class="token function">createHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">createEpicMiddleware</span><span class="token punctuation">(</span>epics<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> context<span class="token punctuation">:</span> <span class="token punctuation">{</span> url<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> html <span class="token operator">=</span> <span class="token function">renderToString</span><span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>StaticRouter location<span class="token operator">=</span><span class="token punctuation">{</span>req<span class="token punctuation">.</span>url<span class="token punctuation">}</span> context<span class="token operator">=</span><span class="token punctuation">{</span>context<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>AppContainer<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>StaticRouter<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span>url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span>HttpStatus<span class="token punctuation">.</span>MOVED_PERMANENTLY<span class="token punctuation">,</span> context<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token function">renderHtml</span><span class="token punctuation">(</span>html<span class="token punctuation">,</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`App is listening on </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>which will serve the <strong>React</strong>-application on all other routes except <code>ROOT/assets</code>, where our assets are served from.</p>
+<hr>
+<p>First we made a simple function to normalize an incoming <code>PORT</code>-parameter</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> normalizePort <span class="token operator">=</span> <span class="token punctuation">(</span>val<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">|</span> <span class="token keyword">string</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">|</span> <span class="token keyword">string</span> <span class="token operator">|</span> <span class="token keyword">boolean</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> base <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> port<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">=</span> <span class="token keyword">typeof</span> val <span class="token operator">===</span> <span class="token string">&apos;string&apos;</span> <span class="token operator">?</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> base<span class="token punctuation">)</span> <span class="token punctuation">:</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">isNaN</span><span class="token punctuation">(</span>port<span class="token punctuation">)</span> <span class="token operator">?</span> val <span class="token punctuation">:</span> port <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">?</span> port <span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>which tries to parse the incoming <code>val</code>-parameter.</p>
+<hr>
+<p>Next we create a function to render our <code>html</code> based on the rendered <strong>React</strong> application</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> renderHtml <span class="token operator">=</span> <span class="token punctuation">(</span>html<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> preloadedState<span class="token punctuation">:</span> State<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token template-string"><span class="token string">`
+    &lt;!doctype html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;meta charset=&quot;utf-8&quot; /&gt;
+            &lt;title&gt;Todo app&lt;/title&gt;
+            &lt;link href=&quot;https://fonts.googleapis.com/css?family=Roboto&quot; rel=&quot;stylesheet&quot; /&gt;
+            &lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;180x180&quot; href=&quot;/assets/icons/apple-touch-icon.png&quot; /&gt;
+            &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;32x32&quot; href=&quot;/assets/icons/favicon-32x32.png&quot; /&gt;
+            &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;16x16&quot; href=&quot;/assets/icons/favicon-16x16.png&quot; /&gt;
+            &lt;link rel=&quot;manifest&quot; href=&quot;/assets/manifest.json&quot; /&gt;
+            &lt;link rel=&quot;mask-icon&quot; href=&quot;/assets/icons/safari-pinned-tab.svg&quot; color=&quot;#5bbad5&quot; /&gt;
+            &lt;link rel=&quot;shortcut icon&quot; href=&quot;/assets/icons/favicon.ico&quot; /&gt;
+            &lt;meta name=&quot;msapplication-config&quot; content=&quot;/assets/browserconfig.xml&quot; /&gt;
+            &lt;meta name=&quot;theme-color&quot; content=&quot;#FF8041&quot; /&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;/styles/styles.css&quot;&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div id=&quot;app&quot;&gt;</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>html<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/div&gt;
+            &lt;script&gt;
+                window.__PRELOADED_STATE__ = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>preloadedState<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/&lt;/g</span><span class="token punctuation">,</span> <span class="token string">&apos;\\u003c&apos;</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+            &lt;/script&gt;
+            &lt;script src=&quot;/js/bundle.js&quot;&gt;&lt;/script&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+    `</span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>where the biggest point is <code>window.__PRELOADED_STATE__</code> which lets us set the <strong>state</strong> of the application in the server, although it requires the following modification to our `store.ts``</p>
+<pre class="language-"><code class="lang-typescript"><span class="token comment" spellcheck="true">// Below is a necessary hack to access __PRELOADED_STATE__ on the global window object</span>
+<span class="token keyword">const</span> preloadedState<span class="token punctuation">:</span> State <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token keyword">any</span><span class="token operator">&gt;</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span>__PRELOADED_STATE__<span class="token punctuation">;</span>
+<span class="token keyword">delete</span> <span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token keyword">any</span><span class="token operator">&gt;</span>window<span class="token punctuation">)</span><span class="token punctuation">.</span>__PRELOADED_STATE__<span class="token punctuation">;</span>
+<span class="token keyword">const</span> configureStore <span class="token operator">=</span> <span class="token punctuation">(</span>history<span class="token punctuation">:</span> History<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> createStore<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+    reducer<span class="token punctuation">,</span>
+    preloadedState<span class="token punctuation">,</span>
+    <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>epicMiddleware<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<p>Next we set some required variables and create our <strong>Express</strong>-application</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> defaultPort <span class="token operator">=</span> <span class="token number">8080</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token function">normalizePort</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>PORT <span class="token operator">||</span> defaultPort<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>where we use our previously created <code>normalizePort</code> to normalize the (<em>possibly</em>) given <code>PORT</code> environment variable.</p>
+<hr>
+<p>Next up we set up <strong>Express</strong> to serve our static assets</p>
+<pre class="language-"><code class="lang-typescript">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">&apos;/js&apos;</span><span class="token punctuation">,</span> express<span class="token punctuation">.</span><span class="token keyword">static</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&apos;js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> redirect<span class="token punctuation">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">&apos;/styles&apos;</span><span class="token punctuation">,</span> express<span class="token punctuation">.</span><span class="token keyword">static</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&apos;styles&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> redirect<span class="token punctuation">:</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>with <a href="https://expressjs.com/en/4x/api.html#app.use" target="_blank"><code>use</code></a> you can set a middleware-function to a specific path, in this case <a href="https://expressjs.com/en/4x/api.html#express.static" target="_blank"><code>express.static</code></a>, which will serve static files from a relative path.</p>
+<blockquote>
+<p><a href="https://nodejs.org/api/path.html#path_path_join_paths" target="_blank"><code>path.join</code></a> will create a path using platform-specific separators.</p>
+</blockquote>
+<hr>
+<p>Next is the beef of our server application, the actual server-side rendering</p>
+<pre class="language-"><code class="lang-typescript">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> res<span class="token punctuation">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> store <span class="token operator">=</span> createStore<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">(</span>reducer<span class="token punctuation">,</span> <span class="token function">applyMiddleware</span><span class="token punctuation">(</span>
+        <span class="token function">routerMiddleware</span><span class="token punctuation">(</span><span class="token function">createHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token function">createEpicMiddleware</span><span class="token punctuation">(</span>epics<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> context<span class="token punctuation">:</span> <span class="token punctuation">{</span> url<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> html <span class="token operator">=</span> <span class="token function">renderToString</span><span class="token punctuation">(</span>
+        <span class="token operator">&lt;</span>Provider store<span class="token operator">=</span><span class="token punctuation">{</span>store<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>StaticRouter location<span class="token operator">=</span><span class="token punctuation">{</span>req<span class="token punctuation">.</span>url<span class="token punctuation">}</span> context<span class="token operator">=</span><span class="token punctuation">{</span>context<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>Route component<span class="token operator">=</span><span class="token punctuation">{</span>AppContainer<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>StaticRouter<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span>url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">redirect</span><span class="token punctuation">(</span>HttpStatus<span class="token punctuation">.</span>MOVED_PERMANENTLY<span class="token punctuation">,</span> context<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token function">renderHtml</span><span class="token punctuation">(</span>html<span class="token punctuation">,</span> store<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>where we use <strong>react-router</strong> to match the current path to our client code, where the <a href="http://knowbody.github.io/react-router-docs/api/match.html" target="_blank"><code>match</code></a>-function matches the current route without rendering. Afterwards we create a store and render the application as <code>html</code> and finally send it to the client.</p>
+<hr>
+<p>Finally we start the application itself</p>
+<pre class="language-"><code class="lang-typescript">app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`App is listening on </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<p>Of course we need to again make some changes to our <strong>webpack</strong> configurations, but this time only to the production configuration and then we need to create a configuration for the server code itself.</p>
+<p>For the production configuration we want to remove our <code>index.html</code> creation plugin as the server itself serves the index file, so remove the following lines:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;html-webpack-plugin&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// ...</span>
+        <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</code></pre>
+<p>after which, we can remove the plugin itself, by running</p>
+<pre class="language-"><code>yarn remove html-webpack-plugin
+</code></pre><hr>
+<p>For the building of the server side code, we need to create another <strong>webpack</strong> configuration file, this time called <code>webpack.server.js</code>, which will have the following content:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token keyword">var</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;path&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;webpack&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">:</span> <span class="token string">&apos;node&apos;</span><span class="token punctuation">,</span>
+    entry<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;src&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;server.tsx&apos;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        filename<span class="token punctuation">:</span> <span class="token string">&apos;server.js&apos;</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">&apos;dist&apos;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                test<span class="token punctuation">:</span> <span class="token regex">/\.tsx?$/</span><span class="token punctuation">,</span>
+                loader<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;babel-loader&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;awesome-typescript-loader&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                exclude<span class="token punctuation">:</span> <span class="token regex">/node_modules/</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;.tsx&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;.ts&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;.js&apos;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>where we simply define the <code>entry</code> to be <code>server.tsx</code>, the output folder to be <code>dist</code> (<em>with the output file being <code>server.js</code></em>) and make it process <strong>TypeScript</strong>.</p>
+<p>Then we also need to update our build scripts to include our server, so we change the old <code>build</code>-script into the following three scripts:</p>
+<pre class="language-"><code class="lang-json"><span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;build:server&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack -d --env=server -p --colors&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;build:client&quot;</span><span class="token operator">:</span> <span class="token string">&quot;webpack -d --env=prod --colors&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;yarn clean &amp;&amp; concurrently --kill-others-on-fail -p \&quot;{name}\&quot; -n \&quot;SERVER,CLIENT\&quot; -c \&quot;bgBlue,bgMagenta\&quot; \&quot;yarn build:server\&quot; \&quot;yarn build:client\&quot;&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>where the <code>build:client</code>-script is the same as before, <code>build:server</code> calls <strong>webpack</strong> with our new server configuration and <code>build</code> runs both of these at the same time using <strong>concurrecntly</strong>.</p>
+<hr>
+<p>Finally we create the actual <code>start</code>-script which will run our application</p>
+<pre class="language-"><code class="lang-json">    <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;start&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cd dist &amp;&amp; NODE_ENV=production node server.js&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>which is very simple, just setting the <code>production</code>-flag for our <code>NODE_ENV</code> and starting the <code>server</code> with <strong>node</strong>.</p>
+<p>That&apos;s it, you should now have fully working server-side rendered application!</p>
+<h3 id="pwa">PWA</h3>
+<p>PWA stands for <a href="https://developers.google.com/web/progressive-web-apps/" target="_blank">Progressive Web Apps</a>, which are websites that can behave like apps, e.g. work when offline, can be installed on the home screen etc. In order to begin transforming our service into a PWA, we first need to add some values to the <code>manifest.json</code>, replace applicable lines with information appropriate to your application:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HN PWA&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;short_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HN PWA&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;An example HN PWA with TypeScript and React&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;lang&quot;</span><span class="token operator">:</span> <span class="token string">&quot;en-US&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;orientation&quot;</span><span class="token operator">:</span> <span class="token string">&quot;portrait-primary&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;start_url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/&quot;</span><span class="token punctuation">,</span>
+    // ...
+<span class="token punctuation">}</span>
+</code></pre>
+<p>where <code>name</code>, <code>short_name</code> and <code>description</code> should be self-evident, whereas <code>lang</code> defines the language of the application, <code>orientation</code> sets the wished <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest" target="_blank">orientation</a> for your app. <code>start_url</code> is one of the most important ones, as it sets the url your app opens into when it is opened from the home screen.</p>
+<h3 id="docker">Docker</h3>
+<p>If you want to <a href="https://www.docker.com/" target="_blank">dockerize</a> your application you need to add a <code>Dockerfile</code> to your application&apos;s root folder (<em>which is just a file named <code>Dockerfile</code></em>)</p>
+<pre class="language-"><code>FROM node:4-onbuild
+
+LABEL maintainer &quot;your.email.here@domain.com&quot;
+
+COPY dist/ /
+
+ENV NODE_ENV=production
+
+EXPOSE 8080
+
+CMD node /server.js
+</code></pre><p>which tells <strong>Docker</strong> how to build your container (<em>installation instructions for <strong>Docker</strong> can be found <a href="https://docs.docker.com/engine/installation/" target="_blank">here</a></em>).</p>
+<p>To start your new <strong>Docker</strong>-container you can just run</p>
+<pre class="language-"><code>docker build .
+</code></pre><p>then take the image id given by the build command and use it here</p>
+<pre class="language-"><code class="lang-`">docker run -d -p 8080:8080 IMAGEID
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="TESTING.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Testing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Extras","level":"2.12","depth":1,"previous":{"title":"Testing","level":"2.11","depth":1,"path":"docs/TESTING.md","ref":"docs/TESTING.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/EXTRAS.md","mtime":"2018-01-18T13:07:18.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

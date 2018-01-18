@@ -1,0 +1,698 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Reducers · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="CONTAINERS.html" />
+    
+    
+    <link rel="prev" href="VIEWS.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Reducers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="reducers">Reducers</h1>
+<p>Now we build our business logic, also known as <strong>reducers</strong>. Stay calm, this will be a bit more complicated than anything before.</p>
+<h3 id="indexreducer">IndexReducer</h3>
+<p>We begin by creating a file called <code>IndexReducer.ts</code> in the <code>src/modules/index</code>-folder</p>
+<blockquote>
+<p>Our <strong>reducers</strong> follow the naming pattern of <code>[Foldername]Reducer</code></p>
+</blockquote>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Action <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Observable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;rxjs/Observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/operator/delay&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/operator/map&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/operator/mapTo&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Epic<span class="token punctuation">,</span> combineEpics<span class="token punctuation">,</span> ActionsObservable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> makeAction<span class="token punctuation">,</span> isAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../../redux/guards&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;../../common/Todo&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> testDelay <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">IndexState</span> <span class="token punctuation">{</span>
+    readonly title<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
+    readonly todos<span class="token punctuation">:</span> Todo<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    readonly loading<span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> SET_TITLE <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SET_TITLE&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> SAVE_TODO <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SAVE_TODO&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> SAVE_TODO_SUCCESS <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SAVE_TODO_SUCCESS&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> SET_DONE <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SET_DONE&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> SET_DONE_SUCCESS <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SET_DONE_SUCCESS&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> setTitle <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SET_TITLE<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SET_TITLE<span class="token punctuation">,</span> payload<span class="token punctuation">:</span> title <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> saveTodo <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SAVE_TODO<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SAVE_TODO <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> saveTodoSuccess <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SAVE_TODO_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SAVE_TODO_SUCCESS <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> setDone <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SET_DONE<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SET_DONE<span class="token punctuation">,</span> payload<span class="token punctuation">:</span> i <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> setDoneSuccess <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SET_DONE_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SET_DONE_SUCCESS<span class="token punctuation">,</span> payload<span class="token punctuation">:</span> i <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> saveTodoEpic<span class="token punctuation">:</span> Epic<span class="token operator">&lt;</span>Action<span class="token punctuation">,</span> undefined<span class="token operator">&gt;</span> <span class="token operator">=</span> action$ <span class="token operator">=</span><span class="token operator">&gt;</span>
+    action$
+        <span class="token punctuation">.</span><span class="token function">ofType</span><span class="token punctuation">(</span>SAVE_TODO<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span>testDelay<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">mapTo</span><span class="token punctuation">(</span><span class="token function">saveTodoSuccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> setDoneEpic<span class="token punctuation">:</span> Epic<span class="token operator">&lt;</span>Action<span class="token punctuation">,</span> undefined<span class="token operator">&gt;</span> <span class="token operator">=</span> action$ <span class="token operator">=</span><span class="token operator">&gt;</span>
+    action$
+        <span class="token punctuation">.</span><span class="token function">ofType</span><span class="token punctuation">(</span>SET_DONE<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span>testDelay<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>action <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDone<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">setDoneSuccess</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> IndexEpics <span class="token operator">=</span> <span class="token function">combineEpics</span><span class="token punctuation">(</span>saveTodoEpic<span class="token punctuation">,</span> setDoneEpic<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> IndexReducer <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">:</span> IndexState <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> Action<span class="token punctuation">)</span><span class="token punctuation">:</span> IndexState <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setTitle<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> title<span class="token punctuation">:</span> action<span class="token punctuation">.</span>payload <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> saveTodo<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> loading<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> saveTodoSuccess<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            title<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+            todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Todo</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> state<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            loading<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDone<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> loading<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDoneSuccess<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span>id <span class="token operator">===</span> action<span class="token punctuation">.</span>payload <span class="token operator">?</span> t<span class="token punctuation">.</span><span class="token function">setDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            loading<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> IndexReducer<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<p>First we define the <strong>state</strong> for our <code>IndexReducer</code></p>
+<blockquote>
+<p><strong>Reducers</strong> usually define their own <strong>state</strong> and we&apos;ll show you <a href="#connecting">later</a> how to connect it to the main <strong>reducer</strong> and <strong>state</strong></p>
+</blockquote>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;../../common/Todo&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">IndexState</span> <span class="token punctuation">{</span>
+    readonly title<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">;</span>
+    readonly todos<span class="token punctuation">:</span> Todo<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    readonly loading<span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>which is fairly simple. Here we define the <code>IndexState</code> as a class, with the given properties (<em>make sure you add default values for required properties so you can instantiate it!</em>), with the <code>title</code> for the current <code>Todo</code> the user is creating, <code>todos</code> for the list of current <code>Todo</code>s and <code>loading</code> to show the user whether the application is performing an async call or not.</p>
+<hr>
+<p>Next up we define our <a href="http://redux.js.org/docs/basics/Actions.html" target="_blank">action types</a></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> SET_TITLE <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SET_TITLE&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> SAVE_TODO <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SAVE_TODO&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> SAVE_TODO_SUCCESS <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SAVE_TODO_SUCCESS&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> SET_DONE <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SET_DONE&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> SET_DONE_SUCCESS <span class="token operator">=</span> <span class="token string">&apos;boilerplate/Index/SET_DONE_SUCCESS&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>which <strong>redux</strong> recommends to be constant <code>string</code>s, but can be of the type <code>any</code>. In our case, as we are using <strong>redux-guards</strong> to facilitate the way <strong>TypeScript</strong> works with <strong>redux</strong> we have to make them <code>string</code>s.</p>
+<blockquote>
+<p>Here we follow the <a href="https://github.com/erikras/ducks-modular-redux" target="_blank">redux-ducks</a> naming pattern of the format <code>applicationName/ViewName/ACTION_TYPE</code></p>
+</blockquote>
+<hr>
+<p>Next we define our <strong>action creators</strong> which are functions that return an <strong>action</strong></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> makeAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../../redux/guards&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> setTitle <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SET_TITLE<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SET_TITLE<span class="token punctuation">,</span> payload<span class="token punctuation">:</span> title <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> saveTodo <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SAVE_TODO<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SAVE_TODO <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> saveTodoSuccess <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SAVE_TODO_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SAVE_TODO_SUCCESS <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> setDone <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SET_DONE<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SET_DONE<span class="token punctuation">,</span> payload<span class="token punctuation">:</span> i <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> setDoneSuccess <span class="token operator">=</span> <span class="token function">makeAction</span><span class="token punctuation">(</span>SET_DONE_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> type<span class="token punctuation">:</span> SET_DONE_SUCCESS<span class="token punctuation">,</span> payload<span class="token punctuation">:</span> i <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>of a specific type with a specific <code>payload</code> (<em>which is the way to pass new information to the <strong>reducer</strong></em>). In this case we use <code>makeAction</code> as defined by <strong>redux-guards</strong> to ensure we get proper typings.</p>
+<blockquote>
+<p>If you want to avoid having to type <code>type: ACTION_TYPE</code> you can override the <strong>redux</strong> interface according to <a href="https://medium.com/@danschuman/redux-guards-for-typescript-1b2dc2ed4790" target="_blank">this article</a>, but I personally I dislike overriding libraries so I prefer the duplicity here instead.</p>
+</blockquote>
+<hr>
+<p>Next we define our <a href="https://redux-observable.js.org/docs/basics/Epics.html" target="_blank">Epics</a></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Action <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Observable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;rxjs/Observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/operator/delay&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/operator/map&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/operator/mapTo&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Epic<span class="token punctuation">,</span> combineEpics<span class="token punctuation">,</span> ActionsObservable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> isAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../../redux/guards&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> saveTodoEpic<span class="token punctuation">:</span> Epic<span class="token operator">&lt;</span>Action<span class="token punctuation">,</span> undefined<span class="token operator">&gt;</span> <span class="token operator">=</span> action$ <span class="token operator">=</span><span class="token operator">&gt;</span>
+    action$
+        <span class="token punctuation">.</span><span class="token function">ofType</span><span class="token punctuation">(</span>SAVE_TODO<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span>testDelay<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">mapTo</span><span class="token punctuation">(</span><span class="token function">saveTodoSuccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> setDoneEpic<span class="token punctuation">:</span> Epic<span class="token operator">&lt;</span>Action<span class="token punctuation">,</span> undefined<span class="token operator">&gt;</span> <span class="token operator">=</span> action$ <span class="token operator">=</span><span class="token operator">&gt;</span>
+    action$
+        <span class="token punctuation">.</span><span class="token function">ofType</span><span class="token punctuation">(</span>SET_DONE<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span>testDelay<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>action <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDone<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">setDoneSuccess</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> IndexEpics <span class="token operator">=</span> <span class="token function">combineEpics</span><span class="token punctuation">(</span>saveTodoEpic<span class="token punctuation">,</span> setDoneEpic<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>which are <a href="https://redux-observable.js.org" target="_blank">redux-observable&apos;s</a> way of handling side-effects in <strong>Redux</strong> (<em>like AJAX calls etc.</em>). At the end we combine all our <strong>Epics</strong> in this file to a single exportable <strong>Epic</strong> called <code>IndexEpics</code> (<em>so we only need to import one variable when we want access to these later</em>).</p>
+<blockquote>
+<p>The importing part may look a little weird, but it&apos;s because <a href="http://reactivex.io/rxjs/" target="_blank">RxJS</a> is a rather large library, we can either import everything using <code>import * as RxJS from &apos;rxjs&apos;</code> or import only the parts we need as shown above, which will allow any proper <a href="https://developers.google.com/speed/docs/insights/MinifyResources" target="_blank">minifier</a> like <a href="https://github.com/mishoo/UglifyJS" target="_blank">UglifyJS</a> to include only the needed parts from <strong>RxJS</strong></p>
+</blockquote>
+<p>The first line</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> saveTodoEpic<span class="token punctuation">:</span> Epic<span class="token operator">&lt;</span>Action<span class="token punctuation">,</span> undefined<span class="token operator">&gt;</span> <span class="token operator">=</span> action$ <span class="token operator">=</span><span class="token operator">&gt;</span>
+</code></pre>
+<p>defines an <strong>Epic</strong> which takes in as the first type argument the <code>type</code> for the <code>Actions</code> the epic takes in (<em>and returns</em>), in this case <code>Action</code> from <strong>redux</strong>, and as the second argument the type of the <strong>State</strong> it takes in (<em>which isn&apos;t needed this time, so undefined will do</em>). An <strong>Epic</strong> is a function that takes in a <a href="https://en.wikipedia.org/wiki/Stream_(computing" target="_blank">stream</a>) (<em>in this case of the type <code>ActionsObservable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Action</span><span class="token punctuation">&gt;</span></span></code></em>) which includes items of the <code>type</code> given as the first type argument and returns another stream (<em>in this case an <a href="http://reactivex.io/documentation/observable.html" target="_blank"><code>Observable<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Action</span><span class="token punctuation">&gt;</span></span></code></a>, which <code>ActionsObservable</code> is based on</em>) which includes items of the same <code>type</code> as the input stream.</p>
+<blockquote>
+<p>In JavaScript the convention is to append a <code>$</code> to all variables names that are <strong>streams</strong>, to let the developer know that they are dealing with one</p>
+</blockquote>
+<p>The second and third line</p>
+<pre class="language-"><code class="lang-typescript">    action$
+        <span class="token punctuation">.</span><span class="token function">ofType</span><span class="token punctuation">(</span>SET_DONE<span class="token punctuation">)</span>
+</code></pre>
+<p>utilizes the inbuilt function <code>ofType(key: string)</code> of <code>ActionsObservable</code>, which basically filters out all <strong>actions</strong> that do not have the <code>type</code>-property of the given argument.</p>
+<blockquote>
+<p>A more verbose, but maybe a simpler to understand version would be to write</p>
+<pre class="language-"><code class="lang-typescript">action$<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>action <span class="token operator">=</span><span class="token operator">&gt;</span> action<span class="token punctuation">.</span>type <span class="token operator">===</span> SET_DONE<span class="token punctuation">)</span>
+</code></pre>
+<p>If you find yourself needing to understand the types of the components provided by <strong>redux-observable</strong> I suggest reading <a href="https://github.com/redux-observable/redux-observable/blob/master/index.d.ts" target="_blank">this</a></p>
+</blockquote>
+<p>The third and fourth line</p>
+<pre class="language-"><code class="lang-typescript">        <span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">mapTo</span><span class="token punctuation">(</span><span class="token function">saveTodoSuccess</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>include the actual functionality of our <strong>Epic</strong>. In this case <strong>after</strong> we receive an <strong>action</strong> of the type <code>SET_DONE</code> we wait for 1 second (<em><code>delay</code> takes milliseconds as argument</em>) and then we return an <strong>action</strong> of the type <code>SAVE_TODO_SUCCESS</code> (<em>in this case using <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mapTo" target="_blank"><code>mapTo</code></a> as we just want to return a new <strong>Action</strong></em>).</p>
+<blockquote>
+<p>If you wanted to return multiple actions, say <code>SET_DONE_SUCCESS</code> and an imaginary <code>SEND_PUSH_NOTIFICATION</code> you could do it using <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mergeMap" target="_blank"><code>mergeMap</code></a>, which is kind of like <code>flatMap</code>, like so:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Observable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;rxjs/Observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/observable/from&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">&apos;rxjs/add/operator/mergeMap&apos;</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+    action$<span class="token punctuation">.</span><span class="token function">ofType</span><span class="token punctuation">(</span>SET_DONE<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">mergeMap</span><span class="token punctuation">(</span>action <span class="token operator">=</span><span class="token operator">&gt;</span> Observable<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+            <span class="token function">setDoneSuccess</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>payload<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token comment" spellcheck="true">// SEND_PUSH_NOTIFICATION,</span>
+            <span class="token comment" spellcheck="true">// OTHER ACTIONS,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</blockquote>
+<p>The other <strong>Epic</strong> is otherwirse similar, but it uses <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-map" target="_blank"><code>map</code></a></p>
+<pre class="language-"><code class="lang-typescript">        <span class="token punctuation">.</span><span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>action <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDone<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">setDoneSuccess</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>to return an action of the type <code>SET_DONE_SUCCESS</code>, using the payload of the incoming action. We use <code>isAction</code> defined by <strong>redux-guards</strong> here to ensure <strong>TypeScript</strong> understands the type of our action, otherwise it would complain that <code>Action does not have key payload</code>.</p>
+<blockquote>
+<p>If you wanted to do an AJAX call, you would go about it like this:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> ajax <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;rxjs/observable/dom/ajax&apos;</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+    action$<span class="token punctuation">.</span><span class="token function">ofType</span><span class="token punctuation">(</span>AJAX_CALL<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mergeMap</span><span class="token punctuation">(</span>action <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// For a get JSON call</span>
+        ajax<span class="token punctuation">.</span><span class="token function">getJSON</span><span class="token punctuation">(</span><span class="token string">&apos;url&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> headers<span class="token punctuation">:</span> <span class="token string">&apos;go here&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">someAction</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">errorAction</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// For all other calls, just select the correct verb</span>
+        ajax<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">&apos;url&apos;</span><span class="token punctuation">,</span> payload<span class="token punctuation">,</span> <span class="token punctuation">{</span> headers<span class="token punctuation">:</span> <span class="token string">&apos;go here&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">someAction</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">errorAction</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Redux-observable</strong> is built upon <a href="http://reactivex.io/" target="_blank">RxJS</a>, the JavaScript implemention of <strong>ReactiveX</strong> and most issues you will run into will be <strong>RxJS</strong> issues</p>
+</blockquote>
+<hr>
+<p>Finally we define the rest of our business logic, a.k.a. the <strong>reducer</strong> itself</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> IndexReducer <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">:</span> IndexState <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> Action<span class="token punctuation">)</span><span class="token punctuation">:</span> IndexState <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setTitle<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> title<span class="token punctuation">:</span> action<span class="token punctuation">.</span>payload <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> saveTodo<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> loading<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> saveTodoSuccess<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            title<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+            todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Todo</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> state<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            loading<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDone<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> loading<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDoneSuccess<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span>id <span class="token operator">===</span> action<span class="token punctuation">.</span>payload <span class="token operator">?</span> t<span class="token punctuation">.</span><span class="token function">setDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            loading<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>for which I suggest to break from the <strong>redux-ducks</strong> pattern by using the naming convention of <code>[Pagename]Reducer</code>. The important thing to remember with <strong>reducers</strong> is that they have to be <a href="https://en.wikipedia.org/wiki/Functional_programming" target="_blank">functional</a>, a.k.a. they are not allowed to mutate the incoming information or have side-effects.</p>
+<p>On the first line we define the signature of our <code>IndexReducer</code></p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> IndexReducer <span class="token operator">=</span> <span class="token punctuation">(</span>state<span class="token punctuation">:</span> IndexState <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> Action<span class="token punctuation">)</span><span class="token punctuation">:</span> IndexState <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>where we define it to take to parameters (<em>as all <strong>reducers</strong></em>), our <code>IndexState</code> (<em>with a default for the empty state</em>) and an action. <code>IndexReducer</code> will also return an <code>IndexState</code> (<em>as all <strong>reducers</strong></em>).</p>
+<p>Next we do the actual logic which all <strong>reducers</strong> are built upon</p>
+<pre class="language-"><code class="lang-typescript">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setTitle<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> title<span class="token punctuation">:</span> action<span class="token punctuation">.</span>payload <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> saveTodo<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> loading<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> saveTodoSuccess<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            title<span class="token punctuation">:</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">,</span>
+            todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Todo</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> state<span class="token punctuation">.</span>title<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            loading<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDone<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token operator">...</span>state<span class="token punctuation">,</span> loading<span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAction</span><span class="token punctuation">(</span>action<span class="token punctuation">,</span> setDoneSuccess<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token operator">...</span>state<span class="token punctuation">,</span>
+            todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>t <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>t<span class="token punctuation">.</span>id <span class="token operator">===</span> action<span class="token punctuation">.</span>payload <span class="token operator">?</span> t<span class="token punctuation">.</span><span class="token function">setDone</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            loading<span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>which is usually a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch" target="_blank"><code>switch</code></a>-statement, but due to the way we use <strong>redux-guards</strong> we use an <code>if-else-if-else</code>-block instead, where we use <code>isAction</code> to check the function&apos;s type (<em>and give <strong>TypeScript</strong> the type information</em>). In each <code>block</code> we do something (<em>except the <code>default</code>-one, where you traditionally just return the incoming <strong>state</strong></em>) to add value to that <strong>action</strong>, such as setting the <code>title</code> to the <code>payload</code> in the <strong>action</strong> in case the <strong>action</strong> is a <code>SET_TITLE</code>-action. Notice how we are using the <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Spread_operator" target="_blank">spread syntax</a> to immutably create a new version of the state, thus holding true to the immutability of <strong>reducers</strong>.</p>
+<blockquote>
+<p>Other options are to use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank"><code>Object.assign({}, ...)</code></a> or <a href="https://facebook.github.io/immutable-js/" target="_blank">Immutable</a></p>
+</blockquote>
+<h3 id="connecting-the-reducer">Connecting the reducer</h3>
+<p>Remember our <a href="../REDUX.md#reducer">root-reducer</a>? Now we connect our <code>IndexReducer</code> to it.</p>
+<p>First the <strong>reducer</strong> itself</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> combineReducers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> IndexReducer <span class="token keyword">from</span> <span class="token string">&apos;../modulex/index/IndexReducer&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    index<span class="token punctuation">:</span> IndexReducer<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>where we add the <code>IndexReducer</code> under the key <code>index</code>, which is very important, as when <code>combineReducers</code> combines included <strong>reducers</strong> it will put their specific state under the key given, in the global <strong>state</strong>-object.</p>
+<p>Next we add the <code>IndexState</code> to our global <code>State</code>-class (<em>this is just to allow us to define the type and initialize it for tests later on</em>)</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> IndexState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../modules/index/IndexReducer&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+    readonly index<span class="token punctuation">:</span> IndexState <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IndexState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>where we define that the global <code>State</code>-object has a property <code>index</code> of the type <code>IndexState</code> (<em>as our <code>combineReducer</code> already says, but we want to be explicit here</em>).</p>
+<p>Then we want to add our <strong>Epics</strong> into the global <code>epics</code> constant</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> combineEpics <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> IndexEpics <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../modules/index/IndexReducer&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> epics <span class="token operator">=</span> <span class="token function">combineEpics</span><span class="token punctuation">(</span>IndexEpics<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>by including it as a parameter to <code>combineEpics</code>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="VIEWS.html" class="navigation navigation-prev " aria-label="Previous page: Views">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="CONTAINERS.html" class="navigation navigation-next " aria-label="Next page: Containers">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Reducers","level":"2.6","depth":1,"next":{"title":"Containers","level":"2.7","depth":1,"path":"docs/CONTAINERS.md","ref":"docs/CONTAINERS.md","articles":[]},"previous":{"title":"Views","level":"2.5","depth":1,"path":"docs/VIEWS.md","ref":"docs/VIEWS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/REDUCERS.md","mtime":"2018-01-17T10:47:26.630Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

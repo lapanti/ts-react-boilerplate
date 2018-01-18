@@ -1,0 +1,543 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Common · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="COMPONENTS.html" />
+    
+    
+    <link rel="prev" href="STRUCTURE.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Common</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="common">Common</h1>
+<p>We will begin with the simplest piece, common (or shared) code. This will also serve as a good introduction to <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>.</p>
+<h3 id="initialize">Initialize</h3>
+<p>We will begin by creating the structure and installing the necessary dependencies (make sure you have <a href="https://yarnpkg.com/lang/en/" target="_blank">Yarn</a> installed). Open up your console in the directory you want to build your application in and run the following commands:</p>
+<ol>
+<li>Initialize the Yarn-project and answer the prompts according to your application:<pre class="language-"><code>yarn init
+</code></pre></li>
+<li>Add the necessary dependencies, <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> and <a href="https://palantir.github.io/tslint/" target="_blank">TSLint</a> (for code quality checks, a.k.a. linting). When you add dependencies in <strong>Yarn</strong> they will be saved to your <code>package.json</code> and <strong>Yarn</strong> will create a <code>yarn.lock</code> file to manage the versions of those dependencies. The flag <code>-D</code> saves them as <code>devDependencies</code> which will not be utilized when running the system in production.<pre class="language-"><code>yarn add -D typescript tslint
+</code></pre></li>
+<li>Open your project in an editor like <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> or <a href="https://atom.io/" target="_blank">Atom</a>, though I recommend <strong>Visual Studio Code</strong> as it has <a href="https://en.wikipedia.org/wiki/Intelligent_code_completion" target="_blank">IntelliSense</a>.</li>
+<li>Create the file <code>Todo.ts</code> inside a folder called <code>common</code> which will in turn be inside <code>src</code> that is located at the root of your application.</li>
+</ol>
+<h3 id="configuring-typescript">Configuring TypeScript</h3>
+<p>Next we will configure <strong>TypeScript</strong> by creating a file in the root folder called <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank">tsconfig.json</a>. <code>tsconfig.json</code> indicates to <strong>TypeScript</strong> that the folder is a <strong>TypeScript</strong> project. Start by writing the following content into your <code>tsconfig.json</code>:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;compilerOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;noImplicitAny&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;target&quot;</span><span class="token operator">:</span> <span class="token string">&quot;es5&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;jsx&quot;</span><span class="token operator">:</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;moduleResolution&quot;</span><span class="token operator">:</span> <span class="token string">&quot;node&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;lib&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;dom&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es2016&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es2017&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;sourceMap&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;include&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;src/**/*.ts&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;src/**/*.tsx&quot;</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>On the first row</p>
+<pre class="language-"><code class="lang-json">    <span class="token property">&quot;compilerOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>we start by defining the <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank">compilerOptions</a>.</p>
+<p>The first rule we set</p>
+<pre class="language-"><code class="lang-json">        <span class="token property">&quot;noImplicitAny&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</code></pre>
+<p>is <code>noImplicitAny</code> which will enforce the use of type declarations (more about those later) when the type would otherwise be inferred as <code>any</code>.</p>
+<p>The second rule</p>
+<pre class="language-"><code class="lang-json">        <span class="token property">&quot;target&quot;</span><span class="token operator">:</span> <span class="token string">&quot;es5&quot;</span><span class="token punctuation">,</span>
+</code></pre>
+<p>defines the target ECMAScript version (in this case <a href="https://kangax.github.io/compat-table/es5/" target="_blank">ES5</a>) for the compiled JavaScript files.</p>
+<p>In the third line</p>
+<pre class="language-"><code class="lang-json">        <span class="token property">&quot;moduleResolution&quot;</span><span class="token operator">:</span> <span class="token string">&quot;node&quot;</span>
+</code></pre>
+<p>we set the <a href="https://www.typescriptlang.org/docs/handbook/module-resolution.html" target="_blank">moduleResolution</a> mode for the <strong>TypeScript</strong> compiler as <code>node</code>, which allows the importing of dependencies from the folder <code>node_modules</code> (<em>where Yarn saves them by default</em>) by using non-relative imports. </p>
+<p>On the fourth line</p>
+<pre class="language-"><code class="lang-json">        <span class="token property">&quot;lib&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;dom&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es2016&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;es2017&quot;</span><span class="token punctuation">]</span>
+</code></pre>
+<p>we add support for DOM APIs like <a href="https://developer.mozilla.org/en/docs/Web/API/Window" target="_blank"><code>Window</code></a> and the newest features from <a href="http://2ality.com/2016/01/ecmascript-2016.html" target="_blank">es2016</a> and <a href="http://2ality.com/2016/02/ecmascript-2017.html" target="_blank">es2017</a>.</p>
+<p>On the fifth line</p>
+<pre class="language-"><code class="lang-json">        <span class="token property">&quot;sourceMap&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</code></pre>
+<p>we tell the compiler to generate <a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map" target="_blank">source maps</a>.</p>
+<hr>
+<p>On the seventh line</p>
+<pre class="language-"><code class="lang-json">    <span class="token property">&quot;include&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</code></pre>
+<p>we set the files <strong>TypeScript</strong> will compile.</p>
+<p>In this case we use a <a href="https://en.wikipedia.org/wiki/Glob_(programming" target="_blank">glob pattern</a>) to indicate the <strong>TypeScript</strong> files on the eight and ninth lines.</p>
+<pre class="language-"><code class="lang-json">        <span class="token string">&quot;src/**/*.ts&quot;</span><span class="token punctuation">,</span>
+        <span class="token string">&quot;src/**/*.tsx&quot;</span>
+</code></pre>
+<p>These globs will match all files in the <code>src</code> folder (recursively) with the extension <code>.ts</code> or <code>.tsx</code>.</p>
+<h3 id="start-coding">Start coding</h3>
+<p>We will begin by creating a class that defines our Todo-items. A Todo should have an id (to differentiate between todos), a title (tha actual todo) and information on whether the todo has been completed or not. Here we see the benefit of using <strong>TypeScript</strong>, as it allows us to define the actual information contained in a Todo (in plain JavaScript and all other dynamically typed languages you as a developer have to keep track of such things). I&apos;ll first show you the class in its simplest form and then explain what each keyword means.</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Todo</span> <span class="token punctuation">{</span>
+    readonly id<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+    readonly title<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    readonly done<span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<p>On the first line</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">Todo</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>we first define that this <code>class</code> is the default export (<code>export default</code>) of our module, which means that in other files we can write</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;../path/to/Todo.ts&apos;</span>
+</code></pre>
+<p>instead of (just writing <code>export</code>)</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Todo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;../path/to/Todo.ts&apos;</span>
+</code></pre>
+<p>to get a hold of our new <code>Todo</code>-class.</p>
+<blockquote>
+<p>Remember that a module can only have one default export.</p>
+</blockquote>
+<p>After the export-clause we define the <code>class Todo</code>. In <strong>TypeScript</strong> a <a href="https://www.typescriptlang.org/docs/handbook/classes.html" target="_blank">class</a> is something you can instantiate (create an instance of), and that can inherit other classes (have their properties as well).</p>
+<hr>
+<p>On the second line</p>
+<pre class="language-"><code class="lang-typescript">    readonly id<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+</code></pre>
+<p>we define our first property for the <code>class Todo</code>. The first word <a href="https://basarat.gitbooks.io/typescript/docs/types/readonly.html" target="_blank">readonly</a> defines the property as something that is <a href="https://en.wikipedia.org/wiki/Immutable_object" target="_blank">immutable</a> and from now on <strong>TypeScript</strong> a <code>class</code> will give you an error if you try to change the value of a <code>Todo</code>&apos;s <code>number</code>-field. The second word <code>id</code> is the name of the property (so later on we can access it by calling <code>myInstanceOfTodo.id</code>). The last word here is the <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">type</a> of the property, meaning what kind of information the property can hold, in this case a <code>number</code> (this particular type doesn&apos;t care if it is a whole number or a floating one).</p>
+<hr>
+<p>The two following lines</p>
+<pre class="language-"><code class="lang-typescript">    readonly title<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+    readonly done<span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span>
+</code></pre>
+<p>are otherwise the same as the first one, except the property <code>title</code> has a <strong>type</strong> of <code>string</code>, meaning it&apos;s an arbitrary sequence of letters and characters and the property <code>done</code> has a <strong>type</strong> of <code>boolean</code>, meaning that its value is either <code>true</code> or <code>false</code>.</p>
+<hr>
+<p>Congratulations, you have now created your very first <strong>TypeScript</strong> <code>class</code>!</p>
+<h3 id="linting">Linting</h3>
+<p>It&apos;s time to start linting your code by using <a href="https://palantir.github.io/tslint/" target="_blank">TSLint</a>. Let&apos;s begin by creating a <a href="https://yarnpkg.com/lang/en/docs/cli/run/" target="_blank">Yarn script</a> to run <strong>TSLint</strong>:</p>
+<pre class="language-"><code class="lang-json">// In package.json
+<span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;lint:ts&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tslint --type-check --project tsconfig.json&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The lint command can now be run with <code>yarn run lint:ts</code>. This will now run <strong>TSLint</strong> with its default settings (<em>using tsconfig.json&apos;s settings</em>). However, that might not always be enough for you and if you want to define the rules for your own codebase more accurately, you can create a <code>tslint.json</code> in the root folder and populate it with rules according to <a href="https://palantir.github.io/tslint/rules/" target="_blank">TSLint rules</a>. For example in the boilerplate the <code>tslint.json</code> looks like that:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;rules&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;no-any&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> // Allows use of any as a type declaration
+        <span class="token property">&quot;no-magic-numbers&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> // Disallow magic numbers
+        <span class="token property">&quot;only-arrow-functions&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Enforces the use of arrow functions instead of the traditional syntax
+        <span class="token property">&quot;curly&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> // Enforces curly braces in all ifs/fors/dos/whiles
+        <span class="token property">&quot;no-var-keyword&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> // Enforces the use of the new keywords let and const instead of the old var
+        <span class="token property">&quot;triple-equals&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> // Enforces the use of triple equals instead of double equals in conditionals
+        <span class="token property">&quot;indent&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;spaces&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Enforces indentation using spaces instead of tabs
+        <span class="token property">&quot;prefer-const&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> // Enforces the use of const unless let is needed
+        <span class="token property">&quot;semicolon&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">&quot;always&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Enforces that all lines should end in a semicolon
+        <span class="token property">&quot;eofline&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> // Enforces an empty line at the end of file
+        <span class="token property">&quot;trailing-comma&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token property">&quot;multiline&quot;</span><span class="token operator">:</span> <span class="token string">&quot;always&quot;</span><span class="token punctuation">,</span> <span class="token property">&quot;singleline&quot;</span><span class="token operator">:</span> <span class="token string">&quot;never&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Enforces a comma at the end of all parameters that end in a new line
+        <span class="token property">&quot;arrow-return-shorthand&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Suggests one to use shorthand arrow functions when possible
+        <span class="token property">&quot;class-name&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> // Enforces PascalCased class names
+        <span class="token property">&quot;interface-name&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">&quot;always-prefix&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Enforces all interfaces to follow PascalCasing and be prefixed with I
+        <span class="token property">&quot;quotemark&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">&quot;single&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Enforces the use of single quotation marks
+        <span class="token property">&quot;no-unused-variable&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token property">&quot;ignore-pattern&quot;</span><span class="token operator">:</span> <span class="token string">&quot;^I&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // Warns about unused variables<span class="token punctuation">,</span> unless they start with a capital I (interfaces<span class="token punctuation">)</span>
+        <span class="token property">&quot;no-unused-expression&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">&quot;allow-fast-null-checks&quot;</span><span class="token punctuation">]</span> // Warns about unused expressions<span class="token punctuation">,</span> unless it is a <span class="token null">null</span> check e.g. someVariable &amp;&amp; someVariable.doSomething(<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="alternatives">Alternatives</h3>
+<p>Below you can find alternatives to TypeScript, if you don&apos;t fancy it as much as I do:</p>
+<ul>
+<li><a href="http://simplefocus.com/flowtype/" target="_blank">Flow</a></li>
+<li><a href="http://www.purescript.org/" target="_blank">PureScript</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="STRUCTURE.html" class="navigation navigation-prev " aria-label="Previous page: Application structure">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="COMPONENTS.html" class="navigation navigation-next " aria-label="Next page: Components">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Common","level":"2.2","depth":1,"next":{"title":"Components","level":"2.3","depth":1,"path":"docs/COMPONENTS.md","ref":"docs/COMPONENTS.md","articles":[]},"previous":{"title":"Application structure","level":"2.1","depth":1,"path":"docs/STRUCTURE.md","ref":"docs/STRUCTURE.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/COMMON.md","mtime":"2018-01-10T09:30:26.765Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

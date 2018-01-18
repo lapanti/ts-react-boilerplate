@@ -1,0 +1,528 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Redux · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="VIEWS.html" />
+    
+    
+    <link rel="prev" href="COMPONENTS.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Redux</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="redux">Redux</h1>
+<p>Next we will setup <a href="http://redux.js.org/" target="_blank">redux</a> to handle the state for our application (<em>redux allows us to keep our components pure, helping testing and predictability</em>).</p>
+<blockquote>
+<p>You can think of <strong>redux</strong> as an implementation of the <a href="https://facebook.github.io/flux/" target="_blank">Flux</a> pattern, where the main point is that data flows into a single direction.</p>
+</blockquote>
+<h3 id="initialize">Initialize</h3>
+<ol>
+<li>This time we will only need to add the necessary dependencies to allow development with <strong>redux</strong>:<pre class="language-"><code>yarn add redux redux-observable rxjs react-router-redux@next history
+</code></pre></li>
+<li>Add the necessary type definitions (<em>redux, redux-observable and rxjs contain type definitions</em>):<pre class="language-"><code>yarn add -D @types/react-router-redux @types/history
+</code></pre><blockquote>
+<p><a href="https://redux-observable.js.org/" target="_blank">Redux-observable</a> is our choice for allowing side effects, such as <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started" target="_blank">AJAX</a>-calls in <strong>redux</strong>. <a href="http://reactivex.io/" target="_blank">RxJS</a> is a peer dependency for <strong>redux-observable</strong>. If you want something else you can check the <a href="#alternatives">alternatives</a>. <a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux" target="_blank">React-router-redux</a> is used to tie navigation events and browser history into <strong>redux</strong> when using <a href="https://reacttraining.com/react-router/" target="_blank">React Router</a> (<em>which well setup later</em>), and <a href="https://github.com/reacttraining/history" target="_blank">history</a> is needed to use <strong>react-router-redux</strong>.</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="redux-guards">Redux guards</h3>
+<p>We will begin by creating a file called <code>guards.js</code> inside the folder <code>redux</code> in <code>src</code>. This file will contain some helper functions so that TypeScript will play nicely with <strong>Redux</strong>. The contents of the file are as follows:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Action <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> type IActionType<span class="token operator">&lt;</span>X<span class="token operator">&gt;</span> <span class="token operator">=</span> X <span class="token operator">&amp;</span> <span class="token punctuation">{</span> __actionType<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> _devSet<span class="token punctuation">:</span> <span class="token punctuation">{</span> <span class="token punctuation">[</span>key<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> makeAction <span class="token operator">=</span> <span class="token operator">&lt;</span>Z <span class="token keyword">extends</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> typePrefix <span class="token operator">=</span> <span class="token string">&apos;&apos;</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Helpful check against copy-pasting duplicate type keys when creating</span>
+    <span class="token comment" spellcheck="true">// new actions.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>NODE_ENV <span class="token operator">===</span> <span class="token string">&apos;development&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>_devSet<span class="token punctuation">[</span>type<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>
+                <span class="token string">&apos;Attempted creating an action with an existing type key. &apos;</span> <span class="token operator">+</span> <span class="token string">&apos;This is almost cetainly an error.&apos;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        _devSet<span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> type<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>X <span class="token keyword">extends</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> Z<span class="token operator">&gt;</span><span class="token punctuation">(</span>fn<span class="token punctuation">:</span> X<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> returnFn<span class="token punctuation">:</span> IActionType<span class="token operator">&lt;</span>X<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span><span class="token punctuation">(</span>fn as <span class="token keyword">any</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span><span class="token punctuation">,</span> type <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> as <span class="token keyword">any</span><span class="token punctuation">;</span>
+        returnFn<span class="token punctuation">.</span>__actionType <span class="token operator">=</span> typePrefix <span class="token operator">+</span> type<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> returnFn<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> isAction <span class="token operator">=</span> <span class="token operator">&lt;</span>T<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+    action<span class="token punctuation">:</span> Action<span class="token punctuation">,</span>
+    actionCreator<span class="token punctuation">:</span> IActionType<span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">:</span> <span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> T<span class="token operator">&gt;</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span> action is T <span class="token operator">&amp;</span> Action <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> action<span class="token punctuation">.</span>type <span class="token operator">===</span> actionCreator<span class="token punctuation">.</span>__actionType<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p><a href="http://redux.js.org/docs/basics/Actions.html" target="_blank">Actions</a> are the only way to send new content to the <strong>redux</strong>-state, and are usually in the form of an object with the properties <code>type</code> (<em>a unique string</em>) and an optional <code>payload</code> (<em>something to pass to the reducer</em>). However as <strong>redux</strong> has defined the <code>type</code> key to be of the type <code>any</code>, we lose type safety and that is why we alias the actual string to <code>__actionType</code>, which allows <strong>TypeScript</strong> to infer the type of an action implicitly, which is where <code>makeAction</code> comes in. The <code>_devSet</code> variable and the things related to it inside <code>makeAction</code> are for development, to ensure we don&apos;t create duplicate actions. The <code>isAction</code>-function is a <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html" target="_blank">type guard</a> which allows us to use the action creators (<em>more about them in <a href="REDUCERS.html">reducers</a></em>) own return type as the actual type for the action, giving us implicit, but safe, typings. You can read more about  <a href="https://github.com/quicksnap/redux-guards" target="_blank">redux guards</a> <a href="https://medium.com/@danschuman/redux-guards-for-typescript-1b2dc2ed4790" target="_blank">here</a>. Don&apos;t worry if this seems too complex as it uses a lot of advanced features of <strong>TypeScript</strong> to work.</p>
+<h3 id="reducer">Reducer</h3>
+<p>Now we will define our root-reducer in a file called <code>reducer.ts</code> inside the folder <code>redux</code>:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> combineReducers <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> combineEpics <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> routerReducer<span class="token punctuation">,</span> RouterState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> reducer <span class="token operator">=</span> combineReducers<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    router<span class="token punctuation">:</span> routerReducer<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+    readonly router<span class="token punctuation">:</span> RouterState <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> epics <span class="token operator">=</span> <span class="token function">combineEpics</span><span class="token punctuation">(</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> reducer<span class="token punctuation">;</span>
+</code></pre>
+<p>This file will allow us to export all of the following:</p>
+<ul>
+<li>Our root reducer (<em>all specific reducers will be combined into this one, as according to <a href="http://redux.js.org/docs/basics/Reducers.html#handling-actions" target="_blank">redux documentation</a>, allowing our reducers to only handle a slice of the entire <code>state</code></em>) made with <a href="http://redux.js.org/docs/api/combineReducers.html" target="_blank">combineReducers</a></li>
+<li>The class of our entire <code>state</code> (<em>defined as a class to allow initialization in for example tests</em>)</li>
+<li>Our combined <a href="https://redux-observable.js.org/docs/basics/Epics.html" target="_blank">epics</a> (<em>more about epics later</em>) made with <a href="https://redux-observable.js.org/docs/api/combineEpics.html" target="_blank">combineEpics</a></li>
+</ul>
+<h3 id="store">Store</h3>
+<p>Now we will define our store creator. Having it as a separate function helps us in doing <a href="https://github.com/reactjs/redux/blob/master/docs/recipes/ServerRendering.md" target="_blank">server-side rendering</a> but if you don&apos;t want to do it you can define this function later. The store creator goes in a file called <code>store.ts</code> inside the <code>redux</code>-folder:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> applyMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createEpicMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> History <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;history&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> routerMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> reducer<span class="token punctuation">,</span> <span class="token punctuation">{</span> epics<span class="token punctuation">,</span> State <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./reducer&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> epicMiddleware <span class="token operator">=</span> <span class="token function">createEpicMiddleware</span><span class="token punctuation">(</span>epics<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> configureStore <span class="token operator">=</span> <span class="token punctuation">(</span>history<span class="token punctuation">:</span> History<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> createStore<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+    reducer<span class="token punctuation">,</span>
+    <span class="token function">applyMiddleware</span><span class="token punctuation">(</span><span class="token function">routerMiddleware</span><span class="token punctuation">(</span>history<span class="token punctuation">)</span><span class="token punctuation">,</span> epicMiddleware<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> configureStore<span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<p>On the fifth line we create a <a href="http://redux.js.org/docs/advanced/Middleware.html" target="_blank">middleware</a> for our <strong>store</strong> to handle our epics, using <a href="https://redux-observable.js.org/docs/api/createEpicMiddleware.html" target="_blank">createEpicMiddleware</a> (<em>and here you see why we combined all our epics into one</em>):</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createEpicMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-observable&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> epics <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./reducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> epicMiddleware <span class="token operator">=</span> <span class="token function">createEpicMiddleware</span><span class="token punctuation">(</span>epics<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<p>And then on the seventh line we define our store creator method (<em>which is exported on the 14th line</em>):</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> createStore<span class="token punctuation">,</span> applyMiddleware<span class="token punctuation">,</span> Store <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> History <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;history&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> routerMiddleware <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;react-router-redux&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> reducer<span class="token punctuation">,</span> <span class="token punctuation">{</span> State <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;./reducer&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> configureStore <span class="token operator">=</span> <span class="token punctuation">(</span>history<span class="token punctuation">:</span> History<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> createStore<span class="token operator">&lt;</span>State<span class="token operator">&gt;</span><span class="token punctuation">(</span>
+    reducer<span class="token punctuation">,</span>
+    <span class="token function">applyMiddleware</span><span class="token punctuation">(</span><span class="token function">routerMiddleware</span><span class="token punctuation">(</span>history<span class="token punctuation">)</span><span class="token punctuation">,</span> epicMiddleware<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> configureStore<span class="token punctuation">;</span>
+</code></pre>
+<p><a href="http://redux.js.org/docs/api/createStore.html" target="_blank">createStore</a> is the function that creates a <strong>Store</strong> for <strong>redux</strong> and as it&apos;s first argument it takes the root-reducer and as the second one all the applicable middleware (<em>combined with <a href="http://redux.js.org/docs/api/applyMiddleware.html" target="_blank">applyMiddleware</a></em>), in this case our <strong>epicMiddleware</strong> and <strong>routerMiddleware</strong>. The function <code>configureStore</code> takes a <code>History</code> as an argument, to allow us to call it with different types of histories.</p>
+<hr>
+<p>Now we have everything set up to start doing the beef of the application, a.k.a. the views!</p>
+<h3 id="alternatives">Alternatives</h3>
+<p>If <strong>redux</strong> doesn&apos;t float your boat, you can always try <a href="https://github.com/mobxjs/mobx" target="_blank">MobX</a>, but <strong>redux</strong> is maybe the more used one at this point.</p>
+<p>For <strong>redux-observable</strong> you have multiple alternatives, namely:</p>
+<ul>
+<li><a href="https://github.com/redux-loop/redux-loop" target="_blank">redux-loop</a>, which is inspired by <a href="http://elm-lang.org/" target="_blank">elm</a>&apos;s effect system</li>
+<li><a href="https://github.com/gaearon/redux-thunk" target="_blank">redux-thunk</a></li>
+<li><a href="https://github.com/redux-saga/redux-saga" target="_blank">redux-saga</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="COMPONENTS.html" class="navigation navigation-prev " aria-label="Previous page: Components">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="VIEWS.html" class="navigation navigation-next " aria-label="Next page: Views">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Redux","level":"2.4","depth":1,"next":{"title":"Views","level":"2.5","depth":1,"path":"docs/VIEWS.md","ref":"docs/VIEWS.md","articles":[]},"previous":{"title":"Components","level":"2.3","depth":1,"path":"docs/COMPONENTS.md","ref":"docs/COMPONENTS.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/REDUX.md","mtime":"2018-01-17T10:47:26.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

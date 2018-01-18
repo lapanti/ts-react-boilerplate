@@ -1,0 +1,549 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Components · TS-React-Boilerplate</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="REDUX.html" />
+    
+    
+    <link rel="prev" href="COMMON.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Walk-through</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="STRUCTURE.html">
+            
+                <a href="STRUCTURE.html">
+            
+                    
+                    Application structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="COMMON.html">
+            
+                <a href="COMMON.html">
+            
+                    
+                    Common
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="COMPONENTS.html">
+            
+                <a href="COMPONENTS.html">
+            
+                    
+                    Components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="REDUX.html">
+            
+                <a href="REDUX.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="VIEWS.html">
+            
+                <a href="VIEWS.html">
+            
+                    
+                    Views
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="REDUCERS.html">
+            
+                <a href="REDUCERS.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="CONTAINERS.html">
+            
+                <a href="CONTAINERS.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="COMPLETING.html">
+            
+                <a href="COMPLETING.html">
+            
+                    
+                    Completing React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="WEBPACK.html">
+            
+                <a href="WEBPACK.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="STYLES.html">
+            
+                <a href="STYLES.html">
+            
+                    
+                    Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="TESTING.html">
+            
+                <a href="TESTING.html">
+            
+                    
+                    Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="EXTRAS.html">
+            
+                <a href="EXTRAS.html">
+            
+                    
+                    Extras
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Components</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="components">Components</h1>
+<p>Next we will start writing out our components. This will serve as a good introduction to <a href="https://facebook.github.io/react/" target="_blank">React</a>.</p>
+<h3 id="initialize">Initialize</h3>
+<ol>
+<li>First we will add the needed dependencies for developing a <strong>React</strong> application:<pre class="language-"><code>yarn add react
+</code></pre></li>
+<li>And the needed developer dependencies for <strong>React</strong> development (with <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>):<pre class="language-"><code>yarn add -D @types/react tslint-react
+</code></pre>The package <code>@types/react</code> gives us type definitions for <strong>React</strong> and <a href="https://github.com/palantir/tslint-react" target="_blank">tslint-react</a> allows us to use <a href="https://palantir.github.io/tslint/" target="_blank">TSLint</a> to lint our <strong>React</strong> components.</li>
+</ol>
+<h3 id="configuring-for-react">Configuring for React</h3>
+<p>First we will configure <strong>TypeScript</strong> to work with <a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank">JSX</a> by adding the following line to our <a href="https://www.typescriptlang.org/docs/handbook/tsconfig-json.html" target="_blank">tsconfig.json</a>:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;compilerOptions&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;jsx&quot;</span><span class="token operator">:</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">,</span>
+        // Rest of the compiler options
+    <span class="token punctuation">}</span>
+    // Rest of the config file
+<span class="token punctuation">}</span>
+</code></pre>
+<p>As we are not using another transformation step setting <a href="https://www.typescriptlang.org/docs/handbook/jsx.html" target="_blank">jsx</a> to the value of <code>react</code> will emit the actual JavaScript after compilation.</p>
+<hr>
+<p>To use <strong>tslint-react</strong> we add the following lines to the file <code>tslint.json</code>:</p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;tslint-react&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> // This will allow us to use tslint-react-specific rules
+    <span class="token property">&quot;rules&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;jsx-no-lambda&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> // This disallows the definition of functions inside a React Component&apos;s render-function
+        // The rest of the rules
+        <span class="token property">&quot;quotemark&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">&quot;single&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;jsx-double&quot;</span><span class="token punctuation">]</span> // We added <span class="token string">&quot;jsx-double&quot;</span> here to denote that in JSX one should use double quotation marks.
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="button">Button</h3>
+<p>We will start with the simplest component that utilizes all the tools we need for most components, a <code>Button</code>, so go ahead and create a file <code>Button.tsx</code> (<em>the extension defines the file as a TypeScript-file that has JSX in it</em>) in the folder <code>components</code>:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">IButtonProps</span> <span class="token punctuation">{</span>
+    <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    readonly text<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> Button<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>IButtonProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> click<span class="token punctuation">,</span> text <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>input className<span class="token operator">=</span><span class="token string">&quot;btn&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token punctuation">{</span>text<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Button<span class="token punctuation">;</span>
+</code></pre>
+<p>In the first row</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>we import all the functionalities provided by <strong>React</strong> under the name <code>React</code> (<code>* as React</code>), including the ability to write JSX (<em>those things that look like HTML</em>).</p>
+<hr>
+<p>On the third to sixth rows</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">IButtonProps</span> <span class="token punctuation">{</span>
+    <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+    readonly text<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>we define an <a href="https://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank">interface</a> to denote the <a href="https://facebook.github.io/react/docs/components-and-props.html" target="_blank">properties</a> (<em>or props for short</em>) our <strong>component</strong> accepts (<em>and in this case needs</em>). <code>click()</code> defines a function, which will be known as <code>click</code> inside our <code>Button</code> and as we have only defined that it takes no arguments, we also tell the compiler that we don&apos;t care if it returns anything, just that it can be called, using the return type of <code>void</code>. <code>readonly text: string</code> on the other hand defines a <a href="https://basarat.gitbooks.io/typescript/docs/types/readonly.html" target="_blank">readonly</a> (<em>an immutable property</em>) called <code>text</code> inside our <code>Button</code>, that is of the type <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">string</a>.</p>
+<blockquote>
+<p><strong>Interfaces</strong> are shapes we define, meaning that we do not care what the actual implementation is, just that it has those types of values with those names. They cannot be instantiated as such and thus cannot contain default values like <a href="https://www.typescriptlang.org/docs/handbook/classes.html" target="_blank">classes</a>.</p>
+</blockquote>
+<hr>
+<p>On the eighth to tenth rows</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">const</span> Button<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>IButtonProps<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> click<span class="token punctuation">,</span> text <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>input className<span class="token operator">=</span><span class="token string">&quot;btn&quot;</span> type<span class="token operator">=</span><span class="token string">&quot;submit&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span> value<span class="token operator">=</span><span class="token punctuation">{</span>text<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>we define a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const" target="_blank">constant</a> (an immutable variable) called <code>Button</code> which is of the type <a href="https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc" target="_blank">React.StatelessComponent<ibuttonprops></ibuttonprops></a>, meaning it is a <a href="https://facebook.github.io/react/docs/react-component.html" target="_blank">React component</a>, which does not have an internal <a href="https://facebook.github.io/react-native/docs/state.html" target="_blank">state</a>, but only <strong>props</strong> of type <code>IButtonProps</code>. <a href="https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc" target="_blank">Stateless components</a> in <strong>React</strong> only need to define their <a href="https://facebook.github.io/react/docs/react-api.html" target="_blank">render</a>-method and using an <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank">ES6 arrow function</a> and a <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">destructuring assignment</a> we can return JSX with our <strong>props</strong> already defined as simple variables (<em>in this case &quot;click&quot; and &quot;text&quot;</em>). The actual return here is a simple HTML <a href="https://facebook.github.io/react/docs/forms.html" target="_blank">input</a> element with a class of <code>btn</code> (<em>in React you define classes with the property &quot;className&quot;</em>), a type of <code>submit</code>, an <a href="https://facebook.github.io/react/docs/handling-events.html" target="_blank"><code>onClick</code>-handler</a> that will simply call the <code>click</code>-property and a value of <code>text</code> (<em>in submit buttons the value is the text in the button</em>).</p>
+<blockquote>
+<p>You need to surround JSX with parentheses.</p>
+</blockquote>
+<hr>
+<p>And finally on the twelfth row</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">export</span> <span class="token keyword">default</span> Button<span class="token punctuation">;</span>
+</code></pre>
+<p>we export our <code>Button</code> as the default export of the module.</p>
+<h3 id="todocomponent">TodoComponent</h3>
+<p>Next we will define a component to visualize our <code>Todo</code>-class from the previous section, creating a file called <code>TodoComponent.tsx</code> in the <code>components</code>-folder:</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;../common/Todo&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">ITodoComponent</span> <span class="token punctuation">{</span>
+    readonly todo<span class="token punctuation">:</span> Todo<span class="token punctuation">;</span>
+    <span class="token function">setDone</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> TodoComponent<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>ITodoComponent<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> todo<span class="token punctuation">,</span> setDone <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;todo&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>input
+            className<span class="token operator">=</span><span class="token string">&quot;todo__checkbox&quot;</span>
+            type<span class="token operator">=</span><span class="token string">&quot;checkbox&quot;</span>
+            checked<span class="token operator">=</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>done<span class="token punctuation">}</span>
+            onChange<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>done <span class="token operator">&amp;&amp;</span> <span class="token function">setDone</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">}</span>
+        <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token string">&quot;todo__number&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">}</span><span class="token punctuation">:</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>span className<span class="token operator">=</span><span class="token string">&quot;todo__title&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>todo<span class="token punctuation">.</span>title<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> TodoComponent<span class="token punctuation">;</span>
+</code></pre>
+<p>which is mostly very similar to our <code>Button</code>. The biggest differences here are the second import</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> Todo <span class="token keyword">from</span> <span class="token string">&apos;../common/Todo&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>which imports our <code>Todo</code>-class using a relative path (<em>the TypeScript compiler will look for the file relative to the current file</em>) and the second property in our <code>interface</code></p>
+<pre class="language-"><code class="lang-typescript">    <span class="token function">setDone</span><span class="token punctuation">(</span>i<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+</code></pre>
+<p>which defines a function called <code>setDone</code> that takes one argument, which is a <code>number</code>.</p>
+<h3 id="loader">Loader</h3>
+<p>Next we implement our third and simplest component, called a <code>Loader</code>, in a file called <code>Loader.tsx</code> in the <code>components</code>-directory</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Loader<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>undefined<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;loader&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;loader__spinner&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Loader<span class="token punctuation">;</span>
+</code></pre>
+<p>which uses all previously introduced tools, except this time we have defined the <strong>props</strong> it receives as <a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html" target="_blank">undefined</a>, meaning that it does not take any <strong>props</strong> at all.</p>
+<h3 id="pagenotfound">PageNotFound</h3>
+<p>Lastly we create a page to be shown whenever user enters a URL that is not found (<em>a 404</em>), called <code>PageNotFound</code> in the <code>components</code>-directory</p>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> as React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> PageNotFound<span class="token punctuation">:</span> React<span class="token punctuation">.</span>StatelessComponent<span class="token operator">&lt;</span>undefined<span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;page-not-found&quot;</span><span class="token operator">&gt;</span>
+        <span class="token number">404</span> <span class="token operator">-</span> page not found
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> PageNotFound<span class="token punctuation">;</span>
+</code></pre>
+<p>which is again a very simple component, very similar to <code>Loader</code>.</p>
+<h3 id="alternatives">Alternatives</h3>
+<p>Below you can find alternatives to <strong>React</strong>, although I would suggest <strong>React</strong> unless you have specific needs, which other frameworks solve better, as it also allows for <a href="https://facebook.github.io/react-native/" target="_blank">mobile development with React Native</a>.</p>
+<ul>
+<li><a href="https://angularjs.org/" target="_blank">AngularJS</a>, possibly the most popular framework after <a href="https://facebook.github.io/react/" target="_blank">React</a></li>
+<li><a href="http://elm-lang.org/" target="_blank">elm</a>, a functional alternative</li>
+<li><a href="https://cycle.js.org/" target="_blank">Cycle.js</a>, a functional reactive alternative</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="COMMON.html" class="navigation navigation-prev " aria-label="Previous page: Common">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="REDUX.html" class="navigation navigation-next " aria-label="Next page: Redux">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Components","level":"2.3","depth":1,"next":{"title":"Redux","level":"2.4","depth":1,"path":"docs/REDUX.md","ref":"docs/REDUX.md","articles":[]},"previous":{"title":"Common","level":"2.2","depth":1,"path":"docs/COMMON.md","ref":"docs/COMMON.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","anker-enable","github","advanced-emoji","-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/Lapanti/ts-react-boilerplate"},"anker-enable":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"advanced-emoji":{"embedEmojis":false},"edit-link":{"label":"Edit this page","base":"https://github.com/Lapanti/ts-react-boilerplate/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"TS-React-Boilerplate","gitbook":"^3.1.1"},"file":{"path":"docs/COMPONENTS.md","mtime":"2018-01-10T09:30:26.791Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-18T13:07:53.996Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-anker-enable/anker.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
