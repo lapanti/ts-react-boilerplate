@@ -2,6 +2,101 @@
 
 Here we go through things you might not need, but might want to include in your project.
 
+### Favicon
+
+A recommended feature of all websites, especially now with so many mobile devices browsing the internet, is to have a [favicon](https://en.wikipedia.org/wiki/Favicon) in your website. A favicon is usually the logo of your company or website. In our case you can either use the ones you can find [here](https://github.com/Lapanti/ts-react-boilerplate/tree/master/src/icons) or make your own. If you want to make your own, I suggest creating a 260 x 260 pixel image, which you then generate into all the useful formats using [RealFaviconGenerator](https://realfavicongenerator.net/).
+
+If you used *RealFaviconGenerator* you should now have the following files:
+- `android-chrome-192x192.png`
+- `android-chrome-512x512.png`
+- `apple-touch-icon.png`
+- `favicon-16x16.png`
+- `favicon-32x32.png`
+- `favicon.ico`
+- `mstile-150x150.png`
+- `safari-pinned-tab.svg`
+- `manifest.json`
+- `browserconfig.xml`
+Now move `manifest.json` and `browserconfig.xml` to your root folder and the rest to `src/icons`.
+
+Now that we have everything in place, let's first update our `index.html` by adding the following parts to inside the `head` tag:
+```html
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
+        <link rel="manifest" href="/assets/manifest.json" />
+        <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+        <meta name="msapplication-config" content="/assets/browserconfig.xml" />
+        <meta name="theme-color" content="#FF8041" />
+```
+where the first line is to have an icon present if an iPhone user [saves your website](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html) to their Home screen. The second, third and sixth line are for different sizes of the traditional browser favicon. The fourth line is for a [manifest.json](https://developer.mozilla.org/en-US/docs/Web/Manifest) which does the same thing as the first line for Android users. The fifth line is an icon for Safari users when they [pin your website](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html). The seventh line is to define a tile for Microsoft users when they [pin your website](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx). The final line is a theme color for your website which is used for example by [mobile browsers](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/).
+
+The contents of you `manifest.json` should look something like this:
+```json
+{
+    "name": "",
+    "icons": [
+        {
+            "src": "/assets/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#FF8041", // Change this and the following line to match your website
+    "background_color": "#FFFFFF",
+    "display": "standalone"
+}
+```
+
+And the contents of your `browserconfig.xml` should look something like this:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="/assets/icons/mstile-150x150.png"/>
+            <TileColor>#FF8041</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>
+```
+where you should change the `TileColor` to match your icon's background.
+
+---
+
+Now we also need to update our **webpack** configurations to include our new icons and manifests into the project, so add the following to your `webpack.dev.js`:
+```javascript
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: path.resolve(__dirname, 'index.html') },
+            { from: path.resolve(__dirname, 'manifest.json'), to: 'assets' },
+            { from: path.resolve(__dirname, 'browserconfig.xml'), to: 'assets' },
+            { from: path.resolve(__dirname, 'src/icons'), to: 'assets/icons' }
+        ]),
+        // ...
+    ]
+```
+
+And then add the following to your `webpack.prod.js`:
+```javascript
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+// ...
+    plugins: [
+        new CopyWebpackPlugin([
+            { from: path.resolve(__dirname, 'manifest.json') },
+            { from: path.resolve(__dirname, 'browserconfig.xml') },
+            { from: path.resolve(__dirname, 'src/icons'), to: 'icons' }
+        ]),
+        // ...
+    ]
+```
+
 ### Server-side rendering
 
 Server-side rendering is the act of having a server render your **React**-application and sending it as an html file to the client, which can considerably reduce initial loading times and enables a lot of SEO. This is usually achieved by adding a [node](https://nodejs.org/en/)-server to your application and then hosting your code on a server.
@@ -44,6 +139,14 @@ const renderHtml = (html: string, preloadedState: State) =>
             <meta charset="utf-8" />
             <title>Todo app</title>
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
+            <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
+            <link rel="manifest" href="/assets/manifest.json" />
+            <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5" />
+            <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+            <meta name="msapplication-config" content="/assets/browserconfig.xml" />
+            <meta name="theme-color" content="#FF8041" />
             <link rel="stylesheet" href="/assets/styles.css">
         </head>
         <body>
@@ -110,6 +213,14 @@ const renderHtml = (html: string, preloadedState: State) => (
             <meta charset="utf-8" />
             <title>Todo app</title>
             <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+            <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />
+            <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png" />
+            <link rel="manifest" href="/assets/manifest.json" />
+            <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5" />
+            <link rel="shortcut icon" href="/assets/icons/favicon.ico" />
+            <meta name="msapplication-config" content="/assets/browserconfig.xml" />
+            <meta name="theme-color" content="#FF8041" />
             <link rel="stylesheet" href="/styles/styles.css">
         </head>
         <body>
