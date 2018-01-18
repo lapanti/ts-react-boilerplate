@@ -1,5 +1,10 @@
 {
-    "name": "",
+    "name": "HN PWA",
+    "short_name": "HN PWA",
+    "description": "An example HN PWA with TypeScript and React",
+    "lang": "en-US",
+    "orientation": "portrait-primary",
+    "start_url": "/",
     "icons": [
         {
             "src": "/assets/icons/android-chrome-192x192.png",
