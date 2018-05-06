@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-export interface IButtonProps {
+export interface ButtonProps {
     click(): void;
     readonly text: string;
 }
 
-const Button: React.StatelessComponent<IButtonProps> = ({ click, text }) =>
+const Button: React.StatelessComponent<ButtonProps> = ({ click, text }) =>
     <input className="btn" type="submit" onClick={() => click()} value={text} />;
 
 export default Button;

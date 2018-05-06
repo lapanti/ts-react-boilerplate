@@ -6,25 +6,24 @@ import { ConnectedRouter } from 'react-router-redux';
 import { AppContainer as HotContainer } from 'react-hot-loader';
 import createHistory from 'history/createBrowserHistory';
 import configureStore from './redux/store';
-import AppContainer from './modules/AppContainer';
-import './styles/styles.scss';
+import App from './modules/App';
 
 const history = createHistory();
 
-const render = (container: React.ComponentClass) =>
-    ReactDOM.render(
-        <HotContainer>
-            <Provider store={configureStore(history)}>
-                <ConnectedRouter history={history}>
-                    <Route component={container} />
-                </ConnectedRouter>
-            </Provider>
-        </HotContainer>,
-        document.getElementById('app'),
-    );
+const render = (container: React.ComponentClass<any>) =>
+  ReactDOM.render(
+    <HotContainer>
+      <Provider store={configureStore(history)}>
+        <ConnectedRouter history={history}>
+          <Route component={container} />
+        </ConnectedRouter>
+      </Provider>
+    </HotContainer>,
+    document.getElementById('app'),
+  );
 
-render(AppContainer);
+render(App);
 
 if ((module as any).hot) {
-    (module as any).hot.accept('./modules/AppContainer', () => render(AppContainer));
+  (module as any).hot.accept('./modules/App', () => render(App));
 }

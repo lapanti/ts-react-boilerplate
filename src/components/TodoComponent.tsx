@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Todo from '../common/Todo';
 
-export interface ITodoComponent {
+export interface TodoProps {
     readonly todo: Todo;
     setDone(i: number): void;
 }
 
-const TodoComponent: React.StatelessComponent<ITodoComponent> = ({ todo, setDone }) =>
+const TodoComponent: React.StatelessComponent<TodoProps> = ({ todo, setDone }) =>
     <div className="todo">
         <input
             className="todo__checkbox"

@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -16,10 +15,6 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: ['babel-loader', 'awesome-typescript-loader'],
                 exclude: /node_modules/
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             }
         ]
     },
@@ -34,7 +29,6 @@ module.exports = {
         ]),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
-        }),
-        new ExtractTextPlugin(path.join('styles.css'))
+        })
     ]
 };

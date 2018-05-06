@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import createHistory from 'history/createBrowserHistory';
-import IndexView from '../IndexView';
+import { Index } from '../Index';
 import Todo from '../../../common/Todo';
 
-describe('IndexView', () => {
+describe('Index', () => {
     const testTodo1 = new Todo(0, 'title');
     const testTodo2 = new Todo(1, 'testing', true);
     const testTitle = 'A title';
@@ -12,7 +12,7 @@ describe('IndexView', () => {
     const testSaveTodo = jest.fn();
     const testSetDone = jest.fn();
     const wrapperMinimalProps = shallow(
-        <IndexView
+        <Index
             title=""
             todos={[]}
             loading={false}
@@ -25,7 +25,7 @@ describe('IndexView', () => {
         />,
     );
     const wrapperMaximumProps = shallow(
-        <IndexView
+        <Index
             title={testTitle}
             todos={[testTodo1, testTodo2]}
             loading

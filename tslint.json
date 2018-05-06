@@ -17,7 +17,7 @@
         "arrow-return-shorthand": [true],
         "class-name": true,
         "interface-name": [true, "always-prefix"],
-        "quotemark": [true, "single", "jsx-double"],
+        "quotemark": [true, "single", "jsx-single"],
         "no-unused-variable": [true, {"ignore-pattern": "^I"}],
         "no-unused-expression": [true, "allow-fast-null-checks"]
     }

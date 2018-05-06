@@ -9,7 +9,7 @@ const reducer = combineReducers<State>({
 });
 
 export class State {
-    readonly router: RouterState = null;
+    readonly router: RouterState = { location: null };
     readonly index: IndexState = new IndexState();
 }
 
