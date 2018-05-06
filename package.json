@@ -30,8 +30,9 @@
   },
   "scripts": {
     "lint:ts": "tslint --project tsconfig.json",
+    "lint:tsfix": "tslint --project tsconfig.json --fix",
     "lint:styles": "stylelint 'src/**/*.tsx'",
-    "test": "concurrently --kill-others-on-fail -p \"{name}\" -n \"SASS-LINT,TS-LINT,JEST\" -c \"bgBlue,bgMagenta,bgCyan\" \"yarn lint:styles\" \"yarn lint:ts\" \"jest\"",
+    "test": "concurrently --kill-others-on-fail -p \"{name}\" -n \"STYLES-LINT,TS-LINT,JEST\" -c \"bgBlue,bgMagenta,bgCyan\" \"yarn lint:styles\" \"yarn lint:ts\" \"jest\"",
     "test:update": "jest --updateSnapshot",
     "test:watch": "jest --watch",
     "test:ci": "yarn lint:sass && yarn lint:ts && jest --runInBand --forceExit --coverage",

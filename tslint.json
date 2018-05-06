@@ -16,9 +16,9 @@
         "trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
         "arrow-return-shorthand": [true],
         "class-name": true,
-        "interface-name": [true, "always-prefix"],
-        "quotemark": [true, "single", "jsx-single"],
-        "no-unused-variable": [true, {"ignore-pattern": "^I"}],
+        "interface-name": [true, "never-prefix"],
+        "quotemark": [true, "single", "jsx-double"],
+        "no-unused-variable": [true],
         "no-unused-expression": [true, "allow-fast-null-checks"]
     }
 }
