@@ -10,7 +10,7 @@ import createHistory from 'history/createMemoryHistory';
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import reducer, { epics, State } from './redux/reducer';
-import AppContainer from './modules/AppContainer';
+import App from './modules/App';
 
 const normalizePort = (val: number | string): number | string | boolean => {
   const base = 10;
@@ -39,7 +39,10 @@ const renderHtml = (html: string, preloadedState: State) =>
     <body>
       <div id="app">${html}</div>
       <script>
-        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+          /</g,
+          '\\u003c',
+        )}
       </script>
       <script src="/assets/bundle.js"></script>
     </body>
@@ -55,13 +58,16 @@ app.use('/assets', express.static(path.join('assets'), { redirect: false }));
 app.use((req: express.Request, res: express.Response) => {
   const store = createStore<State>(
     reducer,
-    applyMiddleware(routerMiddleware(createHistory()), createEpicMiddleware(epics)),
+    applyMiddleware(
+      routerMiddleware(createHistory()),
+      createEpicMiddleware(epics),
+    ),
   );
   const context: { url?: string } = {};
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={context}>
-        <Route component={AppContainer} />
+        <Route component={App} />
       </StaticRouter>
     </Provider>,
   );

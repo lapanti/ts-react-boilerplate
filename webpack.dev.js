@@ -31,13 +31,13 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                use: ['awesome-typescript-loader', 'babel-loader'],
+                use: ['babel-loader', 'awesome-typescript-loader'],
                 exclude: /node_modules/
             }
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js', '.jsx']
     },
     plugins: [
         new CopyWebpackPlugin([
