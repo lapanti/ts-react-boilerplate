@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppView should render correctly 1`] = `
+exports[`App should render correctly 1`] = `
 <div
   className="app-base"
 >
@@ -17,7 +17,7 @@ exports[`AppView should render correctly 1`] = `
 </div>
 `;
 
-exports[`AppView should render correctly 2`] = `
+exports[`App should render correctly 2`] = `
 <div
   className="app-base"
 >

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IndexView should render with correct props 1`] = `
+exports[`Index should render with correct props 1`] = `
 <main
   className="index"
 >
@@ -39,7 +39,7 @@ exports[`IndexView should render with correct props 1`] = `
 </main>
 `;
 
-exports[`IndexView should render with correct props 2`] = `
+exports[`Index should render with correct props 2`] = `
 <main
   className="index"
 >
