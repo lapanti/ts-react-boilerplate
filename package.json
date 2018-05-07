@@ -35,7 +35,7 @@
     "test": "concurrently --kill-others-on-fail -p \"{name}\" -n \"STYLES-LINT,TS-LINT,JEST\" -c \"bgBlue,bgMagenta,bgCyan\" \"yarn lint:styles\" \"yarn lint:ts\" \"jest\"",
     "test:update": "jest --updateSnapshot",
     "test:watch": "jest --watch",
-    "test:ci": "yarn lint:sass && yarn lint:ts && jest --runInBand --forceExit --coverage",
+    "test:ci": "yarn lint:styles && yarn lint:ts && jest --runInBand --forceExit --coverage",
     "clean": "rm -rf dist",
     "develop": "yarn clean && webpack-dev-server -d --env=dev --colors --port 9966",
     "build:server": "webpack -d --env=server -p --colors",

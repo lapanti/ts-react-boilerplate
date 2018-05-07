@@ -210,16 +210,16 @@ describe('PageNotFound', () => (
 ));
 ```
 
-### IndexView
+### HNClientView
 
-Next up we create tests for our `IndexView`
+Next up we create tests for our `HNClientView`
 ```typescript
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import IndexView from '../IndexView';
+import HNClientView from '../HNClientView';
 import Todo from '../../../common/Todo';
 
-describe('IndexView', () => {
+describe('HNClientView', () => {
     const testTodo1 = new Todo(0, 'title');
     const testTodo2 = new Todo(1, 'testing', true);
     const testTitle = 'A title';
@@ -227,7 +227,7 @@ describe('IndexView', () => {
     const testSaveTodo = jest.fn();
     const testSetDone = jest.fn();
     const wrapperMinimalProps = shallow((
-        <IndexView
+        <HNClientView
             title=""
             todos={[]}
             loading={false}
@@ -240,7 +240,7 @@ describe('IndexView', () => {
         />
     ));
     const wrapperMaximumProps = shallow((
-        <IndexView
+        <HNClientView
             title={testTitle}
             todos={[testTodo1, testTodo2]}
             loading
@@ -279,13 +279,13 @@ The biggest difference here is that for the simulation function
 ```
 where we give the `change` function a value to send with the event and test that it goes to the correct function.
 
-### IndexReducer
+### HNClientReducer
 
-For the `IndexReducer` we are not going to use **enzyme**, but rather normal **Jest** functions
+For the `HNClientReducer` we are not going to use **enzyme**, but rather normal **Jest** functions
 ```typescript
 import { ActionsObservable } from 'redux-observable';
 import Todo from '../../../common/Todo';
-import IndexReducer, {
+import HNClientReducer, {
     SET_TITLE,
     setTitle,
     SAVE_TODO,
@@ -298,22 +298,22 @@ import IndexReducer, {
     setDoneEpic,
     SET_DONE_SUCCESS,
     setDoneSuccess,
-    IndexState,
-} from '../IndexReducer';
+    HNClientState,
+} from '../HNClientReducer';
 
-describe('IndexReducer', () => {
+describe('HNClientReducer', () => {
     it('should set the correct title as payload on setTitle', () => {
         const payload = 'THIS_IS_A_TEST_TITLE';
         const setTitleAction = setTitle(payload);
         expect(setTitleAction).toEqual({ type: SET_TITLE, payload });
-        const newState: IndexState = IndexReducer(undefined, setTitleAction);
+        const newState: HNClientState = HNClientReducer(undefined, setTitleAction);
         expect(newState.title).toEqual(payload);
     });
 
     it('should set the correct values on saveTodo', () => {
         const saveTodoAction = saveTodo();
         expect(saveTodoAction).toEqual({ type: SAVE_TODO });
-        const newState: IndexState = IndexReducer(undefined, saveTodoAction);
+        const newState: HNClientState = HNClientReducer(undefined, saveTodoAction);
         expect(newState.loading).toBeTruthy();
     });
 
@@ -325,10 +325,10 @@ describe('IndexReducer', () => {
     it('should set the correct values on saveTodoSuccess', () => {
         /* tslint:disable:no-magic-numbers */
         const testT = new Todo(1, 'Doing', true);
-        const initialState: IndexState = { title: 'TEST', todos: [testT], loading: true };
+        const initialState: HNClientState = { title: 'TEST', todos: [testT], loading: true };
         const saveTodoSuccessAction = saveTodoSuccess();
         expect(saveTodoSuccessAction).toEqual({ type: SAVE_TODO_SUCCESS });
-        const newState: IndexState = IndexReducer(initialState, saveTodoSuccessAction);
+        const newState: HNClientState = HNClientReducer(initialState, saveTodoSuccessAction);
         expect(newState.title).toEqual('');
         expect(newState.todos.length).toEqual(2);
         expect(newState.todos[1].done).toBeFalsy();
@@ -341,7 +341,7 @@ describe('IndexReducer', () => {
     it('should set the correct values on setDone', () => {
         const setDoneAction = setDone(0);
         expect(setDoneAction).toEqual({ type: SET_DONE, payload: 0 });
-        const newState: IndexState = IndexReducer(undefined, setDoneAction);
+        const newState: HNClientState = HNClientReducer(undefined, setDoneAction);
         expect(newState.loading).toBeTruthy();
     });
 
@@ -351,10 +351,10 @@ describe('IndexReducer', () => {
         ));
 
     it('should set the correct values on setDoneSuccess', () => {
-        const initialState: IndexState = { title: '', todos: [new Todo(0, '')], loading: true };
+        const initialState: HNClientState = { title: '', todos: [new Todo(0, '')], loading: true };
         const setDoneSuccessAction = setDoneSuccess(0);
         expect(setDoneSuccessAction).toEqual({ type: SET_DONE_SUCCESS, payload: 0 });
-        const newState: IndexState = IndexReducer(initialState, setDoneSuccessAction);
+        const newState: HNClientState = HNClientReducer(initialState, setDoneSuccessAction);
         expect(newState.loading).toBeFalsy();
         expect(newState.todos[0].done).toBeTruthy();
         expect(newState.todos[0].id).toEqual(initialState.todos[0].id);
@@ -369,31 +369,31 @@ where we test each of our **action creator**-functions and **epics** (*we valida
 
 For the first **action creator** `setTitle` we do it as follows
 ```typescript
-import IndexReducer, { SET_TITLE, setTitle } from '../IndexReducer';
+import HNClientReducer, { SET_TITLE, setTitle } from '../HNClientReducer';
 // ...
     it('should set the correct title as payload on setTitle', () => {
         const payload = 'THIS_IS_A_TEST_TITLE';
         const setTitleAction = setTitle(payload);
         expect(setTitleAction).toEqual({ type: SET_TITLE, payload });
-        const newState = IndexReducer(undefined, setTitleAction);
+        const newState = HNClientReducer(undefined, setTitleAction);
         expect(newState.title).toEqual(payload);
     });
 ```
-where we first check that it has the correct return values and types and then test that running it through our `IndexReducer` has the desired effects. The same is done for `saveTodo`, `saveTodoSuccess`, `setDone` and `setDoneSuccess`.
+where we first check that it has the correct return values and types and then test that running it through our `HNClientReducer` has the desired effects. The same is done for `saveTodo`, `saveTodoSuccess`, `setDone` and `setDoneSuccess`.
 
 ---
 
 Possibly the most important part of our testing is testing our **epics**, for example in the case of our `saveTodoEpic`
 ```typescript
 import { ActionsObservable } from 'redux-observable';
-import { SAVE_TODO_SUCCESS, saveTodo } from '../IndexReducer';
+import { SAVE_TODO_SUCCESS, saveTodo } from '../HNClientReducer';
 // ...
     it('should trigger the correct action on saveTodoEpic', async () => (
         await saveTodoEpic(ActionsObservable.of(saveTodo()), undefined, undefined)
             .forEach(actionReceived => expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }));
     ));
 ```
-where we have to use an [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) function, as **Observables** are not synchronous. We use `ActionsObservable.of` to create an **Observable** out of our **action creator** and give our **epic** an `undefined` as the second argument (*which, if you remember is defined as a type of `undefined` in `IndexReducer`*) and as the third one, as we don't use that feature. After that we [`subscribe`](http://reactivex.io/documentation/operators/subscribe.html) to our new **Observable** returned by `saveTodoEpic` and check that the action received matches what we expect.
+where we have to use an [`async`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) function, as **Observables** are not synchronous. We use `ActionsObservable.of` to create an **Observable** out of our **action creator** and give our **epic** an `undefined` as the second argument (*which, if you remember is defined as a type of `undefined` in `HNClientReducer`*) and as the third one, as we don't use that feature. After that we [`subscribe`](http://reactivex.io/documentation/operators/subscribe.html) to our new **Observable** returned by `saveTodoEpic` and check that the action received matches what we expect.
 
 ---
 
@@ -402,12 +402,12 @@ In our case we don't have any AJAX calls, but most likely you will require them,
 import * as nock from 'nock';
 import { ActionsObservable } from 'redux-observable';
 import { State } '../../../redux/reducer';
-import IndexReducer, {
+import HNClientReducer, {
     fetchTodo,
     fetchTodoSuccess,
     fetchTodoFail,
     fetchTodoEpic,
-} from '../IndexReducer';
+} from '../HNClientReducer';
 
 describe('fetchTodoEpic', () => {
     afterEach(() => {

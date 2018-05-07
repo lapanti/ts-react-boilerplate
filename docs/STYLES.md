@@ -59,9 +59,9 @@ $modal-background: rgba(100, 100, 100, .8);
 ```
 where the underscore in the beginning of the file name is just a convention to differentiate it from regular style files. Inside it we define four different colors (*using comments to define the variable "blocks" of colors, sizes etc. is just another convention*), a primary color, secondary color, tertiary color and a color for the background of a modal. All variables in **Sass** must begin with the dollar `$` sign.
 
-### Index
+### HNClient
 
-Next up is the styles for the `Index`-page, inside a file called `index.scss`
+Next up is the styles for the `HNClient`-page, inside a file called `index.scss`
 ```scss
 @import 'variables.scss';
 

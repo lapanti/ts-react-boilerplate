@@ -1,6 +1,6 @@
 # Completing React
 
-Now we finally get to build our **React**-application into something that can be run and will actually do something! Here we make the assumption that you are going to build a medium- to large-sized application and show how to do these things in a more modular way, but for smaller applications some of these parts can be merged with the `IndexView` and some can be left out completely.
+Now we finally get to build our **React**-application into something that can be run and will actually do something! Here we make the assumption that you are going to build a medium- to large-sized application and show how to do these things in a more modular way, but for smaller applications some of these parts can be merged with the `HNClientView` and some can be left out completely.
 
 ### Initialize
 
@@ -21,7 +21,7 @@ We begin by writing an `AppView.ts` file into the `src/modules`-folder
 ```typescript
 import * as React from 'react';
 import { Route, Switch, RouteComponentProps } from 'react-router-dom';
-import IndexContainer from './index/IndexContainer';
+import HNClientContainer from './hnClient/HNClientContainer';
 import PageNotFound from '../components/PageNotFound';
 
 export type IAppViewProps = RouteComponentProps<undefined>;
@@ -29,7 +29,7 @@ export type IAppViewProps = RouteComponentProps<undefined>;
 const AppView: React.StatelessComponent<IAppViewProps> = () => (
     <div className="app-base">
         <Switch>
-            <Route path="/" exact component={IndexContainer} />
+            <Route path="/" exact component={HNClientContainer} />
             <Route component={PageNotFound} />
         </Switch>
     </div>
@@ -56,13 +56,13 @@ export default connect<{}, undefined, IAppViewProps>(() => ({}))(AppView);
 ```
 which we use just to wrap `AppView` so that it can be used in routes.
 
-### IndexView
+### HNClientView
 
-For `IndexView` we also need to add `RouteComponentProps`, so just add the following
+For `HNClientView` we also need to add `RouteComponentProps`, so just add the following
 ```typescript
 import { RouteComponentProps } from 'react-router-dom';
 // ...
-export type IIndexProps = IIndexState & IIndexDispatch & RouteComponentProps<undefined>;
+export type IHNClientProps = IHNClientState & IHNClientDispatch & RouteComponentProps<undefined>;
 ```
 
 ### index
@@ -168,7 +168,7 @@ if ((module as any).hot) {
 ```
 we do a little configuration to allow our container to be loaded by the **Hot Module Replacement**-system.
 
-### Index.html
+### HNClient.html
 
 Finally we write an `index.html` in our root-folder
 ```html

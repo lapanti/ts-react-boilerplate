@@ -2,10 +2,10 @@
 
 Now we are ready to start working towards the beef of the application: different pages (or views).
 
-### IndexView
+### HNClientView
 
-We will begin by creating a file called `IndexView.tsx` (*remember that 'x' in the end of the file type means that it contains [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html)*) inside a folder called `index` inside the `components`-folder:
-> All of our pages will be inside folders named after the page, in this case **Index** and the view will be named `[Pagename]View.tsx`
+We will begin by creating a file called `HNClientView.tsx` (*remember that 'x' in the end of the file type means that it contains [jsx](https://facebook.github.io/react/docs/jsx-in-depth.html)*) inside a folder called `index` inside the `components`-folder:
+> All of our pages will be inside folders named after the page, in this case **HNClient** and the view will be named `[Pagename]View.tsx`
 
 ```typescript
 import * as React from 'react';
@@ -14,21 +14,21 @@ import TodoComponent from '../../components/TodoComponent';
 import Button from '../../components/Button';
 import Loader from '../../components/Loader';
 
-interface IIndexState {
+interface IHNClientState {
     title: string;
     todos: Todo[];
     loading: boolean;
 }
 
-interface IIndexDispatch {
+interface IHNClientDispatch {
     setTitle(n: string): void;
     saveTodo(): void;
     setDone(i: number): void;
 }
 
-type IIndexProps = IIndexState & IIndexDispatch;
+type IHNClientProps = IHNClientState & IHNClientDispatch;
 
-const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) => (
+const HNClientView: React.StatelessComponent<IHNClientProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) => (
     <main className="index">
         {loading && <Loader />}
         <h1 className="index__header">Todo app</h1>
@@ -51,15 +51,15 @@ const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loadin
     </main>
 );
 
-export default IndexView;
+export default HNClientView;
 ```
 
 ---
 
-The first [interface](https://www.typescriptlang.org/docs/handbook/interfaces.html) we declare, called `IIndexState`
+The first [interface](https://www.typescriptlang.org/docs/handbook/interfaces.html) we declare, called `IHNClientState`
 ```typescript
 import Todo from '../../common/Todo';
-interface IIndexState {
+interface IHNClientState {
     title: string;
     todos: Todo[];
     loading: boolean;
@@ -69,9 +69,9 @@ is an `interface` that holds the "state"-values for our `View`, i.e. the stuff t
 
 ---
 
-The second `interface` we declare, called `IIndexDispatch`
+The second `interface` we declare, called `IHNClientDispatch`
 ```typescript
-interface IIndexDispatch {
+interface IHNClientDispatch {
     setTitle(n: string): void;
     saveTodo(): void;
     setDone(i: number): void;
@@ -82,25 +82,25 @@ is an `interface` that holds all the "dispatch"-functions for our `View`, i.e. a
 
 ---
 
-Together `IIndexState` and `IIndexDispatch` form the type `IIndexProps`
+Together `IHNClientState` and `IHNClientDispatch` form the type `IHNClientProps`
 ```typescript
-type IIndexProps = IIndexState & IIndexDispatch;
+type IHNClientProps = IHNClientState & IHNClientDispatch;
 ```
-which is the definition of all the [props](https://facebook.github.io/react/docs/components-and-props.html) our `IndexView` will need to function.
-> The `IIndexState & IIndexDispatch` part defines that the type called `IIndexProps` is an [intersection](https://www.typescriptlang.org/docs/handbook/advanced-types.html) of those two interfaces, meaning that to fulfill the type, the object needs to have all values present in both of the aforementioned interfaces.
+which is the definition of all the [props](https://facebook.github.io/react/docs/components-and-props.html) our `HNClientView` will need to function.
+> The `IHNClientState & IHNClientDispatch` part defines that the type called `IHNClientProps` is an [intersection](https://www.typescriptlang.org/docs/handbook/advanced-types.html) of those two interfaces, meaning that to fulfill the type, the object needs to have all values present in both of the aforementioned interfaces.
 
 ---
 
-And now we get to the beef of it all, starting with declaring the actual `IndexView`
+And now we get to the beef of it all, starting with declaring the actual `HNClientView`
 ```typescript
 import * as React from 'react';
-const IndexView: React.StatelessComponent<IIndexProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) => (
+const HNClientView: React.StatelessComponent<IHNClientProps> = ({ title, todos, loading, setTitle, saveTodo, setDone }) => (
 );
 ```
-in which we declare a [constant](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) called `IndexView` which is of the type [`React.StatelessComponent<IIndexProps>`](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc). `React.StatelessComponent<T>` is a type of **React Component** that does not have an internal state, only **props** and can be declared as a function that returns `jsx`, where the type of **props** received is put inside the angle brackets (*where `T` is now*).
+in which we declare a [constant](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) called `HNClientView` which is of the type [`React.StatelessComponent<IHNClientProps>`](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc). `React.StatelessComponent<T>` is a type of **React Component** that does not have an internal state, only **props** and can be declared as a function that returns `jsx`, where the type of **props** received is put inside the angle brackets (*where `T` is now*).
 > These kinds of declarations are called [type arguments or generics](https://www.typescriptlang.org/docs/handbook/generics.html), which allow you to define a function without knowing beforehand what the type of the argument or return value is.
 
-After declaring the **const** we define `IndexView` to be a function, that fulfills the [render](https://facebook.github.io/react/docs/react-api.html) function, i.e. takes in an object containing the declared properties (*using [object destructuring](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) so we don't have to write `something.title`, instead of `title`*) and returns `jsx` encapsulated in the brackets.
+After declaring the **const** we define `HNClientView` to be a function, that fulfills the [render](https://facebook.github.io/react/docs/react-api.html) function, i.e. takes in an object containing the declared properties (*using [object destructuring](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) so we don't have to write `something.title`, instead of `title`*) and returns `jsx` encapsulated in the brackets.
 
 ---
 
@@ -109,7 +109,7 @@ For the actual content inside the brackets you can think of it as "HTML on stero
     <main className="index">
     </main>
 ```
-which will hold all the content of our `IndexView` (*and here we begin the introduction of [BEM](http://getbem.com/naming/)-naming*).
+which will hold all the content of our `HNClientView` (*and here we begin the introduction of [BEM](http://getbem.com/naming/)-naming*).
 
 ---
 

@@ -2,9 +2,9 @@
 
 Now we build our business logic, also known as **reducers**. Stay calm, this will be a bit more complicated than anything before.
 
-### IndexReducer
+### HNClientReducer
 
-We begin by creating a file called `IndexReducer.ts` in the `src/modules/index`-folder
+We begin by creating a file called `HNClientReducer.ts` in the `src/modules/index`-folder
 > Our **reducers** follow the naming pattern of `[Foldername]Reducer`
 
 ```typescript
@@ -19,17 +19,17 @@ import Todo from '../../common/Todo';
 
 const testDelay = 1000;
 
-export class IndexState {
+export class HNClientState {
     readonly title: string = '';
     readonly todos: Todo[] = [];
     readonly loading: boolean = false;
 }
 
-export const SET_TITLE = 'boilerplate/Index/SET_TITLE';
-export const SAVE_TODO = 'boilerplate/Index/SAVE_TODO';
-export const SAVE_TODO_SUCCESS = 'boilerplate/Index/SAVE_TODO_SUCCESS';
-export const SET_DONE = 'boilerplate/Index/SET_DONE';
-export const SET_DONE_SUCCESS = 'boilerplate/Index/SET_DONE_SUCCESS';
+export const SET_TITLE = 'boilerplate/HNClient/SET_TITLE';
+export const SAVE_TODO = 'boilerplate/HNClient/SAVE_TODO';
+export const SAVE_TODO_SUCCESS = 'boilerplate/HNClient/SAVE_TODO_SUCCESS';
+export const SET_DONE = 'boilerplate/HNClient/SET_DONE';
+export const SET_DONE_SUCCESS = 'boilerplate/HNClient/SET_DONE_SUCCESS';
 
 export const setTitle = makeAction(SET_TITLE)((title: string) => ({ type: SET_TITLE, payload: title }));
 export const saveTodo = makeAction(SAVE_TODO)(() => ({ type: SAVE_TODO }));
@@ -49,9 +49,9 @@ export const setDoneEpic: Epic<Action, undefined> = action$ =>
         .delay(testDelay)
         .map(action => isAction(action, setDone) && setDoneSuccess(action.payload));
 
-export const IndexEpics = combineEpics(saveTodoEpic, setDoneEpic);
+export const HNClientEpics = combineEpics(saveTodoEpic, setDoneEpic);
 
-const IndexReducer = (state: IndexState = new IndexState(), action: Action): IndexState => {
+const HNClientReducer = (state: HNClientState = new HNClientState(), action: Action): HNClientState => {
     if (isAction(action, setTitle)) {
         return { ...state, title: action.payload };
     } else if (isAction(action, saveTodo)) {
@@ -76,34 +76,34 @@ const IndexReducer = (state: IndexState = new IndexState(), action: Action): Ind
     }
 };
 
-export default IndexReducer;
+export default HNClientReducer;
 ```
 
 ---
 
-First we define the **state** for our `IndexReducer`
+First we define the **state** for our `HNClientReducer`
 > **Reducers** usually define their own **state** and we'll show you [later](#connecting) how to connect it to the main **reducer** and **state**
 
 ```typescript
 import Todo from '../../common/Todo';
 
-export class IndexState {
+export class HNClientState {
     readonly title: string = '';
     readonly todos: Todo[] = [];
     readonly loading: boolean = false;
 }
 ```
-which is fairly simple. Here we define the `IndexState` as a class, with the given properties (*make sure you add default values for required properties so you can instantiate it!*), with the `title` for the current `Todo` the user is creating, `todos` for the list of current `Todo`s and `loading` to show the user whether the application is performing an async call or not.
+which is fairly simple. Here we define the `HNClientState` as a class, with the given properties (*make sure you add default values for required properties so you can instantiate it!*), with the `title` for the current `Todo` the user is creating, `todos` for the list of current `Todo`s and `loading` to show the user whether the application is performing an async call or not.
 
 ---
 
 Next up we define our [action types](http://redux.js.org/docs/basics/Actions.html)
 ```typescript
-const SET_TITLE = 'boilerplate/Index/SET_TITLE';
-const SAVE_TODO = 'boilerplate/Index/SAVE_TODO';
-const SAVE_TODO_SUCCESS = 'boilerplate/Index/SAVE_TODO_SUCCESS';
-const SET_DONE = 'boilerplate/Index/SET_DONE';
-const SET_DONE_SUCCESS = 'boilerplate/Index/SET_DONE_SUCCESS';
+const SET_TITLE = 'boilerplate/HNClient/SET_TITLE';
+const SAVE_TODO = 'boilerplate/HNClient/SAVE_TODO';
+const SAVE_TODO_SUCCESS = 'boilerplate/HNClient/SAVE_TODO_SUCCESS';
+const SET_DONE = 'boilerplate/HNClient/SET_DONE';
+const SET_DONE_SUCCESS = 'boilerplate/HNClient/SET_DONE_SUCCESS';
 ```
 which **redux** recommends to be constant `string`s, but can be of the type `any`. In our case, as we are using **redux-guards** to facilitate the way **TypeScript** works with **redux** we have to make them `string`s.
 > Here we follow the [redux-ducks](https://github.com/erikras/ducks-modular-redux) naming pattern of the format `applicationName/ViewName/ACTION_TYPE`
@@ -147,9 +147,9 @@ const setDoneEpic: Epic<Action, undefined> = action$ =>
         .delay(testDelay)
         .map(action => isAction(action, setDone) && setDoneSuccess(action.payload));
 
-export const IndexEpics = combineEpics(saveTodoEpic, setDoneEpic);
+export const HNClientEpics = combineEpics(saveTodoEpic, setDoneEpic);
 ```
-which are [redux-observable's](https://redux-observable.js.org) way of handling side-effects in **Redux** (*like AJAX calls etc.*). At the end we combine all our **Epics** in this file to a single exportable **Epic** called `IndexEpics` (*so we only need to import one variable when we want access to these later*).
+which are [redux-observable's](https://redux-observable.js.org) way of handling side-effects in **Redux** (*like AJAX calls etc.*). At the end we combine all our **Epics** in this file to a single exportable **Epic** called `HNClientEpics` (*so we only need to import one variable when we want access to these later*).
 > The importing part may look a little weird, but it's because [RxJS](http://reactivex.io/rxjs/) is a rather large library, we can either import everything using `import * as RxJS from 'rxjs'` or import only the parts we need as shown above, which will allow any proper [minifier](https://developers.google.com/speed/docs/insights/MinifyResources) like [UglifyJS](https://github.com/mishoo/UglifyJS) to include only the needed parts from **RxJS**
 
 The first line
@@ -219,7 +219,7 @@ import { ajax } from 'rxjs/observable/dom/ajax';
 
 Finally we define the rest of our business logic, a.k.a. the **reducer** itself
 ```typescript
-const IndexReducer = (state: IndexState = new IndexState(), action: Action): IndexState => {
+const HNClientReducer = (state: HNClientState = new HNClientState(), action: Action): HNClientState => {
     if (isAction(action, setTitle)) {
         return { ...state, title: action.payload };
     } else if (isAction(action, saveTodo)) {
@@ -246,11 +246,11 @@ const IndexReducer = (state: IndexState = new IndexState(), action: Action): Ind
 ```
 for which I suggest to break from the **redux-ducks** pattern by using the naming convention of `[Pagename]Reducer`. The important thing to remember with **reducers** is that they have to be [functional](https://en.wikipedia.org/wiki/Functional_programming), a.k.a. they are not allowed to mutate the incoming information or have side-effects.
 
-On the first line we define the signature of our `IndexReducer`
+On the first line we define the signature of our `HNClientReducer`
 ```typescript
-const IndexReducer = (state: IndexState = new IndexState(), action: Action): IndexState => {
+const HNClientReducer = (state: HNClientState = new HNClientState(), action: Action): HNClientState => {
 ```
-where we define it to take to parameters (*as all **reducers***), our `IndexState` (*with a default for the empty state*) and an action. `IndexReducer` will also return an `IndexState` (*as all **reducers***).
+where we define it to take to parameters (*as all **reducers***), our `HNClientState` (*with a default for the empty state*) and an action. `HNClientReducer` will also return an `HNClientState` (*as all **reducers***).
 
 Next we do the actual logic which all **reducers** are built upon
 ```typescript
@@ -282,34 +282,34 @@ which is usually a [`switch`](https://developer.mozilla.org/en/docs/Web/JavaScri
 
 ### Connecting the reducer
 
-Remember our [root-reducer](/REDUX.md#reducer)? Now we connect our `IndexReducer` to it.
+Remember our [root-reducer](/REDUX.md#reducer)? Now we connect our `HNClientReducer` to it.
 
 First the **reducer** itself
 ```typescript
 import { combineReducers } from 'redux';
-import IndexReducer from '../modulex/index/IndexReducer';
+import HNClientReducer from '../modulex/hnClient/HNClientReducer';
 
 const reducer = combineReducers({
-    index: IndexReducer,
+    index: HNClientReducer,
 });
 ```
-where we add the `IndexReducer` under the key `index`, which is very important, as when `combineReducers` combines included **reducers** it will put their specific state under the key given, in the global **state**-object.
+where we add the `HNClientReducer` under the key `index`, which is very important, as when `combineReducers` combines included **reducers** it will put their specific state under the key given, in the global **state**-object.
 
-Next we add the `IndexState` to our global `State`-class (*this is just to allow us to define the type and initialize it for tests later on*)
+Next we add the `HNClientState` to our global `State`-class (*this is just to allow us to define the type and initialize it for tests later on*)
 ```typescript
-import { IndexState } from '../modules/index/IndexReducer';
+import { HNClientState } from '../modules/hnClient/HNClientReducer';
 
 export class State {
-    readonly index: IndexState = new IndexState();
+    readonly index: HNClientState = new HNClientState();
 }
 ```
-where we define that the global `State`-object has a property `index` of the type `IndexState` (*as our `combineReducer` already says, but we want to be explicit here*).
+where we define that the global `State`-object has a property `index` of the type `HNClientState` (*as our `combineReducer` already says, but we want to be explicit here*).
 
 Then we want to add our **Epics** into the global `epics` constant
 ```typescript
 import { combineEpics } from 'redux-observable';
-import { IndexEpics } from '../modules/index/IndexReducer';
+import { HNClientEpics } from '../modules/hnClient/HNClientReducer';
 
-export const epics = combineEpics(IndexEpics);
+export const epics = combineEpics(HNClientEpics);
 ```
 by including it as a parameter to `combineEpics`.

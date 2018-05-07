@@ -46,7 +46,7 @@ This is all you need to get started in developing your own web application, usin
 ## <a name="tipsandsuggestions">Tips and suggestions</a>
 - Make sure everything has a type (the more you squeeze out of the compiler the easier you're going to have it while developing)
 - Follow [BEM](http://getbem.com/naming/)-naming with CSS
-- Follow [Redux-ducks pattern](https://github.com/erikras/ducks-modular-redux) except that name the reducers as according to the file (see [IndexReducer.tsx](/src/modules/index/IndexReducer.tsx) for an example)
+- Follow [Redux-ducks pattern](https://github.com/erikras/ducks-modular-redux) except that name the reducers as according to the file (see [HNClientReducer.tsx](/src/modules/hnClient/HNClientReducer.tsx) for an example)
 
 ## <a name="dockerization">How to Docker</a>
 The [Dockerfile](/Dockerfile) is where you can find the configuration to build a [Docker](https://www.docker.com/) image out of your application. The first line of the `Dockerfile` (starting with `FROM`) includes the base for your Dockerfile, feel free to change it if you want to.
