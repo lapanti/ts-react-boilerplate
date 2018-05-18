@@ -33,8 +33,9 @@ export const HNClient: React.StatelessComponent<HNClientProps> = ({
 }) => (
   <ClientContainer>
     {loading && <Loader />}
-    <h1 className="index__header">Todo app</h1>
+    <h1 className="index__header">Stories</h1>
     <br />
+    {stories.map(story => <p key={story.id}>{story.title}</p>)}
   </ClientContainer>
 );
 

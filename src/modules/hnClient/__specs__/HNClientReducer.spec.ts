@@ -1,103 +1,122 @@
+import 'rxjs/add/operator/toArray';
 import { ActionsObservable } from 'redux-observable';
-import Todo from '../../../common/Todo';
+import * as nock from 'nock';
+import { OK } from 'http-status-codes';
+
+import Story from '../../../common/Story';
 import HNClientReducer, {
-  SET_TITLE,
-  setTitle,
-  SAVE_TODO,
-  saveTodo,
-  saveTodoEpic,
-  SAVE_TODO_SUCCESS,
-  saveTodoSuccess,
-  SET_DONE,
-  setDone,
-  setDoneEpic,
-  SET_DONE_SUCCESS,
-  setDoneSuccess,
+  HNClientTypes,
+  HNClientActions,
+  getStoryIdsEpic,
+  getStoryEpic,
   HNClientState,
 } from '../HNClientReducer';
+import StoryType from '../../../common/StoryType';
+import ItemType from '../../../common/ItemType';
+import { BASE_URL } from '../../../constants/api';
 
 describe('HNClientReducer', () => {
-  it('should set the correct title as payload on setTitle', () => {
-    const payload = 'THIS_IS_A_TEST_TITLE';
-    const setTitleAction = setTitle(payload);
-    expect(setTitleAction).toEqual({ type: SET_TITLE, payload });
-    const newState: HNClientState = HNClientReducer(undefined, setTitleAction);
-    expect(newState.title).toEqual(payload);
+  afterEach(() => {
+    nock.cleanAll();
   });
 
-  it('should set the correct values on saveTodo', () => {
-    const saveTodoAction = saveTodo();
-    expect(saveTodoAction).toEqual({ type: SAVE_TODO });
-    const newState: HNClientState = HNClientReducer(undefined, saveTodoAction);
-    expect(newState.loading).toBeTruthy();
-  });
-
-  it('should trigger the correct action on saveTodoEpic', async () =>
-    await saveTodoEpic(
-      ActionsObservable.of(saveTodo()),
-      undefined,
-      undefined,
-    ).forEach(actionReceived =>
-      expect(actionReceived).toEqual({ type: SAVE_TODO_SUCCESS }),
-    ));
-
-  it('should set the correct values on saveTodoSuccess', () => {
-    /* tslint:disable:no-magic-numbers */
-    const testT = new Todo(1, 'Doing', true);
-    const initialState: HNClientState = {
-      title: 'TEST',
-      todos: [testT],
-      loading: true,
-    };
-    const saveTodoSuccessAction = saveTodoSuccess();
-    expect(saveTodoSuccessAction).toEqual({ type: SAVE_TODO_SUCCESS });
-    const newState: HNClientState = HNClientReducer(
-      initialState,
-      saveTodoSuccessAction,
-    );
-    expect(newState.title).toEqual('');
-    expect(newState.todos.length).toEqual(2);
-    expect(newState.todos[1].done).toBeFalsy();
-    expect(newState.todos[1].id).toEqual(2);
-    expect(newState.todos[1].title).toEqual(initialState.title);
-    expect(newState.loading).toBeFalsy();
-    /* tslint:enable:no-magic-numbers */
-  });
-
-  it('should set the correct values on setDone', () => {
-    const setDoneAction = setDone(0);
-    expect(setDoneAction).toEqual({ type: SET_DONE, payload: 0 });
-    const newState: HNClientState = HNClientReducer(undefined, setDoneAction);
-    expect(newState.loading).toBeTruthy();
-  });
-
-  it('should trigger the correct action on setDoneEpic', async () =>
-    await setDoneEpic(
-      ActionsObservable.of(setDone(0)),
-      undefined,
-      undefined,
-    ).forEach(actionReceived =>
-      expect(actionReceived).toEqual({ type: SET_DONE_SUCCESS, payload: 0 }),
-    ));
-
-  it('should set the correct values on setDoneSuccess', () => {
-    const initialState: HNClientState = {
-      title: '',
-      todos: [new Todo(0, '')],
-      loading: true,
-    };
-    const setDoneSuccessAction = setDoneSuccess(0);
-    expect(setDoneSuccessAction).toEqual({
-      type: SET_DONE_SUCCESS,
-      payload: 0,
+  it('getStories should set the state as loading', () => {
+    const payload = StoryType.NEW;
+    const getStoriesAction = HNClientActions.getStories(payload);
+    expect(getStoriesAction).toEqual({
+      type: HNClientTypes.GET_STORIES,
+      payload,
     });
     const newState: HNClientState = HNClientReducer(
-      initialState,
-      setDoneSuccessAction,
+      undefined,
+      getStoriesAction,
     );
+    expect(newState.loading).toBeTruthy();
+  });
+
+  it('getStoryIdsEpic should call the correct endpoint on getStories', async () => {
+    const st = StoryType.NEW;
+    const storyId1 = 123456;
+    const storyId2 = 234567;
+    const payload = [storyId1, storyId2];
+    nock(BASE_URL)
+      .get(`/${st}stories.json`)
+      .reply(200, payload, { 'Content-Type': 'application/json' });
+    return await getStoryIdsEpic(
+      ActionsObservable.of(HNClientActions.getStories(st)),
+      undefined,
+      undefined,
+    )
+      .toArray()
+      .subscribe(actionsReceived =>
+        expect(actionsReceived).toEqual([
+          HNClientActions.getStoryIdSuccess(storyId1),
+          HNClientActions.getStoryIdSuccess(storyId2),
+        ]),
+      );
+  });
+
+  it('getStoryIdSuccess should add the correct id to state', () => {
+    const payload = 123456;
+    const getStoryIdSuccessAction = HNClientActions.getStoryIdSuccess(payload);
+    expect(getStoryIdSuccessAction).toEqual({
+      type: HNClientTypes.GET_STORY_ID_SUCCESS,
+      payload,
+    });
+    const newState: HNClientState = HNClientReducer(
+      undefined,
+      getStoryIdSuccessAction,
+    );
+    expect(newState.storyIds).toEqual([payload]);
+  });
+
+  it('getStorySuccess should set the loading to false and add the correct story to state', () => {
+    const payload: Story = {
+      by: 'me',
+      descendants: 0,
+      id: 123456,
+      kids: [],
+      score: 0,
+      time: 1,
+      title: 'Test',
+      type: ItemType.STORY,
+      url: '',
+    };
+    const getStorySuccessAction = HNClientActions.getStorySuccess(payload);
+    expect(getStorySuccessAction).toEqual({
+      type: HNClientTypes.GET_STORY_SUCCESS,
+      payload,
+    });
+    const newState: HNClientState = HNClientReducer(
+      undefined,
+      getStorySuccessAction,
+    );
+    expect(newState.stories).toEqual([payload]);
     expect(newState.loading).toBeFalsy();
-    expect(newState.todos[0].done).toBeTruthy();
-    expect(newState.todos[0].id).toEqual(initialState.todos[0].id);
-    expect(newState.todos[0].title).toEqual(initialState.todos[0].title);
+  });
+
+  it('getStoryEpic should call the correct endpoint on getStoryIdSuccess', async () => {
+    const storyId = 123456;
+    const payload: Story = {
+      by: 'me',
+      descendants: 0,
+      id: storyId,
+      kids: [],
+      score: 0,
+      time: 1,
+      title: 'Test',
+      type: ItemType.STORY,
+      url: '',
+    };
+    nock(`${BASE_URL}/item`)
+      .get(`/${storyId}.json`)
+      .reply(200, payload, { 'Content-Type': 'application/json' });
+    return await getStoryIdsEpic(
+      ActionsObservable.of(HNClientActions.getStoryIdSuccess(storyId)),
+      undefined,
+      undefined,
+    ).subscribe(actionReceived =>
+      expect(actionReceived).toEqual(HNClientActions.getStorySuccess(payload)),
+    );
   });
 });

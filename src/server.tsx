@@ -24,7 +24,7 @@ const renderHtml = (html: string, preloadedState: State) =>
   <html>
     <head>
       <meta charset="utf-8" />
-      <title>Todo app</title>
+      <title>HN PWA</title>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
       <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png" />

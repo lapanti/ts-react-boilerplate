@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should render correctly 1`] = `
-<div
-  className="app-base"
->
+<styled.div>
   <Switch>
     <Route
       component={[Function]}
@@ -14,13 +12,11 @@ exports[`App should render correctly 1`] = `
       component={[Function]}
     />
   </Switch>
-</div>
+</styled.div>
 `;
 
 exports[`App should render correctly 2`] = `
-<div
-  className="app-base"
->
+<styled.div>
   <Switch>
     <Route
       component={[Function]}
@@ -31,5 +27,5 @@ exports[`App should render correctly 2`] = `
       component={[Function]}
     />
   </Switch>
-</div>
+</styled.div>
 `;

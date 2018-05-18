@@ -1,24 +1,40 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import createHistory from 'history/createBrowserHistory';
-import { HNClient } from '../HNClient';
-import Todo from '../../../common/Todo';
 
-describe('HNClient', () => {
-  const testTodo1 = new Todo(0, 'title');
-  const testTodo2 = new Todo(1, 'testing', true);
-  const testTitle = 'A title';
-  const testSetTitle = jest.fn();
-  const testSaveTodo = jest.fn();
-  const testSetDone = jest.fn();
+import { HNClient } from '../HNClient';
+import Story from '../../../common/Story';
+import StoryType from '../../../common/StoryType';
+import ItemType from '../../../common/ItemType';
+
+describe('<HNClient />', () => {
+  const testStory1: Story = {
+    by: 'me',
+    descendants: 0,
+    id: 123456,
+    kids: [],
+    score: 0,
+    time: 1,
+    title: 'Test',
+    type: ItemType.STORY,
+    url: '',
+  };
+  const testStory2: Story = {
+    by: 'me',
+    descendants: 0,
+    id: 234567,
+    kids: [],
+    score: 1,
+    time: 1,
+    title: 'Test 2',
+    type: ItemType.STORY,
+    url: '',
+  };
   const wrapperMinimalProps = shallow(
     <HNClient
-      title=""
-      todos={[]}
+      storyType={StoryType.NEW}
+      stories={[]}
       loading={false}
-      setTitle={testSetTitle}
-      saveTodo={testSaveTodo}
-      setDone={testSetDone}
       match={{ params: undefined, isExact: true, path: '', url: '' }}
       location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
       history={createHistory()}
@@ -26,12 +42,9 @@ describe('HNClient', () => {
   );
   const wrapperMaximumProps = shallow(
     <HNClient
-      title={testTitle}
-      todos={[testTodo1, testTodo2]}
-      loading
-      setTitle={testSetTitle}
-      saveTodo={testSaveTodo}
-      setDone={testSetDone}
+      storyType={StoryType.NEW}
+      stories={[testStory1, testStory2]}
+      loading={false}
       match={{ params: undefined, isExact: true, path: '', url: '' }}
       location={{ pathname: '', search: '', state: {}, hash: '', key: '' }}
       history={createHistory()}
@@ -41,13 +54,5 @@ describe('HNClient', () => {
   it('should render with correct props', () => {
     expect(wrapperMinimalProps).toMatchSnapshot();
     expect(wrapperMaximumProps).toMatchSnapshot();
-  });
-
-  it('should call the correct functions when typing to input field', () => {
-    const testValue = 'A_TEST_VALUE';
-    wrapperMinimalProps
-      .find('[type="text"]')
-      .simulate('change', { target: { value: testValue } });
-    expect(testSetTitle).toBeCalledWith(testValue);
   });
 });
