@@ -20,21 +20,21 @@ describe('HNClientReducer', () => {
     nock.cleanAll();
   });
 
-  it('getStories should set the state as loading', () => {
+  it('getStoryIds should set the state as loading', () => {
     const payload = StoryType.NEW;
-    const getStoriesAction = HNClientActions.getStories(payload);
-    expect(getStoriesAction).toEqual({
-      type: HNClientTypes.GET_STORIES,
+    const getStoryIdsAction = HNClientActions.getStoryIds(payload);
+    expect(getStoryIdsAction).toEqual({
+      type: HNClientTypes.GET_STORY_IDS,
       payload,
     });
     const newState: HNClientState = HNClientReducer(
       undefined,
-      getStoriesAction,
+      getStoryIdsAction,
     );
     expect(newState.loading).toBeTruthy();
   });
 
-  it('getStoryIdsEpic should call the correct endpoint on getStories', async () => {
+  it('getStoryIdsEpic should call the correct endpoint on getStoryIds', async () => {
     const st = StoryType.NEW;
     const storyId1 = 123456;
     const storyId2 = 234567;
@@ -43,7 +43,7 @@ describe('HNClientReducer', () => {
       .get(`/${st}stories.json`)
       .reply(200, payload, { 'Content-Type': 'application/json' });
     return await getStoryIdsEpic(
-      ActionsObservable.of(HNClientActions.getStories(st)),
+      ActionsObservable.of(HNClientActions.getStoryIds(st)),
       undefined,
       undefined,
     )
@@ -51,7 +51,9 @@ describe('HNClientReducer', () => {
       .subscribe(actionsReceived =>
         expect(actionsReceived).toEqual([
           HNClientActions.getStoryIdSuccess(storyId1),
+          HNClientActions.getStory(storyId1),
           HNClientActions.getStoryIdSuccess(storyId2),
+          HNClientActions.getStory(storyId2),
         ]),
       );
   });
@@ -70,11 +72,13 @@ describe('HNClientReducer', () => {
     expect(newState.storyIds).toEqual([payload]);
   });
 
-  it('getStorySuccess should set the loading to false and add the correct story to state', () => {
+  it('getStorySuccess should set loading to false and add the correct story to state and remove the given story from id list', () => {
+    const storyId = 123456;
+    const nonExistentId = 654321;
     const payload: Story = {
       by: 'me',
       descendants: 0,
-      id: 123456,
+      id: storyId,
       kids: [],
       score: 0,
       time: 1,
@@ -88,11 +92,12 @@ describe('HNClientReducer', () => {
       payload,
     });
     const newState: HNClientState = HNClientReducer(
-      undefined,
+      { ...new HNClientState(), storyIds: [storyId, nonExistentId] },
       getStorySuccessAction,
     );
     expect(newState.stories).toEqual([payload]);
     expect(newState.loading).toBeFalsy();
+    expect(newState.storyIds).toEqual([nonExistentId]);
   });
 
   it('getStoryEpic should call the correct endpoint on getStoryIdSuccess', async () => {
@@ -112,7 +117,7 @@ describe('HNClientReducer', () => {
       .get(`/${storyId}.json`)
       .reply(200, payload, { 'Content-Type': 'application/json' });
     return await getStoryIdsEpic(
-      ActionsObservable.of(HNClientActions.getStoryIdSuccess(storyId)),
+      ActionsObservable.of(HNClientActions.getStory(storyId)),
       undefined,
       undefined,
     ).subscribe(actionReceived =>
