@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import routeEnter from '../components/HOC/routeEnter';
 import HNClient from './hnClient/HNClient';
-import { getStories } from './hnClient/HNClientReducer';
+import { getStoryIds } from './hnClient/HNClientReducer';
 import PageNotFound from '../components/PageNotFound';
 import StoryType from '../common/StoryType';
 
@@ -22,7 +22,7 @@ export const App: React.StatelessComponent<AppProps> = () => (
       <Route
         path="/"
         exact
-        component={routeEnter(HNClient, getStories(StoryType.NEW))}
+        component={routeEnter(HNClient, getStoryIds(StoryType.NEW))}
       />
       <Route component={PageNotFound} />
     </Switch>
