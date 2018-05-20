@@ -85,6 +85,7 @@ describe('HNClientReducer', () => {
         expect(actionsReceived).toEqual([
           HNClientActions.getStory(storyId1),
           HNClientActions.getStoryIdSuccess(storyId2),
+          HNClientActions.getStory(storyId2),
         ]),
       );
   });
