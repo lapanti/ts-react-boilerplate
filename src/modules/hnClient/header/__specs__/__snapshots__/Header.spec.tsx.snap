@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render with correct props 1`] = `
+<styled.header>
+  <styled.h1>
+    HN PWA
+  </styled.h1>
+  <Styled(NavLink)
+    to="/new"
+  >
+    New
+  </Styled(NavLink)>
+  <Styled(NavLink)
+    to="/top"
+  >
+    Top
+  </Styled(NavLink)>
+  <Styled(NavLink)
+    to="/best"
+  >
+    Best
+  </Styled(NavLink)>
+</styled.header>
+`;

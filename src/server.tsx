@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as express from 'express';
 import * as React from 'react';
-import HttpStatus from 'http-status-enum';
+import { MOVED_PERMANENTLY } from 'http-status-codes';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter, Route } from 'react-router-dom';
@@ -72,7 +72,7 @@ app.use((req: express.Request, res: express.Response) => {
     </Provider>,
   );
   if (context.url) {
-    res.redirect(HttpStatus.MOVED_PERMANENTLY, context.url);
+    res.redirect(MOVED_PERMANENTLY, context.url);
   } else {
     res.send(renderHtml(html, store.getState()));
   }

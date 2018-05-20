@@ -7,6 +7,7 @@ import Story from '../../../common/Story';
 import HNClientReducer, {
   HNClientTypes,
   HNClientActions,
+  initEpic,
   getStoryIdsEpic,
   getStoryEpic,
   HNClientState,
@@ -14,10 +15,33 @@ import HNClientReducer, {
 import StoryType from '../../../common/StoryType';
 import ItemType from '../../../common/ItemType';
 import { BASE_URL } from '../../../constants/api';
+import { State } from '../../../redux/reducer';
 
 describe('HNClientReducer', () => {
   afterEach(() => {
     nock.cleanAll();
+  });
+
+  it('setStoryType should set the correct storyType', () => {
+    const payload = StoryType.BEST;
+    const setStoryTypeAction = HNClientActions.setStoryType(payload);
+    expect(setStoryTypeAction).toEqual({
+      type: HNClientTypes.SET_STORY_TYPE,
+      payload,
+    });
+    const newState = HNClientReducer(undefined, setStoryTypeAction);
+    expect(newState.storyType).toEqual(payload);
+  });
+
+  it('initEpic should send getStoryIds on setStoryType', async () => {
+    const payload = StoryType.BEST;
+    return await initEpic(
+      ActionsObservable.of(HNClientActions.setStoryType(payload)),
+      undefined,
+      undefined,
+    ).forEach(actionReceived =>
+      expect(actionReceived).toEqual(HNClientActions.getStoryIds(payload)),
+    );
   });
 
   it('getStoryIds should set the state as loading', () => {
@@ -27,10 +51,7 @@ describe('HNClientReducer', () => {
       type: HNClientTypes.GET_STORY_IDS,
       payload,
     });
-    const newState: HNClientState = HNClientReducer(
-      undefined,
-      getStoryIdsAction,
-    );
+    const newState = HNClientReducer(undefined, getStoryIdsAction);
     expect(newState.loading).toBeTruthy();
   });
 
@@ -50,16 +71,20 @@ describe('HNClientReducer', () => {
       .reply(OK);
     return await getStoryIdsEpic(
       ActionsObservable.of(HNClientActions.getStoryIds(st)),
-      undefined,
+      {
+        dispatch: jest.fn(),
+        getState: () => ({
+          ...new State(),
+          hnClient: { ...new HNClientState(), storyLimit: 1 },
+        }),
+      },
       undefined,
     )
       .toArray()
       .forEach(actionsReceived =>
         expect(actionsReceived).toEqual([
-          HNClientActions.getStoryIdSuccess(storyId1),
           HNClientActions.getStory(storyId1),
           HNClientActions.getStoryIdSuccess(storyId2),
-          HNClientActions.getStory(storyId2),
         ]),
       );
   });
@@ -71,10 +96,7 @@ describe('HNClientReducer', () => {
       type: HNClientTypes.GET_STORY_ID_SUCCESS,
       payload,
     });
-    const newState: HNClientState = HNClientReducer(
-      undefined,
-      getStoryIdSuccessAction,
-    );
+    const newState = HNClientReducer(undefined, getStoryIdSuccessAction);
     expect(newState.storyIds).toEqual([payload]);
   });
 
@@ -97,7 +119,7 @@ describe('HNClientReducer', () => {
       type: HNClientTypes.GET_STORY_SUCCESS,
       payload,
     });
-    const newState: HNClientState = HNClientReducer(
+    const newState = HNClientReducer(
       { ...new HNClientState(), storyIds: [storyId, nonExistentId] },
       getStorySuccessAction,
     );

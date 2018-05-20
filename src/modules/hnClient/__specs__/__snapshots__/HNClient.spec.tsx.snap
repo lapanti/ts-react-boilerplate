@@ -1,24 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HNClient /> should render with correct props 1`] = `
-<styled.main>
-  <h1
-    className="index__header"
-  >
-    Stories
-  </h1>
-  <br />
+<styled.main
+  rows={0}
+>
+  <Connect(Component) />
 </styled.main>
 `;
 
 exports[`<HNClient /> should render with correct props 2`] = `
-<styled.main>
-  <h1
-    className="index__header"
-  >
-    Stories
-  </h1>
-  <br />
+<styled.main
+  rows={2}
+>
+  <Connect(Component) />
   <p
     key="123456"
   >

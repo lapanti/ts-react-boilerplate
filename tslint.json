@@ -1,24 +1,24 @@
 {
-    "extends": ["tslint-react", "tslint-config-prettier"],
-    "rules": {
-        "jsx-no-lambda": false,
-        "jsx-boolean-value": ["never"],
-        "no-any": false,
-        "no-magic-numbers": true,
-        "only-arrow-functions": [true],
-        "curly": true,
-        "no-var-keyword": true,
-        "triple-equals": true,
-        "indent": ["spaces"],
-        "prefer-const": true,
-        "semicolon": [true, "always"],
-        "eofline": true,
-        "trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
-        "arrow-return-shorthand": [true],
-        "class-name": true,
-        "interface-name": [true, "never-prefix"],
-        "quotemark": [true, "single", "jsx-double"],
-        "no-unused-variable": [true],
-        "no-unused-expression": [true, "allow-fast-null-checks"]
-    }
+  "extends": ["tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "jsx-no-lambda": false,
+    "jsx-boolean-value": ["never"],
+    "no-any": false,
+    "no-magic-numbers": true,
+    "only-arrow-functions": [true],
+    "curly": true,
+    "no-var-keyword": true,
+    "triple-equals": true,
+    "indent": ["spaces"],
+    "prefer-const": true,
+    "semicolon": [true, "always"],
+    "eofline": true,
+    "trailing-comma": [true, { "multiline": "always", "singleline": "never" }],
+    "arrow-return-shorthand": [true],
+    "class-name": true,
+    "interface-name": [true, "never-prefix"],
+    "quotemark": [true, "single", "jsx-double"],
+    "no-unused-variable": [true],
+    "no-unused-expression": [true, "allow-fast-null-checks"]
+  }
 }

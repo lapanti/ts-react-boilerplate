@@ -13,7 +13,7 @@ import { BASE_URL } from '../../constants/api';
 import { State } from '../../redux/reducer';
 
 export class HNClientState {
-  readonly storyLimit = 25;
+  readonly storyLimit: number = 25;
   readonly storyType: StoryType = StoryType.NEW;
   readonly storyIds: number[] = [];
   readonly stories: Story[] = [];
@@ -60,36 +60,48 @@ export type HNClientActions =
   | ActionType<typeof HNClientActions>
   | DefaultAction;
 
-export const getStoryIdsEpic: Epic<HNClientActions, never> = action$ =>
+export const initEpic: Epic<HNClientActions, never> = action$ =>
+  action$
+    .ofType<ActionType<typeof setStoryType>>(getType(setStoryType))
+    .map(action => getStoryIds(action.payload));
+
+export const getStoryIdsEpic: Epic<HNClientActions, State> = (action$, store) =>
   action$
     .ofType<ActionType<typeof getStoryIds>>(getType(getStoryIds))
     .mergeMap(action =>
       ajax
         .getJSON<number[]>(`${BASE_URL}/${action.payload}stories.json`)
         .mergeMap(ids =>
-          [].concat.apply(
-            [],
-            ids.map(storyId => [getStoryIdSuccess(storyId), getStory(storyId)]),
+          ids.map(
+            (storyId, i) =>
+              i < store.getState().hnClient.storyLimit
+                ? getStory(storyId)
+                : getStoryIdSuccess(storyId),
           ),
         ),
     );
 
-export const getStoryEpic: Epic<HNClientActions, State> = (action$, store) =>
+export const getStoryEpic: Epic<HNClientActions, State> = action$ =>
   action$
     .ofType<ActionType<typeof getStory>>(getType(getStory))
-    .take(store.getState().hnClient.storyLimit)
     .mergeMap(action =>
       ajax.getJSON<Story>(`${BASE_URL}/item/${action.payload}.json`),
     )
     .map(story => getStorySuccess(story));
 
-export const HNClientEpics = combineEpics(getStoryIdsEpic, getStoryEpic);
+export const HNClientEpics = combineEpics(
+  initEpic,
+  getStoryIdsEpic,
+  getStoryEpic,
+);
 
 const HNClientReducer = (
   state: HNClientState = new HNClientState(),
   action: HNClientActions,
 ): HNClientState => {
   switch (action.type) {
+    case getType(setStoryType):
+      return { ...state, storyType: action.payload, stories: [], storyIds: [] };
     case getType(getStoryIds):
       return { ...state, loading: true };
     case getType(getStoryIdSuccess):

@@ -1,17 +1,17 @@
 {
-    "gitbook": "^3.1.1",
-    "title": "TS-React-Boilerplate",
-    "plugins": ["edit-link", "prism", "anker-enable", "github", "advanced-emoji", "-sharing"],
-    "pluginsConfig": {
-        "theme-default": {
-            "showLevel": false
-        },
-        "edit-link": {
-            "base": "https://github.com/Lapanti/ts-react-boilerplate/tree/master",
-            "label": "Edit this page"
-        },
-        "github": {
-            "url": "https://github.com/Lapanti/ts-react-boilerplate"
-        }
+  "gitbook": "^3.1.1",
+  "title": "TS-React-Boilerplate",
+  "plugins": ["edit-link", "prism", "anker-enable", "github", "advanced-emoji", "-sharing"],
+  "pluginsConfig": {
+    "theme-default": {
+      "showLevel": false
+    },
+    "edit-link": {
+      "base": "https://github.com/Lapanti/ts-react-boilerplate/tree/master",
+      "label": "Edit this page"
+    },
+    "github": {
+      "url": "https://github.com/Lapanti/ts-react-boilerplate"
     }
+  }
 }

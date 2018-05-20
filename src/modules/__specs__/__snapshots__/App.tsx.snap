@@ -10,6 +10,21 @@ exports[`App should render correctly 1`] = `
     />
     <Route
       component={[Function]}
+      exact={true}
+      path="/new"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/top"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/best"
+    />
+    <Route
+      component={[Function]}
     />
   </Switch>
 </styled.div>
@@ -22,6 +37,21 @@ exports[`App should render correctly 2`] = `
       component={[Function]}
       exact={true}
       path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/new"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/top"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/best"
     />
     <Route
       component={[Function]}

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { combineEpics } from 'redux-observable';
-import { routerReducer, RouterState } from 'react-router-redux';
+import { routerReducer, RouterState, RouterAction } from 'react-router-redux';
 import { DefaultAction } from './utils';
 import HNClientReducer, {
   HNClientEpics,
@@ -18,7 +18,7 @@ export class State {
   readonly hnClient: HNClientState = new HNClientState();
 }
 
-export type Actions = HNClientActions | DefaultAction;
+export type Actions = HNClientActions | RouterAction | DefaultAction;
 
 export const epics = combineEpics(HNClientEpics);
 
