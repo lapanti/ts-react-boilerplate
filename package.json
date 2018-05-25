@@ -32,26 +32,26 @@
     "lint:ts": "tslint --project tsconfig.json",
     "lint:ts:fix": "tslint --project tsconfig.json --fix",
     "lint:styles": "stylelint 'src/**/*.tsx'",
-    "test": "concurrently --kill-others-on-fail -p \"{name}\" -n \"STYLES-LINT,TS-LINT,JEST\" -c \"bgBlue,bgMagenta,bgCyan\" \"yarn lint:styles\" \"yarn lint:ts\" \"jest\"",
+    "test": "concurrently --kill-others-on-fail -p \"{name}\" -n \"STYLES-LINT,TS-LINT,JEST\" -c \"bgBlue,bgMagenta,bgCyan\" \"npm run lint:styles\" \"npm run lint:ts\" \"jest\"",
     "test:update": "jest --updateSnapshot",
     "test:watch": "jest --watch",
-    "test:ci": "yarn lint:styles && yarn lint:ts && jest --runInBand --forceExit --coverage",
+    "test:ci": "npm run lint:styles && npm run lint:ts && jest --runInBand --forceExit --coverage",
     "clean": "rm -rf dist",
-    "start:dev": "yarn clean && webpack-dev-server -d --env=dev --colors --port 9966",
+    "start:dev": "npm run clean && webpack-dev-server -d --env=dev --colors --port 9966",
     "build:server": "webpack -d --env=server -p --colors",
     "build:client": "webpack -d --env=prod --colors",
-    "build": "yarn clean && concurrently --kill-others-on-fail -p \"{name}\" -n \"SERVER,CLIENT\" -c \"bgBlue,bgMagenta\" \"yarn build:server\" \"yarn build:client\"",
+    "build": "npm run clean && concurrently --kill-others-on-fail -p \"{name}\" -n \"SERVER,CLIENT\" -c \"bgBlue,bgMagenta\" \"npm run build:server\" \"npm run build:client\"",
     "start": "cd dist && NODE_ENV=production node server.js",
     "docs:clean": "rm -rf _book",
     "docs:prepare": "gitbook install",
     "docs:watch": "gitbook serve",
-    "docs:build": "yarn docs:prepare && gitbook build -g Lapanti/ts-react-boilerplate",
-    "docs:publish": "yarn docs:clean && yarn docs:build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m \"Update book\" && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am \"Update book\" && git push git@github.com:Lapanti/ts-react-boilerplate gh-pages --force"
+    "docs:build": "npm run docs:prepare && gitbook build -g Lapanti/ts-react-boilerplate",
+    "docs:publish": "npm run docs:clean && npm run docs:build && cp CNAME _book && cd _book && git init && git commit --allow-empty -m \"Update book\" && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am \"Update book\" && git push git@github.com:Lapanti/ts-react-boilerplate gh-pages --force"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "pre-push": "npm run test"
     }
   },
   "lint-staged": {
