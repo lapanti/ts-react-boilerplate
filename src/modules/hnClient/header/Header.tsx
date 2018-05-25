@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import styled from '../../../theme/styled';
@@ -29,7 +28,7 @@ const Category = styled(NavLink).attrs({
   text-decoration: none;
 `;
 
-export const Header: React.StatelessComponent<{}> = () => (
+const Header: React.StatelessComponent<{}> = () => (
   <StyledHeader>
     <Title>HN PWA</Title>
     <Category to="/new">New</Category>
@@ -38,4 +37,4 @@ export const Header: React.StatelessComponent<{}> = () => (
   </StyledHeader>
 );
 
-export default connect()(Header);
+export default Header;

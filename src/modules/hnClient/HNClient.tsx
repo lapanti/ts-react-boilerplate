@@ -8,6 +8,7 @@ import StoryType from '../../common/StoryType';
 import Story from '../../common/Story';
 import Loader from '../../components/Loader';
 import Header from './header/Header';
+import StoryItem from './storyItem/StoryItem';
 
 const ClientContainer = withProps<{ rows: number }>(styled.main)`
   display: grid;
@@ -36,7 +37,9 @@ export const HNClient: React.StatelessComponent<HNClientProps> = ({
   <ClientContainer rows={stories.length}>
     {loading && <Loader />}
     <Header />
-    {stories.map(story => <p key={story.id}>{story.title}</p>)}
+    {stories.map((story, i) => (
+      <StoryItem story={story} index={i} key={story.id} />
+    ))}
   </ClientContainer>
 );
 

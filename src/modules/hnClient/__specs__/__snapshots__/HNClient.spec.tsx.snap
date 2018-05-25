@@ -4,7 +4,7 @@ exports[`<HNClient /> should render with correct props 1`] = `
 <styled.main
   rows={0}
 >
-  <Connect(Component) />
+  <Header />
 </styled.main>
 `;
 
@@ -12,16 +12,40 @@ exports[`<HNClient /> should render with correct props 2`] = `
 <styled.main
   rows={2}
 >
-  <Connect(Component) />
-  <p
+  <Header />
+  <StoryItem
+    index={0}
     key="123456"
-  >
-    Test
-  </p>
-  <p
+    story={
+      Object {
+        "by": "me",
+        "descendants": 0,
+        "id": 123456,
+        "kids": Array [],
+        "score": 0,
+        "time": 1,
+        "title": "Test",
+        "type": "story",
+        "url": "",
+      }
+    }
+  />
+  <StoryItem
+    index={1}
     key="234567"
-  >
-    Test 2
-  </p>
+    story={
+      Object {
+        "by": "me",
+        "descendants": 0,
+        "id": 234567,
+        "kids": Array [],
+        "score": 1,
+        "time": 1,
+        "title": "Test 2",
+        "type": "story",
+        "url": "",
+      }
+    }
+  />
 </styled.main>
 `;

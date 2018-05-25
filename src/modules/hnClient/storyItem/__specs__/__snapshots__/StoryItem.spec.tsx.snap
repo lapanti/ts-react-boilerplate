@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StoryItem /> should render with correct props 1`] = `
+<styled.div>
+  1
+  .
+  <styled.div>
+    <styled.a
+      href=""
+      target="_blank"
+    >
+      Test
+    </styled.a>
+    <styled.div>
+      1283
+       points by 
+      test
+       
+      an hour ago
+       |
+       
+      10293
+       comments
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`<StoryItem /> should render with correct props 2`] = `
+<styled.div>
+  2
+  .
+  <styled.div>
+    <styled.a
+      href=""
+      target="_blank"
+    >
+      Test 2
+    </styled.a>
+    <styled.div>
+      12
+       points by 
+      test2
+       
+      a year ago
+       |
+       
+      10
+       comments
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
