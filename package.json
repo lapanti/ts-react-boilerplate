@@ -113,7 +113,7 @@
     "react-hot-loader": "^4.0.0",
     "react-test-renderer": "^16.2.0",
     "sass-lint": "^1.12.1",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^7.0.3",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.0",
     "ts-jest": "^22.0.1",
