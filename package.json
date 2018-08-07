@@ -115,7 +115,7 @@
     "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.6",
     "source-map-loader": "^0.2.3",
-    "style-loader": "^0.20.0",
+    "style-loader": "^0.22.0",
     "ts-jest": "^22.0.1",
     "tslint": "^5.8.0",
     "tslint-config-prettier": "^1.6.0",
